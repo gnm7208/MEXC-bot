@@ -110,6 +110,22 @@ Log outcome in TRADE-LOG: "Review: [Proceed/Skip/Size down] - reason"
 10. Weekly circuit breaker: if >= 40% of closed trades this week are losses
     (min 5 trades) -> halt; resume when F&G > 50 AND BTC 24h > 0%
 11. Daily gate: if >= 8 trades today AND win rate < 60% -> halt until tomorrow
+12. BENCHMARK-TRACKING BTC CORE (added Wk4, 2026-08-09): the mission is to BEAT
+    BTC buy-and-hold — sitting 100% cash while BTC rises is a guaranteed loss vs
+    the benchmark even when closed trades win (Week 4: bot +2.24% vs BTC +3.41%,
+    trailed −1.17%, three days fully idle). To floor idleness:
+    - Trigger: >= 3 consecutive scan sessions with ZERO rules-clean alt entries
+      AND macro NOT halted (SIZE_MULTIPLIER > 0) AND deployment < 40%.
+    - Action: allocate a core tranche of ~30-40% of the book to BTC (or ETH if
+      BTC momentum is clearly weaker) spot as a benchmark-tracking HOLD.
+    - This core is EXEMPT from the momentum-entry gates, the +12% take-profit,
+      and trailing-stop churn — it is an index-tracking hold, not a momentum trade.
+    - Exit the core only if: (a) macro gate halts (SIZE_MULTIPLIER -> 0), or
+      (b) capital is needed to fund a qualifying alt entry (alts take priority),
+      or (c) a hard -10% drawdown on the core (macro regime break).
+    - Do NOT loosen alt-entry quality gates to force deployment — the parabolic-
+      chase discipline stays. Rule 12 is a floor on idleness, not a gate loosening.
+    - Log core buys/sells in TRADE-LOG tagged "BTC-CORE (Rule 12)".
 
 ## Sector P&L Tracking
 - Record sector in every TRADE-LOG entry: L1 / DeFi / AI / Gaming / Other

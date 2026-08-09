@@ -43,6 +43,7 @@ Cloud routines live in `routines/`. Local slash commands in `.claude/commands/`.
 - Max **30** new trades per week; max **8** trades per day
 - **Weekly circuit breaker**: if ≥ 40% of this week's closed trades are losses (min 5 trades) → halt; resume when F&G > 50 AND BTC 24h > 0%
 - **Daily gate**: if ≥ **8** trades today AND win rate < 60% → halt until tomorrow
+- **Benchmark-tracking BTC core** (Rule 12): if ≥ 3 consecutive scans yield zero rules-clean alt entries AND macro not halted AND deployment < 40% → hold ~30-40% in BTC (or ETH) spot as an index-tracking hold (exempt from momentum gates + +12% TP; exit only on macro halt, to fund a qualifying alt, or −10% core drawdown). Never sit 100% cash conceding BTC during alt dry spells. Do NOT loosen alt-entry gates to force deployment.
 - **Take-profit**: close at **+12%** gain — no exceptions
 - **Entry signal** — any ONE is sufficient:
   - OPTION A: 24h price change ≥ +5% AND volume ≥ $3M
