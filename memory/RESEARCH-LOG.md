@@ -1287,3 +1287,50 @@ Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/klin
 **Decision: NO NEW ENTRY.** No candidate clears both the momentum gate and the 3-Candle Confirmation Gate with a genuine catalyst; SOL/XMR aren't on today's watchlist and lack confirmed same-day catalysts, SKYAI fails liquidity and is still above its pullback zone, ADA/ETH/BNB show no trigger. Preserve $33.5845 (100%) dry powder. ADA remains PRIMARY execution-validated re-entry into tomorrow's Aug-9 SEC spot-ADA-ETF eligibility milestone *only* on a volume-confirmed 3-candle breakout ≥ $0.20 / ≥ +5%. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
 
 Sources: live MEXC `/api/v3/ticker/24hr` (full board, corrected `priceChangePercent` scaling) + `/ticker/price` + `/klines?interval=60m` + `account`; **Perplexity (sonar)** ×2 (afternoon altcoin pump check, SOL/XMR catalyst check).
+
+## 2026-08-09 — Morning Research (Day 18, Sunday)
+
+### Account Snapshot
+- **$33.58 USDT, 100% cash, 0 positions, 0 open orders** (USDT free $33.5844686955 / locked $0, canTrade=true). Reachability gate PASS (BTC $64,814).
+- Trades 3/25 wk · 0/8 today · 1 closed trade this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (needs ≥5 closed), daily gate N/A. Phase closed record 2W/0L.
+
+### Market Context (live MEXC 24hr + CoinGecko global)
+- BTC **$64,814** (−0.17% 24h, vol $183M) — coiled $64.8–65.2k channel (H $65,193 / L $64,785); no breakout, 4th day range-bound.
+- ETH $1,915 (+0.03%, $54.6M) · SOL $75.83 (+2.62%, $33.8M) · BNB $601.36 (+1.62%, still below $605 trigger) · XRP $1.035 (+0.20%) · **ADA $0.1986 (−1.09%, $2.63M)** · LINK $8.29 (+1.24%, thin $0.2M). Majors mixed — SOL/BNB/XRP modest green, BTC/ADA red; all well below the +5% OPTION-A gate.
+- **BTC.D 56.63%** · ETH.D 10.06% · Total mcap 24h **−0.11%** — flat, no broad alt rotation.
+- **Fear & Greed 31 (Fear)** — up 1 from Aug-8's 30. DXY ~101 (firm).
+- CoinGecko trending: PENGU, TUT, ETH, TAO, FWA, CASHCAT, UNI, PONS — meme/microcap-led; TAO the only non-meme, but fails liquidity (below).
+- **Macro gate:** MACRO_SCORE ≈ **47** (F&G 31 → 9.3 · BTC −0.17% → 12.1 · BTC.D 56.6% → 11.2 · mixed-green breadth → ~6.8 · default loss-rate 75 → 7.5) → **SIZE_MULTIPLIER 0.6** (reduced, not halted). MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B override.
+- **Sector status:** no SECTOR_BLOCKED (only 2 phase closes, both wins). No open positions → no sector exposure.
+
+### On-Chain / Derivatives / Catalysts (Perplexity sonar)
+- **BTC ETF flows:** ~$382M net inflows prior 2 sessions (supportive); whale accumulation cited as a current BTC support factor.
+- **Funding:** BTC perp funding neutral ~0.0030%/8h (annualized ~3.3%) — well below crowded-long levels. **OI:** stalled/flat, perp positioning ~300k BTC, CME OI at 2023 levels — supportive-but-not-euphoric, no fresh conviction leverage.
+- **ADA ETF (the watched catalyst):** NO confirmed SEC decision on a spot-ADA/Cardano ETF and no confirmation of the Aug-9 eligibility milestone in fresh results. The only regulatory item surfaced is the CLARITY Act, already pushed past the immediate Senate window. Buy-the-rumor tail has faded; **eligibility ≠ approval** regardless.
+- **Sector leadership:** AI (Bittensor/TAO on Grayscale AI Fund rebalance) and L1 (ICP, SUI on upgrade narratives) leading the alt tape; DeFi mild rotation; Gaming absent. None on a liquid MEXC name clears the entry gate today.
+- Whale Alert on free key (unavailable) — no direct on-chain accumulation signal on a specific liquid ticker.
+
+### Confirmed Relative-Strength Movers (OPTION-A gate: 24h ≥ +5% AND vol ≥ $3M)
+Live MEXC full-board scan → **1 qualifier, disqualified:**
+- **TUT +267.15%** ($4.17M, $0.1374) — parabolic meme blow-off (was +178% at last night's evening-scan, now steeper), thin ~$0.03M/hr liquidity, no coin-specific fundamental. **FAILS 3-Candle Gate + Layer 3 exit-liquidity. Disqualified — do NOT chase.**
+- **TAO +5.77%** ($2.17M) — clears the +5% momentum leg on a real AI catalyst (Grayscale AI Fund) but **FAILS the $3M liquidity floor** (only $2.17M) → not tradeable; also thin per-account slippage risk. Watch only.
+- **ADA $0.1986 (−1.09%, $2.63M)** — momentum negative, below $0.20; last 6 closed 1h candles flat ~$0.1986–0.1995, volumes falling (930k→224k) ⇒ **FAILS 3-Candle Gate + momentum gate outright.** Aug-9 eligibility milestone landed with no SEC action → catalyst spent.
+- Every other liquid name fails the +5% gate.
+
+### Trade Ideas (research only — execution owns the decision)
+1. **No disciplined fresh entry.** Sole OPTION-A qualifier (TUT) is a parabolic-thin meme chase failing the 3-Candle Gate + Layer 3; TAO has the cleanest catalyst but fails the $3M liquidity floor. Nothing qualifies for a rules-clean entry.
+2. **ADA — DEMOTE from PRIMARY.** Aug-9 eligibility milestone passed with no SEC decision and momentum negative ($0.1986, −1.09%, below $0.20). Catalyst is spent; only re-arm on a genuine fresh SEC-approval headline + volume-confirmed 3-candle breakout ≥ $0.20 / ≥ +5%. No longer a same-day setup.
+3. **TAO — WATCH (liquidity-gated).** Real AI-sector catalyst and +5.77% momentum, but $2.17M vol < $3M floor. Re-arm only if 24h volume expands ≥ $3M while holding ≥ +5% — then run the full score + Layer 3.
+4. **Watchlist — SOL $75.83 / BNB $601 / BTC $65.3k:** SOL leading alts (+2.62%) — watch for a volume-confirmed ≥ +5% leadership breakout; BNB re-arm on ≥ +2% reclaim/hold above $605 (now $601, close); BTC needs a $65,300 channel-top reclaim to unlock broad alt beta. None present.
+5. **Dry powder** — hold $33.58 (100%) cash; deploy on the first clean qualifier (3-candle gate PASS). Third consecutive session with no rules-clean liquid setup — capital preservation over a forced entry into a Fear tape.
+
+### Risk Factors
+- F&G 31 (Fear) + firm DXY (~101) + coiled $64.8–65.2k BTC channel (4th day) + Sunday/August seasonal thinness → fragile risk appetite; thin-conviction breakouts fail easily.
+- **ADA catalyst spent:** Aug-9 eligibility milestone passed with no decision (SEC ruling ~Oct 23 at earliest); +12.9% already banked Aug 6. Do not re-enter on narrative alone.
+- Today's only liquid mover (TUT) and the cleanest catalyst (TAO) are both untradeable — parabolic-thin and sub-$3M respectively — for a ~$33 account (min-notional + slippage).
+- OI flat + funding neutral = no leverage-driven conviction; a BTC channel breakdown would drag alts regardless of AI/L1 narrative.
+
+### Decision
+**HOLD — NO NEW TRADE (research posture).** No position to manage (100% cash). Sole OPTION-A qualifier (TUT) is a parabolic-thin meme chase; TAO fails liquidity; ADA's catalyst is spent and it fails the momentum/3-candle gate. Preserve $33.58 (100%) dry powder into a Fear tape + coiled BTC channel. **Tomorrow's watchlist:** TAO (only on ≥$3M volume expansion holding ≥+5%), SOL (alt-leadership breakout with rising vol), BNB (≥+2% reclaim above $605), BTC $65,300 channel-top reclaim. ADA demoted — re-arm only on a genuine SEC-approval headline. No ClickUp alert (no trade fired, no state change from prior runs). Sunday weekly-review also due today. Re-evaluate at next scan window.
+
+Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** overnight catalyst/on-chain/ADA-ETF check.
