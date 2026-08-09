@@ -621,3 +621,18 @@ Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): **1 raw qualifier (
 **ADA (PRIMARY Aug-9 re-entry candidate): FAIL.** Live $0.1989, **−0.69% 24h** (H $0.2023 / L $0.1978, vol $2.48M) — below $0.20, negative momentum, no volume-confirmed 3-candle breakout. Aug-9 SEC spot-ADA-ETF *eligibility* milestone ≠ approval; buy-the-rumor tail already faded. 3-Candle Gate FAIL, momentum gate FAIL → no entry.
 
 **Decision: NO NEW ENTRY.** Sole OPTION-A qualifier (TUT) is a parabolic-thin meme chase; ADA fails momentum/breakout gate; no smart-money accumulation signal on a liquid name. Preserve $33.5845 (100%) dry powder into Fear tape + coiled $64–65k BTC channel. **Tomorrow's watchlist:** ADA (only on volume-confirmed 3-candle breakout ≥$0.20/≥+5%), SOL/XRP/LINK (watch for alt-leadership breakout with rising vol), BTC $65,300 resistance reclaim. No ClickUp alert (no trade fired, no state change from prior runs). Weekly-review also due (Sunday). Re-evaluate at next scan window.
+
+## 2026-08-09 — Morning Execution (Day 18, Sunday)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,808.23.
+
+**Account:** $33.5844686955 USDT free / locked $0 (canTrade=true). **0 positions, 100% cash** — nothing to protect (no cut/take-profit/tighten checks; nothing held since the Aug-6 ADA exit). Trades 3/25 wk · 0/8 today · 1 closed trade this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (needs ≥5 closed), daily gate N/A. Macro gate MACRO_SCORE ≈47 → SIZE_MULTIPLIER 0.6 (reduced, not halted); MACRO<60 ⇒ needs SCORE ≥8 OR OPTION_B.
+
+**Trade-idea validation vs buy-side rules (live at execution):**
+1. **ADA — DEMOTED (was PRIMARY): FAIL.** Live $0.1985, **−1.09% 24h** (vol $2.91M) — below $0.20, negative momentum, no volume-confirmed 3-candle breakout. Aug-9 eligibility milestone passed with no SEC action → catalyst spent. Momentum gate FAIL, 3-Candle Gate FAIL → no entry.
+2. **TAO — WATCH (liquidity-gated): FAIL.** Live $205.77, **+5.03% 24h** but vol **$2.06M < $3M floor** → not tradeable; also thin per-account slippage. Clears momentum leg only. Disqualified on liquidity.
+3. **SOL $75.97 (+1.75%) / BNB $602.35 (+1.48%, below $605 trigger) / XRP $1.036 (+0.25%) / ETH $1,915 (−0.15%):** none clear the +5% gate; no trigger present. LINK thin ($0.21M).
+
+**Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M):** **0 qualifiers.** Last night's TUT parabolic meme has faded off the board. No liquid rules-clean setup.
+
+**Decision: NO NEW ENTRY — no trade fires.** No candidate passes the buy-side gate (ADA momentum decayed/catalyst spent; TAO fails $3M liquidity floor; SOL/BNB/XRP/ETH no trigger; full board has zero OPTION-A qualifiers). Preserve $33.58 (100%) dry powder into a Fear tape (F&G 31), coiled $64.8–65.2k BTC channel (4th day). **Watchlist:** TAO (only on ≥$3M volume expansion holding ≥+5%), SOL (alt-leadership breakout with rising vol), BNB (≥+2% reclaim above $605), BTC $65,300 channel-top reclaim. No ClickUp alert (no trade fired, no state change). Re-evaluate at midday.
