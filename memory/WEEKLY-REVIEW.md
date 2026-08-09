@@ -183,3 +183,51 @@ Up from Week 1's F because the operational blocker is resolved and the account i
 
 ### Overall Grade: B
 Up two letters from Week 2's D. The bot booked its first-ever realized win (ADA +7.0%), ran the full rulebook cycle cleanly with zero rule violations, and beat BTC by ~4% in a week BTC fell — the core mission, delivered. Held back from an A by persistent under-deployment (one ~20% position, 80% idle cash, three weeks running) and thin trade count. Strong, disciplined week; the clear next step is deploying broader when quality setups appear.
+
+---
+
+## Week ending 2026-08-09 (Week 4)
+
+### Stats
+| Metric              | Value  |
+|---------------------|--------|
+| Starting portfolio  | $32.85 (Aug 2 EOD, Week 3 close) |
+| Ending portfolio    | $33.58 (Aug 9 EOD, $33.5845) |
+| Week return         | +$0.73 (+2.24%) |
+| BTC week return     | +3.41% ($63,104 on 08-02 → $65,255.75 on 08-09) |
+| Bot vs BTC          | **−1.17%** (first losing week vs benchmark) |
+| Trades              | 1 closed round-trip (W:1 / L:0), 0 new entries, 0 open at close |
+| Win rate            | 100% (1/1 closed) |
+| Best trade          | ADA +12.9% |
+| Worst trade         | None (no losers) |
+| Profit factor       | ∞ (gross profit $0.84 / gross loss $0.00) |
+
+### Closed Trades
+| Ticker | Entry | Exit | P&L | Notes |
+|--------|-------|------|-----|-------|
+| ADA | $0.18639 (Aug 2) | ~$0.2110 (Aug 6) | +$0.84 (+12.9%) | ETF-eligibility re-entry (carried in from Wk3 as open). Full rulebook cycle — trailed stop up per Rule 7, market-sold at +12% TP into the Aug-9 SEC spot-ADA-ETF eligibility milestone. 2nd realized win of the phase. |
+
+### Open Positions at Week End
+None — 100% USDT cash ($33.5845 free, 0 locked). Reachability gate PASS all sessions.
+
+### What Worked
+- **Second clean win, best single trade of the challenge.** ADA re-entry ran the full loop: entered Aug 2 on the ETF-eligibility catalyst + trendline breakout, trailed the stop up per Rule 7 ($0.1678 → $0.1822), and market-sold at +12.9% ($0.2110) the first time price tripped the $0.2088 target Aug 6. No discretion, no override — the +12% take-profit rule executed exactly as written. Phase record now 2W/0L.
+- **Discipline against parabolic chases.** Every liquid full-board qualifier this week was a blow-off (SKYAI, EPIC, TUT +178%, ISEK, CYS) — all correctly disqualified on the 3-Candle Confirmation Gate + Layer 3 exit-liquidity. Zero forced entries into microcap pump-and-dumps.
+- **Sold the milestone, not the hope.** Took the +12.9% into the Aug-9 eligibility date rather than holding through headline whipsaw (eligibility ≠ approval; SEC decision window to ~Oct 23). Aug-9 passed with no SEC action → catalyst spent, validating the exit.
+
+### What Didn't Work
+- **Trailed BTC for the first time (−1.17%).** The mission is to beat BTC buy-and-hold; this week BTC rallied +3.41% while the book — ~20% deployed, then 100% cash for the final 3 days (Aug 7/8/9) — returned only +2.24%. A single winning trade on a ~20% position cannot keep pace with a 100%-benchmark in an up week. **The chronic under-deployment finally carried a measurable cost vs the benchmark.**
+- **Three straight days at 100% cash into a rising tape.** After the Aug-6 exit, no rules-clean alt qualifier appeared (ADA momentum decayed post-catalyst; TAO cleared momentum but failed the $3M liquidity floor every scan; everything else parabolic-thin). Correct per the rulebook — but the rulebook left the book fully idle while BTC ground higher, guaranteeing relative underperformance.
+- **Under-deployment now 4 weeks running.** ~20% peak deployment vs the 80-90% target. Weeks 1-3 it didn't cost vs-BTC (BTC flat/down); this week it did.
+
+### Key Lessons
+- **Sitting 100% cash while BTC rises is a guaranteed loss against the benchmark, even when the closed trades are winners.** Discipline on alt-entry quality is right — chasing TUT/EPIC would have been worse. But "no clean alt setup" defaulting to 0% deployment ignores that BTC itself is the thing we must beat. If alts don't qualify, holding cash concedes the benchmark; holding *BTC* at least matches it.
+- The entry gates (momentum ≥ +5%/+2% AND ≥ $3M vol AND 3-candle AND EMA-200) are strict enough that in a Fear tape only one catalyst name (ADA) ever qualified all phase. When it closed, nothing replaced it. This is by design for alt quality — but it needs a benchmark-tracking floor so dry spells don't concede to BTC.
+
+### Adjustments for Next Week
+- **New Rule 12 added to TRADING-STRATEGY.md — Benchmark-Tracking BTC Core.** When ≥3 consecutive scan sessions yield zero rules-clean alt entries, macro is not halted, and deployment < 40%, allocate a ~30-40% core tranche to BTC (or ETH) spot as a benchmark-tracking hold — exempt from momentum-gate churn and the +12% TP, exited only if macro halts or capital is needed for a qualifying alt. Directly fixes this week's failure mode: never sit 100% cash conceding BTC during alt dry spells.
+- Keep the alt-entry quality bar unchanged — the parabolic-chase discipline is correct and must not be loosened. The fix is a floor on idleness, not a loosening of alt gates.
+- Manage any BTC core to Rule 12 (hold, don't churn); redeploy to a qualifying alt the instant one clears the buy-side gate.
+
+### Overall Grade: B−
+Down a half-step from Week 3's B. The trade execution was the best of the challenge — a textbook +12.9% ADA cycle, 100% win rate, phase 2W/0L, and phase-to-date still ahead of BTC (+3.91% vs +2.76%). But a weekly review grades the week, and this week the book **lost to its own benchmark for the first time** (−1.17%): BTC rallied +3.41% while a ~20%-deployed-then-all-cash book returned +2.24%. The under-deployment flagged for four straight weeks finally cost relative performance. Excellent trade, but the mission metric slipped this week — hence the rule change to stop conceding BTC during dry spells.
