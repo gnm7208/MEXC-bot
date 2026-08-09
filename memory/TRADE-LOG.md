@@ -644,3 +644,17 @@ Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): **1 raw qualifier (
 **Positions:** 0 open (100% cash). USDT free $33.5844686955 / locked $0 (canTrade=true) — confirmed live. Nothing to cut (-7%), nothing to tighten (+15%/+20% winners), no thesis to re-check — no positions held since the Aug-6 ADA take-profit exit.
 
 **Decision: NO ACTION.** No ClickUp alert (no action taken).
+
+## 2026-08-09 — Afternoon Execution (Day 18, Sunday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $65,024.93.
+
+**Account/Positions:** 0 open (100% cash). USDT free $33.5844686955 / locked $0 (canTrade=true) — confirmed live via `account`/`positions`. `orders` endpoint HTTP 400 (known permission-gap pattern); balance locked=0 confirms no resting orders. Nothing to take-profit/cut/tighten — no positions held since the Aug-6 ADA exit. Trades 3/25 wk, 0/5 (0/8) today; 1 closed trade this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (needs ≥5 closed), daily gate N/A (0 trades today).
+
+**Watchlist re-check (today's RESEARCH-LOG watchlist: TAO, SOL, BNB, BTC $65,300 reclaim):**
+- TAO $206.99, **+5.23%** 24h but vol **$1.999M < $3M floor** — still fails the liquidity gate (unchanged from morning-execution). Klines show the move already fading (last closed 1h candle flat-to-down, hourly quoteVol collapsing).
+- SOL +1.53% ($76.61), BNB +1.36% ($604.72, above $600 but below research's $605 trigger), ADA −1.15% ($0.1968), XRP −0.17%, ETH ~0%, BTC ~+0.01% ($65,024.93) — none clear the +2% entry gate.
+- Perplexity afternoon catalyst check returned stale/mixed-date articles (2024–2025 snapshots misdated as "today") citing SUI/BICO/TIA/HNT/TAO/PYTH pumps; cross-checked every name live on MEXC `/ticker/24hr` — all flat (0.00–0.17% actual 24h chg), confirming the Perplexity output was unreliable noise, not a live signal. No Option B override candidate.
+- **Full-board scan (chg ≥ +2% AND vol ≥ $3M): 3 raw qualifiers — TUT +156.48% ($9.63M), ISEK +39.41% ($3.84M), CYS +14.75% ($4.37M).** 1h klines on all three show classic blow-off/whipsaw structure: TUT decaying from its earlier +178%/+267% spikes with hourly quoteVol collapsing ($995k→$92k) and a red/flat last candle; ISEK is a sub-penny microcap with erratic multi-hundred-percent hourly volume swings and a declining last candle; CYS's last closed candle is red with quoteVol collapsing ($216k→$34k). **All three fail the 3-Candle Confirmation Gate (closes not rising above prior, volume not rising) — disqualified as chases**, consistent with TUT's repeated disqualification at evening-scan/morning-execution today.
+
+**Decision: NO NEW ENTRY.** No candidate clears the buy-side gate — majors/watchlist flat, TAO still liquidity-gated, full-board qualifiers (TUT/ISEK/CYS) all fail the 3-Candle Gate as parabolic-thin chases. Preserve $33.5845 (100%) dry powder. No ClickUp alert (no trade fired, no state change from prior runs). Re-evaluate at daily-summary.
