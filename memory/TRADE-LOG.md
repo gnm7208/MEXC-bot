@@ -636,3 +636,11 @@ Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): **1 raw qualifier (
 **Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M):** **0 qualifiers.** Last night's TUT parabolic meme has faded off the board. No liquid rules-clean setup.
 
 **Decision: NO NEW ENTRY — no trade fires.** No candidate passes the buy-side gate (ADA momentum decayed/catalyst spent; TAO fails $3M liquidity floor; SOL/BNB/XRP/ETH no trigger; full board has zero OPTION-A qualifiers). Preserve $33.58 (100%) dry powder into a Fear tape (F&G 31), coiled $64.8–65.2k BTC channel (4th day). **Watchlist:** TAO (only on ≥$3M volume expansion holding ≥+5%), SOL (alt-leadership breakout with rising vol), BNB (≥+2% reclaim above $605), BTC $65,300 channel-top reclaim. No ClickUp alert (no trade fired, no state change). Re-evaluate at midday.
+
+## 2026-08-09 — Position Scan (Ad Hoc, cut/tighten/thesis sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,986.90.
+
+**Positions:** 0 open (100% cash). USDT free $33.5844686955 / locked $0 (canTrade=true) — confirmed live. Nothing to cut (-7%), nothing to tighten (+15%/+20% winners), no thesis to re-check — no positions held since the Aug-6 ADA take-profit exit.
+
+**Decision: NO ACTION.** No ClickUp alert (no action taken).
