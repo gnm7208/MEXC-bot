@@ -754,3 +754,15 @@ Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/bookTicker` + `
 **No alt positions held** — nothing else to scan for -7% cuts or +15%/+20% stop-tightening.
 
 **Decision: NO ACTION.** No positions at -7%, no +15%/+20% winners to tighten, no thesis breaks. BTC-CORE flat and within Rule 12 hold parameters. No ClickUp alert (no action taken per task instruction).
+
+---
+
+## Aug 10 — EOD Snapshot (Day 19, Monday)
+
+**Portfolio:** $33.47 | **Cash:** $21.83 (65.2%) | **Day P&L:** −$0.11 (−0.33%) | **Phase P&L:** +$1.15 (+3.57%)
+
+| Ticker | Qty | Entry | Price | Day Chg | Unrealized P&L | Stop |
+|--------|-----|-------|-------|---------|----------------|------|
+| BTC-CORE | 0.0001808 | ~$65,020 | $64,404.39 | −1.30% | −$0.11 (−0.95%) | none (Rule 12 exempt) |
+
+**Notes:** First deployment day of the phase — Rule 12 BTC benchmark-tracking core established at evening-scan ($11.7556, 0.0001808 BTC @ avg ~$65,020, order C02__715293523296854016046) after ≥3 consecutive zero-clean-alt scans + macro not halted (MACRO ≈46, SIZE_MULTIPLIER 0.6 >0) + 0% deployment. USDT free $21.8289 / locked $0 (canTrade=true); BTC 0.0001808 / locked $0. `orders` endpoint HTTP 400 (known permission gap); locked=0 confirms no resting orders — consistent with BTC-CORE being Rule-12 stop-exempt (no stop / no +12% TP by design). Reachability gate PASS (BTC $64,404.39 at EOD). **Trades:** 1 fill today (BTC-CORE, Rule-12 core — not counted toward momentum trade gates); 3/25 momentum trades this week, 0/8 today. 1 closed trade this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (needs ≥5 closed), daily gate N/A. Phase closed record 2W/0L. **Day P&L −$0.11 (−0.33%)** — portfolio Aug-9 EOD $33.5845 (100% cash) → $33.4732; the full move is BTC-CORE mark-to-market (BTC $65,255.75 EOD Aug-9 → $64,404.39, −1.30%), cash unchanged. **Phase P&L +$1.15 (+3.57%)** vs $32.32 baseline. Deployment 34.8% (BTC-CORE) — within Rule 12's 30-40% core target; remaining 65.2% dry powder held for a qualifying alt breakout (alt-entry quality gates NOT loosened — parabolic-chase discipline stays). All Aug-10 alt scans (evening/morning/afternoon/trade-idea) produced zero rules-clean liquid entries: full-board OPTION-A qualifiers (TUT/MY/RAZOR/CYS/龙虾/XMR) all parabolic-thin blow-offs or pump-and-dump traps failing the 3-Candle Gate + Layer 3 exit-liquidity; watchlist majors flat below all triggers (SOL no ≥+5% leadership, BNB below $605, ADA below $0.20 catalyst spent, TAO vol <$3M). F&G ~30 (Fear), coiled $64.6–65.5k BTC channel (5th day) drifting toward the $64,700 floor. **BTC buy-and-hold benchmark:** phase baseline BTC ~$63,500 (Jul 22 funding) → $64,404.39 now (~+1.42%); bot +3.57% phase — still outperforming buy-and-hold by ~2.1 pts. **Watchlist into Aug 11:** ADA (only on volume-confirmed 3-candle breakout ≥$0.20/≥+5%), SOL (alt-leadership breakout with rising vol), BNB (≥+2% reclaim above $605), TAO (only on ≥$3M vol holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at evening-scan.
