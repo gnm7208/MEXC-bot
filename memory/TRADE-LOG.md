@@ -725,3 +725,20 @@ Sources: live MEXC `/api/v3/ticker/bookTicker` + `/ticker/price` + `account`/`po
 Perplexity afternoon catalyst check cited PUMP (+14-30%) and BMT (+149%) — neither on today's watchlist, neither appears in the live MEXC full-board OPTION-A scan (not listed/liquid on this exchange or below scan threshold) → no actionable Option B override.
 
 **Decision: NO NEW ENTRY.** No candidate clears the buy-side gate — watchlist flat, all 5 full-board qualifiers disqualified (MY is an outright pump-and-dump trap, RAZOR/CYS repeat prior disqualifications, XMR fails the 3-candle gate despite a headline, 龙虾 is a legitimacy skip). BTC-CORE flat, no exit trigger. Preserve $21.83 (65%) dry powder. No ClickUp alert (no trade fired, no state change from prior runs). Re-evaluate at evening-scan.
+
+## 2026-08-10 — Trade-Idea Validation (Day 19, Monday, scheduled buy-side check)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,590.15 (coiled channel drifting toward $64,700 floor).
+
+**Account/Positions (live):** 1 open (BTC-CORE), USDT free $21.8289 (65%) / locked $0 (canTrade=true). No resting orders. Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A. Positions 1/6.
+
+**BTC-CORE (Rule 12) — HOLD:** 0.0001808 BTC @ mark $64,590 = $11.678 vs cost $11.7556 → **−0.66% (flat)**. Index-tracking hold — NO stop / NO +12% TP by design. No exit trigger (macro NOT halted, MACRO ≈48.5 → mult 0.6 >0; well above −10% core exit ~$58,518; no qualifying alt needs the capital). No add (deployment 35% within 30–40% target).
+
+**Research trade-idea validation (2026-08-10 research scan) vs buy-side gate:**
+- Idea 1 (no disciplined alt entry — TUT/RAZOR/CYS parabolic-thin) — confirmed. Full-board OPTION-A scan (≥+5% AND vol ≥$3M): 4 raw qualifiers, all disqualified — **MY +211.71%** ($12.35M, decayed from afternoon's +277% = blow-off confirmed, pump-and-dump trap), **龙虾 +47.55%** ($4.45M, obscure/untranslatable legitimacy skip), **RAZOR +33.90%** ($3.50M, sub-penny microcap repeat disqualification), **CYS +14.75%** ($4.45M, repeat disqualification). All FAIL 3-Candle Gate + Layer 3.
+- Idea 2 (BTC-CORE HOLD) — maintained, flat/healthy.
+- Ideas 3–5 watchlist re-check LIVE: SOL $76.34 (flat, no ≥+5% breakout), ADA $0.1963 (below $0.20, catalyst spent), BNB $600.48 (below $605 trigger, dropped further), TAO vol <$3M (liquidity fail), ETH $1,899 / XRP $1.025 (flat/red). **None clears the entry gate.**
+
+**Decision: NO NEW ALT ENTRY — BTC-CORE maintained.** No research idea clears momentum + 3-Candle + liquidity gates with a catalyst; watchlist live-confirmed below all triggers; all 4 full-board qualifiers are parabolic-thin/illegitimate chases. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). Preserve $21.83 (65%) dry powder into a Fear tape (F&G 30) + coiled $64.6–65.5k BTC channel drifting toward the $64,700 floor. **No ClickUp alert (no trade fired, no state change).** Watchlist unchanged: SOL (leadership breakout w/ rising vol), ADA (SEC-approval headline + $0.20/+5% breakout), BNB (≥+2% above $605), TAO (≥$3M vol holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. Re-evaluate at next scan window.
+
+Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/bookTicker` + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/).
