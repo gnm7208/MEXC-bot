@@ -688,3 +688,19 @@ Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): **1 raw qualifier (
 **Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): 3 raw qualifiers — TUT +113.31% ($12.55M), RAZOR +97.96% ($3.62M), CYS +6.11% ($3.98M).** All fail the 3-Candle Confirmation Gate as parabolic-thin chases: TUT is the same multi-day meme blow-off disqualified repeatedly Aug-9; RAZOR is a sub-penny microcap +98% parabola; CYS's 60m klines show a blow-off top (spiked $1.30 then dumped to $1.09, now ~$1.045 — last candle red, closes not rising). No liquid rules-clean alt entry → alt gate: NO ENTRY.
 
 **Decision: BTC-CORE (Rule 12) established, NO ALT ENTRY.** Zero rules-clean alt setups (3 OPTION-A qualifiers all parabolic-chase disqualified; majors flat, no leadership; ADA below $0.20; TAO liquidity-gated) → with ≥3 consecutive zero-entry scans + macro not halted + 0% deployment, Rule 12 triggers a ~35% BTC benchmark-tracking core ($11.7556, 0.0001808 BTC @ ~$65,020). Remaining ~65% ($21.83) held as dry powder for a qualifying alt breakout. **ClickUp alert sent** (trade fired — state change). **Tomorrow's watchlist:** ADA (only on volume-confirmed 3-candle breakout ≥$0.20/≥+5%), SOL (alt-leadership breakout with rising vol, $24.8M vol is the most liquid major mover), BNB (≥+2% reclaim above $605), TAO (only on ≥$3M volume expansion holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at next scan window.
+
+## 2026-08-10 — Morning Execution (Day 19, Monday, buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,965.24 (coiled $64.7–65.5k channel).
+
+**Account/Positions (live):** USDT free $21.8289 (65%) + BTC-CORE 0.0001808 (locked $0, canTrade=true) — 1 position, no resting orders (`orders` endpoint SSL_ERROR/HTTP-gap pattern; balance locked=0 confirms none). Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A. Positions 1/6.
+
+**BTC-CORE (Rule 12) — HOLD:** 0.0001808 BTC @ mark $64,965 = $11.7457 vs cost $11.7556 → **−0.08% (flat)**. Index-tracking hold — NO stop / NO +12% TP. No exit trigger (macro NOT halted, MACRO ≈48.5 → mult 0.6 >0; well above −10% core exit ~$58,518; no qualifying alt needing capital). No add (deployment 35% within 30–40% target).
+
+**Research trade-idea validation (2026-08-10 research scan) — buy-side gate:**
+- Fresh alt qualifiers TUT/RAZOR/CYS — all fail the 3-Candle Confirmation Gate + Layer 3 exit-liquidity (parabolic-thin chases). **DISQUALIFIED — no buy.**
+- Watchlist re-check LIVE: SOL $76.78 (+~1%, no ≥+5% leadership breakout), BNB $603.81 (still below $605 trigger), ADA $0.1966 (below $0.20, Aug-9 SEC eligibility milestone passed with no action → catalyst spent), TAO $203.84 (vol still <$3M floor), ETH $1,915 (flat), XRP $1.031 (red). **None clears the entry gate.**
+
+**Decision: NO NEW ALT ENTRY — BTC-CORE maintained.** No research idea clears momentum + 3-Candle + liquidity gates with a catalyst; watchlist live-confirmed below all triggers. No market buys placed → no stop-limit orders needed (BTC-CORE is Rule-12 stop-exempt). Preserve $21.83 (65%) dry powder. **No ClickUp alert (no trade fired, no state change).** Watchlist unchanged: SOL (leadership breakout w/ rising vol), ADA (SEC-approval headline + $0.20/+5% breakout), BNB (≥+2% above $605), TAO (≥$3M vol holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. Re-evaluate at next scan window.
+
+Sources: live MEXC `/api/v3/ticker/bookTicker` + `/ticker/price` + `account`/`positions`.
