@@ -688,3 +688,21 @@ Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): **1 raw qualifier (
 **Full-board OPTION-A scan (chg ≥ +5% AND quoteVol ≥ $3M): 3 raw qualifiers — TUT +113.31% ($12.55M), RAZOR +97.96% ($3.62M), CYS +6.11% ($3.98M).** All fail the 3-Candle Confirmation Gate as parabolic-thin chases: TUT is the same multi-day meme blow-off disqualified repeatedly Aug-9; RAZOR is a sub-penny microcap +98% parabola; CYS's 60m klines show a blow-off top (spiked $1.30 then dumped to $1.09, now ~$1.045 — last candle red, closes not rising). No liquid rules-clean alt entry → alt gate: NO ENTRY.
 
 **Decision: BTC-CORE (Rule 12) established, NO ALT ENTRY.** Zero rules-clean alt setups (3 OPTION-A qualifiers all parabolic-chase disqualified; majors flat, no leadership; ADA below $0.20; TAO liquidity-gated) → with ≥3 consecutive zero-entry scans + macro not halted + 0% deployment, Rule 12 triggers a ~35% BTC benchmark-tracking core ($11.7556, 0.0001808 BTC @ ~$65,020). Remaining ~65% ($21.83) held as dry powder for a qualifying alt breakout. **ClickUp alert sent** (trade fired — state change). **Tomorrow's watchlist:** ADA (only on volume-confirmed 3-candle breakout ≥$0.20/≥+5%), SOL (alt-leadership breakout with rising vol, $24.8M vol is the most liquid major mover), BNB (≥+2% reclaim above $605), TAO (only on ≥$3M volume expansion holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at next scan window.
+
+---
+
+## 2026-08-10 — Position Scan (Ad Hoc, cut/tighten/thesis sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,930.15.
+
+**Positions:** 1 open — BTC-CORE (Rule 12 index-tracking hold). Qty 0.0001808 BTC, entry ~$65,020 → live $64,930.15, **−0.14%**. No open alt positions (0 ADA/other). USDT free $21.8289 / locked $0, BTC 0.0001808 / locked $0 — confirmed live, no resting orders.
+
+**Cut check (−7%):** N/A — BTC-CORE is exempt from the momentum −6%/−7% cut per Rule 12 (index hold, not a momentum trade); current −0.14% is nowhere close regardless. **No cut.**
+
+**Tighten check (+15%/+20%):** N/A — BTC-CORE carries no stop and is exempt from the trailing-stop ladder + +12% TP per Rule 12; current P&L is −0.14% (no winner to tighten). **No tighten.**
+
+**Thesis check:** Rule 12 thesis (benchmark-tracking BTC core, held while alt dry spell persists) unbroken — no macro halt (last MACRO_SCORE ≈46-47, SIZE_MULTIPLIER 0.6, not halted), no −10% core drawdown (trigger ≈$58,518, price $64,930 far above), no qualifying alt has emerged needing the capital. **Thesis intact.**
+
+**Decision: NO ACTION.** No cut, no tighten, no thesis break, no ClickUp alert (nothing to report — matches "notify only if action taken").
+
+---
