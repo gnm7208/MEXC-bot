@@ -742,3 +742,15 @@ Perplexity afternoon catalyst check cited PUMP (+14-30%) and BMT (+149%) — nei
 **Decision: NO NEW ALT ENTRY — BTC-CORE maintained.** No research idea clears momentum + 3-Candle + liquidity gates with a catalyst; watchlist live-confirmed below all triggers; all 4 full-board qualifiers are parabolic-thin/illegitimate chases. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). Preserve $21.83 (65%) dry powder into a Fear tape (F&G 30) + coiled $64.6–65.5k BTC channel drifting toward the $64,700 floor. **No ClickUp alert (no trade fired, no state change).** Watchlist unchanged: SOL (leadership breakout w/ rising vol), ADA (SEC-approval headline + $0.20/+5% breakout), BNB (≥+2% above $605), TAO (≥$3M vol holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. Re-evaluate at next scan window.
 
 Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/bookTicker` + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/).
+
+## 2026-08-10 — Stop/Trim Position Scan (Day 19, Monday, position-monitoring)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,868.57.
+
+**Account/Positions (live):** 1 open (BTC-CORE), USDT free $21.8289 (65%) / locked $0 (canTrade=true). Positions 1/6.
+
+**BTC-CORE (Rule 12) check:** 0.0001808 BTC @ mark $64,868.57 = $11.7274 vs cost $11.7556 (avg fill ~$65,020) → **−0.24% (flat)**. Index-tracking hold — NO stop / NO +12% TP by design (Rule 12 stop-exempt). Not near −7% cut threshold, not a +15%/+20% winner (n/a — no stop to tighten). Exit triggers checked: macro not halted, well above −10% core exit (~$58,518), no qualifying alt needs the capital. **Thesis intact** — no break.
+
+**No alt positions held** — nothing else to scan for -7% cuts or +15%/+20% stop-tightening.
+
+**Decision: NO ACTION.** No positions at -7%, no +15%/+20% winners to tighten, no thesis breaks. BTC-CORE flat and within Rule 12 hold parameters. No ClickUp alert (no action taken per task instruction).
