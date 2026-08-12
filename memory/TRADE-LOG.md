@@ -794,3 +794,15 @@ Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/bookTicker` + `
 Perplexity afternoon catalyst check cited RAD/COOKIE/LUNA/BANANAS31/GIGGLE/HOLO/PROM/FHE/CAP/UPC/BTW (+JTO/WLD/PUMP) — none on today's watchlist, none appearing in the live MEXC full-board scan (not listed/liquid on this exchange at the momentum threshold) → no actionable Option B override.
 
 **Decision: NO NEW ENTRY.** Full-board scan returned zero momentum qualifiers, watchlist majors all flat (BNB/SOL/ADA/TAO/BTC within noise of prior close), no OPTION B catalyst maps to a tradeable MEXC listing. BTC-CORE at −2.31%, no exit trigger, thesis intact. Preserve $21.83 (65.5%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+## 2026-08-12 — Stop/Trim Position Scan (Day 21, Wednesday, ad-hoc position-monitoring)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,373.83.
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.5%) / locked $0 (canTrade=true). No resting orders. Positions 1/5.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.4579 @ mark $63,373.83 → **−2.53%**. Rule-12 index-tracking hold — **exempt from the −6%/−7% cut and +15%/+20% trailing-tighten rules by design**; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (BTC ≈ $58,518 — current price ~7.7% above that floor). No exit trigger. Thesis (ETF weekly demand structural, despite Aug-10 outflow) unchanged since this afternoon's scan — no new catalyst or invalidating news found.
+
+**No alt positions held** — nothing else to scan for −7% cuts or +15%/+20% stop-tightening.
+
+**Decision: NO ACTION.** BTC-CORE within Rule 12 hold parameters, no thesis break. No ClickUp alert (no action taken per task instruction).
