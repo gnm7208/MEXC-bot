@@ -1381,3 +1381,51 @@ Full-board scan → **3 raw qualifiers, all disqualified as parabolic-thin chase
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY (research posture).** BTC-CORE flat/healthy; ETF inflows + whale accumulation support the benchmark hold. No rules-clean alt setup (3 OPTION-A qualifiers all parabolic-chase disqualified; majors flat, no leadership; ADA below $0.20; TAO/BNB below triggers). Preserve $21.83 (65%) dry powder. **No ClickUp alert (no trade fired, no state change).** Watchlist unchanged: SOL (leadership breakout w/ rising vol), ADA (SEC-approval headline + $0.20/+5% breakout), BNB (≥+2% above $605), TAO (≥$3M vol holding ≥+5%), BTC $65,500 channel-top reclaim / $64,700 floor. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at next scan window.
 
 Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`/`positions`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** ETF-flow / on-chain / catalyst check.
+
+## 2026-08-12 — Morning Research (Day 21, Wednesday)
+
+### Account Snapshot
+- **$33.31 total** — USDT free **$21.8289** (65.5%) + **BTC-CORE 0.0001808** ($11.48, 34.5%), 1 position, 0 open orders. Reachability gate PASS (BTC $63,511).
+- **BTC-CORE (Rule 12):** cost $11.7556 (avg ~$65,020) → val $11.4829, **−2.32%**. Index-tracking hold — no stop / no +12% TP; exit only on macro halt, alt-funding need, or −10% (BTC $58,518). Well above exit; thesis intact.
+- Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (<5 closed), daily gate N/A. Phase closed record 2W/0L.
+
+### Market Context (live MEXC 24hr + CoinGecko global)
+- BTC **$63,511** (−0.44% 24h, vol $457M) — **broke BELOW the coiled $64.7–65.5k channel floor** (was ~6-day range); now basing ~$63.5k. First loss of the channel since Aug 4.
+- ETH $1,893 (+1.06%, $187M) · SOL $75.77 (+0.85%, $33.4M) · **BNB $610.74 (+0.47%, $15.8M — now above the $605 level but only +0.47%, not the ≥+2% reclaim the trigger requires)** · XRP $1.011 (+1.41%) · **ADA $0.1831 (−0.65%, $2.9M — slid further below $0.20)** · LINK $8.765 (+2.64% but thin $0.9M) · TAO $199.77 (−0.37%, thin $1.4M). Majors mixed-green, all far below the +5% OPTION-A gate.
+- **BTC.D 56.2%** · ETH.D 10.07% · Total mcap 24h **+0.14%** ($2.26T) — flat, no broad alt rotation.
+- **Fear & Greed 27 (Fear)** — down from Aug-9's 31 / Aug-10's 30; sentiment cooling as BTC lost the channel.
+- **Macro gate:** MACRO_SCORE ≈ **47** (F&G 27 → 8.1 · BTC −0.44% → 11.4 · BTC.D 56.2% → 11.7 · mixed breadth → ~8.3 · default loss 75 → 7.5) → **SIZE_MULTIPLIER 0.6** (reduced, not halted). MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B.
+- **Sector status:** no SECTOR_BLOCKED (only 2 phase closes, both wins). Sole exposure = BTC-CORE (L1, benchmark hold).
+
+### On-Chain / Derivatives / Catalysts (Perplexity sonar)
+- **BTC ETF flows — cooled:** **−$144.7M Aug 10** (IBIT −$53.6M, GBTC −$52.0M, FBTC −$40.3M) then **+$4.9M Aug 11** — flat-to-negative after last week's +$853.5M five-day streak. Reads as a short pullback, not a trend break, but the sustained institutional bid has paused. Consistent with BTC losing the channel.
+- **Weekly context:** prior week (ended Aug 7) +$1.3B across BTC/ETH/SOL/XRP US spot ETFs — structural demand intact on a weekly basis.
+- **Funding / OI:** no fresh verified reading this run (Perplexity results insufficient). Prior sessions: neutral funding (~0.003%/8h) + flat OI = no leverage-driven conviction. No change assumed.
+- **Whale accumulation / same-day alt catalysts:** none confirmed for SOL/ETH/ADA/TAO/BNB/LINK in fresh results. No OPTION_B override available.
+
+### Confirmed Relative-Strength Movers (OPTION-A: 24h ≥ +5% AND vol ≥ $3M)
+Full-board scan → **4 raw qualifiers, all disqualified (FAIL 3-Candle Gate):**
+- **UPC +12.04%** ($3.7M, $0.1516) — 1h closes flat ~0.151–0.152, last-candle vol collapsed to ~$1k; no rising structure. **FAIL 3-Candle Gate + liquidity quality.**
+- **MY +11.11%** ($7.6M, $0.015) — same pump-and-dump flagged Aug 10 (was $0.15+), price has since **collapsed −90%** to $0.015; 24h% is decay noise off the dump. **FAIL — trap, do not touch.**
+- **BEAT +10.42%** ($5.0M, $1.082) — recovery bounce off a −20% intrahour dump (closes 1.286→1.297→1.010→1.016→1.063→1.082, choppy), last-candle vol ~$30k. **FAIL 3-Candle Gate.**
+- **CYS +6.95%** ($5.7M, $1.513) — same name disqualified repeatedly Aug-9/Aug-10 (blow-off structure). **FAIL 3-Candle Gate.**
+- Every liquid major fails the +5% momentum leg.
+
+### Trade Ideas (research only — execution owns the decision)
+1. **No disciplined fresh alt entry.** All 4 OPTION-A qualifiers (UPC/MY/BEAT/CYS) are parabolic-thin/pump-decay chases failing the 3-Candle Gate + Layer 3 exit-liquidity. Nothing clears a rules-clean entry — 8th+ consecutive scan with no liquid qualifier.
+2. **BTC-CORE — HOLD.** Rule-12 benchmark hold at −2.32% (BTC lost the channel to $63.5k). No exit trigger: macro not halted, well above −10% exit ($58,518), no qualifying alt needs the capital. ETF flows cooled but weekly demand intact — thesis intact. No add (deployment 34.5%, within 30–40% target).
+3. **BNB — WATCH (closest trigger).** $610.74, now trading above the $605 level but only +0.47% 24h — the trigger requires a ≥+2% reclaim/hold above $605 with volume. Re-arm if it accelerates ≥+2%.
+4. **SOL — WATCH.** $75.77, most liquid major mover but +0.85% (no ≥+5% leadership breakout). Re-arm on a volume-confirmed ≥+5% breakout with rising 1h vol.
+5. **ADA — WATCH (demoted).** $0.1831, sliding further below $0.20; Aug-9 SEC eligibility milestone passed with no action → catalyst spent. Re-arm only on a genuine SEC-approval headline + volume-confirmed 3-candle breakout ≥ $0.20 / ≥ +5%.
+6. **Dry powder** — hold $21.83 (65.5%) for the first clean alt qualifier. Capital preservation over a forced entry into a Fear tape (F&G 27) with BTC below its channel.
+
+### Risk Factors
+- **BTC lost the $64.7k channel floor** (now $63.5k) on cooling ETF flows (−$144.7M Aug 10) — first regime crack of the phase; a further breakdown would pressure BTC-CORE and drag alts. Monitor the −10% core exit ($58,518, still ~7.9% below).
+- F&G 27 (Fear, cooling) + firm DXY + August seasonal thinness → fragile risk appetite; thin-conviction breakouts fail easily.
+- Every liquid mover today (UPC/MY/BEAT/CYS) is a parabolic-thin/pump-decay chase — untradeable for a ~$33 account (min-notional + slippage + 3-Candle Gate fail).
+- BTC.D 56.2% + no OI/funding conviction = no broad alt rotation.
+
+### Decision
+**HOLD — BTC-CORE maintained, NO NEW ALT ENTRY (research posture).** BTC-CORE at −2.32% but thesis intact (macro not halted, well above −10% exit, weekly ETF demand structural). No rules-clean alt setup (4 OPTION-A qualifiers all disqualified; majors flat, no leadership; BNB above $605 but not ≥+2%; ADA below $0.20 catalyst spent). Preserve $21.83 (65.5%) dry powder into a Fear tape with BTC below its channel. **No ClickUp alert (no trade fired, no state change).** Watchlist into next scan: BNB (≥+2% reclaim/hold above $605), SOL (leadership breakout w/ rising vol), ADA (SEC-approval headline + $0.20/+5% breakout), TAO (≥$3M vol holding ≥+5%), BTC $64,700 channel reclaim / $63,000 next support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at next scan window.
+
+Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global`; **Perplexity (sonar)** ETF-flow / on-chain / catalyst check.
