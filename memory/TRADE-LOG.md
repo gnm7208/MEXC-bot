@@ -856,3 +856,21 @@ Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/tick
 **No alt positions held** — nothing else to scan for −7% cuts or +15%/+20% stop-tightening.
 
 **Decision: NO ACTION.** No position at −7% (BTC-CORE exempt regardless, and only −2.14%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+## 2026-08-13 — Afternoon Execution (Day 22, Thursday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,606.42.
+
+**Account/Positions (live):** 1 open (BTC-CORE), USDT free $21.828861061116 (65.5%) / locked $0 (canTrade=true), BTC 0.0001808 / locked $0. `orders` endpoint HTTP 400 (known permission-gap pattern); balance locked=0 confirms no resting orders — consistent with BTC-CORE being Rule-12 stop-exempt. Trades 3/25 wk, 0/8 today; 1 closed trade this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A (0 trades today).
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $63,606.42 = $11.4998 vs cost $11.7556 → **−2.18%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; no trailing-tighten. No exit trigger: macro not halted, well above −10% core exit (~$58,518, BTC ~9.1% higher), no qualifying alt needs the capital. No action. No other open positions.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (1 closed trade < 5 min). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, TAO, BTC $64,700 reclaim):** BNB $609.73 (−0.006%), SOL $76.09 (−0.004%), ADA $0.1829 (−0.004%), TAO $200.05 (−0.009%), ETH $1,888.23 (−0.010%), XRP $1.0067 (−0.009%), LINK $8.78 (−0.005%) — all dead-flat, none clears the +2% afternoon entry gate.
+
+**Full-board scan (chg ≥ +2% AND vol ≥ $3M): 0 qualifiers** — cleanest tape check of the phase.
+
+Perplexity afternoon catalyst check cited BR/FRONG/ACU/XST/CYS (+SATS/HNT/STRK/TIA) — checked live on MEXC: BR +0.08% ($156k vol), FRONG +0.41% ($286k vol), ACU +0.26% ($254k vol), XST not listed on MEXC, CYS −0.18% ($1.26M vol, same name repeatedly disqualified). None remotely matches the cited pump — thin/stale MEXC listings, no actionable Option B override.
+
+**Decision: NO NEW ENTRY.** Full-board scan returned zero momentum qualifiers, watchlist majors all dead-flat, no OPTION B catalyst maps to a tradeable/liquid MEXC listing. BTC-CORE at −2.18%, no exit trigger, thesis intact. Preserve $21.83 (65.5%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
