@@ -844,3 +844,15 @@ Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/klin
 **Decision: NO NEW ALT ENTRY — BTC-CORE maintained.** No research idea clears momentum + 3-Candle + liquidity gates with a catalyst; live full-board OPTION-A scan returned 0 qualifiers; watchlist live-confirmed below all triggers; no OPTION-B catalyst maps to a tradeable MEXC listing. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). Preserve $21.83 (65.4%) dry powder into a Fear tape (F&G 29) with BTC below its channel. **No ClickUp alert (no trade fired, no state change).** Watchlist unchanged: BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), TAO (≥$3M vol holding ≥+5%), BTC $64,700 channel reclaim / $63,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at next scan window.
 
 Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/ticker/bookTicker` + `account`.
+
+## 2026-08-13 — Stop/Trim Position Scan (Day 22, Thursday, ad-hoc position-monitoring)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,627.64.
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.4%) / locked $0 (canTrade=true). No resting orders. Positions 1/5.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.5039 @ mark $63,627.64 → **−2.14%**. Rule-12 index-tracking hold — **exempt from the −6%/−7% cut and +15%/+20% trailing-tighten rules by design**; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (BTC ≈ $58,518 — current price ~9.0% above that floor). No exit trigger. Thesis (ETF weekly demand structural) unchanged since this morning's scan — no new invalidating news.
+
+**No alt positions held** — nothing else to scan for −7% cuts or +15%/+20% stop-tightening.
+
+**Decision: NO ACTION.** No position at −7% (BTC-CORE exempt regardless, and only −2.14%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
