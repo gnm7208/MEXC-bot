@@ -806,3 +806,24 @@ Perplexity afternoon catalyst check cited RAD/COOKIE/LUNA/BANANAS31/GIGGLE/HOLO/
 **No alt positions held** — nothing else to scan for −7% cuts or +15%/+20% stop-tightening.
 
 **Decision: NO ACTION.** BTC-CORE within Rule 12 hold parameters, no thesis break. No ClickUp alert (no action taken per task instruction).
+
+## 2026-08-13 — Evening Scan (Day 22, Thursday, Asian open ~03:00 UTC)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,706.86.
+
+**Account/Positions (live):** 1 open (BTC-CORE), USDT free $21.828861061116 (65.4%) / locked $0 (canTrade=true), BTC 0.0001808 / locked $0. No resting orders (locked=0; `orders` permission-gap). Trades 3/25 wk · 0/8 today; 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A. Positions 1/5.
+
+**STEP 3 — Position protection:** BTC-CORE 0.0001808 BTC @ mark $63,706.86 = $11.5182 vs cost $11.7556 → **−2.02%**. Rule-12 index-tracking hold — **exempt from stop/+12% TP by design**; not at ≤stop (none) nor ≥+12%. No emergency action. Exit triggers checked: macro NOT halted, well above −10% core exit (~$58,518, BTC ~8.1% higher), no qualifying alt needs the capital. Thesis intact. **No action.**
+
+**STEP 4 — Overnight catalyst + Asian session scan:**
+- **Perplexity (sonar):** no fresh confirmed overnight catalyst for the Aug-13 window; backdrop = stalled CLARITY Act, cautious risk sentiment, BTC consolidating $62–66k band. No OPTION-B override.
+- **F&G 29 (Fear)** (was 27 Aug-12 EOD). **CoinGecko trending:** DEUS, APR, CASHCAT, HYPE, CRV, PONS, ETH, PUMP — none MEXC-liquid at the momentum threshold; no actionable retail rotation.
+- **Full-board OPTION-A scan (chg ≥ +5% AND vol ≥ $3M): 1 raw qualifier, disqualified:**
+  - **UPC +11.57%** ($3.72M, $0.1513) — same name flagged Aug-12. 1h closes dead-flat ~$0.151 (+0.20/+0.13/−0.07/−0.20/−0.20/+0.27%), per-candle vol collapsed to $0.7–2.6k. **FAIL 3-Candle Gate + Layer-3 exit-liquidity** (no rising structure, dead intraday liquidity).
+- **Watchlist majors (live):** BNB $611.50 (−0.70%, back below the ≥+2% reclaim trigger), SOL $75.85 (−0.51%, no ≥+5% leadership), ADA $0.1833 (−1.55%, below $0.20, catalyst spent), TAO $200.90 (−0.33%, vol $1.3M — liquidity fail). **None clears the entry gate.**
+
+**STEP 5 — Watchlist into Aug 13 (Fri):** BNB (≥+2% reclaim/hold above $605 w/ volume), SOL (volume-confirmed ≥+5% leadership breakout), ADA (genuine SEC-approval headline + $0.20/+5% 3-candle breakout), TAO (≥$3M vol holding ≥+5%), BTC $64,700 channel reclaim / $63,000 next support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only.
+
+**Decision: HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** 9th+ consecutive scan with zero rules-clean liquid alt (sole OPTION-A qualifier UPC is a dead-flat/thin chase failing the 3-Candle Gate; majors flat/red below all triggers; no OPTION-B catalyst maps to a tradeable MEXC listing). BTC-CORE at −2.02%, no exit trigger, thesis intact. Preserve $21.83 (65.4%) dry powder into a Fear tape (F&G 29) with BTC below its channel. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at next scan window.
+
+Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight-catalyst check.
