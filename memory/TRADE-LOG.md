@@ -909,3 +909,24 @@ Perplexity afternoon catalyst check cited BR/FRONG/ACU/XST/CYS (+SATS/HNT/STRK/T
 **Decision: HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** 11th+ consecutive scan with zero rules-clean liquid alt: all 3 OPTION-A qualifiers (ETHFI/AKE/PUMP) fail the 3-Candle Gate — spent or parabolic-faded chases; majors flat below all triggers; overnight tape is macro risk-off with a fresh hack cluster and no tradeable OPTION-B catalyst. BTC-CORE at −2.29%, no exit trigger, thesis intact. Preserve $21.83 (65.5%) dry powder into a Fear tape (F&G 29). No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at next scan window.
 
 Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `/ticker/bookTicker` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight-catalyst / hack / Asia-gainer checks.
+
+## 2026-08-14 — Morning Execution (Day 23, Friday, buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,325.18 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.6%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A.
+
+**Buy-side validation of today's research trade ideas (each vs entry gates):**
+- **Idea 1 — no fresh alt (0 qualifiers):** confirmed. Live full-board = no liquid coin clears +5% momentum + $3M vol + 3-Candle Gate. Nothing to act on.
+- **AKE / ETHFI / PUMP (3 raw OPTION-A qualifiers from AM/evening scans):** all FAIL — AKE parabolic pump-and-fade (dead exit liquidity); ETHFI move spent, live $0.4281 rolled off $0.4427 (FAIL 3-Candle Gate); PUMP choppy $0.002896, no rising structure (FAIL 3-Candle Gate). SKIP all.
+- **BNB — WATCH:** live $610.03, above $605 but far below the ≥+2% reclaim trigger → entry signal FAIL → SKIP.
+- **SOL — WATCH:** live $75.83, no ≥+5% leadership → entry signal FAIL → SKIP.
+- **ADA — WATCH:** live $0.1827, below $0.20, SEC catalyst spent → entry signal FAIL → SKIP.
+- **TAO — WATCH:** live $201.10, <$3M vol → liquidity FAIL → SKIP.
+- **BTC-CORE (Rule 12):** cost $11.7556 (avg ~$65,020) → val $11.4492 @ mark $63,325.18 → **−2.61%**. Index-tracking hold, exempt from stop/+12% TP. No exit trigger: macro NOT halted (MACRO ≈46, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~7.6% higher), no qualifying alt needs the capital. Thesis (ETF weekly demand structural) intact. HOLD, no add (deployment 34.4%, within 30–40% target).
+
+**Macro/gate summary:** MACRO_SCORE ≈ 46 → SIZE_MULTIPLIER 0.6 (reduced, not halted); MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B. No candidate reaches even the OPTION-A momentum leg with valid structure/liquidity; no tradeable OPTION-B catalyst (SEC Aug-14 rulemaking = not same-day tradeable; hack cluster = risk-off). Alt-entry quality gates NOT loosened.
+
+**Decision: NO NEW ALT ENTRY — 0 market buys, 0 stop-limit orders.** 12th+ consecutive scan with zero rules-clean liquid alt. BTC-CORE maintained (−2.61%, no exit trigger, thesis intact). Preserve $21.83 (65.6%) dry powder into a Fear tape (F&G 29) with BTC below its $64.7k channel. **No ClickUp alert (no trade fired, no state change).** Watchlist into midday: BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), TAO (≥$3M vol holding ≥+5%), BTC $64,700 channel reclaim / $63,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only.
+
+Sources: live MEXC `/ticker/price` + `/ticker/bookTicker` + `account`; today's RESEARCH-LOG AM + evening scans ([alt.me F&G], CoinGecko, Perplexity sonar).
