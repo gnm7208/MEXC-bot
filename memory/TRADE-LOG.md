@@ -942,3 +942,27 @@ Sources: live MEXC `/ticker/price` + `/ticker/bookTicker` + `account`; today's R
 **No alt positions held** — nothing else to scan for −7% cuts or +15%/+20% stop-tightening.
 
 **Decision: NO ACTION.** No position at −7% (BTC-CORE exempt regardless, and only −3.27%, well above the −10% Rule-12 exit). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+## 2026-08-14 — Afternoon Execution (Day 23, Friday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $62,759.13.
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.6%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 confirms no resting orders. Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A (0 trades today).
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $62,759.13 = $11.3503 vs cost $11.7556 → **−3.45%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, Rule-12 exempt) nor ≥+7%. Exit triggers checked: macro NOT halted, well above −10% core exit (~$58,518, BTC ~9.2% higher), no qualifying alt needs the capital. Thesis (ETF weekly demand structural) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (1 closed trade < 5 min). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, TAO, ETHFI-conditional, BTC $64,700 reclaim):** BNB $605.06 (−0.86%), SOL $75.15 (−1.5%), ADA $0.1767 (−3.39%), TAO $198.05 (−2.03%), ETHFI $0.4326 (+11.16% but see below) — none clears the +2% afternoon entry gate cleanly except ETHFI, which fails structure (below).
+
+**Full-board scan (chg ≥ +2% AND vol ≥ $3M): 4 qualifiers, ALL disqualified on 3-Candle Gate:**
+- **AKE +75.71%** ($4.71M) — parabolic pump-and-fade (repeat offender): 1h candles +18.55/+16.00/+3.85/+0.56/**−5.62%**, vol collapsing $549k→$130k. **FAIL.**
+- **VELVET +49.25%** ($3.83M) — extremely erratic whipsaw: +9.62/−2.84/+6.93/**−16.27%**/+6.24% across last 5×1h, no clean rising structure, looks manipulated/thin. **FAIL.**
+- **ETHFI +11.16%** ($6.24M, $0.4326) — move spent/choppy: last 6×1h +1.71/−1.08/−0.44/+0.72/+0.28/(flat), no fresh breakout, matches prior "spent" diagnosis from AM/evening scans. **FAIL 3-Candle Gate.**
+- **RAIN +4.86%** ($3.01M) — fading: last 4×1h +0.83/−0.10/−0.57/−0.23%, no rising structure. **FAIL.**
+
+**Perplexity afternoon catalyst check** cited AKEDO +92%, ETHFI +13.75%, ATOM +10.1%, PUMP +8%. Cross-checked live on MEXC: AKE/ETHFI already scanned above (fail). ATOM only +0.85% on MEXC with $1.06M vol (thin, doesn't match cited move — stale/other-venue data) — liquidity + momentum fail. PUMP not on today's watchlist and thin/choppy per repeated prior scans. No actionable OPTION-B override.
+
+**Decision: NO NEW ENTRY.** 14th+ consecutive scan with zero rules-clean liquid alt. Watchlist majors all red/flat below triggers. All 4 full-board OPTION-A qualifiers fail the 3-Candle Gate (parabolic fade, whipsaw, spent, or fading). BTC-CORE at −3.45%, no exit trigger, thesis intact, well above −10% Rule-12 floor. Preserve $21.83 (65.6%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; **Perplexity (sonar)** afternoon catalyst check.
