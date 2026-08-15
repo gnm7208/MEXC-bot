@@ -33,6 +33,7 @@ STEP 1 — Read memory:
   (b) Trades today: count toward 5/day limit
   (c) Trades this week: count toward 20/week limit
   (d) Closed trades this week: losses for circuit breaker
+  (e) SIGNAL_GATE from today's RESEARCH-LOG Sector Status: CLEAR or LOW_TIER_BLOCKED
 
 If RESEARCH-LOG Decision = MACRO_HALTED: skip to STEP 2-3 (monitor only), then commit+push.
 
@@ -48,7 +49,7 @@ STEP 2 — Pull live account state:
 STEP 3 — Monitor open positions (always runs, even on MACRO_HALTED days):
 
   A) Emergency stop check:
-  For each position where live price <= stop_price (from TRADE-LOG) OR P&L <= -6%:
+  For each position where live price <= stop_price (from TRADE-LOG) OR P&L <= -10% (hard backstop):
     bash scripts/mexc.sh close SYMBOLUSDT
     Append to TRADE-LOG:
     ## YYYY-MM-DD — Trade Exit (afternoon emergency stop)
@@ -81,7 +82,7 @@ STEP 3 — Monitor open positions (always runs, even on MACRO_HALTED days):
     2+ FAIL → close + log TRADE-LOG + ClickUp "PEAK DECAY EXIT". < 2 FAIL → log one line, no ClickUp.
 
   E) Ladder buy eligibility:
-  For each position where P&L is between -5% and -8% AND thesis intact AND no ladder yet:
+  For each position where live_price <= ladder_price (from TRADE-LOG) AND live_price > stop_price AND thesis intact AND no ladder yet:
     Flag for ladder buy in STEP 5.
 
   F) Near-stop pre-alert (on all REMAINING open positions after A/B/C actions):
@@ -303,6 +304,8 @@ print(f'US_OPEN_WINDOW: {\"ACTIVE\" if in_window else \"inactive\"} (UTC {h}:{m:
   Else: EFFECTIVE_SIZE_MULTIPLIER = SIZE_MULTIPLIER
 
   Entry threshold: MACRO_SCORE >= 60 → score >= 5 | MACRO_SCORE < 60 → score >= 8 (quality gate). OR Option B strong catalyst.
+  If SIGNAL_GATE = LOW_TIER_BLOCKED AND score < 9: SKIP.
+    Log: "SKIP SIGNAL_GATE: score {score}/20 < 9 (consecutive low-tier losses)"
   If level_pts == -2 AND score < 7: SKIP — low conviction into resistance.
   Skip any ticker in SECTOR_BLOCKED sector.
   Also include any ladder buys flagged in STEP 3E.
@@ -347,30 +350,48 @@ STEP 7 — Execute approved buys (market orders, one at a time):
 
   Capture fill price and filled qty from the order response before STEP 8.
 
-STEP 8 — Calculate stop, target, ladder:
-  stop_price   = fill_price * 0.92
-  ladder_level = fill_price * 0.95  (-5%)
+STEP 8 — Calculate ATR-based stop, target, ladder for each fill:
+  python3 - <<'PYEOF'
+import json, urllib.request
+TICKER = 'TICKERUSDT'  # replace with filled ticker
+FILL = 0.0             # replace with actual fill_price
+def fetch(url):
+    with urllib.request.urlopen(url, timeout=10) as r: return json.loads(r.read())
+daily = fetch(f'https://api.mexc.com/api/v3/klines?symbol={TICKER}&interval=1d&limit=15')
+daily_atr = sum(float(d[2])-float(d[3]) for d in daily[:-1]) / 14
+atr_pct    = daily_atr / FILL * 100
+stop_pct   = max(6.0, min(10.0, atr_pct * 1.0))   # 1x ATR, clamped 6-10%
+target_pct = max(10.0, min(16.0, atr_pct * 2.0))  # 2x ATR, clamped 10-16%
+stop_price   = FILL * (1 - stop_pct / 100)
+target_price = FILL * (1 + target_pct / 100)
+ladder_price = FILL * (1 - stop_pct * 0.7 / 100)  # 70% of stop distance
+rr = target_pct / stop_pct
+print(f'ATR: ${daily_atr:.6f} ({atr_pct:.2f}% of fill)')
+print(f'stop_pct={stop_pct:.1f}% target_pct={target_pct:.1f}% ladder_pct={stop_pct*0.7:.1f}% R:R={rr:.2f}')
+print(f'Stop: ${stop_price:.5f} | Target: ${target_price:.5f} | Ladder: ${ladder_price:.5f}')
+PYEOF
 
-  Range TP — uses prev_day_high from STEP 5 range TP pre-check:
+  If R:R < 2.0: SKIP this entry (ATR-based risk:reward insufficient). Log: "SKIP R:R={rr:.2f} < 2.0"
+
+  Range TP override — uses prev_day_high from STEP 5 range TP pre-check:
   range_dist = (prev_day_high - fill_price) / fill_price * 100
   If prev_day_high > fill_price AND 4.0 <= range_dist < 12.0:
     target_price = prev_day_high  (range TP: exit at prev-day high resistance)
     tp_type = f"range TP prev-day high ${prev_day_high:.5f}"
   Else:
-    target_price = fill_price * 1.12
-    tp_type = "standard +12%"
+    tp_type = f"ATR +{target_pct:.1f}%"  (ATR-based target)
 
 STEP 9 — Append each trade to memory/TRADE-LOG.md:
   ## YYYY-MM-DD — Trade Entry (afternoon)
-  **BUY** SYMBOL | Qty: X | Entry: $X.XX | Stop: $X.XX (-8%) | Target: $X.XX (+12%) | Ladder: $X.XX (-5%)
-  **Signal Score:** X/20 | **Macro Score:** XX | **Size:** $X.XX (BASE_SIZE * SIZE_MULTIPLIER)
+  **BUY** SYMBOL | Qty: X | Entry: $X.XX | Stop: $X.XX (-X.X% / 1×ATR) | Target: $X.XX (+X.X% / ATR or range TP) | Ladder: $X.XX (-X.X%)
+  **ATR:** $X.XXXXX (X.X% of price) | **Signal Score:** X/20 | **Macro Score:** XX | **Size:** $X.XX
   **Thesis:** ...
   **Catalyst:** ... (source: CoinGecko gainer / Whale Alert / Perplexity / trader call)
   **Sector:** ... (L1 / DeFi / AI / Gaming / Other)
   **Review:** Proceed — [brief note from Layer 3 review]
 
   For ladder buys:
-  **LADDER BUY** SYMBOL | Price: $X.XX | Avg cost: $X.XX | New stop: $X.XX | New target: $X.XX
+  **LADDER BUY** SYMBOL | Price: $X.XX | Avg cost: $X.XX | New stop: $X.XX (-X.X% ATR of avg) | New target: $X.XX (+X.X% ATR of avg)
 
 STEP 10 — Notify only if trade placed or emergency stop hit:
   bash scripts/clickup.sh "Bought TICKER x qty @ $X.XX | score X/20 | macro XX | stop $X.XX | target $X.XX (range TP / +12%)"

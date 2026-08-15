@@ -32,7 +32,7 @@ STEP 2 — Pull current state:
   bash scripts/mexc.sh price <each held ticker>USDT
 
 STEP 3 — Cut losers. For every position where current price <= stop_price (from TRADE-LOG)
-OR unrealized P&L% <= -6%:
+OR unrealized P&L% <= -10% (hard backstop beyond max ATR stop):
   bash scripts/mexc.sh close <SYMBOL>USDT
 
   Append to memory/TRADE-LOG.md:
@@ -48,17 +48,19 @@ STEP 4 — Take profit. For every position where live_price >= target_price (fro
   (target may be range TP prev-day high or +12% standard — read from TRADE-LOG entry)
 
 STEP 5 — LADDER BUY check. For each open position where TRADE-LOG shows no ladder placed yet:
-  - Get current price and calculate P&L%
-  - If P&L% is between -5% and -8% AND thesis still intact (check RESEARCH-LOG and any midday news):
+  - Get current price
+  - Read ladder_price and stop_price from TRADE-LOG entry (set at entry using ATR-based formula)
+  - If current_price <= ladder_price AND current_price > stop_price AND thesis still intact (check RESEARCH-LOG and any midday news):
     -> Calculate ladder buy amount (same USDT size as original tranche)
     -> Check daily gate: trades today < 8 AND trades this week < 30
     -> Execute: bash scripts/mexc.sh order '{"symbol":"XYZUSDT","side":"BUY","type":"MARKET","quoteOrderQty":"<amount>"}'
-    -> avg_cost = (entry1 + ladder_price) / 2
-    -> new_stop = avg_cost * 0.92
-    -> new_target = avg_cost * 1.12
+    -> avg_cost = (entry_price + ladder_fill_price) / 2
+    -> Re-run ATR stop calculation on avg_cost (same Python block as morning-execution STEP 8)
+    -> new_stop = avg_cost * (1 - stop_pct / 100)  # ATR-based stop on new avg
+    -> new_target = avg_cost * (1 + target_pct / 100)  # ATR-based target on new avg
     -> Update TRADE-LOG:
-       **LADDER BUY** SYMBOL | Price: $X.XX | Avg cost: $X.XX | New stop: $X.XX | New target: $X.XX
-  - If thesis is broken, sector rolling over, or P&L% < -8%: DO NOT ladder — cut instead (STEP 3)
+       **LADDER BUY** SYMBOL | Price: $X.XX | Avg cost: $X.XX | New stop: $X.XX (-X.X% ATR) | New target: $X.XX (+X.X% ATR)
+  - If thesis is broken, sector rolling over, or current_price <= stop_price: DO NOT ladder — cut instead (STEP 3)
   - Max 1 ladder per position
 
 STEP 6 — Tighten trailing stops on remaining positions (P&L +3% to +11%). For each:

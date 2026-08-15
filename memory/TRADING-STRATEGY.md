@@ -92,21 +92,29 @@ Log outcome in TRADE-LOG: "Review: [Proceed/Skip/Size down] - reason"
 2. 80-90% deployed; only 10-20% USDT dry powder
 3. Max 5 open positions; virtual capital model ($154 ref, 4.5-6% per position = $6.93-$9.24/bet)
 4. Every position: stop price recorded in TRADE-LOG immediately after fill
-5. Cut losers at -6% from entry: market sell immediately
-6. Take profit at +12%: market sell - no exceptions
-7. Trailing stop (manual - enforced by monitoring routines):
-   - Entry: stop at -8% below fill price (in TRADE-LOG)
+5. ATR-based stops (VOLATILITY_ADJUSTED_STOPS: ACTIVE as of 2026-08-15):
+   atr_pct = 14-day daily ATR / fill_price * 100
+   stop_pct   = max(6.0, min(10.0, atr_pct * 1.0))   # 1x ATR, clamped 6-10%
+   target_pct = max(10.0, min(16.0, atr_pct * 2.0))  # 2x ATR, clamped 10-16%
+   ladder_pct = stop_pct * 0.7                         # 70% of stop distance
+   R:R minimum = 2.0; skip entry if target_pct / stop_pct < 2.0
+6. Cut losers when live_price <= stop_price (from TRADE-LOG). Hard backstop: -10% (ATR max).
+7. Take profit when live_price >= target_price (from TRADE-LOG) OR P&L >= ATR target. No exceptions.
+8. Trailing stop (manual - enforced by monitoring routines):
+   - Entry: stop at ATR-based distance below fill price (6-10%, recorded in TRADE-LOG)
    - At +3% gain: new_stop = max(current_price * 0.93, entry_price) — break-even floor ensures
      stop never drops below entry price once a trade has proven itself
-   - At +12%: close for take profit
+   - At target: close for take profit
    - Never tighten within 3% of current price; never move a stop down
-8. LADDER BUY: if open position drops -5% to -8% AND thesis still intact:
+9. LADDER BUY: if live_price <= ladder_price (from TRADE-LOG) AND live_price > stop_price AND thesis intact:
    - Buy a second tranche (same USDT size as first)
-   - New stop = avg cost * 0.92 | New target = avg cost * 1.12
+   - avg_cost = (entry + ladder_fill) / 2
+   - New stop = avg_cost × (1 - stop_pct/100) using ATR of avg_cost
+   - New target = avg_cost × (1 + target_pct/100) using ATR of avg_cost
    - Log in TRADE-LOG: "Ladder buy at $X, avg cost now $X"
    - Never ladder if thesis broken or sector rolling over
    - Max 1 ladder per position
-9. Max 30 new trades per week; max 8 new trades per day
+10. Max 30 new trades per week; max 8 new trades per day
 10. Weekly circuit breaker: if >= 40% of closed trades this week are losses
     (min 5 trades) -> halt; resume when F&G > 50 AND BTC 24h > 0%
 11. Daily gate: if >= 8 trades today AND win rate < 60% -> halt until tomorrow
@@ -133,6 +141,15 @@ Log outcome in TRADE-LOG: "Review: [Proceed/Skip/Size down] - reason"
 - SECTOR_BLOCKED: any sector with 2+ CONSECUTIVE losses -> avoid until sector recovers
 - Record sector status in RESEARCH-LOG Macro Gate section each morning
 
+## Signal Gate (Losing-Signal Memory)
+- At morning-research STEP 1B: scan TRADE-LOG closed trades (newest first)
+- Count unbroken consecutive losses where Signal Score was 5-8 (low tier)
+- If N_consec_low_losses >= 2: SIGNAL_GATE = LOW_TIER_BLOCKED
+- Else: SIGNAL_GATE = CLEAR
+- Record in RESEARCH-LOG under Sector Status each morning
+- Effect: if LOW_TIER_BLOCKED → minimum score to enter = 9 (quality filter)
+- Resets each morning (daily rolling check, not persistent across days)
+
 ## Buy-Side Gate (every check must pass before any order)
 - Macro gate NOT halted (SIZE_MULTIPLIER > 0)
 - Weekly circuit breaker NOT active
@@ -141,7 +158,9 @@ Log outcome in TRADE-LOG: "Review: [Proceed/Skip/Size down] - reason"
 - Trades today + 1 <= 8 | Trades this week + 1 <= 30
 - FINAL_SIZE_USDT <= available USDT balance (keep >= 10% dry powder)
 - Entry signal: score >= 5 OR OPTION_B catalyst
+- If SIGNAL_GATE = LOW_TIER_BLOCKED: score must be >= 9 (raise threshold)
 - Ticker NOT in SECTOR_BLOCKED sector
+- ATR R:R >= 2.0 (target_pct / stop_pct >= 2.0)
 - Layer 3 review OUTCOME = Proceed (or Size down, not Skip)
 - Instrument is spot crypto (USDT pair on MEXC)
 - 3-Candle Confirmation Gate: last 3 closed 1h candles all above yesterday's close AND volume rising (each >= prior). If fails → defer to next scan window (no permanent skip).
@@ -171,13 +190,12 @@ bash scripts/mexc.sh close SYMBOLUSDT
 ```
 
 ## Sell-Side Rules (evaluated at EVERY midday and afternoon scan)
-- Price <= stop price in TRADE-LOG OR P&L <= -6%: market sell immediately
-- live_price >= target_price (from TRADE-LOG) OR P&L >= +12%: market sell immediately
-  (target_price may be range TP = prev-day high, or standard +12% — always read from TRADE-LOG)
-- P&L +3% to +11%: new_stop = max(current_price × 0.93, entry_price) — break-even floor applied
-- Thesis broken (catalyst invalidated, sector rolling over): sell even if not at -6%
+- live_price <= stop_price (from TRADE-LOG, ATR-based) OR P&L <= -10% (hard backstop): market sell
+- live_price >= target_price (from TRADE-LOG, ATR-based or range TP): market sell immediately
+- P&L +3% to target: new_stop = max(current_price × 0.93, entry_price) — break-even floor applied
+- Thesis broken (catalyst invalidated, sector rolling over): sell even if above stop
 - SECTOR_BLOCKED: exit all positions in blocked sector
-- Ladder buy check: if -5% to -8% AND thesis intact -> execute ladder buy
+- Ladder buy check: live_price <= ladder_price (from TRADE-LOG) AND live_price > stop_price AND thesis intact
 - Peak Decay Exit: if P&L has declined >= 50% from its recorded peak AND current P&L < +3%
   AND stop < 6% away -> run mini thesis check (3 questions):
     Q1: current 24h volume >= 50% of entry volume? (FAIL if not)

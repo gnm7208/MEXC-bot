@@ -1,9 +1,8 @@
-# Volatility-Adjusted Stops & Targets — Future Feature (NOT YET ACTIVE)
+# Volatility-Adjusted Stops & Targets — ACTIVE (Aug 15 2026)
 
 ## Status
-INACTIVE — impact: 8 | bot_fit: 7 | effort: 7
-NOT implemented: requires ≥10 closed trades to calibrate 1x/2x ATR multipliers before
-changing core stop/TP logic. Check back at Aug 22 phase review.
+ACTIVE — activated 2026-08-15 (user approved after playlist transcript analysis)
+ATR-based stops replace fixed -8%/+12% from this date forward.
 
 ## The Rule (when active)
 Instead of fixed -7% stop / +12% TP for all positions, compute per-coin stop and
@@ -63,10 +62,9 @@ Entry format adds ATR fields:
 **ATR:** $X.XXXXX (X.X% of price)
 ```
 
-## Activation checklist (manual — requires user approval)
-- [ ] >= 10 closed trades to compare against
-- [ ] User explicitly approves activation
-- [ ] Update stop/TP calculation in morning-execution.md STEP 8
-- [ ] Update stop/TP calculation in afternoon-execution.md STEP 8
-- [ ] Update monitoring routines to read stop% per position (not assume -7%)
-- [ ] Add "VOLATILITY_ADJUSTED_STOPS: ACTIVE" to TRADING-STRATEGY.md
+## Activation checklist
+- [x] User explicitly approved activation 2026-08-15
+- [x] Updated stop/TP calculation in morning-execution.md STEP 8
+- [x] Updated stop/TP calculation in afternoon-execution.md STEP 8
+- [x] Monitoring routines read stop_price and ladder_price from TRADE-LOG per position
+- [x] Added "VOLATILITY_ADJUSTED_STOPS: ACTIVE" to TRADING-STRATEGY.md

@@ -56,6 +56,13 @@ STEP 1B — Self-Learning Trade Review (uses TRADE-LOG data from STEP 1 — no e
   - If a sector is SECTOR_WEAK (not BLOCKED): note in watchlist entry, require score >= 9 to enter
   - If HIGH_BAND_UNDERPERFORMING: no change — unusual; note it for weekly review
 
+  SIGNAL_GATE — consecutive low-tier loss check:
+  From TRADE-LOG closed trades (newest first), find the most recent unbroken run of losses
+  on entries where Signal Score was 5-8 (low tier).
+  N_consec = length of that run. (If most recent low-tier trade was a win, N_consec = 0.)
+  SIGNAL_GATE = LOW_TIER_BLOCKED if N_consec >= 2, else CLEAR.
+  Append to self-learning log: "| signal_gate: CLEAR / LOW_TIER_BLOCKED (N consec losses)"
+
 STEP 1E — Anomaly scan (uses TRADE-LOG and RESEARCH-LOG data from STEP 1 — no extra API calls):
 
   A) Consecutive HOLD/HALTED check:
@@ -357,6 +364,7 @@ STEP 7 — Write dated entry to memory/RESEARCH-LOG.md:
 
   ### Sector Status
   SECTOR_BLOCKED: (list any blocked sectors or "none")
+  SIGNAL_GATE: CLEAR / LOW_TIER_BLOCKED (N consecutive low-tier losses)
   Sector P&L (recent): L1 X W / X L | DeFi X W / X L | AI X W / X L | Gaming X W / X L
 
   ### Account Snapshot
@@ -384,7 +392,7 @@ STEP 7 — Write dated entry to memory/RESEARCH-LOG.md:
   (thesis intact / broken? catalyst update? ladder opportunity?)
 
   ### Trade Ideas (Layer 3 review fires at execution time)
-  1. TICKER — Score: X/17 | Final size: $X | Entry ~$X | Stop $X (-10%) | Ladder $X (-7%) | Target $X (+12%)
+  1. TICKER — Score: X/20 | Final size: $X | Entry ~$X | Stop $X (-X.X% ATR) | Ladder $X (-X.X%) | Target $X (+X.X% ATR / range TP)
      Signals: (list which sources)
      Catalyst: ...
      Sector: ...
