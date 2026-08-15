@@ -1516,3 +1516,40 @@ Sources: live MEXC `/api/v3/ticker/24hr` (full board) + `/ticker/price` + `accou
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** 12th+ consecutive scan with zero rules-clean liquid alt. Macro not halted (SIZE_MULT 0.6) but all qualifiers fail 3-Candle Gate / exit-liquidity; majors flat below triggers; no tradeable OPTION-B catalyst. BTC-CORE −2.16%, no exit trigger, thesis intact. Preserve $21.83 (65.5%) dry powder into a Fear tape. Alt-entry quality gates NOT loosened. Re-evaluate at morning-execution.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`.
+
+## 2026-08-15 — Evening Scan (Day 24, Saturday, Asian open ~03:00 UTC)
+
+### Account Snapshot
+- Portfolio ~$33.22 | 1 open (BTC-CORE 0.0001808 BTC) | USDT free $21.83 (65.7%) / locked $0 (canTrade=true)
+- Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (<5 closed), daily gate N/A
+
+### Market Context
+- **BTC $63,003.98** (~flat, soft into Asia) | **BTC dom 56.11%** | total mcap −0.59% 24h
+- **Fear & Greed 34 (Fear)** — up from 29 (Aug-14), still Fear
+- Macro: MACRO_SCORE ≈ 47 → SIZE_MULTIPLIER 0.6 (reduced, not halted). No confirmed overnight catalyst — Perplexity (sonar) 6h scan = broad risk-off / session flows, **no ETF approval, hack, or protocol upgrade** in last 6h.
+
+### STEP 3 — Position protection
+- **BTC-CORE (Rule 12):** cost $11.7556 (avg ~$65,020) → val $11.3911 @ $63,003.98 → **−3.10%**. Index-tracking hold, exempt from stop/+12% TP. No exit trigger: macro NOT halted, well above −10% core exit (~$58,518, BTC ~7.7% higher), no qualifying alt needs capital. Thesis (ETF weekly demand structural) intact. **No action.**
+
+### STEP 4 — Overnight / Asian-session scan
+- **Live MEXC full-board OPTION-A (chg ≥ +5% AND vol ≥ $3M): 4 qualifiers, ALL fail 3-Candle Gate:**
+  1. **KII +255.10%** ($6.25M) — extreme parabolic, ALREADY FADING: last 6×1h mostly negative (−5.67/−4.65/−4.21/+2.40/+2.87/−0.82%). No rising structure, chasing a blown-off top. **FAIL.**
+  2. **ACE +111.58%** ($3.56M) — parabolic pump-and-crash: last 6×1h +6.20/+1.54/+6.04/+4.50/**−28.46%**/+4.11% on collapsing vol ($344k→$40k). Dead exit liquidity. **FAIL.** (matches CG trending #1 + Perplexity ACE +188% cite.)
+  3. **AKE +54.29%** ($5.22M) — repeat parabolic pump-and-fade offender. **FAIL.**
+  4. **VELVET +41.15%** ($4.36M) — choppy whipsaw, tiny per-candle vol ($5–57k), no clean rising structure. **FAIL.**
+- **Perplexity-cited movers cross-checked live on MEXC (fail liquidity/momentum):** ATOM only +0.33% / $0.96M vol (cited +9.31%/$42M = other venue — thin here); ETHFI +3.03% / $4.74M — below +5%, breakout candle (+5.31%) already spent (+0.38/+0.31/+0.31/+0.40% fading, vol $845k→$28k); PUMP −2.54% (negative). None actionable.
+- **CG trending:** ACE, PENGU, UNI, HYPE, LIT, HBAR, PUMP, STONKBROKER — meme/retail-driven, none rules-clean. **No OPTION-B catalyst** maps to a tradeable MEXC listing.
+
+### STEP 5 — Watchlist into Aug 15 day session
+- **BNB** (≥+2% reclaim/hold above $605 w/ volume)
+- **SOL** (volume-confirmed ≥+5% leadership breakout)
+- **ADA** (genuine SEC-approval headline + $0.20/+5% 3-candle breakout)
+- **TAO** (≥$3M vol holding ≥+5%)
+- **ETHFI** (only on a FRESH volume-confirmed 3-candle breakout — today's move spent again)
+- **BTC** $64,700 channel reclaim / $63,000 support
+- **BTC-CORE** monitored for macro-halt / −10% ($58,518) exit only
+
+### Decision
+**HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** 15th+ consecutive scan with zero rules-clean liquid alt. All 4 live OPTION-A qualifiers are parabolic pumps/whipsaws failing the 3-Candle Gate (KII/ACE already blowing off tops, AKE repeat offender, VELVET whipsaw); Perplexity-cited movers fail liquidity/momentum live; no confirmed overnight catalyst (broad risk-off, F&G 34 Fear). BTC-CORE −3.10%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder. Alt-entry quality gates NOT loosened. **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** overnight catalyst + gainers check.
