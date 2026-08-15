@@ -115,10 +115,10 @@ Log outcome in TRADE-LOG: "Review: [Proceed/Skip/Size down] - reason"
    - Never ladder if thesis broken or sector rolling over
    - Max 1 ladder per position
 10. Max 30 new trades per week; max 8 new trades per day
-10. Weekly circuit breaker: if >= 40% of closed trades this week are losses
+11. Weekly circuit breaker: if >= 40% of closed trades this week are losses
     (min 5 trades) -> halt; resume when F&G > 50 AND BTC 24h > 0%
-11. Daily gate: if >= 8 trades today AND win rate < 60% -> halt until tomorrow
-12. BENCHMARK-TRACKING BTC CORE (added Wk4, 2026-08-09): the mission is to BEAT
+12. Daily gate: if >= 8 trades today AND win rate < 60% -> halt until tomorrow
+13. BENCHMARK-TRACKING BTC CORE (added Wk4, 2026-08-09): the mission is to BEAT
     BTC buy-and-hold — sitting 100% cash while BTC rises is a guaranteed loss vs
     the benchmark even when closed trades win (Week 4: bot +2.24% vs BTC +3.41%,
     trailed −1.17%, three days fully idle). To floor idleness:

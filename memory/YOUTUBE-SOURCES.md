@@ -70,6 +70,7 @@ New videos from these channels = potential new features to implement:
 
 ## Implementation Scorecard (Aug 2026 batch)
 
+### Batch 1 — prior sessions
 | Feature | Impact | Bot Fit | Effort | Status | Memory File |
 |---|---|---|---|---|---|
 | EMA-200 Trend Filter | 8 | 8 | 4 | ✅ ACTIVE | EMA-200-TREND-FILTER.md |
@@ -82,3 +83,15 @@ New videos from these channels = potential new features to implement:
 | HMM Market Regime | 5 | 4 | 9 | ⏸ INACTIVE | HMM-MARKET-REGIME.md |
 | Multi-Agent Specialization | 5 | 3 | 9 | ⏸ INACTIVE | MULTI-AGENT-SPECIALIZATION.md |
 | Walk-Forward Backtesting | 5 | 3 | 10 | ⏸ INACTIVE | WALK-FORWARD-BACKTESTING.md |
+
+### Batch 2 — playlist analysis (2026-08-15, 20 videos from trading-playlist-videos.md)
+| Feature | Source Video | Impact | Bot Fit | Effort | Status |
+|---|---|---|---|---|---|
+| ATR-Based Dynamic Stops | #29 (54i7wfbuCQA) + #30 (BPFwaD0CgZ8) | 8 | 8 | 5 | ✅ ACTIVE (VOLATILITY-ADJUSTED-STOPS.md) |
+| Losing-Signal Memory Gate | #28 (PBBSMSyU674) | 6 | 7 | 4 | ✅ ACTIVE (TRADING-STRATEGY.md Signal Gate) |
+| Discord/Whale Wallet Auto-Monitor | #22 (x2pY9kI0zBY) | 7 | 4 | 8 | ⏸ INACTIVE |
+| Crypto Volatility Index (macro gate) | #52 (iQjzITDp-AI) | 5 | 5 | 5 | ⏸ INACTIVE |
+| 20MA Dynamic Support Filter | #18 (gddYspvW0_w) | 5 | 5 | 4 | ⏸ INACTIVE |
+
+### Skipped (not applicable to MEXC spot bot)
+- #1 (DEX arbitrage), #6 (stocks), #12 (stocks), #13 #17 #19 #26 #31-34 #37-40 #42-45 #47-48 #50-51 #53-55 #57-58 (wrong instrument/timeframe), #25 (TradingView integration), #35 #36 #41 #46 #49 #59 (principles already in strategy)
