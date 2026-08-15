@@ -998,4 +998,14 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 
 **Decision: NO NEW ALT ENTRY — 0 market buys, 0 stop-limit orders.** 17th+ consecutive scan with zero rules-clean liquid alt. All 5 live OPTION-A qualifiers are parabolic pumps/whipsaws/spent spikes failing the 3-Candle Gate; watchlist majors below all triggers into a Fear tape (F&G 34). BTC-CORE maintained (−2.96%, no exit trigger, thesis intact). Preserve $21.83 (65.7%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Watchlist into midday: BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), TAO (≥$3M vol holding ≥+5%), ETHFI (FRESH volume-confirmed 3-candle breakout only), BTC $64,700 channel reclaim / $63,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only.
 
+## 2026-08-15 — Midday Scan (Day 24, Saturday)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,048.46 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.7%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5. No alt positions held — nothing to scan for the −7% cut or +15%/+20% trailing-tighten rules this run.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.3992 @ mark $63,048.46 → **−3.03%**. Rule-12 index-tracking hold — **exempt from the −6%/−7% cut and +15%/+20% trailing-tighten rules by design**; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (BTC ≈ $58,518 — current price ~7.7% above that floor). No exit trigger. Thesis (ETF weekly demand structural) unchanged since this morning's scan — no new invalidating news. Deployment 34.3% (within Rule 12's 30-40% target).
+
+**Decision: NO ACTION.** No position at −7% (BTC-CORE exempt regardless, and only −3.03%, well above the −10% Rule-12 exit). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board) + `/klines?interval=60m` + `account`; today's RESEARCH-LOG AM scan ([alt.me F&G], CoinGecko, Perplexity sonar).
