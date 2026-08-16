@@ -1636,3 +1636,46 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** 19th+ consecutive scan with zero rules-clean liquid alt: the sole OPTION-A qualifier (ETHFI +5.32%) fails the 3-Candle Gate (spent move, dead vol); no fresh 6h catalyst (ETF flows negative, no hack/upgrade); majors all below triggers into a Fear tape. BTC-CORE −2.99%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder. Alt-entry quality gates NOT loosened. **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst scan.
+
+## 2026-08-16 — Morning Research (Day 25, Sunday, ~11:00 UTC)
+
+### Account Snapshot
+- Portfolio ~$33.24 | 1 open (BTC-CORE 0.0001808 BTC) | USDT free $21.83 (65.7%) / locked $0 (canTrade=true)
+- Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (<5 closed), daily gate N/A
+
+### Market Context
+- **BTC $63,125.01** (~flat vs evening-scan $63,077) | **F&G 34 (Fear)** — unchanged
+- **BTC.D 56.17%** (elevated) · ETH.D 10.08% · total MCap −0.12% 24h — capital pinned in BTC, no alt rotation
+- Macro: MACRO_SCORE ≈ 47 → SIZE_MULTIPLIER 0.6 (reduced, not halted). MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B.
+- **Catalyst (Perplexity sonar):** NO fresh 6h catalyst — results are recycled/stale ETF pieces (BTC weekly inflows, Grayscale WLD S-1 from Aug 13, SEC pipeline). No new approval/hack/upgrade/whale/VC in the 6h window.
+
+### News on Held Positions
+- **BTC-CORE (Rule 12):** cost $11.7556 (avg ~$65,020) → val $11.4130 @ $63,125.01 → **−2.91%**. Index-tracking hold, exempt from stop/+12% TP. No exit trigger: macro NOT halted, well above −10% core exit ($58,518, BTC ~7.3% higher), no qualifying alt needs the capital. Thesis (structural ETF demand) intact. Deployment 34.3% (within 30–40% target). HOLD, no add.
+
+### Trade Ideas / Full-Board OPTION-A Scan (chg ≥ +5% AND vol ≥ $3M): 0 qualifiers
+- **Zero** momentum+liquidity qualifiers on the entire MEXC USDT board — cleanest tape of the phase (repeat of yesterday's afternoon 0-qualifier read).
+- **ETHFI +4.22%** ($3.95M, $0.4733) — nearest miss, below the +5% leg AND a repeat spent-move offender across 4 prior scans (24h leg already in price, decaying vol). No FRESH rising 3-candle structure. **FAIL.**
+- **Perplexity-cited gainers fail live on MEXC:** WLD +2.21% (vol $0.39M, thin), JTO +0.60% (vol $0.06M, dead), PUMP −0.64% (vol $3.62M, red) — all stale/other-venue snapshots vs the cited +10%/+10%/+7%. No OPTION-B catalyst maps to a tradeable MEXC listing.
+
+### On-Chain / Derivatives
+- BTC.D elevated 56.17%, total MCap flat/red, ETF flows soft (2-session outflow blip noted in evening scan) — risk-off backdrop, no alt rotation. Consistent with 20+ scans of zero clean alt entry.
+
+### Watchlist Majors (live 24h)
+- **BNB $607.09** (−0.27%, $7.49M) — below ≥+2% reclaim trigger → SKIP
+- **SOL $75.60** (−0.06%, $13.90M) — no ≥+5% leadership → SKIP
+- **ADA $0.1767** (−2.48%, $1.28M) — below $0.20, negative, thin → SKIP
+- **TAO $197.09** (−1.56%, $0.58M) — <$3M liquidity → SKIP
+- **ETH $1,884.07** (−0.08%, $48.29M) — flat, no signal
+
+### Risk Factors
+- BTC pinned ~$63.1k below the $64.7k channel into a Fear tape (F&G 34); a break of $63k support pressures BTC-CORE/alts. −10% core exit $58,518 (~7.3% below).
+- Zero OPTION-A movers = no candidates to chase; forcing deployment = wrong. Capital preservation correct.
+
+### Watchlist into Aug 16 day session
+- **BNB** (≥+2% reclaim/hold above $605 w/ volume) · **SOL** (volume-confirmed ≥+5% leadership breakout) · **ADA** (genuine SEC-approval headline + $0.20/+5% 3-candle breakout) · **TAO** (≥$3M vol holding ≥+5%) · **ETHFI** (FRESH volume-confirmed 3-candle breakout only — current move spent) · **BTC** $64,700 channel reclaim / $63,000 support
+- **BTC-CORE** monitored for macro-halt / −10% ($58,518) exit only
+
+### Decision
+**HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** 20th+ consecutive scan with zero rules-clean liquid alt: full-board OPTION-A scan returned ZERO qualifiers; nearest miss ETHFI (+4.22%) is below the momentum leg and spent; no fresh 6h catalyst (recycled ETF news only); Perplexity gainers don't confirm live; majors all below triggers into a Fear tape. BTC-CORE −2.91%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder. Alt-entry quality gates NOT loosened. **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-execution.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global`; **Perplexity (sonar)** 6h catalyst + gainers check.
