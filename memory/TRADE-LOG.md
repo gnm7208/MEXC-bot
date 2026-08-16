@@ -1070,3 +1070,23 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **Decision: NO ACTION.** No position at −7% (BTC-CORE exempt regardless, and only −3.08%, well above the −10% Rule-12 exit). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
 
 Sources: live MEXC `/ticker/price` + `account`.
+
+## 2026-08-16 — Afternoon Execution (Day 25, Sunday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,075.27 (live).
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.7%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 confirms no resting orders. Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A (0 trades today).
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $63,075.27 = $11.4040 vs cost $11.7556 → **−2.99%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, Rule-12 exempt) nor ≥+7%. Exit triggers checked: macro NOT halted, well above −10% core exit (~$58,518, BTC ~7.5% higher), no qualifying alt needs the capital. Thesis (ETF weekly demand structural) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (1 closed trade < 5 min). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, TAO, ETHFI-conditional, BTC $64,700 reclaim):** BNB $608.24 (−0.003%, $7.85M), SOL $75.33 (−0.002%, $13.42M), ADA $0.1762 (−0.016%, $1.27M), TAO $196.44 (−0.004%, $0.61M), ETHFI $0.4944 (+0.023%, $2.55M) — all dead-flat, none clears the +2% afternoon entry gate.
+
+**Full-board scan (chg ≥ +2% AND vol ≥ $3M): 0 qualifiers** — dead tape, no momentum candidates at all (BTC itself flat at 0.00% 24h).
+
+**Perplexity afternoon catalyst check** cited COW (+60.81%), CYS (+37.63%), H, PUMP, JTO, WLD, VVV, CRV, ZEC/LIT/HYPE as gainers — sources dated Aug 10-15, stale/aggregator snapshots. Checked live on MEXC: COW −0.22% ($294k vol, thin), CYS −0.54% ($6.37M vol, red), H −0.01% ($1.18M, thin), PUMP −0.03% ($2.86M, below $3M floor), JTO +0.03% ($61k, dead), WLD +0.003% ($324k, dead), ZEC −0.01%, LIT +0.03%, HYPE +0.01%, VVV +0.01%, CRV +0.03%, TRX +0.002% ($2.62M, below floor) — none remotely matches the cited moves; no actionable OPTION-B override.
+
+**Decision: NO NEW ENTRY.** 22nd+ consecutive scan with zero rules-clean liquid alt. Full-board scan returned zero momentum qualifiers, watchlist majors all dead-flat, Perplexity-cited gainers (COW/CYS/etc.) don't confirm live on MEXC — stale/other-venue snapshots. BTC-CORE at −2.99%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; **Perplexity (sonar)** afternoon catalyst check.
