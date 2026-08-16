@@ -231,3 +231,51 @@ None — 100% USDT cash ($33.5845 free, 0 locked). Reachability gate PASS all se
 
 ### Overall Grade: B−
 Down a half-step from Week 3's B. The trade execution was the best of the challenge — a textbook +12.9% ADA cycle, 100% win rate, phase 2W/0L, and phase-to-date still ahead of BTC (+3.91% vs +2.76%). But a weekly review grades the week, and this week the book **lost to its own benchmark for the first time** (−1.17%): BTC rallied +3.41% while a ~20%-deployed-then-all-cash book returned +2.24%. The under-deployment flagged for four straight weeks finally cost relative performance. Excellent trade, but the mission metric slipped this week — hence the rule change to stop conceding BTC during dry spells.
+
+---
+
+## Week ending 2026-08-16 (Week 5)
+
+### Stats
+| Metric              | Value  |
+|---------------------|--------|
+| Starting portfolio  | $33.5845 (Aug 9 EOD, Week 4 close) |
+| Ending portfolio    | $33.2418 (Aug 16 EOD) |
+| Week return         | −$0.34 (−1.02%) |
+| BTC week return     | −3.27% ($65,255.75 on 08-09 → $63,124.33 on 08-16) |
+| Bot vs BTC          | **+2.25%** (back ahead of benchmark) |
+| Trades              | 1 action (BTC-CORE buy Aug 10) — 0 closed round-trips (W:0 / L:0 / open:1) |
+| Win rate            | N/A (0 closed trades) |
+| Best trade          | N/A |
+| Worst trade         | N/A |
+| Profit factor       | N/A (no realized P&L) |
+
+### Closed Trades
+None. Zero round-trips this week — the only action was opening the BTC-CORE (Rule 12) index-tracking hold on Aug 10. (The ADA +12.9% Aug-6 win belongs to Week 4; the trade-log's rolling counter carries it, but it is not a Week-5 close.)
+
+### Open Positions at Week End
+| Ticker | Entry | Price | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| BTC-CORE | ~$65,020 (Aug 10) | $63,124.33 | −$0.34 (−2.92%) | none (Rule 12 exempt) |
+
+### What Worked
+- **Back ahead of the benchmark (+2.25 pts).** BTC fell −3.27% on the week while the book returned only −1.02% — the mission (beat BTC buy-and-hold) was met after Week 4's first-ever benchmark miss.
+- **No-chase discipline held through a garbage tape.** Every liquid full-board mover all week was a parabolic-thin pump/rug (MY +277%, TUT, RAZOR +98%, CYS, 龙虾 +66%) — all correctly disqualified on the 3-Candle Gate + Layer 3 exit-liquidity. Chasing any of them would have lost money. 22+ consecutive scans with zero rules-clean alt qualifier; the bot forced nothing.
+- **Rule 12 (new Wk4) executed cleanly on its trigger.** ≥3 dry scans + macro not halted + <40% deployed → a ~34% BTC core was established Aug 10, avoiding a 100%-cash week. The core stayed a disciplined index-hold (no churn, no forced stop/TP), exactly as designed.
+
+### What Didn't Work
+- **Negative absolute return, and the sole deployed position is underwater.** −1.02% on the week; BTC-CORE closed −2.92%. Nothing was actively earned — the week was fully passive.
+- **The +2.25-pt outperformance was direction-luck, not edge.** The book beat BTC because it was ~66% cash while BTC fell — not because of any active trade. Had BTC *risen* this week, the same 66%-cash book would have trailed again (the exact Week-4 failure). And a 100%-cash week would have beaten BTC by *more* (+3.27 vs +2.25): the BTC-CORE actually *dragged* relative performance this particular week because BTC fell.
+- **Fifth straight week under-deployed / zero alt trades.** The whole phase has produced only 2 alt round-trips (both ADA). The strict alt gates + persistent Fear tape (F&G 27–34 all week) mean essentially nothing ever qualifies. Rule 12 floors the idleness with BTC but does not solve it.
+
+### Key Lessons
+- **Rule 12 is trend-blind, and this week exposed the trade-off.** It deploys a fixed ~30–40% BTC core during any dry spell regardless of BTC's own trend. That is correct when BTC rises (Week 4's problem — don't concede) but *costs* when BTC falls (this week — the core dragged, cash would have been better). Over a full sample the up/down weeks should roughly wash on the core slice while the cash portion carries the "beat BTC" edge — but two consecutive weeks (Wk4 BTC +3.4% / Wk5 BTC −3.3%) now bracket both regimes and make the tension concrete. Whether a trend-aware core (hold BTC only when BTC momentum is non-negative, else cash) beats the fixed core is the open question — but one down-week is not enough evidence to add a BTC-timing filter, which would re-introduce exactly the discretion Rule 12 was built to remove.
+- **The scoreboard says "beat BTC," but the *reason* matters.** Beating a falling benchmark by holding cash is not the same as an active edge. The structural under-deployment problem is unresolved — it simply didn't bite this week because BTC happened to fall.
+
+### Adjustments for Next Week
+- **No live rule change.** The strategy behaved as designed: quality gates correctly rejected every pump, Rule 12 fired on its trigger, sell-side/exit logic had nothing to act on. One BTC down-week is not grounds to bolt a BTC-timing filter onto Rule 12 mid-phase with 6 days left — that decision belongs to the Aug-22 phase-parameter recalibration, on the full-phase sample.
+- **Flagged for the Aug-22 review** (added to TRADING-STRATEGY.md "Phase Parameter Validation"): does a trend-aware BTC core (deploy only when BTC momentum ≥ 0) beat the fixed 30–40% core? And is the alt-entry gate *too* strict for a Fear regime — 2 alt trades in 5 weeks — or is that correct discipline given the tape was genuinely junk?
+- **Aug 17–22 (final aggressive stretch, then revert):** manage BTC-CORE to Rule 12 (hold; exit only on macro halt, capital-for-alt, or −10% ≈ $58,518). Redeploy to any alt that *cleanly* clears the buy-side gate — do not loosen gates to force it. Then execute the scheduled conservative revert on Aug 22.
+
+### Overall Grade: B−
+The book beat its benchmark (+2.25 pts) — the literal mission — with correct no-chase discipline through a week of nothing but pump-and-dump tape, and Rule 12 executed exactly as written. That keeps it out of C territory. But it was a fully passive, absolute-negative week (−1.02%) whose only deployed position (BTC-CORE) finished underwater, and the outperformance owed more to BTC's direction (a −3.3% down-week met with a 66% cash cushion) than to any earned edge. The five-week under-deployment problem is unresolved. Same grade as Week 4 by a different route: Week 4 had an excellent trade but *lost* to BTC; Week 5 had no active trade but *beat* BTC — the two roughly offset. Last full week of aggressive mode; phase-to-date still ahead (+2.85% vs BTC −0.59%, 2W/0L closed).
