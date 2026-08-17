@@ -1114,3 +1114,25 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; **
 **Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 23rd+ consecutive scan with zero rules-clean liquid alt. Both OPTION-A qualifiers fail the 3-Candle Gate (spent/thin); no tradeable catalyst; risk-off deepening (F&G 31, BTC $62.8k below channel, ETF outflows). BTC-CORE maintained (−3.39%, no exit trigger, thesis intact). Preserve $21.83 (65.7%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + gainers scan.
+
+## 2026-08-17 — Morning Execution (Day 26, Monday, buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,523.71 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.5%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5 · Trades 0/30 wk · 0/8 today · new week (Aug 17-23), 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**Buy-side validation of today's research trade ideas (each re-checked live at execution):** AM research generated ZERO rules-clean alt entries (KII/ETHFI/UPC OPTION-A qualifiers all failed the 3-Candle Gate). Live re-scan confirms:
+- **Full-board OPTION-A scan (chg ≥ +5% AND vol ≥ $3M): 2 qualifiers, both FAIL 3-Candle Confirmation Gate:**
+  - **UPC +10.42%** ($4.00M, $0.1536) — 3-Candle Gate FAIL: closes above prev-day but hourly qvol DEAD ($2.4k→$2.0k→$2.1k, not rising) → no exit liquidity (Layer-3 Q3 fail). Thin-float spent leg. Skip.
+  - **ETHFI +8.08%** ($3.10M, $0.5105) — 8th+ spent-move offender. 3-Candle Gate FAIL: last candle close DOWN ($0.5127→$0.5107) on falling vol ($78k→$117k→$68k, not rising). Skip.
+  - **KII** dropped to **+3.31%** ($24.0M) — below the +5% OPTION-A leg, disqualified on momentum.
+- **No OPTION-B catalyst:** AM Perplexity (sonar) found no verifiable fresh alt catalyst in 24-48h (CLARITY Act delayed = catalyst removed; Coldcard exploit risk-negative). Nothing maps to a tradeable MEXC listing.
+- **Watchlist majors all flat/red:** BNB −0.06% ($9.2M), SOL +0.11% ($20.5M), ADA −0.16% ($2.5M), XRP +0.09%, ETH +0.98%, TAO +0.31% — none clears the +2% entry gate.
+
+**Macro/gate summary:** MACRO_SCORE ≈ 49 → SIZE_MULTIPLIER 0.6 (reduced, NOT halted); MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B. No candidate clears the 3-Candle/liquidity gate; no tradeable OPTION-B. Alt-entry quality gates NOT loosened.
+
+**BTC-CORE (Rule 12):** 0.0001808 BTC, cost $11.7556 (avg ~$65,020) → val $11.4851 @ mark $63,523.71 → **−2.30%**. Index-tracking hold, exempt from stop/+12% TP. No exit trigger: macro NOT halted, well above −10% core exit (~$58,518, BTC ~8.6% higher), no qualifying alt needs the capital; thesis (structural ETF weekly demand) intact. Deployment 34.5% — within Rule 12's 30-40% target. HOLD, no add.
+
+**Decision: NO NEW ALT ENTRY — 0 market buys, 0 stop-limit orders.** 24th+ consecutive scan with zero rules-clean liquid alt. Both live OPTION-A qualifiers (UPC/ETHFI) fail the 3-Candle Confirmation Gate (spent/thin, volume not rising, no exit liquidity); KII fell below the +5% leg; no tradeable OPTION-B catalyst; watchlist majors flat/red into a Fear tape (F&G 31). BTC-CORE maintained (−2.30%, no exit trigger, thesis intact). Preserve $21.83 (65.5%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at midday.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; today's RESEARCH-LOG AM scan (Perplexity sonar catalyst).
