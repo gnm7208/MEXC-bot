@@ -1136,3 +1136,15 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **Decision: NO NEW ALT ENTRY — 0 market buys, 0 stop-limit orders.** 24th+ consecutive scan with zero rules-clean liquid alt. Both live OPTION-A qualifiers (UPC/ETHFI) fail the 3-Candle Confirmation Gate (spent/thin, volume not rising, no exit liquidity); KII fell below the +5% leg; no tradeable OPTION-B catalyst; watchlist majors flat/red into a Fear tape (F&G 31). BTC-CORE maintained (−2.30%, no exit trigger, thesis intact). Preserve $21.83 (65.5%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at midday.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; today's RESEARCH-LOG AM scan (Perplexity sonar catalyst).
+
+## 2026-08-17 — Midday Scan (Day 26, Monday, position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,644.12 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5. No alt positions — nothing to check against the −7% cut or +15%/+20% trailing-tighten rules.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.5069 @ mark $63,644.12 → **−2.12%**. Rule-12 index-tracking hold — exempt from the −7% cut and +15%/+20% trailing-tighten rules by design; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (~$58,518, BTC ~5.6% above that floor). Thesis (structural ETF weekly demand) unchanged — no invalidating news since this morning's scan.
+
+**Decision: NO ACTION.** No position at/near −7% (BTC-CORE exempt regardless, only −2.12%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+Sources: live MEXC `/ticker/price` + `account`.
