@@ -1148,3 +1148,25 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **Decision: NO ACTION.** No position at/near −7% (BTC-CORE exempt regardless, only −2.12%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
 
 Sources: live MEXC `/ticker/price` + `account`.
+
+## 2026-08-17 — Afternoon Execution (Day 26, Monday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,480.28 (live).
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.6%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk · 0/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $63,480.28 = $11.4772 vs cost $11.7556 → **−2.37%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, Rule-12 exempt) nor ≥+7%. Exit triggers checked: macro NOT halted (MACRO ≈49, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~8.6% higher), no qualifying alt needs the capital. Thesis (structural ETF weekly demand) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, KII, BTC $64,700 reclaim/$62,000 support):** BNB $604.13 (−0.67%, $9.76M), SOL $75.32 (−0.09%, $29.04M), ADA $0.1733 (−1.81%, $2.83M), KII $0.0668 (−0.96%, $34.62M) — all red/flat, none clears the +2% afternoon entry gate. BTC $63,480 — below the $64,700 channel reclaim, above the $62,000 support; no breakout either way.
+
+**Full-board scan (chg ≥ +5% AND vol ≥ $3M): 2 qualifiers, both FAIL 3-Candle Gate:**
+- **XPLK +16.80%** ($3.23M) — extreme whipsaw (hourly candles +19%/+18%/−39%/+22%/−17%/+8%/−17%/+14%), last two hourly qvol collapsed to $774/$649 — dead, no exit liquidity. Classic thin-float pump-dump. Skip.
+- **PUMP +6.20%** ($5.22M) — choppy, no clean rising structure (last candle +0.07% on $63k qvol vs $609k first candle — volume declining trend, not rising). Skip.
+
+**Perplexity afternoon catalyst check** cited PUMP (+5%, buyback narrative) and HYPE (+4.12%) as leaders, plus BASECAT (+1,701%) and H (+28%). Checked live on MEXC: PUMP confirmed above (fails 3-Candle Gate) — buyback narrative already priced, not a fresh trigger; HYPE +3.02% but only $766k vol (well below $3M floor) and below the +5% leg; BASECAT and H not liquid/confirmed on MEXC (thin-float/other-venue, consistent with the pattern all week). No actionable OPTION-B override.
+
+**Decision: NO NEW ENTRY.** 25th+ consecutive scan with zero rules-clean liquid alt. Both full-board OPTION-A qualifiers (XPLK, PUMP) fail the 3-Candle Gate (spent/thin, no exit liquidity); watchlist majors all red/flat; Perplexity-cited gainers don't clear the gate live on MEXC. BTC-CORE at −2.37%, no exit trigger, thesis intact. Preserve $21.83 (65.6%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; **Perplexity (sonar)** afternoon catalyst check.
