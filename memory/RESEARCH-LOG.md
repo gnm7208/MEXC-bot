@@ -1768,3 +1768,36 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** Macro not halted (SIZE_MULT 0.6) but all momentum qualifiers fail the 3-Candle/liquidity gate and no verifiable catalyst exists. BTC-CORE −2.52%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder; alt-entry quality gates NOT loosened. Not urgent — no ClickUp/notification. Re-evaluate at morning-execution.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `quote` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** macro + catalyst + on-chain/derivatives scan.
+
+## 2026-08-18 — Evening Scan (Day 27, Tuesday, Asian open ~00:15 UTC)
+
+### Account Snapshot
+- Total portfolio ~$33.48 (BTC-CORE $11.65 + USDT $21.83) · Free USDT $21.83 (65.2%)
+- Open positions: 1 (BTC-CORE 0.0001808 BTC) · Trades 0/30 wk · 0/8 today · week Aug 17-23, 0 closed → circuit breaker N/A, daily gate N/A
+
+### Market Context
+- BTC $64,420 (recovered from Monday $62.8k Asian-open low, back above $64k) · ETH $1,910.64 (+1.87%, $172M) · SOL $76.00 (+1.86%, $31M) · BNB $605.65 (+0.55%) · ADA $0.1739 (−0.45%) · TAO $196.05 (+0.07%)
+- Fear & Greed: **41 (Fear)** — up from Monday's 31; Fear tape easing
+- Trending (CoinGecko): PENGU, VVV, ANSEM, PEAQ, PUMP, RENDER, SLX, HYPE — none maps to a rules-clean MEXC OPTION-A
+
+### Overnight Catalyst (Perplexity sonar)
+- **No tradeable fresh catalyst.** Coldcard hardware-wallet exploit still the main discussion point = risk-NEGATIVE (cautious, not capitulatory). BTC-ETF flows mixed-to-negative (reports cite 2 straight down days; one cites $1.1B combined BTC+ETH inflow — providers inconsistent, demand choppy). No protocol upgrade / listing / whale catalyst in last 6h.
+- Perplexity-cited gainers checked LIVE on MEXC: GPS +48% but only $0.46M vol; ACE +14% $0.74M; VELVET −43%; PORTAL −5%; SKY +2% $0.06M — all thin/down/other-venue, none clears the $3M floor. Consistent with the all-week thin-float pattern.
+
+### Momentum Scan (live MEXC full board)
+- **OPTION-A (chg ≥ +5% AND qvol ≥ $3M): 1 qualifier, FAILS 3-Candle Gate:**
+  - **KII +7.84%** ($41.85M) — real volume but the 3 up-close hourly candles ride **collapsing** qvol ($1375k→$699k→$187k, dead last candle) → spent leg, no exit liquidity (Layer-3 Q3 fail). Today's daily candle $0.19M so far, price barely above prev close. Same exhaustion structure as Aug-17 AM. Skip.
+- No OPTION-B catalyst; majors all below triggers (SOL closest at +1.86%, still below +2% reclaim and no vol-confirmed +5% breakout).
+
+### Risk Factors
+- Coldcard exploit + soft ETF flows + F&G 41 = Fear tape easing but no fresh long conviction. Forcing an alt here chases a spent grind-up (KII) into thin overnight liquidity.
+- 26th+ consecutive scan with zero rules-clean liquid alt — persistent Fear-regime alt drought. Discipline over deployment; gates NOT loosened.
+
+### Watchlist into Aug 18 day session
+- **SOL** (volume-confirmed ≥+5% leadership breakout — nearest mover) · **BNB** (≥+2% reclaim/hold >$605 w/ vol) · **ETH** (≥+5% vol-confirmed leg, currently +1.87%) · **ADA** (real SEC-approval headline + $0.20/+5% 3-candle) · **KII** (only on a FRESH volume-RISING 3-candle breakout, not this spent leg) · **BTC** $64,700 channel reclaim / $62,000 support
+- **BTC-CORE** monitored for macro-halt / −10% ($58,518) exit only
+
+### Decision
+**HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** Macro not halted (SIZE_MULT 0.6) but the sole OPTION-A qualifier (KII) fails the 3-Candle/liquidity gate on collapsing volume, no verifiable OPTION-B catalyst (Coldcard exploit risk-negative), majors below triggers into an easing-but-still-Fear tape (F&G 41). BTC-CORE −0.92% (improved on BTC recovery), no exit trigger, thesis intact. Preserve $21.83 (65.2%) dry powder; gates NOT loosened. **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m,1d` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + gainers scan.
