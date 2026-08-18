@@ -1801,3 +1801,44 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** Macro not halted (SIZE_MULT 0.6) but the sole OPTION-A qualifier (KII) fails the 3-Candle/liquidity gate on collapsing volume, no verifiable OPTION-B catalyst (Coldcard exploit risk-negative), majors below triggers into an easing-but-still-Fear tape (F&G 41). BTC-CORE −0.92% (improved on BTC recovery), no exit trigger, thesis intact. Preserve $21.83 (65.2%) dry powder; gates NOT loosened. **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m,1d` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + gainers scan.
+
+## 2026-08-18 — Research Scan (Day 27, Tuesday, ~03:05 UTC / late-evening CT)
+
+### Account Snapshot
+- Total portfolio ~$33.42 (BTC-CORE $11.59 + USDT $21.83) · Free USDT $21.83 (65.3%)
+- Open positions: 1 (BTC-CORE 0.0001808 BTC) · Trades 0/30 wk · 0/8 today · week Aug 17-23, 0 closed → circuit breaker N/A, daily gate N/A
+
+### Market Context
+- BTC $64,111 (+1.14% 24h), vol $436.1M · ETH $1,893.96 (−0.48%, $156.3M) · SOL $75.36 (−0.15%, $32.0M) · BNB $603.23 (−0.26%, $9.0M) · ADA $0.1721 (−2.65%, $2.4M) · XRP $0.9915 (−0.97%, $12.5M) · TAO $191.01 (−3.27%, $1.0M)
+- BTC Dominance: 56.54% | ETH dom 10.05% | total mcap +0.51% 24h
+- Fear & Greed: **41 (Fear)** — flat vs Tuesday evening scan; Fear tape holding
+- Trending (CoinGecko): VVV, PENGU, HYPE, ANSEM, WKC, ACU, BTC, PEAQ — none maps to a rules-clean MEXC OPTION-A
+
+### On-Chain / Derivatives (Perplexity sonar)
+- **No fresh catalyst** in last 12h: no ETF filing/approval, protocol upgrade, exchange listing, or verified whale/VC accumulation event.
+- BTC ETF flows **negative**: −$57.6M (Aug 14) / −$56.2M latest print (reported Aug 17) — outflow bias continues; cumulative since launch +$51.79B.
+- Funding: BTC perp **+0.0002%/1h (~+1.7% annualized)** — mild, not overheated.
+- Open interest: elevated but **stable-to-firm**, no declining trend — no crowded-leverage flush signal.
+
+### Macro Gate
+- MACRO_SCORE ≈ **52** → SIZE_MULTIPLIER **0.6** (reduced sizing; NOT halted). F&G 41·BTC +1.14%·dom 56.54·breadth mixed-weak·loss-rate default 75.
+- Sector status: no alt positions, no new alt round-trips. No SECTOR_BLOCKED. SIGNAL_GATE CLEAR.
+
+### News on Held Positions
+- BTC-CORE: 0.0001808 BTC, cost $11.7556 → val $11.59 @ $64,111 = **−1.40%** (improved from Monday EOD −1.77% on firmer BTC). Rule-12 index-tracking hold — exempt from stop/+TP; exit only on macro-halt / −10% core ($58,518, BTC ~9.7% above) / capital for a qualifying alt. Thesis (structural ETF weekly demand) intact — no invalidating news.
+
+### Trade Ideas
+1. **NO rules-clean alt entry — full-board OPTION-A (chg ≥ +5% AND qvol ≥ $3M) = 0 qualifiers this scan** (down from 1 at the 00:15 evening scan). KII, the sole prior qualifier, **faded to −0.32%** on the reversal — validating Tuesday's 3-Candle/collapsing-volume skip.
+   - Only >+5% movers with any liquidity are thin-float pump/rugs below the $3M floor: **OV +657%** ($1.29M), **TOFU +280%** ($1.10M), **TUT +41%** ($2.38M), **ANSEM +9%** ($1.19M), **CASHCAT +5.29%** ($1.35M). None clears the volume gate; all thin-float. Skip.
+2. No tradeable OPTION-B: Perplexity finds no verifiable fresh alt catalyst (ETF/upgrade/listing/whale) in 12h.
+3. **Watchlist:** SOL (volume-confirmed ≥+5% leadership breakout — nearest major but red today) · BNB (≥+2% reclaim/hold >$605 w/ vol) · ETH (≥+5% vol-confirmed leg) · ADA (real SEC-approval headline + $0.20/+5% 3-candle) · BTC $64,700 channel reclaim / $62,000 support · BTC-CORE monitored for macro-halt / −10% ($58,518) exit only.
+
+### Risk Factors
+- ETF outflows + F&G 41 (Fear) + majors mostly red = risk-off tone; forcing an alt here chases thin-float pumps into a weak tape.
+- **27th+ consecutive scan with zero rules-clean liquid alt** — persistent Fear-regime alt drought (documented Wk5 review). Discipline over deployment; gates NOT loosened.
+- Mild funding + stable OI = no euphoria and no fresh long conviction — range-bound BTC likely.
+
+### Decision
+**HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** Macro not halted (SIZE_MULT 0.6) but the full board returns 0 OPTION-A qualifiers and no verifiable OPTION-B catalyst; majors below triggers into a Fear tape (F&G 41). BTC-CORE −1.40%, no exit trigger, thesis intact. Preserve $21.83 (65.3%) dry powder; alt-entry quality gates NOT loosened. **Not urgent — no ClickUp/notification.** Re-evaluate at morning-research.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** catalyst + on-chain/derivatives scan.
