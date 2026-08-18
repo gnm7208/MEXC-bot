@@ -1842,3 +1842,27 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** Macro not halted (SIZE_MULT 0.6) but the full board returns 0 OPTION-A qualifiers and no verifiable OPTION-B catalyst; majors below triggers into a Fear tape (F&G 41). BTC-CORE −1.40%, no exit trigger, thesis intact. Preserve $21.83 (65.3%) dry powder; alt-entry quality gates NOT loosened. **Not urgent — no ClickUp/notification.** Re-evaluate at morning-research.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** catalyst + on-chain/derivatives scan.
+
+## 2026-08-18 — Afternoon Execution (Day 27, Tuesday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,145.14 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.3%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk · 0/8 today · week Aug 17-23, 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $64,145.14 = $11.5974 vs cost $11.7556 → **−1.35%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, exempt) nor ≥+7%. Exit triggers checked: macro NOT halted, well above −10% core exit (~$58,518, BTC ~9.9% higher), no qualifying alt needs the capital. Thesis (structural ETF weekly demand) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, TAO, ETHFI-conditional, KII, BTC $64,700 reclaim):** SOL $75.34 (+0.01%, $31.4M), BNB $605.6 (−0.01%, $8.8M), ADA $0.1734 (+0.01%, $2.1M), TAO $196.0 (−0.02%, $1.1M), ETHFI $0.4930 (−0.03%, $2.5M), KII $0.0709 (+5.81%, $26.6M) — all majors dead-flat, below the +2% afternoon entry gate; only KII moves.
+
+**Full-board scan (chg ≥ +2% AND vol ≥ $3M): 3 qualifiers, all FAIL 3-Candle Gate:**
+- **TUT +20.19%** ($3.07M, barely above floor) — hourly closes whipsaw dn/dn/UP/dn/UP, no clean rising structure; hourly qvol declining (186k→114k→92k→126k→25k, dead last candle). Skip.
+- **KII +5.81%** ($26.6M) — last completed hourly candle closed DOWN (0.07115→0.07107) on collapsing qvol (452k→159k) — same exhaustion pattern flagged every scan since Aug-16. Skip.
+- **UPC +5.68%** ($5.58M) — closes not cleanly rising (0.159→0.16→0.1592dn→0.1603), hourly qvol declining off peak (1.51M→615k). 7th+ spent-move offender this week. Skip.
+
+**Perplexity afternoon catalyst check** cited STAR (+44.3%), GPS (+47.6%), PUMP (+8.18%), ZRO (+6.77%), AVAX (+3.33%), AERO (+2.55%), VVV (+2.39%), LINK (+14.32%). Checked live on MEXC: STAR actually **−6.51%** ($160k vol, contradicts citation), GPS **+21.52%** but only $392k vol (well below $3M floor — same thin-float GPS repeat-offender from Aug-18 evening scan), PUMP **−2.25%** ($4.3M, negative — citation stale/dated Aug-4 source), ZRO −0.37%, AVAX +0.53%, AERO −2.63%, LINK −1.07% (all dead/thin, sourced from a 2025-dated article), VVV +19.43% but only $234k vol. None clears the $3M liquid-volume floor with a matching live move — all stale/other-venue/misdated snapshots, consistent with the pattern all week. No actionable OPTION-B override.
+
+### Decision
+**HOLD — BTC-CORE maintained, NO NEW ENTRY.** 29th+ consecutive scan with zero rules-clean liquid alt. Full-board OPTION-A qualifiers (TUT/KII/UPC) all fail the 3-Candle Gate (whipsaw or collapsing volume, no exit liquidity); watchlist majors dead-flat; Perplexity-cited gainers (STAR/GPS/PUMP/etc.) don't confirm live on MEXC (stale/thin/misdated). BTC-CORE at −1.35%, no exit trigger, thesis intact. Preserve $21.83 (65.3%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; **Perplexity (sonar)** afternoon catalyst check.
