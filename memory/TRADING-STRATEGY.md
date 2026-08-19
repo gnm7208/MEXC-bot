@@ -212,6 +212,17 @@ Compare actual results against these assumptions:
 - Did macro gate (SIZE_MULTIPLIER) correctly filter bad market days?
 - Did signal score >= 5 threshold have better win rate than score < 5 entries?
 - Was 30-35% position sizing appropriate for portfolio size ($30-50 range)?
+- **Rule 12 trend-blindness (flagged Wk5, 2026-08-16):** the BTC core deploys a fixed
+  30-40% during ANY dry spell regardless of BTC's own trend. Wk4 (BTC +3.4%) it helped
+  (don't concede an up-move); Wk5 (BTC −3.3%) it DRAGGED (a 100%-cash week would have
+  beaten BTC by more). Over a full sample the up/down weeks should roughly wash on the
+  core slice, but recalibrate: does a TREND-AWARE core (deploy only when BTC momentum ≥ 0,
+  else hold cash) beat the fixed core? Weigh against re-introducing BTC-timing discretion
+  that Rule 12 was built to remove. Do NOT change mid-phase — decide here on the full sample.
+- **Alt-gate strictness (flagged Wk5):** only 2 alt round-trips in 5 phase weeks (both ADA,
+  both wins). Strict gates + persistent Fear tape (F&G 27-34) = near-permanent alt drought.
+  Was the discipline correct (every dry-spell mover was a pump/rug), or are the gates too
+  tight for a Fear regime? Calibrate the conservative alt-entry threshold accordingly.
 Use this review to calibrate conservative strategy settings for post-Aug-22.
 
 ## Notes from Experience

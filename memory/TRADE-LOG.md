@@ -1029,3 +1029,276 @@ Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board) + `/klines?inte
 **Decision: NO NEW ENTRY.** 18th+ consecutive scan with zero rules-clean liquid alt. Full-board scan returned zero momentum qualifiers (cleanest tape yet), watchlist majors all dead-flat, Perplexity-cited gainers don't confirm live on MEXC. BTC-CORE at −2.97%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; **Perplexity (sonar)** afternoon catalyst check.
+
+## Aug 15 — EOD Snapshot (Day 24, Saturday)
+
+**Portfolio:** $33.23 | **Cash:** $21.83 (65.7%) | **Day P&L:** −$0.01 (−0.03%) | **Phase P&L:** +$0.91 (+2.81%)
+
+| Ticker   | Qty       | Entry    | Price      | Day Chg | Unrealized P&L  | Stop                  |
+|----------|-----------|----------|------------|---------|-----------------|-----------------------|
+| BTC-CORE | 0.0001808 | ~$65,020 | $63,049.93 | −0.10%  | −$0.36 (−3.03%) | none (Rule 12 exempt) |
+
+**Notes:** Held BTC-CORE + dry powder, **0 trades** — flat, no-fill day across all Saturday scan windows (morning-execution, midday, afternoon-execution, now EOD). USDT free $21.828861061116 / locked $0 (canTrade=true); BTC 0.0001808 / locked $0 — confirmed live via `account`. `orders` permission-gap; locked=0 confirms no resting orders (BTC-CORE is Rule-12 stop-exempt — no stop / no +12% TP by design). Reachability gate PASS (BTC $63,049.93 at EOD). **Trades:** 0 today, 3/25 momentum trades this week; 1 closed this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (needs ≥5 closed), daily gate N/A (0 trades today). Phase closed record 2W/0L. Positions 1/5. **Day P&L −$0.01 (−0.03%)** — portfolio Aug-14 EOD $33.2396 → $33.2283; the move is pure BTC-CORE mark-to-market (BTC $63,112.42 Aug-14 EOD → $63,049.93, −0.10%), cash flat at $21.8289. **Phase P&L +$0.91 (+2.81%)** vs $32.32 baseline — eased fractionally from Aug-14's +$0.92 (+2.85%) on the marginally softer BTC mark. **BTC-CORE (Rule 12):** cost $11.7556 → val $11.3994, −3.03%. Index-tracking hold — no exit trigger: macro NOT halted (MACRO ≈47, SIZE_MULTIPLIER 0.6 >0), well above the −10% core exit (~$58,518, BTC ~7.7% higher), no qualifying alt needs the capital; thesis intact (ETF weekly demand structural). Deployment 34.3% — within Rule 12's 30-40% core target; remaining 65.7% ($21.83) dry powder held for a qualifying alt breakout (alt-entry quality gates NOT loosened). **Regime note:** BTC range-bound ~$63.0k, still below the reclaimed $64,700 channel; F&G **34 (Fear)**. 18th+ consecutive scan with no rules-clean liquid alt qualifier — today's OPTION-A movers (KII parabolic blow-off, ACE pump-and-crash, CYS/AKE choppy dead-vol, ETHFI spent) all failed the 3-Candle Gate; afternoon full-board returned **zero** momentum qualifiers (cleanest tape of the phase); watchlist majors (BNB/SOL/ADA/TAO) dead-flat below all triggers. **BTC buy-and-hold benchmark:** phase baseline BTC ~$63,500 (Jul 22 funding) → $63,049.93 now (~−0.71%); bot +2.81% phase — outperforming buy-and-hold by ~3.5 pts. **Watchlist into Aug 16:** BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), TAO (≥$3M vol holding ≥+5%), ETHFI (only on a FRESH volume-confirmed 3-candle breakout — today's move spent), BTC $64,700 channel reclaim / $63,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at evening-scan.
+
+## 2026-08-16 — Morning Execution (Day 25, Sunday, buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,078.39 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.7%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A.
+
+**Buy-side validation of today's research trade ideas (each vs entry gates), re-checked live vs AM research (~11:00 UTC):**
+- Today's morning research generated **ZERO qualifying alt entries** (full-board OPTION-A scan = 0 qualifiers; nearest miss ETHFI below the +5% leg and spent). Live re-scan at execution:
+- **Full-board OPTION-A scan (chg ≥ +5% AND vol ≥ $3M): 1 qualifier, FAILS 3-Candle Gate:**
+  - **ETHFI +5.44%** ($3.90M, $0.4725) — repeat spent-move offender (6th+ scan). Live 60m klines: last 8×1h flat/red with closes drifting DOWN (−0.21/−0.38/−0.13/−0.61/+0.30/−0.15/−0.51/+0.34%), volume collapsing ($62k→$57k→$8k, falling not rising). No FRESH rising 3-candle structure, no volume confirmation. **FAIL 3-Candle Gate.** 24h leg already in price.
+- **No OPTION-B catalyst:** AM Perplexity (sonar) 6h scan = no fresh ETF approval / hack / protocol upgrade (recycled weekly ETF data only); nothing new maps to a tradeable MEXC listing.
+- **BTC-CORE (Rule 12):** cost $11.7556 (avg ~$65,020) → val $11.4046 @ mark $63,078.39 → **−2.99%**. Index-tracking hold, exempt from stop/+12% TP. No exit trigger: macro NOT halted (MACRO ≈47, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~7.5% higher), no qualifying alt needs the capital. Thesis (ETF weekly demand structural) intact. HOLD, no add (deployment 34.3%, within 30–40% target).
+
+**Macro/gate summary:** MACRO_SCORE ≈ 47 → SIZE_MULTIPLIER 0.6 (reduced, not halted); MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B. No candidate reaches even the OPTION-A momentum leg with valid structure/liquidity; no tradeable OPTION-B catalyst. Alt-entry quality gates NOT loosened.
+
+**Decision: NO NEW ALT ENTRY — 0 market buys, 0 stop-limit orders.** 21st+ consecutive scan with zero rules-clean liquid alt. The sole live OPTION-A qualifier (ETHFI +5.44%) fails the 3-Candle Gate (spent, closes drifting down on dead volume); no tradeable OPTION-B catalyst; majors below all triggers into a Fear tape (F&G 34). BTC-CORE maintained (−2.99%, no exit trigger, thesis intact). Preserve $21.83 (65.7%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at midday.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; today's RESEARCH-LOG AM scan (Perplexity sonar 6h catalyst).
+
+## 2026-08-16 — Midday Scan (Day 25, Sunday)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,019.74 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.7%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5. No alt positions held — nothing to scan for the −7% cut or +15%/+20% trailing-tighten rules this run.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.3940 @ mark $63,019.74 → **−3.08%**. Rule-12 index-tracking hold — **exempt from the −6%/−7% cut and +15%/+20% trailing-tighten rules by design**; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (BTC ≈ $58,518 — current price ~7.4% above that floor). No exit trigger. Thesis (ETF weekly demand structural) unchanged since this morning's scan — no new invalidating news.
+
+**Decision: NO ACTION.** No position at −7% (BTC-CORE exempt regardless, and only −3.08%, well above the −10% Rule-12 exit). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+Sources: live MEXC `/ticker/price` + `account`.
+
+## 2026-08-16 — Afternoon Execution (Day 25, Sunday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,075.27 (live).
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.7%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 confirms no resting orders. Positions 1/5 · Trades 3/25 wk · 0/8 today · 1 closed this week (1W/0L, ADA +12.9% Aug 6) → weekly circuit breaker N/A (<5 closed), daily gate N/A (0 trades today).
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $63,075.27 = $11.4040 vs cost $11.7556 → **−2.99%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, Rule-12 exempt) nor ≥+7%. Exit triggers checked: macro NOT halted, well above −10% core exit (~$58,518, BTC ~7.5% higher), no qualifying alt needs the capital. Thesis (ETF weekly demand structural) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (1 closed trade < 5 min). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, TAO, ETHFI-conditional, BTC $64,700 reclaim):** BNB $608.24 (−0.003%, $7.85M), SOL $75.33 (−0.002%, $13.42M), ADA $0.1762 (−0.016%, $1.27M), TAO $196.44 (−0.004%, $0.61M), ETHFI $0.4944 (+0.023%, $2.55M) — all dead-flat, none clears the +2% afternoon entry gate.
+
+**Full-board scan (chg ≥ +2% AND vol ≥ $3M): 0 qualifiers** — dead tape, no momentum candidates at all (BTC itself flat at 0.00% 24h).
+
+**Perplexity afternoon catalyst check** cited COW (+60.81%), CYS (+37.63%), H, PUMP, JTO, WLD, VVV, CRV, ZEC/LIT/HYPE as gainers — sources dated Aug 10-15, stale/aggregator snapshots. Checked live on MEXC: COW −0.22% ($294k vol, thin), CYS −0.54% ($6.37M vol, red), H −0.01% ($1.18M, thin), PUMP −0.03% ($2.86M, below $3M floor), JTO +0.03% ($61k, dead), WLD +0.003% ($324k, dead), ZEC −0.01%, LIT +0.03%, HYPE +0.01%, VVV +0.01%, CRV +0.03%, TRX +0.002% ($2.62M, below floor) — none remotely matches the cited moves; no actionable OPTION-B override.
+
+**Decision: NO NEW ENTRY.** 22nd+ consecutive scan with zero rules-clean liquid alt. Full-board scan returned zero momentum qualifiers, watchlist majors all dead-flat, Perplexity-cited gainers (COW/CYS/etc.) don't confirm live on MEXC — stale/other-venue snapshots. BTC-CORE at −2.99%, no exit trigger, thesis intact. Preserve $21.83 (65.7%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `account`; **Perplexity (sonar)** afternoon catalyst check.
+
+## Aug 16 — EOD Snapshot (Day 25, Sunday)
+
+**Portfolio:** $33.24 | **Cash:** $21.83 (65.7%) | **Day P&L:** +$0.01 (+0.04%) | **Phase P&L:** +$0.92 (+2.85%)
+
+| Ticker   | Qty       | Entry    | Price      | Day Chg | Unrealized P&L  | Stop                  |
+|----------|-----------|----------|------------|---------|-----------------|-----------------------|
+| BTC-CORE | 0.0001808 | ~$65,020 | $63,124.33 | +0.12%  | −$0.34 (−2.92%) | none (Rule 12 exempt) |
+
+**Notes:** Held BTC-CORE + dry powder, **0 trades** — flat, no-fill day across all Sunday scan windows (morning-execution, midday, afternoon-execution, now EOD). USDT free $21.828861061116 / locked $0 (canTrade=true); BTC 0.0001808 / locked $0 — confirmed live via `account`. `orders` permission-gap; locked=0 confirms no resting orders (BTC-CORE is Rule-12 stop-exempt — no stop / no +12% TP by design). Reachability gate PASS (BTC $63,124.33 at EOD). **Trades:** 0 today, 3/25 momentum trades this week; 1 closed this week (1W/0L, ADA +12.9% Aug 6) → circuit breaker N/A (needs ≥5 closed), daily gate N/A (0 trades today). Phase closed record 2W/0L. Positions 1/5. **Day P&L +$0.01 (+0.04%)** — portfolio Aug-15 EOD $33.2303 → $33.2418; the move is pure BTC-CORE mark-to-market (BTC $63,049.93 Aug-15 EOD → $63,124.33, +0.12%), cash flat at $21.8289. **Phase P&L +$0.92 (+2.85%)** vs $32.32 baseline — up fractionally from Aug-15's +$0.91 (+2.81%) on the marginally firmer BTC mark. **BTC-CORE (Rule 12):** cost $11.7556 → val $11.4129, −2.92%. Index-tracking hold — no exit trigger: macro NOT halted (MACRO ≈47, SIZE_MULTIPLIER 0.6 >0), well above the −10% core exit (~$58,518, BTC ~7.4% higher), no qualifying alt needs the capital; thesis intact (ETF weekly demand structural). Deployment 34.3% — within Rule 12's 30-40% core target; remaining 65.7% ($21.83) dry powder held for a qualifying alt breakout (alt-entry quality gates NOT loosened). **Regime note:** BTC range-bound ~$63.1k, still below the reclaimed $64,700 channel; F&G **34 (Fear)** (carried from today's scans). 22nd+ consecutive scan with no rules-clean liquid alt qualifier — today's morning OPTION-A scan returned only ETHFI +5.44% (failed 3-Candle Gate, spent/dead volume); afternoon full-board returned **zero** momentum qualifiers (dead tape, BTC itself 0.00% 24h); watchlist majors (BNB/SOL/ADA/TAO/ETHFI) dead-flat below all triggers; Perplexity-cited gainers (COW/CYS/PUMP/etc.) didn't confirm live on MEXC (stale/other-venue snapshots). **BTC buy-and-hold benchmark:** phase baseline BTC ~$63,500 (Jul 22 funding) → $63,124.33 now (~−0.59%); bot +2.85% phase — outperforming buy-and-hold by ~3.4 pts. **Watchlist into Aug 17:** BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), TAO (≥$3M vol holding ≥+5%), ETHFI (only on a FRESH volume-confirmed 3-candle breakout — today's move spent), BTC $64,700 channel reclaim / $63,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at Monday morning-research.
+
+## 2026-08-17 — Evening Scan (Day 26, Monday, Asian open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $62,817.79 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.7%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5 · Trades 3/25 wk · 0/8 today · new week (Aug 17-23), 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $62,817.79 = $11.3575 vs cost $11.7556 → **−3.39%**. Rule-12 index-tracking hold — no stop / +12% TP by design. Not ≤ stop (none, exempt), not ≥ +12%. Exit triggers checked: macro NOT halted (MACRO ≈47, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~6.8% higher), no qualifying alt needs capital; thesis (structural ETF demand) intact. **No emergency action.** No other open positions.
+
+**STEP 4 — Catalyst/momentum scan:** Full-board OPTION-A (chg ≥ +5% AND vol ≥ $3M) = **2 qualifiers, both FAIL 3-Candle Gate**: **UPC +13.17%** ($4.00M) — thin-float, spent 24h leg, hourly qvol dead ($0.8–2.8k/hr), closes drifting down, no exit liquidity; **ETHFI +5.52%** ($3.07M) — 7th+ spent-move offender, closes fading on collapsing vol ($204k→$18k). No tradeable OPTION-B (Perplexity: CLARITY Act delayed = catalyst removed; Coldcard hardware-wallet exploit = risk-negative; no hack-play/upgrade maps to a MEXC listing). Perplexity gainers (DAPPOS/LILUNI/PORTAL/HEMI) = thin-float/other-venue, not confirmed liquid on MEXC. Watchlist majors (BNB −0.95%, SOL −1.19%, ADA −1.64%, TAO −0.59%) all red/below triggers. F&G 31 (Fear, down from 34).
+
+**Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 23rd+ consecutive scan with zero rules-clean liquid alt. Both OPTION-A qualifiers fail the 3-Candle Gate (spent/thin); no tradeable catalyst; risk-off deepening (F&G 31, BTC $62.8k below channel, ETF outflows). BTC-CORE maintained (−3.39%, no exit trigger, thesis intact). Preserve $21.83 (65.7%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + gainers scan.
+
+## 2026-08-17 — Morning Execution (Day 26, Monday, buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,523.71 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.5%) / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5 · Trades 0/30 wk · 0/8 today · new week (Aug 17-23), 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**Buy-side validation of today's research trade ideas (each re-checked live at execution):** AM research generated ZERO rules-clean alt entries (KII/ETHFI/UPC OPTION-A qualifiers all failed the 3-Candle Gate). Live re-scan confirms:
+- **Full-board OPTION-A scan (chg ≥ +5% AND vol ≥ $3M): 2 qualifiers, both FAIL 3-Candle Confirmation Gate:**
+  - **UPC +10.42%** ($4.00M, $0.1536) — 3-Candle Gate FAIL: closes above prev-day but hourly qvol DEAD ($2.4k→$2.0k→$2.1k, not rising) → no exit liquidity (Layer-3 Q3 fail). Thin-float spent leg. Skip.
+  - **ETHFI +8.08%** ($3.10M, $0.5105) — 8th+ spent-move offender. 3-Candle Gate FAIL: last candle close DOWN ($0.5127→$0.5107) on falling vol ($78k→$117k→$68k, not rising). Skip.
+  - **KII** dropped to **+3.31%** ($24.0M) — below the +5% OPTION-A leg, disqualified on momentum.
+- **No OPTION-B catalyst:** AM Perplexity (sonar) found no verifiable fresh alt catalyst in 24-48h (CLARITY Act delayed = catalyst removed; Coldcard exploit risk-negative). Nothing maps to a tradeable MEXC listing.
+- **Watchlist majors all flat/red:** BNB −0.06% ($9.2M), SOL +0.11% ($20.5M), ADA −0.16% ($2.5M), XRP +0.09%, ETH +0.98%, TAO +0.31% — none clears the +2% entry gate.
+
+**Macro/gate summary:** MACRO_SCORE ≈ 49 → SIZE_MULTIPLIER 0.6 (reduced, NOT halted); MACRO < 60 ⇒ eligibility needs SCORE ≥ 8 OR OPTION_B. No candidate clears the 3-Candle/liquidity gate; no tradeable OPTION-B. Alt-entry quality gates NOT loosened.
+
+**BTC-CORE (Rule 12):** 0.0001808 BTC, cost $11.7556 (avg ~$65,020) → val $11.4851 @ mark $63,523.71 → **−2.30%**. Index-tracking hold, exempt from stop/+12% TP. No exit trigger: macro NOT halted, well above −10% core exit (~$58,518, BTC ~8.6% higher), no qualifying alt needs the capital; thesis (structural ETF weekly demand) intact. Deployment 34.5% — within Rule 12's 30-40% target. HOLD, no add.
+
+**Decision: NO NEW ALT ENTRY — 0 market buys, 0 stop-limit orders.** 24th+ consecutive scan with zero rules-clean liquid alt. Both live OPTION-A qualifiers (UPC/ETHFI) fail the 3-Candle Confirmation Gate (spent/thin, volume not rising, no exit liquidity); KII fell below the +5% leg; no tradeable OPTION-B catalyst; watchlist majors flat/red into a Fear tape (F&G 31). BTC-CORE maintained (−2.30%, no exit trigger, thesis intact). Preserve $21.83 (65.5%) dry powder. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at midday.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; today's RESEARCH-LOG AM scan (Perplexity sonar catalyst).
+
+## 2026-08-17 — Midday Scan (Day 26, Monday, position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,644.12 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 / locked $0 (canTrade=true). No resting orders (locked=0). Positions 1/5. No alt positions — nothing to check against the −7% cut or +15%/+20% trailing-tighten rules.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.5069 @ mark $63,644.12 → **−2.12%**. Rule-12 index-tracking hold — exempt from the −7% cut and +15%/+20% trailing-tighten rules by design; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (~$58,518, BTC ~5.6% above that floor). Thesis (structural ETF weekly demand) unchanged — no invalidating news since this morning's scan.
+
+**Decision: NO ACTION.** No position at/near −7% (BTC-CORE exempt regardless, only −2.12%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+Sources: live MEXC `/ticker/price` + `account`.
+
+## 2026-08-17 — Afternoon Execution (Day 26, Monday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $63,480.28 (live).
+
+**Account/Positions (live):** 1 open (BTC-CORE, 0.0001808 BTC), USDT free $21.828861061116 (65.6%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk · 0/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $63,480.28 = $11.4772 vs cost $11.7556 → **−2.37%**. Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, Rule-12 exempt) nor ≥+7%. Exit triggers checked: macro NOT halted (MACRO ≈49, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~8.6% higher), no qualifying alt needs the capital. Thesis (structural ETF weekly demand) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week). Daily gate N/A (0 trades today).
+
+**STEP 5 — Watchlist re-check (today's RESEARCH-LOG: BNB, SOL, ADA, KII, BTC $64,700 reclaim/$62,000 support):** BNB $604.13 (−0.67%, $9.76M), SOL $75.32 (−0.09%, $29.04M), ADA $0.1733 (−1.81%, $2.83M), KII $0.0668 (−0.96%, $34.62M) — all red/flat, none clears the +2% afternoon entry gate. BTC $63,480 — below the $64,700 channel reclaim, above the $62,000 support; no breakout either way.
+
+**Full-board scan (chg ≥ +5% AND vol ≥ $3M): 2 qualifiers, both FAIL 3-Candle Gate:**
+- **XPLK +16.80%** ($3.23M) — extreme whipsaw (hourly candles +19%/+18%/−39%/+22%/−17%/+8%/−17%/+14%), last two hourly qvol collapsed to $774/$649 — dead, no exit liquidity. Classic thin-float pump-dump. Skip.
+- **PUMP +6.20%** ($5.22M) — choppy, no clean rising structure (last candle +0.07% on $63k qvol vs $609k first candle — volume declining trend, not rising). Skip.
+
+**Perplexity afternoon catalyst check** cited PUMP (+5%, buyback narrative) and HYPE (+4.12%) as leaders, plus BASECAT (+1,701%) and H (+28%). Checked live on MEXC: PUMP confirmed above (fails 3-Candle Gate) — buyback narrative already priced, not a fresh trigger; HYPE +3.02% but only $766k vol (well below $3M floor) and below the +5% leg; BASECAT and H not liquid/confirmed on MEXC (thin-float/other-venue, consistent with the pattern all week). No actionable OPTION-B override.
+
+**Decision: NO NEW ENTRY.** 25th+ consecutive scan with zero rules-clean liquid alt. Both full-board OPTION-A qualifiers (XPLK, PUMP) fail the 3-Candle Gate (spent/thin, no exit liquidity); watchlist majors all red/flat; Perplexity-cited gainers don't clear the gate live on MEXC. BTC-CORE at −2.37%, no exit trigger, thesis intact. Preserve $21.83 (65.6%) dry powder. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; **Perplexity (sonar)** afternoon catalyst check.
+
+## Aug 17 — EOD Snapshot (Day 26, Monday)
+
+**Portfolio:** $33.38 | **Cash:** $21.83 (65.4%) | **Day P&L:** +$0.13 (+0.40%) | **Phase P&L:** +$1.06 (+3.27%)
+
+| Ticker   | Qty       | Entry    | Price      | Day Chg | Unrealized P&L  | Stop                  |
+|----------|-----------|----------|------------|---------|-----------------|-----------------------|
+| BTC-CORE | 0.0001808 | ~$65,020 | $63,868.85 | +1.18%  | −$0.21 (−1.77%) | none (Rule 12 exempt) |
+
+**Notes:** Held BTC-CORE + dry powder, **0 trades** — flat, no-fill day across all Monday scan windows (evening-scan Asian-open, morning-execution, midday, afternoon-execution, now EOD). USDT free $21.828861061116 / locked $0 (canTrade=true); BTC 0.0001808 / locked $0 — confirmed live via `account`. locked=0 on both assets confirms no resting orders (BTC-CORE is Rule-12 stop-exempt — no stop / no +12% TP by design). Reachability gate PASS (BTC $63,868.85 at EOD). **Trades:** 0 today, 0/30 momentum trades this week (Aug 17-23, fresh count); 0 closed this week → circuit breaker N/A (needs ≥5 closed), daily gate N/A (0 trades today). Phase closed record 2W/0L. Positions 1/5. **Day P&L +$0.13 (+0.40%)** — portfolio Aug-16 EOD $33.2418 → $33.3764; the move is pure BTC-CORE mark-to-market (BTC $63,124.33 Aug-16 EOD → $63,868.85, +1.18%), cash flat at $21.8289. **Phase P&L +$1.06 (+3.27%)** vs $32.32 baseline — up from Aug-16's +$0.92 (+2.85%) on the firmer BTC mark; new phase high. **BTC-CORE (Rule 12):** cost $11.7556 → val $11.5475, −1.77% (improved from Aug-16's −2.92%). Index-tracking hold — no exit trigger: macro NOT halted (MACRO ≈49, SIZE_MULTIPLIER 0.6 >0), well above the −10% core exit (~$58,518, BTC ~8.4% higher), no qualifying alt needs the capital; thesis (structural ETF weekly demand) intact. Deployment 34.6% — within Rule 12's 30-40% core target; remaining 65.4% ($21.83) dry powder held for a qualifying alt breakout (alt-entry quality gates NOT loosened). **Regime note:** BTC recovered to ~$63.9k intraday (from $62.8k Asian-open low), still below the reclaimed $64,700 channel; F&G **31 (Fear)** (down from Aug-16's 34, per today's scans). 25th+ consecutive scan with no rules-clean liquid alt qualifier — today's full-board OPTION-A scans returned only spent/thin-float pumps (UPC, ETHFI, XPLK, PUMP) — all FAIL the 3-Candle Confirmation Gate (dead hourly qvol, no exit liquidity); no tradeable OPTION-B (CLARITY Act delayed = catalyst removed; Coldcard exploit risk-negative); watchlist majors (BNB/SOL/ADA/KII/TAO) dead-flat/red below all triggers; Perplexity-cited gainers (PUMP/HYPE/BASECAT/H/etc.) didn't confirm liquid on MEXC (thin-float/other-venue). **BTC buy-and-hold benchmark:** phase baseline BTC ~$63,500 (Jul 22 funding) → $63,868.85 now (~+0.58%); bot +3.27% phase — outperforming buy-and-hold by ~2.7 pts. **Watchlist into Aug 18:** BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), KII (fresh volume-confirmed breakout, not a fading spike), TAO (≥$3M vol holding ≥+5%), ETHFI (only on a FRESH volume-confirmed 3-candle breakout — this week's moves all spent), BTC $64,700 channel reclaim / $62,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at Tuesday morning-research.
+
+## 2026-08-18 — Evening Scan (Day 27, Tuesday, Asian open ~00:15 UTC)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,420.31 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.2%) / locked $0 (canTrade=true). No resting orders (locked=0 both assets). Positions 1/5 · Trades 0/30 wk · 0/8 today · week Aug 17-23, 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $64,420.31 = $11.6472 vs cost $11.7556 → **−0.92%** (improved from Monday EOD −1.77% on BTC recovery $63.9k→$64.4k). Rule-12 index-tracking hold — no stop/+12% TP by design. Not ≤ stop (none, exempt), not ≥ +12%. Exit triggers checked: macro NOT halted (MACRO ≈50, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~9.9% higher), no qualifying alt needs capital; thesis (structural ETF demand) intact. **No emergency action.** No other open positions.
+
+**STEP 4 — Catalyst/momentum scan:** Full-board OPTION-A (chg ≥ +5% AND qvol ≥ $3M) = **1 qualifier, FAILS 3-Candle Gate**: **KII +7.84%** ($41.85M) — real volume but last 3 hourly closes grind up (UP/UP/UP 0.06905→0.06972→0.07128→0.07149) on **collapsing** hourly qvol ($1375k→$699k→$187k) → spent leg, dead exit liquidity (Layer-3 Q3 fail); today's daily candle only $0.19M so far, price marginally above prev close $0.07128. Same exhaustion pattern KII showed Aug-17 AM. Skip. No tradeable OPTION-B: Perplexity (sonar) overnight = Coldcard hardware-wallet exploit (risk-NEGATIVE), ETF flows mixed-to-negative (2 straight down days), no protocol upgrade/listing/whale catalyst in last 6h. Perplexity-cited gainers (GPS +48%/$0.46M, ACE +14%/$0.74M, VELVET −43%, PORTAL −5%, SKY +2%) all thin/down/other-venue on MEXC — none clears $3M floor. CoinGecko trending (PENGU/VVV/PUMP/HYPE/RENDER) — none maps to a rules-clean OPTION-A on MEXC. Watchlist majors: BNB +0.55% ($9.1M), SOL +1.86% ($31.0M, closest but below +2% reclaim & no vol-confirmed +5% breakout), ADA −0.45%, ETH +1.87% ($172M), TAO +0.07% — none clears the entry gate. F&G **41 (Fear)** (up from 31 Monday).
+
+**Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 26th+ consecutive scan with zero rules-clean liquid alt. Sole OPTION-A qualifier (KII) fails the 3-Candle Gate on collapsing hourly volume (no exit liquidity); no tradeable OPTION-B (Coldcard exploit risk-negative, ETF flows soft); majors all below triggers into a Fear tape (F&G 41). BTC-CORE maintained (−0.92%, improved, no exit trigger, thesis intact). Preserve $21.83 (65.2%) dry powder; alt-entry quality gates NOT loosened. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m,1d` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + gainers scan.
+
+## 2026-08-18 — Morning Execution (Day 27, Tuesday)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,194.74 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.3%) / locked $0 (canTrade=true). No resting orders (locked=0 both assets). Positions 1/5 · Trades 0/30 wk · 0/8 today · week Aug 17-23, 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**Buy-side gate:** portfolio (1/5), daily (0/8), weekly (0/30) all PASS. Macro NOT halted (MACRO ≈52, SIZE_MULT 0.6).
+
+**Validated today's research (AM scan ~03:05 UTC) live:**
+- **Full-board OPTION-A (chg ≥ +5% AND qvol ≥ $3M) = 1 qualifier, FAILS 3-Candle Gate:** **KII +6.97%** ($42.8M). Hourly klines: last completed candles +1.84%/$508k → +1.84%/$470k on **collapsing** hourly qvol ($899k→$424k→$508k→$470k, current forming $33k). 24h % is off an earlier spike; recent action is low-volume grind, no fresh volume-confirmed breakout, no exit liquidity — same exhaustion pattern flagged Aug-16/17/18. Skip.
+- **No tradeable OPTION-B:** research found no verifiable fresh catalyst (ETF/upgrade/listing/whale) in 12h; ETF flows negative (−$56.2M latest).
+- **Watchlist majors all below entry gate:** SOL +0.33% ($33.0M), BNB −0.34% ($8.7M), ETH −0.24% ($154.7M), ADA −2.20% ($2.5M), XRP −0.70%, TAO −2.24% ($1.0M) — none clears the +2% reclaim / +5% vol-confirmed breakout trigger. BTC $64,192 — below the $64,700 channel reclaim, above $62,000 support.
+
+**BTC-CORE (Rule 12) check:** 0.0001808 BTC @ mark $64,191.55 = $11.6058 vs cost $11.7556 → **−1.27%** (improved from Monday EOD −1.77%). Index-tracking hold — exempt from stop/+12% TP. No exit trigger: macro NOT halted (SIZE_MULT 0.6 > 0), +9.7% above the −10% core exit floor (~$58,518), no qualifying alt needs the capital; thesis (structural ETF weekly demand) intact. **Maintained.**
+
+**Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 28th+ consecutive scan with zero rules-clean liquid alt. Sole OPTION-A qualifier (KII) fails the 3-Candle Gate on collapsing volume; no OPTION-B catalyst; majors below triggers into a Fear tape (F&G 41). BTC-CORE maintained (−1.27%, no exit trigger). Preserve $21.83 (65.3%) dry powder; alt-entry quality gates NOT loosened. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at midday.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; today's RESEARCH-LOG AM scan (Perplexity sonar catalyst).
+
+## 2026-08-18 — Position Sweep (ad hoc, ~06:11 AM CT)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,305.80 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap); locked=0 both assets confirms no resting orders. No alt positions — nothing to check against the −7% cut or +15%/+20% trailing-tighten rules.
+
+**BTC-CORE check:** val $11.6265 vs cost $11.7556 → **−1.10%**. Not near −7% (and Rule-12 core is exempt from the momentum cut/trail rules by design regardless); well above the −10% hard core-exit floor (~$58,518, BTC ~12.3% above it). Macro not halted, no qualifying alt needs the capital. Thesis (structural ETF weekly demand) unchanged since this morning's scan — no invalidating news.
+
+**Decision: NO ACTION.** No cut, no tightening, no thesis break. No ClickUp alert (no action taken per task instruction).
+
+Sources: live MEXC `/ticker/price` + `account`.
+
+## Aug 18 — EOD Snapshot (Day 27, Tuesday)
+
+**Portfolio:** $33.54 | **Cash:** $21.83 (65.1%) | **Day P&L:** +$0.16 (+0.49%) | **Phase P&L:** +$1.22 (+3.77%)
+
+| Ticker   | Qty       | Entry    | Price      | Day Chg | Unrealized P&L  | Stop                  |
+|----------|-----------|----------|------------|---------|-----------------|-----------------------|
+| BTC-CORE | 0.0001808 | ~$65,020 | $64,765.69 | +1.40%  | −$0.05 (−0.39%) | none (Rule 12 exempt) |
+
+**Notes:** Held BTC-CORE + dry powder, **0 trades** — flat, no-fill day across all Tuesday scan windows (evening-scan Asian-open, morning-execution, midday position-sweep, afternoon-execution, now EOD). USDT free $21.828861061116 / locked $0 (canTrade=true); BTC 0.0001808 / locked $0 — confirmed live via `account`. locked=0 on both assets confirms no resting orders (BTC-CORE is Rule-12 stop-exempt — no stop / no +12% TP by design). Reachability gate PASS (BTC $64,765.69 at EOD). **Trades:** 0 today, 0/30 momentum trades this week (Aug 17-23); 0 closed this week → circuit breaker N/A (needs ≥5 closed), daily gate N/A (0 trades today). Phase closed record 2W/0L. Positions 1/5. **Day P&L +$0.16 (+0.49%)** — portfolio Aug-17 EOD $33.3764 → $33.5385; the move is pure BTC-CORE mark-to-market (BTC $63,868.85 Aug-17 EOD → $64,765.69, +1.40%), cash flat at $21.8289. **Phase P&L +$1.22 (+3.77%)** vs $32.32 baseline — up from Aug-17's +$1.06 (+3.27%) on the firmer BTC mark; new phase high. **BTC-CORE (Rule 12):** cost $11.7556 → val $11.7096, −0.39% (improved from Aug-17's −1.77%). Index-tracking hold — no exit trigger: macro NOT halted (MACRO ≈52, SIZE_MULTIPLIER 0.6 >0), well above the −10% core exit (~$58,518, BTC ~10.7% higher), no qualifying alt needs the capital; thesis (structural ETF weekly demand) intact. Deployment 34.9% — within Rule 12's 30-40% core target; remaining 65.1% ($21.83) dry powder held for a qualifying alt breakout (alt-entry quality gates NOT loosened). **Regime note:** BTC firmed to ~$64.8k, testing the $64,700 channel reclaim from below; F&G **41 (Fear)** (up from Aug-17's 31, per today's scans). 28th+ consecutive scan with no rules-clean liquid alt qualifier — today's full-board OPTION-A scans returned only spent/thin-float pumps (KII, TUT, UPC) — all FAIL the 3-Candle Confirmation Gate (collapsing hourly qvol, no exit liquidity); no tradeable OPTION-B (Coldcard exploit risk-negative; ETF flows negative −$56.2M latest); watchlist majors (SOL/BNB/ETH/ADA/TAO) flat/red below all triggers; Perplexity-cited gainers (GPS/ACE/PORTAL/etc.) didn't confirm liquid on MEXC (thin-float/other-venue). **BTC buy-and-hold benchmark:** phase baseline BTC ~$63,500 (Jul 22 funding) → $64,765.69 now (~+1.99%); bot +3.77% phase — outperforming buy-and-hold by ~1.8 pts. **Watchlist into Aug 19:** BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), KII (fresh volume-confirmed breakout, not a fading spike), TAO (≥$3M vol holding ≥+5%), ETHFI (only on a FRESH volume-confirmed 3-candle breakout — this week's moves all spent), BTC $64,700 channel reclaim / $62,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at Wednesday morning-research.
+
+Sources: live MEXC `/ticker/price` + `account` (EOD); today's scan windows (evening/morning/midday/afternoon) in TRADE-LOG + RESEARCH-LOG.
+
+## 2026-08-19 — Evening Scan (Day 28, Wednesday, Asian open ~00:15 UTC)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,563.76 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.1%) / locked $0 (canTrade=true). No resting orders (locked=0 both assets). Positions 1/5 · Trades 0/30 wk · 0/8 today · week Aug 17-23, 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $64,563.76 = $11.6931 vs cost $11.7556 → **−0.53%** (BTC firm ~$64.6k). Rule-12 index-tracking hold — no stop/+12% TP by design. Not ≤ stop (none, exempt), not ≥ +12%. Exit triggers checked: macro NOT halted (MACRO ≈50, SIZE_MULT 0.6), ~+10.3% above −10% core exit (~$58,518), no qualifying alt needs capital; thesis (structural ETF demand) intact. **No emergency action.** No other open positions.
+
+**STEP 4 — Catalyst/momentum scan:** Full-board OPTION-A (chg ≥ +5% AND qvol ≥ $3M) = **1 qualifier, FAILS 3-Candle Gate**: **PUMP +10.46%** ($4.93M) — up-leg (+4.32%/+1.38%/+2.79% on rising $455k→$575k→$496k qvol) has **rolled over**: last completed hourly candle **−1.32% on collapsing $165k qvol** (vs $496k prior), price $0.003057 fading off $0.003098 high — spent leg, thinning exit liquidity, no fresh continuation. Skip. No tradeable OPTION-B: Perplexity (sonar) overnight = macro-only + risk-NEGATIVE (crypto mcap −3.3% on the day; ETF flows −$4.5B week; GMX exploit, Trezor data breach, Cryptomixer takedown; Fed minutes + White House crypto meeting = headline risk, not a buy trigger). Perplexity-cited gainers all **fail the $3M liquidity floor on MEXC**: ACE +46.28% ($1.10M), ALPINE +19.33% ($0.22M), LA +13.61% ($0.09M), ACM +7.38% ($0.06M), VVV +5.67% ($0.26M), POL +2.64% ($0.19M) — thin-float/other-venue, no exit liquidity. Watchlist majors below triggers: BNB −0.42% ($8.72M), SOL +1.05% ($35.70M), ETH +0.07% ($141.5M), ADA −0.34% ($2.10M), KII −5.57% ($27.89M), TAO −3.03% ($1.01M), ETHFI −2.22% ($1.93M) — none clears the +2% reclaim / +5% vol-confirmed breakout gate. F&G **46 (Fear)** (up from 41 Tuesday).
+
+**STEP 5 — Watchlist into Aug 19 day session:** BNB (≥+2% reclaim/hold above $605 w/ vol), SOL (volume-confirmed ≥+5% leadership breakout — closest major, $35.7M vol but only +1.05%), ETH (≥+2% vol-confirmed reclaim), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), KII (fresh volume-confirmed breakout, not a fading spike — currently −5.57%), PUMP (only on a FRESH volume-confirmed 3-candle breakout — tonight's leg spent), BTC $64,700 channel reclaim / $62,000 support. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only.
+
+**Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 29th+ consecutive scan with zero rules-clean liquid alt. Sole OPTION-A qualifier (PUMP) fails the 3-Candle Gate (leg rolled over, collapsing volume); no tradeable OPTION-B (negative security/ETF backdrop, macro-only catalysts); Perplexity-cited gainers all sub-$3M thin-float on MEXC; majors below triggers into a Fear tape (F&G 46, mcap −3.3%). BTC-CORE maintained (−0.53%, no exit trigger, thesis intact). Preserve $21.83 (65.1%) dry powder; alt-entry quality gates NOT loosened. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); **Perplexity (sonar)** overnight catalyst + 6h news + gainers scan.
+
+## 2026-08-19 — Midday Scan (Day 28, Wednesday, position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,518.67 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.1%) / locked $0 (canTrade=true). No resting orders (locked=0 both assets). Positions 1/5. No alt positions — nothing to check against the −7% cut or +15%/+20% trailing-tighten rules this run.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.6650 @ mark $64,518.67 → **−0.77%**. Rule-12 index-tracking hold — exempt from the −6%/−7% cut and +15%/+20% trailing-tighten rules by design; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (~$58,518, BTC ~11.0% above that floor). Thesis (structural ETF weekly demand) unchanged since this morning's evening-scan — no invalidating news.
+
+**Decision: NO ACTION.** No position at/near −7% (BTC-CORE exempt regardless, and only −0.77%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+Sources: live MEXC `/ticker/price` + `account`.
+
+## 2026-08-19 — Afternoon Execution (Day 28, Wednesday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,970.10 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.0%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk (Aug 17-23) · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $64,970.10 = $11.7466 vs cost $11.7556 → **−0.08%** (essentially flat). Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, exempt) nor ≥+7%. Exit triggers checked: macro NOT halted (MACRO ≈53, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~11.0% higher), no qualifying alt needs the capital. Thesis (structural ETF weekly demand) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week). Daily gate N/A (0 trades today).
+
+**STEP 5 — Full-board scan (chg ≥ +2% AND vol ≥ $3M): 6 qualifiers found. Note: MEXC `priceChangePercent` returns a fraction (e.g. `0.6618` = 66.18%), not a pre-multiplied percentage — earlier same-session parse using the raw value undercounted qualifiers to zero; corrected by ×100.**
+
+- **BTW +66.96%** ($13.86M) — 3-Candle Gate **FAIL**: last 3 completed hourly closes all above yesterday's close ($0.433) but hourly qvol **declining** ($683k→$283k→$157k) — post-spike exhaustion, no exit liquidity. Skip.
+- **RAZOR +44.23%** (ticker/24hr rolling-window stat) — 1d klines show the calendar-day close is actually **down** vs yesterday ($0.00075 vs $0.0013, ~−42%); hourly closes whipsawing, qvol erratic/dead ($142k→$2.3k→$2.0k→$430). Pump-and-dump, no exit liquidity. Skip.
+- **PUMP +7.70%** ($6.16M) — 3-Candle Gate **FAIL**: last 3 completed hourly closes ($0.003004/$0.00301/$0.003032) all **below** yesterday's close ($0.003098) — hasn't reclaimed prior day, rolled-over leg. Skip.
+- **SOL +3.05%** ($36.4M) — on today's watchlist. 3-Candle Gate **PASS** (last 3 completed hourly closes 77.38/77.55/78.41 all > yesterday close $77.05; hourly qvol rising 835k→1.45M→4.51M). 1h market structure bullish (HH/HL), price > session VWAP, MEXC vol ≥$3M. **EMA-200 Trend Filter FAIL: price $78.41 < 200-day EMA $81.41** — daily downtrend, this is a bounce not a reversal. RSI(14) 76.9 = overbought (−1pt). No fresh (<24-48h) verifiable whale/VC signal found (Perplexity results all stale/undated/>7d old, recycled whale-tracker pages) → no OPTION_B override. **Skip — downtrend pump per EMA-200 rule.**
+- **ETH +2.19%** ($174.2M) — on today's watchlist. 3-Candle Gate **PASS** (last 3 completed hourly closes 1920.23/1923.07/1937.44 all > yesterday close $1917.63; hourly qvol rising 3.30M→5.35M→21.8M). 1h market structure bullish (HH/HL), price > session VWAP. **EMA-200 Trend Filter FAIL: price $1937.44 < 200-day EMA $2005.44** — same downtrend-bounce pattern as SOL. RSI(14) 72.1 = overbought (−1pt). No fresh verifiable whale/VC signal (same stale-citation issue). **Skip — downtrend pump per EMA-200 rule.**
+- **XRP +2.07%** ($11.5M) — 3-Candle Gate PASS on the same technical basis, but **not on today's watchlist and no clear new catalyst identified** → fails the "watchlist OR catalyst" entry criterion. Not evaluated further (EMA-200 not checked; disqualified upstream). Skip.
+
+**Perplexity smart-money check (SOL/ETH):** returned SOL whale-accumulation and ETH 50k-ETH-staked items, but nearly all citations are undated or dated days-to-months old (recycled whale-tracker/evergreen pages); none is a clean, freshly-timestamped (<24-48h) accumulation event per the strategy's Whale Alert scoring window. Treated as non-fresh — no OPTION_B override, consistent with the pattern flagged all week for Perplexity-cited gainers/catalysts.
+
+**Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 32nd+ consecutive scan with zero rules-clean liquid alt. For the first time this week, two full-board qualifiers (SOL, ETH) cleared the momentum/volume/3-Candle-Gate/market-structure checks, but both **fail the EMA-200 Trend Filter** (price below the 200-day daily EMA — a bounce inside a larger downtrend, not a confirmed reversal) with no fresh OPTION_B catalyst to override; BTW/RAZOR/PUMP are spent or dumping pumps; XRP has no watchlist/catalyst basis. BTC-CORE at −0.08% (flat), no exit trigger, thesis intact. Preserve $21.83 (65.0%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan; worth re-checking SOL/ETH if price reclaims the 200-day EMA (SOL >$81.41, ETH >$2005.44) with volume confirmation.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m,1d` (200-day EMA, RSI14, VWAP, market structure) + `account`; **Perplexity (sonar)** smart-money/catalyst check.
+
+## Aug 19 — EOD Snapshot (Day 28, Wednesday)
+
+**Portfolio:** $33.88 | **Cash:** $21.83 (64.4%) | **Day P&L:** +$0.34 (+1.01%) | **Phase P&L:** +$1.56 (+4.82%)
+
+| Ticker   | Qty       | Entry    | Price      | Day Chg | Unrealized P&L  | Stop                  |
+|----------|-----------|----------|------------|---------|-----------------|-----------------------|
+| BTC-CORE | 0.0001808 | ~$65,020 | $66,646.84 | +2.90%  | +$0.29 (+2.50%) | none (Rule 12 exempt) |
+
+**Notes:** Held BTC-CORE + dry powder, **0 trades** — flat, no-fill day across all Wednesday scan windows (evening-scan Asian-open, morning-execution, midday sweep, afternoon-execution, now EOD). USDT free $21.828861061116 / locked $0 (canTrade=true); BTC 0.0001808 / locked $0 — confirmed live via `account`. locked=0 on both assets confirms no resting orders (BTC-CORE is Rule-12 stop-exempt — no stop / no +12% TP by design). Reachability gate PASS (BTC $66,646.84 at EOD). **Trades:** 0 today, 0/30 momentum trades this week (Aug 17-23); 0 closed this week → circuit breaker N/A (needs ≥5 closed), daily gate N/A (0 trades today). Phase closed record 2W/0L. Positions 1/5. **Day P&L +$0.34 (+1.01%)** — portfolio Aug-18 EOD $33.5385 → $33.8786; pure BTC-CORE mark-to-market (BTC $64,765.69 Aug-18 EOD → $66,646.84, +2.90%), cash flat at $21.8289. **Phase P&L +$1.56 (+4.82%)** vs $32.32 baseline — up from Aug-18's +$1.22 (+3.77%) on BTC's rally; new phase high. **BTC-CORE (Rule 12):** cost $11.7556 → val $12.0497, **+2.50%** (best mark of the phase, up from Aug-18's −0.39%). Index-tracking hold — no exit trigger: macro NOT halted (MACRO ≈53, SIZE_MULTIPLIER 0.6 >0), ~13.9% above the −10% core exit (~$58,518), no qualifying alt needs the capital; thesis (structural ETF weekly demand) intact. Deployment 35.6% — within Rule 12's 30-40% core target; remaining 64.4% ($21.83) dry powder held for a qualifying alt breakout (alt-entry quality gates NOT loosened). **Regime note:** BTC ripped ~+2.9% to $66.6k, reclaiming the $64.7k channel and pushing to phase highs; F&G **46 (Fear)** per today's scans. 32nd+ consecutive scan with no rules-clean liquid alt qualifier — today's full-board scans surfaced two clean momentum candidates (SOL +3.05%/$36.4M, ETH +2.19%/$174M — both PASS 3-Candle Gate + market structure) but **both FAIL the EMA-200 Trend Filter** (price below the 200-day daily EMA = downtrend bounce, not reversal) with no fresh OPTION_B whale/VC catalyst to override; other movers (BTW +67%, RAZOR +44%, PUMP, KII, TUT) all spent/dumping pumps failing the 3-Candle Gate or liquidity floor; Perplexity-cited gainers (ACE/ALPINE/LA/VVV/POL) all sub-$3M thin-float on MEXC. **BTC buy-and-hold benchmark:** phase baseline BTC ~$63,500 (Jul 22 funding) → $66,646.84 now (~+4.96%); bot +4.82% phase — essentially matching buy-and-hold (~−0.1 pt), the give-back from holding 64.4% cash on a strong BTC up-day (prior-day lead of ~1.8 pts compressed as BTC rallied). **Watchlist into Aug 20:** SOL (re-qualifies only on a volume-confirmed reclaim of the 200-day EMA >$81.41), ETH (reclaim >$2005.44 w/ volume), BNB (≥+2% reclaim/hold above $605 w/ vol), ADA (SEC-approval headline + $0.20/+5% 3-candle breakout), KII (fresh volume-confirmed breakout, not a fading spike), TAO (≥$3M vol holding ≥+5%), BTC $62,000 support / continuation above $66.6k. BTC-CORE monitored for macro-halt / −10% ($58,518) exit only. Re-evaluate at Thursday morning-research.
+
+Sources: live MEXC `/ticker/price` + `account` (EOD); today's scan windows (evening/morning/midday/afternoon) in TRADE-LOG + RESEARCH-LOG.
