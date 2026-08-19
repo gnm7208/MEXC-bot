@@ -18,3 +18,12 @@ the next scheduled run (morning-execution, midday, eod-scan will also fail).
 
 ### Decision
 CIRCUIT_BREAKER (credentials unavailable, not a trading halt)
+
+### Addendum — 2026-08-19 09:45 ET (morning-execution)
+Alpaca credentials ARE set and working on this run (`account` call succeeded:
+equity $100,000, cash $100,000, no open positions/orders). Issue was isolated
+to the earlier morning-research run's environment. Per CIRCUIT_BREAKER
+protocol, no Trade Ideas exist for today (research was skipped), so
+morning-execution ran STEP 2 monitor-only (nothing to monitor — zero open
+positions) and took no trades. Next morning-research run should re-verify
+credentials by execution before assuming they're still missing.
