@@ -118,6 +118,41 @@ if len(gains) >= 14:
 else:
     rsi = 50
 
+# Previous day Value Area High (volume profile from hourly bars)
+from datetime import datetime, timedelta, timezone as _tz
+_today = datetime.now(_tz.utc)
+_d = 1
+while True:
+    _prev = _today - timedelta(days=_d)
+    if _prev.weekday() < 5: break
+    _d += 1
+h1p_data = fetch(f'{DATA}/v2/stocks/{SYMBOL}/bars?timeframe=1Hour&start={_prev.strftime("%Y-%m-%dT13:30:00Z")}&end={_prev.strftime("%Y-%m-%dT20:00:00Z")}&feed=iex')
+prev_h1  = h1p_data.get('bars', [])
+if len(prev_h1) >= 3:
+    _total_vol = sum(float(b['v']) for b in prev_h1)
+    _poc_bar   = max(prev_h1, key=lambda b: float(b['v']))
+    _poc_price = (float(_poc_bar['h']) + float(_poc_bar['l'])) / 2
+    _poc_idx   = prev_h1.index(_poc_bar)
+    _included  = {_poc_idx}
+    _accum     = float(_poc_bar['v'])
+    _rest      = sorted(
+        [i for i in range(len(prev_h1)) if i != _poc_idx],
+        key=lambda i: abs((float(prev_h1[i]['h'])+float(prev_h1[i]['l']))/2 - _poc_price)
+    )
+    for _i in _rest:
+        if _accum >= _total_vol * 0.70: break
+        _included.add(_i); _accum += float(prev_h1[_i]['v'])
+    _va      = [prev_h1[i] for i in _included]
+    vah      = max(float(b['h']) for b in _va)
+    val      = min(float(b['l']) for b in _va)
+    poc_price = _poc_price
+else:
+    vah       = highs[-2] if len(highs) >= 2 else live_close
+    val       = lows[-2]  if len(lows)  >= 2 else live_close * 0.97
+    poc_price = (vah + val) / 2
+above_vah   = live_close > vah
+pct_abv_vah = (live_close - vah) / vah * 100
+
 # Intraday change
 chg_pct = (live_close - prev_close) / prev_close * 100
 
@@ -143,11 +178,12 @@ rr         = target_pct / stop_pct
 
 print(f'{SYMBOL}: chg={chg_pct:+.2f}% vol={vol_ratio:.1f}x RSI={rsi:.0f} SMA50={"above" if above_sma50 else "BELOW"}')
 print(f'  ATR={daily_atr:.3f} ({atr_pct:.2f}%) stop={stop_pct:.1f}% target={target_pct:.1f}% R:R={rr:.2f}')
+print(f'  Volume Profile: POC=${poc_price:.2f} | VAH=${vah:.2f} | VAL=${val:.2f} | above_vah={above_vah} ({pct_abv_vah:+.1f}%)')
 print(f'  Score (excl. catalyst): {score}/15 | dist_from_prev_high: {dist_from_high:.1f}%')
 PYEOF
 
   Add catalyst points from STEP 4 to get FINAL_SCORE.
-  Skip if: FINAL_SCORE < 6 OR R:R < 1.5 OR price BELOW 50-day SMA OR SECTOR_BLOCKED.
+  Skip if: FINAL_SCORE < 6 OR R:R < 1.5 OR price BELOW 50-day SMA OR above_vah=False (waived only for EARNINGS_BEAT or ACQUISITION catalyst) OR SECTOR_BLOCKED.
   If MARKET_SENTIMENT = BEARISH: raise threshold to FINAL_SCORE >= 9.
 
 STEP 6 — Write RESEARCH-LOG entry:
@@ -162,8 +198,8 @@ STEP 6 — Write RESEARCH-LOG entry:
   (list from `alpaca.sh movers` output)
 
   ### Signal Table
-  | Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
-  |--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+  | Ticker | Chg% | Vol× | RSI | SMA50 | VAH | Abv VAH? | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+  |--------|------|------|-----|-------|-----|----------|----------|---------|-------|----------|---------|-----|-----------|
 
   ### Trade Ideas
   1. TICKER — Score: X/15 | Notional: $X | Entry ~$X | Stop $X (-X.X% ATR) | Target $X (+X.X% ATR)

@@ -87,6 +87,7 @@ Record both order IDs in TRADE-LOG so they can be updated or cancelled.
 - Weekly circuit breaker NOT active; daily gate NOT active
 - Ticker NOT in SECTOR_BLOCKED sector
 - Price above 50-day SMA (no downtrend entries)
+- **VAH breakout**: price is above previous day's Value Area High (institutional acceptance above prior value area). If prev-day hourly data unavailable, use prev-day high as proxy.
 - Not already holding this ticker
 
 ## TRADE-LOG Entry Format

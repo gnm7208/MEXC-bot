@@ -61,7 +61,51 @@ STEP 4 — Re-validate each Trade Idea from RESEARCH-LOG:
      bash scripts/alpaca.sh quote SYMBOL
      If spread > 0.3%: SKIP this ticker (liquidity risk)
 
-  3. Re-check volume and momentum with live data:
+  3. Confirm price is above previous day's Value Area High (VAH breakout gate):
+     python3 - <<'PYEOF'
+import json, urllib.request, os
+from datetime import datetime, timedelta, timezone as _tz
+SYMBOL = 'TICKER'
+KEY    = os.environ['ALPACA_API_KEY_ID']
+SECRET = os.environ['ALPACA_API_SECRET_KEY']
+DATA   = os.environ.get('ALPACA_DATA_URL','https://data.alpaca.markets')
+def fetch(url):
+    req = urllib.request.Request(url, headers={
+        'APCA-API-KEY-ID': KEY, 'APCA-API-SECRET-KEY': SECRET})
+    with urllib.request.urlopen(req, timeout=10) as r:
+        return json.loads(r.read())
+snap = fetch(f'{DATA}/v2/stocks/{SYMBOL}/snapshot?feed=iex')
+live_price = float(snap.get('latestTrade', {}).get('p', snap.get('latestQuote', {}).get('ap', 0)))
+_today = datetime.now(_tz.utc)
+_d = 1
+while True:
+    _prev = _today - timedelta(days=_d)
+    if _prev.weekday() < 5: break
+    _d += 1
+h1p = fetch(f'{DATA}/v2/stocks/{SYMBOL}/bars?timeframe=1Hour&start={_prev.strftime("%Y-%m-%dT13:30:00Z")}&end={_prev.strftime("%Y-%m-%dT20:00:00Z")}&feed=iex')
+prev_h1 = h1p.get('bars', [])
+if len(prev_h1) >= 3:
+    _total = sum(float(b['v']) for b in prev_h1)
+    _poc   = max(prev_h1, key=lambda b: float(b['v']))
+    _poc_p = (float(_poc['h']) + float(_poc['l'])) / 2
+    _poc_i = prev_h1.index(_poc)
+    _inc   = {_poc_i}; _acc = float(_poc['v'])
+    _rest  = sorted([i for i in range(len(prev_h1)) if i != _poc_i],
+                    key=lambda i: abs((float(prev_h1[i]['h'])+float(prev_h1[i]['l']))/2 - _poc_p))
+    for _i in _rest:
+        if _acc >= _total * 0.70: break
+        _inc.add(_i); _acc += float(prev_h1[_i]['v'])
+    vah = max(float(prev_h1[i]['h']) for i in _inc)
+else:
+    d1 = fetch(f'{DATA}/v2/stocks/{SYMBOL}/bars?timeframe=1Day&limit=2&feed=iex')
+    d1b = d1.get('bars', [])
+    vah = float(d1b[-2]['h']) if len(d1b) >= 2 else live_price
+above_vah = live_price > vah
+print(f'VAH gate: live=${live_price:.2f} vs VAH=${vah:.2f} → {"PASS" if above_vah else "FAIL — below VAH, skip unless EARNINGS_BEAT/ACQUISITION"}')
+PYEOF
+     If above_vah = FAIL: SKIP (unless catalyst is EARNINGS_BEAT or ACQUISITION).
+
+  4. Re-check volume and momentum with live data:
      python3 - <<'PYEOF'
 import json, urllib.request, os
 SYMBOL = 'TICKER'
@@ -90,8 +134,8 @@ else:
     print('No intraday bars available')
 PYEOF
 
-  4. Not already in SECTOR_BLOCKED sector (from RESEARCH-LOG).
-  5. Not already holding this ticker.
+  5. Not already in SECTOR_BLOCKED sector (from RESEARCH-LOG).
+  6. Not already holding this ticker.
 
 STEP 5 — Layer 3 review (answer before EVERY order):
   Q1 — Bear case: strongest argument AGAINST entering right now?
