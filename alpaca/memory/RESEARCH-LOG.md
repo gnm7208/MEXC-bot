@@ -27,3 +27,13 @@ protocol, no Trade Ideas exist for today (research was skipped), so
 morning-execution ran STEP 2 monitor-only (nothing to monitor — zero open
 positions) and took no trades. Next morning-research run should re-verify
 credentials by execution before assuming they're still missing.
+
+### EOD Scan — 2026-08-19
+Open positions held overnight: none
+Positions cut: none
+Tomorrow's watchlist: WMT (earnings before open, confirmed — largest grocer/
+private employer per CNBC preview); TGT/LOW/TJX/ADI/EL were TODAY's (8/19)
+earnings, not tomorrow's — Perplexity query returned mostly same-day results,
+low confidence on other names for 8/20. No FDA/upgrade/acquisition catalysts
+surfaced.
+Account equity EOD: $100,000.00
