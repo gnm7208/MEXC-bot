@@ -1911,3 +1911,23 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **HOLD — BTC-CORE maintained, NO NEW ALT ENTRY.** Macro not halted (SIZE_MULT 0.6) but the full board returns 2 OPTION-A qualifiers that both fail the 3-Candle Gate (spent/collapsing-volume pumps), no verifiable OPTION-B, majors below triggers into a Fear tape (F&G 46). BTC-CORE −1.06%, no exit trigger, thesis intact. Preserve $21.83 (65.2%) dry powder; alt-entry quality gates NOT loosened. **Not urgent — no ClickUp/notification.** Re-evaluate at morning-execution.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** catalyst + ETF-flow scan.
+
+## 2026-08-19 — Morning Execution (Day 28, Wednesday, 09:00 CT)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,219.52 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.2%) / locked $0 (canTrade=true). Positions 1/5 · Trades 0/30 wk (Aug 17-23) · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A. All buy-side portfolio/daily/weekly gates PASS.
+
+**Position check — BTC-CORE:** 0.0001808 BTC @ mark $64,219.52 = $11.611 vs cost $11.7556 → **−1.23%**. Rule-12 index-tracking hold — exempt from stop/+7%/+12% TP. Exit triggers: macro NOT halted, well above −10% core exit ($58,518, BTC ~9.7% higher), no qualifying alt needs the capital, thesis (structural ETF weekly demand) intact. **No action.**
+
+**Candidate re-validation (live at execution):**
+- **PUMP** +5.46% ($5.56M) — clears OPTION-A surface, but 3-Candle Gate **FAIL**: hourly closes faded 0.003078→0.003026→0.003004→0.002966→0.002957, last candle qvol collapsed to $18.9k. Rolled-over/spent leg, no exit liquidity. Skip.
+- **BTW** +58.08% ($6.74M) — clears OPTION-A surface but even more extended than research's +43%. 3-Candle Gate **FAIL**: 3 spike candles ($1.9M qvol) then rolled over off the 0.569 peak (dn/UP-tiny/dn) on collapsing qvol ($1.23M→$166k→$35k). Post-spike exhaustion, chasing +58% into a Fear tape. Skip.
+- Watchlist majors below gate: SOL +1.39% ($32.2M), KII +0.67% ($27.2M), ETH +0.79%, BNB ~flat, ADA +1.1% — none clears +5% vol-confirmed / +2% reclaim.
+
+**Gates:** Weekly circuit breaker N/A (0 closed). Daily gate N/A (0 trades today).
+
+### Decision
+**NO TRADE — BTC-CORE maintained.** Live execution confirms this morning's research: both OPTION-A qualifiers (PUMP/BTW) fail the 3-Candle Gate (spent/collapsing-volume pumps, no exit liquidity), no verifiable OPTION-B catalyst, majors below triggers into a Fear tape (F&G 46). 31st+ consecutive scan with zero rules-clean liquid alt. BTC-CORE −1.23%, no exit trigger, thesis intact. Preserve $21.83 (65.2%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired). Re-evaluate at midday.
+
+Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/24hr` + `/klines?interval=60m`.
