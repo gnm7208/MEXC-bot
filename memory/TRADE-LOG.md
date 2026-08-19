@@ -1253,3 +1253,15 @@ Sources: live MEXC `/ticker/price` + `account` (EOD); today's scan windows (even
 **Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 29th+ consecutive scan with zero rules-clean liquid alt. Sole OPTION-A qualifier (PUMP) fails the 3-Candle Gate (leg rolled over, collapsing volume); no tradeable OPTION-B (negative security/ETF backdrop, macro-only catalysts); Perplexity-cited gainers all sub-$3M thin-float on MEXC; majors below triggers into a Fear tape (F&G 46, mcap −3.3%). BTC-CORE maintained (−0.53%, no exit trigger, thesis intact). Preserve $21.83 (65.1%) dry powder; alt-entry quality gates NOT loosened. No market buys → no stop-limit orders needed (BTC-CORE Rule-12 stop-exempt). **No ClickUp alert (no trade fired, no state change).** Re-evaluate at morning-research.
 
 Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m` + `account`; [alt.me F&G](https://api.alternative.me/fng/); **Perplexity (sonar)** overnight catalyst + 6h news + gainers scan.
+
+## 2026-08-19 — Midday Scan (Day 28, Wednesday, position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,518.67 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.1%) / locked $0 (canTrade=true). No resting orders (locked=0 both assets). Positions 1/5. No alt positions — nothing to check against the −7% cut or +15%/+20% trailing-tighten rules this run.
+
+**BTC-CORE (Rule 12) check:** cost $11.7556 (avg fill ~$65,020) → val $11.6650 @ mark $64,518.67 → **−0.77%**. Rule-12 index-tracking hold — exempt from the −6%/−7% cut and +15%/+20% trailing-tighten rules by design; exit only on macro halt, capital needed for a qualifying alt, or −10% core drawdown (~$58,518, BTC ~11.0% above that floor). Thesis (structural ETF weekly demand) unchanged since this morning's evening-scan — no invalidating news.
+
+**Decision: NO ACTION.** No position at/near −7% (BTC-CORE exempt regardless, and only −0.77%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
+
+Sources: live MEXC `/ticker/price` + `account`.
