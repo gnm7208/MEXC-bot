@@ -1265,3 +1265,28 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **Decision: NO ACTION.** No position at/near −7% (BTC-CORE exempt regardless, and only −0.77%). No +15%/+20% winners to tighten. No thesis break. No ClickUp alert (no action taken per task instruction).
 
 Sources: live MEXC `/ticker/price` + `account`.
+
+## 2026-08-19 — Afternoon Execution (Day 28, Wednesday, US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $64,970.10 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (65.0%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk (Aug 17-23) · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $64,970.10 = $11.7466 vs cost $11.7556 → **−0.08%** (essentially flat). Rule-12 index-tracking hold — no stop/+7%/+12% TP by design; not at ≤stop (none, exempt) nor ≥+7%. Exit triggers checked: macro NOT halted (MACRO ≈53, SIZE_MULT 0.6), well above −10% core exit (~$58,518, BTC ~11.0% higher), no qualifying alt needs the capital. Thesis (structural ETF weekly demand) intact. **No action.** No other open positions to check.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week). Daily gate N/A (0 trades today).
+
+**STEP 5 — Full-board scan (chg ≥ +2% AND vol ≥ $3M): 6 qualifiers found. Note: MEXC `priceChangePercent` returns a fraction (e.g. `0.6618` = 66.18%), not a pre-multiplied percentage — earlier same-session parse using the raw value undercounted qualifiers to zero; corrected by ×100.**
+
+- **BTW +66.96%** ($13.86M) — 3-Candle Gate **FAIL**: last 3 completed hourly closes all above yesterday's close ($0.433) but hourly qvol **declining** ($683k→$283k→$157k) — post-spike exhaustion, no exit liquidity. Skip.
+- **RAZOR +44.23%** (ticker/24hr rolling-window stat) — 1d klines show the calendar-day close is actually **down** vs yesterday ($0.00075 vs $0.0013, ~−42%); hourly closes whipsawing, qvol erratic/dead ($142k→$2.3k→$2.0k→$430). Pump-and-dump, no exit liquidity. Skip.
+- **PUMP +7.70%** ($6.16M) — 3-Candle Gate **FAIL**: last 3 completed hourly closes ($0.003004/$0.00301/$0.003032) all **below** yesterday's close ($0.003098) — hasn't reclaimed prior day, rolled-over leg. Skip.
+- **SOL +3.05%** ($36.4M) — on today's watchlist. 3-Candle Gate **PASS** (last 3 completed hourly closes 77.38/77.55/78.41 all > yesterday close $77.05; hourly qvol rising 835k→1.45M→4.51M). 1h market structure bullish (HH/HL), price > session VWAP, MEXC vol ≥$3M. **EMA-200 Trend Filter FAIL: price $78.41 < 200-day EMA $81.41** — daily downtrend, this is a bounce not a reversal. RSI(14) 76.9 = overbought (−1pt). No fresh (<24-48h) verifiable whale/VC signal found (Perplexity results all stale/undated/>7d old, recycled whale-tracker pages) → no OPTION_B override. **Skip — downtrend pump per EMA-200 rule.**
+- **ETH +2.19%** ($174.2M) — on today's watchlist. 3-Candle Gate **PASS** (last 3 completed hourly closes 1920.23/1923.07/1937.44 all > yesterday close $1917.63; hourly qvol rising 3.30M→5.35M→21.8M). 1h market structure bullish (HH/HL), price > session VWAP. **EMA-200 Trend Filter FAIL: price $1937.44 < 200-day EMA $2005.44** — same downtrend-bounce pattern as SOL. RSI(14) 72.1 = overbought (−1pt). No fresh verifiable whale/VC signal (same stale-citation issue). **Skip — downtrend pump per EMA-200 rule.**
+- **XRP +2.07%** ($11.5M) — 3-Candle Gate PASS on the same technical basis, but **not on today's watchlist and no clear new catalyst identified** → fails the "watchlist OR catalyst" entry criterion. Not evaluated further (EMA-200 not checked; disqualified upstream). Skip.
+
+**Perplexity smart-money check (SOL/ETH):** returned SOL whale-accumulation and ETH 50k-ETH-staked items, but nearly all citations are undated or dated days-to-months old (recycled whale-tracker/evergreen pages); none is a clean, freshly-timestamped (<24-48h) accumulation event per the strategy's Whale Alert scoring window. Treated as non-fresh — no OPTION_B override, consistent with the pattern flagged all week for Perplexity-cited gainers/catalysts.
+
+**Decision: NO NEW ENTRY — 0 market buys, 0 stop-limit orders.** 32nd+ consecutive scan with zero rules-clean liquid alt. For the first time this week, two full-board qualifiers (SOL, ETH) cleared the momentum/volume/3-Candle-Gate/market-structure checks, but both **fail the EMA-200 Trend Filter** (price below the 200-day daily EMA — a bounce inside a larger downtrend, not a confirmed reversal) with no fresh OPTION_B catalyst to override; BTW/RAZOR/PUMP are spent or dumping pumps; XRP has no watchlist/catalyst basis. BTC-CORE at −0.08% (flat), no exit trigger, thesis intact. Preserve $21.83 (65.0%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired, no state change). Re-evaluate at evening-scan; worth re-checking SOL/ETH if price reclaims the 200-day EMA (SOL >$81.41, ETH >$2005.44) with volume confirmation.
+
+Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?interval=60m,1d` (200-day EMA, RSI14, VWAP, market structure) + `account`; **Perplexity (sonar)** smart-money/catalyst check.
