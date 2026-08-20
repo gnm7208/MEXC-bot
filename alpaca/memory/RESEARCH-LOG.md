@@ -108,3 +108,12 @@ Spread-gate follow-up (flagged at 09:45): not a systemic feed problem. Live IEX
 quotes — SPY 0.004%, AAPL 0.013% (both tight), TGT 3.029% (still wide). The wide
 print is TGT-specific thin IEX book depth, not a broken quote endpoint. Gate is
 behaving correctly; no config change warranted.
+
+### EOD Scan — 2026-08-20
+Open positions held overnight: none
+Positions cut: none
+Tomorrow's watchlist: BJ (BJ's Wholesale Club, pre-market earnings, EPS est $1.17
+vs $1.14 LY, confirmed); UI (Ubiquiti, pre-market earnings, EPS est ~$4.03-4.15);
+BKE (Buckle, pre-market earnings, EPS est $0.81). No upgrade/acquisition/FDA
+catalysts surfaced — earnings-only calendar for 8/21.
+Account equity EOD: $100,000.00
