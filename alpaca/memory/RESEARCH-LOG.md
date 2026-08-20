@@ -84,3 +84,18 @@ none
 
 ### Decision
 TRADE: TGT $400 notional (pending morning-execution at 9:45 AM ET for entry + stop/TP order placement)
+
+### Addendum — 2026-08-20 09:45 ET (morning-execution)
+Account: equity $100,000, cash $100,000, 0 open positions, 0 open orders — nothing to
+monitor. Daily/weekly gates clear (0 trades today, 0 open positions).
+
+TGT re-validation:
+- Price: $159.02 (RESEARCH-LOG entry ~$159.14) — flat, momentum intact, no reversal/chase.
+- Spread gate: bid $151.24 / ask $159.49 → 5.455% (re-checked 3x, stable, not a transient
+  glitch). Max allowed is 0.3%. **SKIP — liquidity risk gate failed.**
+
+No trade executed today. Note: IEX-feed-only quotes can show inflated spreads vs true
+consolidated NBBO for large-caps like TGT, but the rulebook gate is on the IEX quote as
+returned by `scripts/alpaca.sh quote` with no discretion carve-out — followed as written
+rather than overridden on a data-quality guess. Flagging for review: if this recurs on
+liquid large-caps, worth checking whether the data feed/quote endpoint needs adjustment.
