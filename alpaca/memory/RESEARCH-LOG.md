@@ -99,3 +99,12 @@ consolidated NBBO for large-caps like TGT, but the rulebook gate is on the IEX q
 returned by `scripts/alpaca.sh quote` with no discretion carve-out — followed as written
 rather than overridden on a data-quality guess. Flagging for review: if this recurs on
 liquid large-caps, worth checking whether the data feed/quote endpoint needs adjustment.
+
+### Addendum — 2026-08-20 12:30 ET (midday)
+Positions: 0 | Open orders: 0 | Equity $100,000 (all cash). Nothing to monitor —
+no stops/TPs to verify, no thesis checks, no trailing tightens. No-op run.
+
+Spread-gate follow-up (flagged at 09:45): not a systemic feed problem. Live IEX
+quotes — SPY 0.004%, AAPL 0.013% (both tight), TGT 3.029% (still wide). The wide
+print is TGT-specific thin IEX book depth, not a broken quote endpoint. Gate is
+behaving correctly; no config change warranted.
