@@ -158,3 +158,15 @@ none
 
 ### Decision
 TRADE: DE $500 notional (pending morning-execution at 9:45 AM ET for entry + stop/TP order placement)
+
+### Addendum — 2026-08-21 09:45 ET (morning-execution)
+Account: equity $100,000, cash $100,000, 0 open positions, 0 open orders — nothing to
+monitor. Daily/weekly gates clear (0 trades today, 0 open positions).
+
+DE re-validation:
+- Price: $622.92 (RESEARCH-LOG entry ~$620.72) — +0.35%, momentum intact, no reversal/chase.
+- Spread gate: bid $591.23 / ask $644.67 → 9.039% (re-checked 3x, stable). Max allowed is
+  0.3%. **SKIP — liquidity risk gate failed.**
+
+Same IEX-thin-book pattern as TGT on 8/20 (see that day's addenda) — followed the rulebook
+as written, no discretion carve-out. No trade executed today.
