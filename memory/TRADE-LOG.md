@@ -1316,3 +1316,17 @@ Sources: live MEXC `/ticker/price` + `account` (EOD); today's scan windows (even
 **Decision: NO ACTION.** Only open position is Rule-12-exempt and up sharply with no exit trigger tripped. No alt positions to cut/ladder/tighten. Flagging the routine gap via notification since macro/F&G hasn't been re-verified in ~2 days despite a large BTC move.
 
 Sources: live MEXC `/ticker/price` + `/ticker/bookTicker` (quote) + `account`; `git log` on memory/ vs alpaca/memory/ for gap confirmation.
+
+## 2026-08-21 — Afternoon Execution (Day 30, Friday, US market open)
+
+**⚠ Routine gap persists:** no memory/RESEARCH-LOG.md entry exists for Aug-20 or Aug-21 — morning-research never ran either day, so there is no TODAY's Macro Gate (MACRO_SCORE/SIZE_MULTIPLIER), SECTOR_BLOCKED list, or SIGNAL_GATE to read per STEP 1. Per routine design (treat missing/undeterminable macro state like MACRO_HALTED), running STEP 2-3 monitor-only this pass; **skipping STEP 4-9 (circuit breaker calc, signal scan, new entries)** — cannot responsibly size or gate a new alt entry without today's macro/sector data. Same gap flagged at today's midday scan; now spans evening-scan Aug-19 night through this run (Aug-20 full day + Aug-21 morning + midday + now afternoon).
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,118.02 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 / locked $0 (canTrade=true); BTC locked $0. `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk (Aug 17-23) · 0/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Position check:** BTC-CORE 0.0001808 BTC @ mark $77,118.02 = $13.9429 vs cost $11.7556 → **+18.61%** (new phase-high mark, up from midday's +18.50%). Rule-12 index-tracking hold — exempt from stop/+12% TP by design. Exit triggers: macro state stale/not re-verified (gap above) but no signal of a halt; ~31.8% above the −10% core exit floor (~$58,518, BTC price basis); no qualifying alt needs the capital (no alt-entry data available anyway this run); thesis (structural ETF weekly demand) intact and reinforced. **No action.** No other open positions to check; no alt positions for ladder/cut/tighten.
+
+**Decision: NO NEW ENTRY, NO ACTION on BTC-CORE.** Sole position is Rule-12-exempt and continuing to run up with no exit trigger tripped. Layer 2 signal scan (STEP 5) skipped this run — no valid MACRO_SCORE/SIZE_MULTIPLIER/SECTOR_BLOCKED to gate entries against (RESEARCH-LOG has not been written since Aug-19 Morning Execution). Alt-entry quality gates NOT loosened to force a scan around the missing data. ClickUp alert sent: routine gap now 2+ days, needs investigation (scheduler/cron for MEXC-bot routines, distinct from `alpaca/` which kept firing).
+
+Sources: live MEXC `/ticker/price` + `account`.
