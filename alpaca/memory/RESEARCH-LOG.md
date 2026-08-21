@@ -170,3 +170,15 @@ DE re-validation:
 
 Same IEX-thin-book pattern as TGT on 8/20 (see that day's addenda) — followed the rulebook
 as written, no discretion carve-out. No trade executed today.
+
+### EOD Scan — 2026-08-21
+Open positions held overnight: none (0 open positions, 0 open orders all day —
+DE skipped at morning-execution on liquidity/spread gate, no other trade taken)
+Positions cut: none
+Tomorrow's watchlist: none confirmed — next trading day is Monday 2026-08-24 (today
+is Friday). Perplexity earnings-catalyst query returned only today's (8/21) pre-market
+reporters (UI, BJ, BEKE), already stale by close; no Monday pre-market catalyst names
+surfaced. Movers scan: gainers led by TSLA +5.80%, DE +4.96%, GS +3.84%; losers MRVL
+-5.42%, PM -1.69% — no fresh catalyst-confirmed setups from this list, re-screen at
+Monday morning-research.
+Account equity EOD: $100,000.00
