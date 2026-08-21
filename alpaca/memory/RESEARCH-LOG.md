@@ -117,3 +117,44 @@ vs $1.14 LY, confirmed); UI (Ubiquiti, pre-market earnings, EPS est ~$4.03-4.15)
 BKE (Buckle, pre-market earnings, EPS est $0.81). No upgrade/acquisition/FDA
 catalysts surfaced — earnings-only calendar for 8/21.
 Account equity EOD: $100,000.00
+
+## 2026-08-21 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL
+Futures: S&P +0.1-0.3% | Nasdaq +0.2-0.6% (mild rebound after Thursday's sharp
+selloff; still fragile — elevated bond yields, Middle East tensions weighing).
+Risk events today: S&P Global Flash Mfg/Services PMI 9:45 AM ET, FOMC Minutes
+(July meeting) 2:00 PM ET. No CPI/NFP. Standard threshold (score >= 6).
+Note: WMT -9.23% today (worst session in 4 years) after Q2 miss/guide cut —
+not a candidate (long-only, no shorts).
+
+### Movers Scanned
+Gainers: DE +6.90% (221,977 vol), MRVL +5.79% (722,246), TMO +2.26%, NOW +2.02%,
+DHR +2.00%, LRCX +1.12%, DLR +1.04%, PM +0.90%, CCI +0.89%, XOM +0.87%
+Losers: WMT -9.23%, ISRG -5.89%, SYK -3.61%, MS -3.21%, PANW -2.88%
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| DE   | +6.90% | 4.0x | 60 | above | EARNINGS_BEAT (Q3 EPS $5.10 vs est, revenue beat, FY guide raised) | +3 | 9/15 | 4.0% | 8.0% | 2.00 | YES — high conviction |
+| MRVL | +5.79% | 1.2x | 66 | above | ANALYST_UPGRADE (Oppenheimer PT $300, BMO initiates Outperform $250, on Google AI-chip deal) | +2 | 4/15 | 5.4% | 10.9% | 2.00 | NO — vol <1.5x, below score threshold |
+
+### Trade Ideas
+1. DE — Score: 9/15 | Notional: $500 | Entry ~$620.72 | Stop ~$595.89 (-4.0% ATR) | Target ~$670.38 (+8.0% ATR)
+   Catalyst: Q3 FY26 EPS $5.10 beat, revenue $12.61B beat, FY26 net income guide raised
+   to $4.75-5.0B low end. Construction/forestry strength offsetting ag weakness;
+   management flagged 2026 as possible ag-cycle trough. Still reacting day after report.
+   RSI 60 (sweet spot), above SMA50, -4.3% below prev-day high (not chasing), vol 4.0x avg.
+   Sector: Industrials (Ag/Construction Equipment)
+
+   NOTE — MRVL not taken: only 1.2x volume (needs 1.5x for points), RSI 66 slightly
+   outside 40-65 sweet spot. Catalyst real (Google AI silicon deal, $12.2B warrant,
+   multiple analyst PT raises) but earnings not until 8/27 — elevated gap risk into
+   a stop/TP window with no fresh volume confirmation. FINAL_SCORE 4/15 < 6 minimum.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+TRADE: DE $500 notional (pending morning-execution at 9:45 AM ET for entry + stop/TP order placement)
