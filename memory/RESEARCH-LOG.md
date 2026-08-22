@@ -1931,3 +1931,44 @@ Sources: live MEXC `/ticker/24hr` (full board) + `/ticker/price` + `/klines?inte
 **NO TRADE — BTC-CORE maintained.** Live execution confirms this morning's research: both OPTION-A qualifiers (PUMP/BTW) fail the 3-Candle Gate (spent/collapsing-volume pumps, no exit liquidity), no verifiable OPTION-B catalyst, majors below triggers into a Fear tape (F&G 46). 31st+ consecutive scan with zero rules-clean liquid alt. BTC-CORE −1.23%, no exit trigger, thesis intact. Preserve $21.83 (65.2%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired). Re-evaluate at midday.
 
 Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/24hr` + `/klines?interval=60m`.
+
+## 2026-08-22 — Evening Scan (Day 33, Saturday, Asian open ~03:00 UTC)
+
+**⚠ Routine gap — worse, not resolved:** flagged at Aug-21 midday/afternoon (2+ days missing evening-scan Aug-19 night through morning-research/execution Aug-20/21, midday Aug-20, daily-summary Aug-20). Gap now extends further: **no RESEARCH-LOG or TRADE-LOG entry exists for Aug-20, Aug-21 morning, or any of Aug-22 before this run** — morning-research and morning-execution have not fired at all since Aug-19 Morning Execution (Day 28). This evening-scan is the first MEXC-bot memory write in 3 days. During the blackout BTC ran **$64,520 → $77,953 (+20.8%)** on a Treasury-buyback/CLARITY-Act/short-squeeze rally — a major regime shift the bot's structured research never priced in.
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,953.44 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (60.8%) / locked $0 (canTrade=true). No resting orders (locked=0 both assets). Positions 1/5 · Trades 0/30 wk (Aug 17-23) · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+### Market Context
+- BTC: **$77,953.44** — up ~+20.8% since Aug-19 EOD ($66,646.84); short-squeeze/liquidity rally (Treasury buybacks, White House crypto meeting, CLARITY Act momentum, record short liquidations $2.7-3.4B)
+- Fear & Greed: **71 (Greed)** — sharp reversal from 46 (Fear) on Aug-19; regime flip Fear→Greed during the routine blackout
+- ETF flows: US spot BTC ETF +$606M (Thu, highest since May 1); XRP spot ETF +$13.2M net daily inflows
+- Sector: broad alt rally — ENA +40-48%, XRP +12-18%, PEPE +16-27%, ZEC +25-29%, SOL/ETH cited +16-20% moves this week per Perplexity
+- No BTC-specific negative catalyst; MANTRA Chain exploit (unrelated asset, offline) and BounceBit $3M exploit (unrelated) are the only security items — neither touches BTC-CORE thesis
+
+### STEP 3 — Position check
+BTC-CORE 0.0001808 BTC @ mark $77,953.44 = $14.094 vs cost $11.7556 → **+19.89%** (new phase-high mark, up sharply from Aug-19's +2.50%). Rule-12 index-tracking hold — exempt from stop/+12% TP by design; no stop_price/target on file (not a momentum entry). Exit triggers checked: no signal of macro halt (F&G swung to Greed, not halt-territory; MACRO_SCORE not formally recomputed this run — Layer 1 belongs to morning-research, which has not fired); ~33% above the −10% core exit floor (~$58,518, cost basis); no qualifying alt currently needs the capital; thesis (structural ETF weekly demand) intact and strongly reinforced by the $606M inflow print. **No emergency action.** No other open positions.
+
+### STEP 4/5 — Overnight catalyst scan + watchlist build
+Perplexity (sonar) overnight + 6h news + gainers scans: rally is macro/liquidity-driven (Treasury buybacks, Jackson Hole/Powell speech risk ahead, CLARITY Act optimism), not a single crypto-native shock; broad short-covering amplifying the move. CoinGecko trending: BTC, PEPE, SUI, PIPEDOG, XRP, LIT, ZEC, ETH. Whale Alert: unavailable (free-tier endpoint returned no data).
+
+Coins in 2+ sources (CoinGecko trending + Perplexity gainers): **PEPE**, **XRP**. MEXC live check:
+- **XRP** +12.53% ($143.4M qvol) — clears OPTION-A (chg≥+5%, vol≥$3M) easily; also has fresh OPTION-B catalyst (spot ETF +$13.2M daily inflow) and 2+ source confirmation (CoinGecko trending + Perplexity gainers + ETF-flow news). Strongest candidate on the board tonight. **Not evaluated for entry this run** — evening-scan builds the watchlist only; full Layer 2/3 gate + 3-Candle Confirmation + EMA-200 check belongs to morning-execution.
+- **PEPE** +27.1% ($2.14M qvol) — fails the $3M liquidity floor on MEXC. Watchlist only, re-check volume next scan.
+- Also elevated on MEXC: SUI +14.01% ($4.78M), ZEC +29.46% ($14.85M), ENA +22.23% ($5.69M), PUMP +6.39% ($23.39M) — all clear OPTION-A on the volume/change surface; none evaluated for entry this run (same reason — belongs to morning-execution's full gate stack, and today's MACRO_SCORE/SIZE_MULTIPLIER/SECTOR_BLOCKED/SIGNAL_GATE have not been computed since Aug-19 due to the routine gap).
+
+**Thesis integrity check on BTC-CORE:** no overnight news breaks the structural-ETF-demand thesis; if anything the $606M inflow print reinforces it. No thesis-broken exit.
+
+### Tomorrow's watchlist
+**XRP** (ETF inflow catalyst + 2-source momentum + clears OPTION-A on MEXC — top priority for morning-execution's full gate stack), ZEC (+29%/$14.85M, no clear catalyst yet — verify not a spent leg), ENA (+22%/$5.69M, described as week-long trend not single-day spike — check EMA-200/3-Candle), SUI (+14%/$4.78M), PUMP (+6.39%/$23.4M — recheck 3-Candle, prior weeks saw this ticker roll over repeatedly), PEPE (only if MEXC volume clears $3M). BTC-CORE: no exit trigger; monitor for macro-halt / −10% ($58,518) / capital-needed-for-alt only.
+
+### Risk Factors / Open Issues
+- **Routine gap is the dominant risk right now, not the market.** Morning-research (Layer 1 Macro Gate) has not run since Aug-19 — today's MACRO_SCORE, SIZE_MULTIPLIER, SECTOR_BLOCKED, and SIGNAL_GATE are all undetermined. If morning-research also fails to fire tomorrow, XRP and the other qualifiers above cannot be responsibly gated/sized per strategy (per Aug-21 afternoon-execution precedent: treat missing macro state like MACRO_HALTED — monitor-only until Layer 1 data exists).
+- **Today (Aug-22) is the stated end of AGGRESSIVE MODE** per TRADING-STRATEGY.md header ("Aug 4-22... revert after Aug 22"). Strategy reversion is out of scope for evening-scan but flagged for weekly-review / the user's attention.
+- BTC-CORE is up ~20% unrealized on a position that has no formal stop/target (Rule-12 exempt by design) — worth a manual sanity check on whether Rule-12's exit criteria still make sense at this much larger unrealized gain, especially heading into a strategy-mode transition.
+
+### Decision
+**HOLD — BTC-CORE maintained (+19.89%, no exit trigger, thesis intact/reinforced). NO NEW ENTRY this run** — evening-scan does not execute trades; XRP flagged as the top watchlist candidate for morning-execution's full Layer 2/3 gate once today's macro state exists. Preserve $21.83 (60.8%) dry powder. **Routine-gap + regime-shift + XRP ETF-inflow catalyst are ClickUp-worthy** given the gap has now spanned Aug-19 night through all of Aug-22 pre-evening and BTC moved +20.8% blind to the bot's own research cadence — alert sent this run.
+
+Sources: live MEXC `/ticker/24hr` (full board tickers) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + 6h news + gainers scans; Whale Alert (unavailable this run); `git log`/`grep` on memory/ for gap confirmation.
