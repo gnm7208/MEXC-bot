@@ -1348,3 +1348,37 @@ Sources: live MEXC `/ticker/price` + `account`.
 **Decision: NO NEW ENTRY, NO ACTION on BTC-CORE.** Preserve $21.83 (60.8%) dry powder. Tomorrow's watchlist: XRP (priority), ZEC, ENA, SUI, PUMP, PEPE (if MEXC vol clears $3M). **ClickUp alert sent** — routine gap (Aug-19 night → today, no Layer 1 macro data for 3 days) + 20.8% blind BTC move + XRP ETF-catalyst watchlist flag, plus note that today (Aug 22) is TRADING-STRATEGY.md's stated AGGRESSIVE MODE end date (revert decision out of evening-scan's scope, flagged for user/weekly-review).
 
 Sources: live MEXC `/ticker/24hr` (spot-check tickers) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + 6h news + gainers scans; `grep`/`git log` on memory/ for gap confirmation.
+
+---
+
+## 2026-08-22 — Trade Exit: BTC-CORE (Rule 12)
+
+**SELL** BTCUSDT | Qty: 0.0001808 | Exit: ~$77,099 effective (order API fill: $76,269.29) | Realized P&L: **+$2.184 (+18.58%)** | Reason: Subscription ending — unmonitored live position risk; proactive close to lock gains.
+
+- Entry cost: $11.7556 (0.0001808 BTC @ ~$65,020 entry price)
+- Exit proceeds: $13.9396 (verified from account balance delta)
+- Portfolio after close: **$35.7685 USDT (100% cash)**
+- MEXC order ID: C02__719767563646464002046
+
+---
+
+## Aug 22 — EOD Snapshot (Day 31, Saturday — PHASE FINAL)
+
+**Portfolio:** $35.7685 | **Cash:** $35.7685 (100%) | **Day P&L:** +$1.89 (+5.58%) | **Phase P&L:** +$3.45 (+10.67%)**
+
+| Ticker   | Qty | Entry | Price | Day Chg | Unrealized P&L | Stop |
+|----------|-----|-------|-------|---------|----------------|------|
+| — | — | — | — | — | — | — |
+
+**Notes:** AGGRESSIVE MODE ended Aug 22 (final day). BTC-CORE closed manually at ~$77,099 effective to secure gains before subscription lapse — no unmonitored open positions. Portfolio 100% USDT. Phase summary:
+
+- **Phase:** Jul 22 – Aug 22, 2026 (31 days)
+- **Starting capital:** $32.32 USDT (4,500 KSh via M-Pesa → Remitano P2P)
+- **Final balance:** $35.7685 USDT
+- **Phase P&L:** +$3.4485 (+**10.67%**)
+- **Closed record:** 3W / 0L (2 momentum trades + BTC-CORE Rule-12 exit, all profitable)
+- **BTC-CORE:** +18.58% realized (entry ~$65,020, exit ~$77,099)
+- **BTC buy-and-hold benchmark:** ~$63,500 → ~$77,099 = **+21.4%** — bot trailed by ~10.7 pt due to 65% cash deployment during 30+ consecutive dry scans
+- **Next phase:** CONSERVATIVE MODE — revert to conservative rules (memory/TRADING-STRATEGY-CONSERVATIVE.md)
+
+Sources: live MEXC `close BTCUSDT` + `account` (final balance confirmed).
