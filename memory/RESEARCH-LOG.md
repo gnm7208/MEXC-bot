@@ -2050,3 +2050,21 @@ None — zero OPTION-A qualifiers on the full board scan; no candidate reached S
 Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/24hr` (full USDT board); [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** alt-breadth, catalyst, whale, VC, trader-call, sector-momentum, and Reddit scans (all cross-checked live on MEXC; several found stale/weekly-conflated).
 
 Sources: live MEXC `/ticker/24hr` (full board tickers) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + 6h news + gainers scans; Whale Alert (unavailable this run); `git log`/`grep` on memory/ for gap confirmation.
+
+## 2026-08-22 — Morning Execution (Day 34, Saturday, last scheduled AGGRESSIVE MODE day, 09:00 CT)
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,356.20 (live).
+
+**Account/Positions (live `account`):** 1 open (BTC-CORE 0.0001808 BTC), USDT free $21.828861061116 (60.9%) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 on both assets confirms no resting orders. Positions 1/5 · Trades 0/30 wk (Aug 17-23) · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A. All buy-side portfolio/daily/weekly gates PASS (no candidates to gate — see below).
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research, Day 34):** MACRO_SCORE 69, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Trade Ideas: **zero rules-clean OPTION-A/B qualifiers** — full MEXC board scan returned 0 candidates (last night's alt leaders XRP/ZEC/ENA/SUI/PUMP all rolled off their 24h window and sat flat). Nothing to re-validate in STEP 5 — no ticker list to process.
+
+**STEP 3 — Position check (BTC-CORE, Rule 12):** 0.0001808 BTC @ mark $77,356.20 = $13.986 vs cost $11.7556 → **+18.97%**. Rule-12 index-tracking hold — exempt from stop/+3%-tighten/+12% TP by design (no stop_price/target/ladder_price on file). A) Emergency stop: N/A (exempt, and P&L well above -10% backstop). B) Take-profit: N/A (exempt from +12% TP). C) Trailing tighten: N/A (exempt). D) Peak decay: N/A (no stop on file to measure decay against). E) Ladder: N/A (exempt, no ladder_price). F) Near-stop pre-alert: N/A (no stop_price). Exit triggers checked: macro NOT halted (SIZE_MULT 0.6 > 0), ~34.4% above the −10% core exit floor (BTC ~$58,518 vs cost basis), no qualifying alt needs the capital (0 candidates today), thesis (structural ETF weekly demand) intact/reinforced. **No action.**
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5-9 — New entries / ladder buys:** Skipped — RESEARCH-LOG Trade Ideas list is empty (0 qualifiers), no ladder-eligible positions (BTC-CORE has no ladder_price, Rule-12 exempt). No tickers to validate, no Layer 3 review, no orders.
+
+**Decision: NO TRADE — BTC-CORE maintained.** Confirms this morning's research: macro tradeable (score 69, not halted) but zero rules-clean alt candidates on the full board; BTC-CORE +18.97%, no exit trigger, thesis intact. Deployment 39.1%, within Rule-12's 30-40% core band. Preserve $21.83 (60.9%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired, no gate breach, no new anomaly — Anomaly A already alerted this morning's research run). Re-evaluate at midday.
+
+Sources: live MEXC `/api/v3/account` + `/ticker/price` + `account`; today's morning-research entry (this file, above).
