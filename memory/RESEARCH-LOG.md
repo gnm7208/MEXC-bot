@@ -1971,4 +1971,82 @@ Coins in 2+ sources (CoinGecko trending + Perplexity gainers): **PEPE**, **XRP**
 ### Decision
 **HOLD — BTC-CORE maintained (+19.89%, no exit trigger, thesis intact/reinforced). NO NEW ENTRY this run** — evening-scan does not execute trades; XRP flagged as the top watchlist candidate for morning-execution's full Layer 2/3 gate once today's macro state exists. Preserve $21.83 (60.8%) dry powder. **Routine-gap + regime-shift + XRP ETF-inflow catalyst are ClickUp-worthy** given the gap has now spanned Aug-19 night through all of Aug-22 pre-evening and BTC moved +20.8% blind to the bot's own research cadence — alert sent this run.
 
+## 2026-08-22 — Morning Research (Day 34, Saturday, Aggressive Mode — last scheduled day)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 71 (Greed)| 71            | 30%    |
+| BTC 24h %     | +5.74%    | 100           | 25%    |
+| BTC Dominance | 58.61%    | 42.6          | 20%    |
+| Alt Breadth   | ~45% (mixed — see note) | 45 | 15%  |
+| Loss Rate     | 0/0 this wk (default) | 75 | 10%    |
+**MACRO_SCORE: 69 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED (just under the 70 full-size threshold)
+
+Note on Alt Breadth: Perplexity/other-venue sources cited large 24h altcoin gains (ETH +9.6%, ADA +16%, XRP +13%, ZEC +25-29%, ENA +40%, PEPE +16%) but these are stale/weekly-conflated (dated Aug-20/21, describing the CNBC-reported "BTC +22% this week" move, not today). Live MEXC 24hr tickers for the same coins all show near-flat +0.1% to +0.5% — the rally already consolidated. Scored breadth on MEXC's live board (authoritative for our tradeable liquidity), not the stale citations.
+
+### Sector Status
+SECTOR_BLOCKED: none (only 2 closed trades ever, both ADA/L1 wins — 2W/0L)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses — no losses on record)
+Sector P&L (recent, all-time): L1 2W / 0L | DeFi 0W / 0L | AI 0W / 0L | Gaming 0W / 0L
+Self-learning: low n/a (0 trades) | mid n/a (0) | high n/a (0) — insufficient sample (only 2 closed trades total, both scored ≥9); no band or sector flags qualify (min 3 trades). | signal_gate: CLEAR (0 consec losses)
+Anomaly scan: A: **detected** (33+ consecutive HOLD/no-new-alt scans, MACRO_SCORE 69 ≥ 40 tradeable — ClickUp alert sent this run) | C: insufficient data (0 stop-outs) | D: insufficient data (2 closed trades < 10)
+
+### Account Snapshot
+- Portfolio value: **$36.04** (BTC-CORE $14.21 + USDT $21.83)
+- Free USDT: **$21.83 (60.6%)** | locked $0 (canTrade=true)
+- Open positions: **1** (BTC-CORE 0.0001808 BTC) · Positions 1/5
+- Trades this week (Aug 17-23): **0/30** · 0/8 today · 0 closed → circuit breaker N/A, daily gate N/A
+- Deployment: 39.4% (BTC-CORE only) — within Rule-12's 30-40% core band, already satisfying the benchmark-tracking mandate
+- Reachability gate PASS (BTC $78,609.31 live)
+
+### Market Context
+- BTC: **$78,609.31 (+5.74% 24h)**, $1.13B MEXC qvol — continuing the Treasury-buyback/CLARITY-Act short-squeeze rally flagged at last night's evening scan ($77,953 → $78,609)
+- BTC Dominance: **58.61%** (up from 56.56% Aug-19 — BTC leading the move, alts lagging today)
+- Fear & Greed: **71 (Greed)** — holding the Fear→Greed flip from overnight
+- Total mcap 24h: **+3.46%**
+- ETF flows (per evening-scan): BTC spot ETF +$606M Thu (highest since May); XRP spot ETF +$13.2M/day
+- Live MEXC board is flat across majors and yesterday's leaders (XRP +0.20%, ZEC +0.45%, ENA +0.22%, PUMP +0.09%, SUI +0.23%, PEPE +0.29%) — BTC-only move today, alt momentum has cooled since last night
+
+### Smart Money Signals
+- Whale Alert: API unavailable this run (free-tier endpoint error, as in prior scans). Perplexity-sourced (soft, unverified) mentions: BTC/ETH/XRP whale accumulation (CryptoQuant), INJ flagged as top alt whale-buying case — no exchange→wallet tx data/timestamps to score formally.
+- VC/fund moves: no actionable 2026 buy/sell today — a16z/Paradigm reported raising new funds ($2B/$1.5B), Multicoin AUM info only (largest position HYPE, per portfolio page, not a fresh move). Not scoreable.
+- Top trader calls: CryptoKaleo mentioned $HMM (not on MEXC) and an older DOGE post — nothing fresh/actionable.
+- DeFiLlama gainers: endpoint unavailable this run.
+- CoinGecko trending top 10: ZEC, BTC, PEPE, HYPE, LIT, SUI, PIPEDOG, XRP, PUMP, ETH — top-5 (ZEC/BTC/PEPE/HYPE/LIT) eligible for +1 pt each if they also clear OPTION-A live.
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| ZEC    | 0         | 0      | 0          | 0             | +1            | 0 (0.45%)| +1 ($17.3M)| —  | n/a       | n/a        | 2 (SCORE_PRE — below 3, watchlist only, no MEXC deep-check) |
+| PEPE   | 0         | 0      | 0          | 0             | +1            | 0 (0.29%)| 0 ($2.3M)| —   | n/a       | n/a        | 1 (watchlist only) |
+| HYPE   | 0         | 0      | 0          | 0             | +1            | 0 (0.12%)| +1 ($6.4M)| —  | n/a       | n/a        | 2 (watchlist only) |
+| XRP    | +2 (soft) | 0      | 0          | 0             | 0             | 0 (0.20%)| +1 ($160M)| —  | n/a       | n/a        | 3 (soft, whale not formally scoreable) — below deep-check bar |
+
+No ticker cleared SCORE_PRE ≥ 3 with a hard (formally-scoreable) signal. Full-board OPTION-A scan (chg ≥ +5% AND qvol ≥ $3M) across the **entire MEXC USDT board**: **0 qualifiers**. No coin proceeds to STEP 6.
+
+### MEXC Live Prices (eligible candidates only)
+None — zero OPTION-A qualifiers on the full board scan; no candidate reached STEP 6.
+
+### News on Held Positions
+- BTC-CORE: 0.0001808 BTC, cost $11.7556 → val $14.2126 @ $78,609.31 = **+20.90%** (new phase high, up from Aug-22 evening's +19.89%). Rule-12 index-tracking hold — exempt from stop/+12% TP by design; no stop/target on file. Exit triggers checked: macro NOT halted (SIZE_MULT 0.6), ~34% above the −10% core exit floor (~$58,518 cost-basis-equivalent), no qualifying alt needs the capital, thesis (structural ETF weekly demand, reinforced by the $606M Thu inflow print) intact. **No action.**
+
+### Trade Ideas
+1. **NO rules-clean alt entry — full-board OPTION-A (chg ≥ +5% AND qvol ≥ $3M) = 0 qualifiers.** Yesterday evening's leaders (XRP +12.5%, ZEC +29%, ENA +22%, SUI +14%, PUMP +6.4%) have all rolled off their 24h window and now sit flat (+0.1% to +0.5%) — the alt leg of the rally already happened and consolidated; BTC is the only thing still moving today (+5.74%).
+2. No tradeable OPTION-B: no fresh single-day catalyst (ETF/upgrade/listing/whale) confirmed live and actionable; ADA CME-anniversary/TAO ETF-filing themes are known multi-week narratives, not today-triggers.
+3. **Watchlist:** ZEC, HYPE, PEPE, XRP (CoinGecko trending + soft whale mentions — recheck if any reclaims +5%/$3M live), INJ (soft whale-accumulation mention, not on today's board scan — verify MEXC listing/liquidity next scan). BTC-CORE: no exit trigger; monitor for macro-halt / −10% (~$58,518) / capital-needed-for-alt only.
+
+### Risk Factors
+- Macro gate: BTC dominance rising (58.61%, up from 56.56% Aug-19) while alts stall — capital may be rotating back into BTC, not broadening into alts; watch for a breadth deterioration if this persists.
+- Blocked sectors: none.
+- **33rd+ consecutive HOLD/no-new-alt scan with tradeable macro (score 69)** — Anomaly A fired, ClickUp alert sent this run (first time this specific anomaly has actually been alerted despite being noted in prose for weeks).
+- Event risk: Jackson Hole/Fed commentary cited as a near-term macro swing factor per Perplexity.
+- **Strategy-mode note (not actioned this run):** today, 2026-08-22, is the last date of AGGRESSIVE MODE per TRADING-STRATEGY.md ("Aug 4-22, revert after Aug 22"). Flagged for weekly-review / user decision — morning-research does not self-revert strategy mode.
+
+### Decision
+**HOLD — BTC-CORE maintained (+20.90%, no exit trigger, thesis intact/reinforced). NO NEW ALT ENTRY.** Macro tradeable (MACRO_SCORE 69, SIZE_MULT 0.6, not halted) but the full MEXC board returns **zero** OPTION-A qualifiers — last night's alt leaders have rolled off and gone flat; no verifiable OPTION-B catalyst. Preserve $21.83 (60.6%) dry powder; alt-entry quality gates NOT loosened. Deployment 39.4% already within Rule-12's core band — no under-deployment action needed. **ClickUp sent this run:** Anomaly A (33+ consecutive HOLD scans, tradeable macro). Re-evaluate at morning-execution.
+
+Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/24hr` (full USDT board); [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** alt-breadth, catalyst, whale, VC, trader-call, sector-momentum, and Reddit scans (all cross-checked live on MEXC; several found stale/weekly-conflated).
+
 Sources: live MEXC `/ticker/24hr` (full board tickers) + `/ticker/price` + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/search/trending`; **Perplexity (sonar)** overnight catalyst + 6h news + gainers scans; Whale Alert (unavailable this run); `git log`/`grep` on memory/ for gap confirmation.
