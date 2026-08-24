@@ -1396,3 +1396,21 @@ Sources: live MEXC `close BTCUSDT` + `account` (final balance confirmed).
 **Decision: NO ACTION.** Portfolio idle in 100% USDT since the Aug-22 phase-final BTC-CORE close. No ClickUp alert (no action taken). Note: TRADING-STRATEGY.md AGGRESSIVE MODE window (Aug 4-22) has ended and has not yet been reverted to CONSERVATIVE MODE per its own instruction — flagged previously (Aug-22 morning-research) for weekly-review/user decision; not actioned here (out of midday scope).
 
 Sources: live MEXC `/ticker/price` + `account` + `positions`.
+
+## 2026-08-24 — Afternoon Execution (US market open)
+
+**⚠ Routine gap persists and has widened:** no memory/RESEARCH-LOG.md entry exists for Aug-23 or Aug-24 — morning-research/morning-execution have not fired since Aug-22 (2 full days missing). **memory/WEEKLY-REVIEW.md also never got a Week 6 (Aug 17-23) entry** — the Sun Aug-23 weekly-review did not run either, last review on file is Week 5 (Aug 10-16). Per STEP 1 routine design (no today's RESEARCH-LOG Decision = treat as MACRO_HALTED), running STEP 2-3 monitor-only; skipping STEP 4-9 (circuit breaker calc, signal scan, new entries) — no MACRO_SCORE/SIZE_MULTIPLIER/SECTOR_BLOCKED/SIGNAL_GATE exists for today.
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,560.18 (live).
+
+**Account/Positions (live `account`/`positions`):** **0 open positions.** USDT free $35.768486977508 (100% cash) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 confirms no resting orders. Positions 0/5 · Trades 0/30 wk · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 3 — Monitor open positions:** N/A — 0 open positions, nothing to cut/take-profit/tighten/ladder/decay-check.
+
+**STEP 4 — Gates:** N/A — 0 trades this week/today.
+
+**STEP 5-9 — New entries:** Skipped — no macro state to gate against (treated as MACRO_HALTED equivalent per routine precedent).
+
+**Decision: NO ACTION.** Portfolio idle 100% USDT ($35.77), no positions since Aug-22 close. Still unresolved and now more urgent: (1) AGGRESSIVE MODE window ended Aug-22, not reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction — 2 days overdue; (2) morning-research/morning-execution silent for 2 full days (Aug-23, Aug-24); (3) Week 6 (Aug 17-23) weekly-review never ran. This is a scheduler/cron issue affecting MEXC-bot routines specifically, not a market condition — no capital is at risk (0 positions) but the automated pipeline needs a human check. **ClickUp alert sent this run** flagging the compounding routine gap.
+
+Sources: live MEXC `/ticker/price` + `account` + `positions` + `orders`; `git log`/`grep` on memory/ for gap confirmation.
