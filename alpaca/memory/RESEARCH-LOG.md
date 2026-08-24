@@ -182,3 +182,17 @@ surfaced. Movers scan: gainers led by TSLA +5.80%, DE +4.96%, GS +3.84%; losers 
 -5.42%, PM -1.69% — no fresh catalyst-confirmed setups from this list, re-screen at
 Monday morning-research.
 Account equity EOD: $100,000.00
+
+### EOD Scan — 2026-08-24
+Open positions held overnight: none (0 open positions, 0 open orders — nothing to
+cut, no stop/TP checks needed)
+Positions cut: none
+Movers scan: gainers led by MA +3.14%, V +3.05%, COST +2.51%, WMT +2.50%, TGT +2.36%;
+losers AMD -3.51%, TSLA -3.34%, MRVL -3.10%, NVDA -2.69%, ORCL -2.37% — no fresh
+catalyst-confirmed setups from this list.
+Tomorrow's watchlist: DKS (pre-market earnings, EPS est. $3.75-3.77) and GFI (pre-market
+earnings, EPS est. $2.69) are the confirmed pre-market reporters for 2026-08-25; HEI,
+SMTC, NCNO also report but timing less certain. INTU and ZM report but postmarket, not
+pre-market. No non-earnings (upgrade/acquisition/FDA) catalysts surfaced. Re-screen at
+Tuesday morning-research for volume/RSI/spread confirmation before any entry.
+Account equity EOD: $100,000.00
