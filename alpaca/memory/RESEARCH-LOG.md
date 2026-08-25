@@ -242,3 +242,18 @@ Account equity: $100,000.00
 Decision = HOLD → monitor only per routine. Account: equity $100,000, cash $100,000,
 buying power $400,000. 0 open positions, 0 open orders — nothing to check (no
 thesis/stop/TP review needed). No trade executed.
+
+### EOD Scan — 2026-08-25
+Open positions held overnight: none (0 open positions, 0 open orders all day —
+morning-research/execution both HOLD, no rules-clean entries surfaced)
+Positions cut: none
+Movers scan (3:30 PM ET): gainers AMD +5.03%, CDNS +4.60%, MRVL +4.17%, MRK +3.61%,
+SNPS +3.25%; losers TGT -4.12%, NKE -3.14%, INTU -3.02%, PANW -3.01%, DE -2.69% — no
+fresh catalyst-confirmed setups from this list (all late-session moves, no new
+catalyst check run this cycle).
+Tomorrow's watchlist: confirmed pre-market (before-open) earnings reporters for
+2026-08-26 — ANF (Abercrombie & Fitch, EPS est $1.99), KSS (Kohl's, EPS est $0.58),
+WSM (Williams-Sonoma). Also reporting pre-market: BBWI, DCI, DY, SJM. Note: NVDA, CRM,
+CRWD, A (Agilent) report after-close 8/26 — these move the 8/27 open, not tomorrow's,
+but flag for Thursday morning-research. No acquisition/FDA catalysts surfaced.
+Account equity EOD: $100,000.00
