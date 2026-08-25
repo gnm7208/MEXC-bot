@@ -1480,3 +1480,15 @@ No Option B strong-catalyst override found (ZEC catalyst live but price declinin
 **Decision: NO NEW ENTRIES.** No rules-clean alt qualifier this window — both MEXC-liquidity-qualifying candidates (INJ, CASHCAT) fail the signal-score threshold and the 3-Candle Confirmation Gate. BTC-CORE (Rule 12) holds unchanged at ~34% deployment, -2.64% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (candidates) + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP/vol-surge) + `account`/`positions`; CoinGecko `/coins/markets` (top-200 by 24h%); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## Aug 25 — EOD Snapshot (Day 34, Tuesday)
+
+**Portfolio:** $35.52 | **Cash:** $23.26 (65.5%) | **Day P&L:** -$0.25 (-0.71%) | **Phase P&L:** +$3.20 (+9.89%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop                  |
+|----------|------------|-----------|------------|---------|-------------------|------------------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $79,168.32 | -1.96%  | -$0.25 (-2.02%)   | none (Rule 12 exempt) |
+
+**Notes:** Day P&L measured against the Aug-22 EOD baseline ($35.7685) since no EOD snapshot ran Aug-23/24 (routine gap, previously flagged). Sole activity this week: the Aug-25 morning BTC-CORE (Rule 12) re-entry, $12.506 cost, 35% deployment — no alt entries fired all day (morning/midday/afternoon scans all found zero rules-clean qualifiers, INJ and CASHCAT both failed score + 3-Candle Gate). BTC-CORE is Rule-12 index-tracking (exempt from stop/+12% TP), currently -2.02% unrealized, well inside the -10% core drawdown floor. Portfolio down slightly on the day as BTC pulled back from this morning's ~$80,800 entry to ~$79,168 EOD. Unresolved carryover: AGGRESSIVE MODE (Aug 4-22) window ended 3 days ago and strategy has not been reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction; Week 6 (Aug 17-23) weekly-review never ran — both flagged again for user/weekly-review attention, out of this routine's scope to fix.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-22 EOD baseline, today's trade count) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
