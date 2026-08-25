@@ -1440,3 +1440,17 @@ Sources: live MEXC `/ticker/price` + `account` + `positions` + `orders`; `git lo
 **Decision: BTC-CORE (Rule 12) re-established, NO ALT ENTRY.** Deployment now ~35% (within Rule 12's 30-40% core target); dry powder $23.26 (65%) preserved for a qualifying alt breakout. Alt-entry quality gates NOT loosened. **Standing unresolved issue (not actioned, out of this routine's scope):** AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 3 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran. Re-evaluate at midday.
 
 Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/quote` (bookTicker) + `order` (market buy) + today's RESEARCH-LOG entry (this file's companion, above).
+
+## 2026-08-25 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,300 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.5%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/5 · Trades 1/30 wk · 1/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE (Rule 12) check:** cost $12.5060 (entry ~$80,804, this morning) → val $12.2733 @ mark $79,300 → **-1.86%**. Rule-12 index-tracking hold — exempt from stop/+12% TP/ladder/tighten by design (Steps 3-6C N/A: no stop_price/ladder_price on file). Exit triggers checked: macro not signaled halted since this morning's research (MACRO_SCORE 57, SIZE_MULTIPLIER 0.6); well above the -10% core drawdown floor (~$72,724 BTC price, currently ~1.8% above the drawdown threshold vs. entry, position at only -1.86%); no qualifying alt needs the capital (no new alt entries this scan — no RESEARCH-LOG update since this morning); thesis (structural ETF weekly demand) intact, no negative catalyst news. Deployment ~34.5% of $35.54 total book — within Rule 12's 30-40% target.
+
+**STEP 7 — Thesis check:** BTC down ~1.99% since this morning's research mark ($80,910 → $79,300), below the >5%-move threshold for a mid-day Perplexity catalyst check — no unusual move, no action.
+
+**Decision: NO ACTION.** Sole position is Rule-12-exempt and within normal drawdown; no exit trigger tripped. No alt positions to cut/ladder/tighten. No ClickUp alert (no action taken).
+
+Sources: live MEXC `/ticker/price` + `/api/v3/account` + `/positions`.
