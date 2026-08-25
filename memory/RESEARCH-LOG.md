@@ -2068,3 +2068,40 @@ Sources: live MEXC `/ticker/24hr` (full board tickers) + `/ticker/price` + `acco
 **Decision: NO TRADE — BTC-CORE maintained.** Confirms this morning's research: macro tradeable (score 69, not halted) but zero rules-clean alt candidates on the full board; BTC-CORE +18.97%, no exit trigger, thesis intact. Deployment 39.1%, within Rule-12's 30-40% core band. Preserve $21.83 (60.9%) dry powder; alt-entry quality gates NOT loosened. No ClickUp alert (no trade fired, no gate breach, no new anomaly — Anomaly A already alerted this morning's research run). Re-evaluate at midday.
 
 Sources: live MEXC `/api/v3/account` + `/ticker/price` + `account`; today's morning-research entry (this file, above).
+
+## 2026-08-25 — Evening Scan (Asian open ~03:00 UTC)
+
+**⚠ Routine gap:** no memory/RESEARCH-LOG.md entry exists for Aug-23, 24, or 25 (morning-research/morning-execution silent since Aug-22). This is the first memory write since Aug-22 Morning Execution. No MACRO_SCORE/SIZE_MULTIPLIER/SECTOR_BLOCKED/SIGNAL_GATE for today — Layer 1 not run. Also AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 3 days ago and has still not been reverted to CONSERVATIVE MODE — flagged repeatedly, out of evening-scan's scope to action.
+
+### Reachability gate PASS
+`price BTCUSDT` = $78,809.74 (live).
+
+### Open positions
+**0 open positions.** Account 100% USDT: $35.768486977508 free/available, $0 locked (canTrade=true). No resting orders. Steps 3/3B/3C all N/A — nothing to stop, take-profit, near-stop alert, or peak-decay check.
+
+### Overnight catalysts (Perplexity)
+- Broader tone mixed-to-weaker into Asia: KOSPI/Nikkei chip-sector weakness + softer US labor data denting risk appetite; earlier August rally drivers (ETF inflows, liquidity hopes, short-covering) appear to have faded/offset.
+- No new ETF approval or confirmed hack in the last 6h. Zcash (ZEC) volatility tied to a Grayscale ETF-conversion filing (not an approval). Suspected data-breach report re: Bitcoin IRA/iTrustCapital (ZachXBT flag, unconfirmed, no official statement). FOMO denies iOS app hack.
+- Protocol upgrades: BNB Chain "Pasteur" hard fork live today (Aug 25); XRP Ledger node-operator key-upgrade alert; Algorand v5.0.0 upgrade (post-quantum accounts, resource-based pricing) cited as a past catalyst.
+- Jackson Hole / Fed commentary still flagged as near-term macro swing risk.
+
+### Whale activity
+Whale Alert API unavailable this run (free-tier endpoint error, consistent with prior scans).
+
+### Asian session movers
+- Perplexity "gainers": LIT +22.68%, MORPHO +21.49%, AAVE +18.22%, PENGU +17.99%, LDO +13.93% (CoinMarketCap), RIF +28.28% (TradingView) — plus several micro-cap/thin-liquidity names (Liluni, DAPPOS, Artificial Inu, Dent) not on MEXC, excluded as noise.
+- CoinGecko trending: ZANO, AERO, BTC, ETH, SUI, PUMP, SOL, ZEC.
+- **No overlap between the two source lists → 0 coins clear the 2+-source bar this scan.**
+- Live MEXC 24hr check on the named movers (LIT/ZEC/AAVE/MORPHO/PENGU/LDO/SUI/PUMP) shows **all flat, -0.1% to +0.1%** — none confirm the Perplexity-cited moves live; consistent with prior pattern where cited "gainers" data is stale/off-exchange and rolls off by the time of the live MEXC check. BTC itself flat (+0.02%, $78,809.74).
+- **0 OPTION-A qualifiers** (need ≥+5% AND ≥$3M qvol) among checked tickers.
+
+### Watchlist for tomorrow
+None promoted — no ticker cleared 2+ sources or live OPTION-A/B criteria this scan. Recheck LIT/AAVE/MORPHO/RIF at next scan if Perplexity-cited moves reappear live on MEXC.
+
+### Thesis check on held positions
+N/A — no open positions.
+
+### Action taken
+**None.** No emergency sells (no positions), no ladder opportunities, no thesis-broken exits. No ClickUp alert sent (no emergency action; routine-gap already alerted repeatedly in prior runs — not re-alerting for the same unresolved issue this run to avoid alert fatigue, per routine's "notify only if emergency action was taken" instruction).
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (spot-checked tickers) + `account`; **Perplexity (sonar)** overnight catalyst + 6h news + gainers scans; CoinGecko `/search/trending`; Whale Alert (unavailable).
