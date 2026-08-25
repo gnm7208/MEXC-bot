@@ -1454,3 +1454,29 @@ Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/quote` (bookTi
 **Decision: NO ACTION.** Sole position is Rule-12-exempt and within normal drawdown; no exit trigger tripped. No alt positions to cut/ladder/tighten. No ClickUp alert (no action taken).
 
 Sources: live MEXC `/ticker/price` + `/api/v3/account` + `/positions`.
+
+## 2026-08-25 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,674.12 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.0%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades 1/30 wk · 1/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 57, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Not MACRO_HALTED — full STEP 2-9 run.
+
+**STEP 3 — Monitor open positions:** Sole position BTC-CORE (Rule 12) — exempt from stop/+12% TP/ladder/tighten (no stop_price/ladder_price on file). Cost $12.5060 (entry ~$80,804) → val $12.1764 @ mark $78,674.12 → **-2.64%**. Exit triggers checked: macro not halted; well above -10% core drawdown floor (~$72,724 BTC price vs. current $78,674); no qualifying alt needs the capital (no new alt entries this scan); thesis (ETF structural demand) intact. Deployment ~34% of $35.44 book — within Rule 12's 30-40% target. No near-stop alert (no stop_price on file for a Rule-12 hold).
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (1 trade today, need ≥3 to gate on win rate).
+
+**STEP 5 — Afternoon signal scan:** CoinGecko top-200 sorted by 24h%: META +32.9% (not on MEXC), H +14.3%/UB +13.97%/CASHCAT +9.29%(with dips)/BTW +8.67% (H/UB/BTW all fail MEXC $3M liquidity floor at $166-786K), JASMY +7.99%/STX +6.70%/POL +5.18% (all fail MEXC $3M floor at $223-597K MEXC-specific volume), INJ +6.58% ($6.38M MEXC vol — qualifies Option A). Whale Alert: unavailable (free-tier endpoint error, consistent pattern). Perplexity: BTC >$80K on soft-dollar rally ($452M shorts liquidated), BlackRock net BTC buyer; meme names TRUMP/PUMP/USELESS/MELANIA flagged as "hot" but are **7-day** gainers — live MEXC 24h change for all four is actually **negative** (-5% to -8%), not usable for Option A. ZEC: Grayscale Zcash ETF live today (dated catalyst) but price -3.51% on MEXC — sell-the-news, not a momentum entry, skip.
+
+Full evaluation on the two MEXC-qualifying candidates:
+- **INJ** ($5.869, +6.58%, $6.38M vol): Level_pts=0 (2.23% from prev-day high, outside 2% penalty band), Manip=0 (34% ATR, not bearish), MktStr=0 (no HH/HL), RSI 59.3 (+1), VWAP +1, VolSurge 1.70x (+1). **SCORE 6/20** (2 mom + 1 vol + 0 level + 0 manip + 0 mktstr +1 rsi +1 vwap +1 surge). **3-Candle Gate: FAIL** (vol not rising through last 3 closed 60m candles). Below MACRO_SCORE<60 threshold (need ≥8) — **SKIP** (score + 3-candle gate both fail).
+- **CASHCAT** ($0.18261, +9.29%, $6.09M vol): Level_pts=0 (22% from prev-day high), Manip +1 (31% ATR, bearish flush), MktStr=0, RSI 47.8 (+1), VWAP=0 (price below session VWAP), VolSurge=0 (1.33x, below 1.5x). EMA200: **insufficient history** (only 49 daily candles — thin/new listing, elevated manipulation risk). **SCORE 5/20**. **3-Candle Gate: FAIL** (last 3 closed 60m candles not confirmed above yesterday's close). **SKIP** (score < 8, 3-candle fail, thin-listing risk consistent with Bear Case Q1/Q2 blind spots).
+
+No Option B strong-catalyst override found (ZEC catalyst live but price declining; BNB Pasteur hardfork already priced in, BNB flat/negative).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** No rules-clean alt qualifier this window — both MEXC-liquidity-qualifying candidates (INJ, CASHCAT) fail the signal-score threshold and the 3-Candle Confirmation Gate. BTC-CORE (Rule 12) holds unchanged at ~34% deployment, -2.64% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (candidates) + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP/vol-surge) + `account`/`positions`; CoinGecko `/coins/markets` (top-200 by 24h%); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
