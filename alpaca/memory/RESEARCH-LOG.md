@@ -237,3 +237,8 @@ none
 HOLD — no rules-clean entries. 0 open positions, 0 open orders, daily/weekly gates
 clear (0 trades today). Re-screen at morning-execution (9:45 AM ET) and midday.
 Account equity: $100,000.00
+
+### Addendum — 2026-08-25 09:45 ET (morning-execution)
+Decision = HOLD → monitor only per routine. Account: equity $100,000, cash $100,000,
+buying power $400,000. 0 open positions, 0 open orders — nothing to check (no
+thesis/stop/TP review needed). No trade executed.
