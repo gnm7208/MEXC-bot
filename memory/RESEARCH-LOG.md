@@ -2105,3 +2105,83 @@ N/A — no open positions.
 **None.** No emergency sells (no positions), no ladder opportunities, no thesis-broken exits. No ClickUp alert sent (no emergency action; routine-gap already alerted repeatedly in prior runs — not re-alerting for the same unresolved issue this run to avoid alert fatigue, per routine's "notify only if emergency action was taken" instruction).
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (spot-checked tickers) + `account`; **Perplexity (sonar)** overnight catalyst + 6h news + gainers scans; CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-08-25 — Morning Research (Aggressive Mode)
+
+**⚠ Routine gap resolved this run:** morning-research had not fired since 2026-08-22 (Aug-23/24 silent). Evening-scan resumed writes on Aug-25 (~03:00 UTC); this is the first full Layer-1/Layer-2 research pass since Aug-22. **Standing unresolved issue (flagged again via ClickUp this run):** AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md's own header) ended 3 days ago and has not been reverted to CONSERVATIVE MODE — out of this routine's scope to action, needs a user/weekly-review decision. Week 6 (Aug 17-23) weekly-review also never ran.
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 74 (Greed)| 74            | 30%    |
+| BTC 24h %     | +0.05%    | 50            | 25%    |
+| BTC Dominance | 59.31%    | 38            | 20%    |
+| Alt Breadth   | ~50% (mixed sample) | 50  | 15%    |
+| Loss Rate     | 0 closed this wk | 75 (neutral default) | 10% |
+**MACRO_SCORE: 57 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none
+SIGNAL_GATE: CLEAR
+Sector P&L (recent, 30d): L1 2W / 0L | DeFi 0W / 0L | AI 0W / 0L | Gaming 0W / 0L
+Self-learning: insufficient data (2 closed alt trades total, both wins, both L1/score not banded — need ≥3 per band to flag) | sector flags: none | signal_gate: CLEAR (0 consecutive low-tier losses)
+Anomaly scan: A: 34th+ consecutive HOLD/no-new-alt scan, MACRO_SCORE 57 (tradeable) → **ClickUp sent this run** | D: insufficient data (3 closed trades total, need ≥10)
+
+### Account Snapshot
+- Total portfolio value: $35.7685 USDT (live `account`)
+- Free USDT: $35.7685 (100%) — 0 open positions, 0 locked, canTrade=true
+- Open positions: 0/5
+- Trades this week: 0/30 (fresh week) · 0/8 today
+- 0 closed trades this week → weekly circuit breaker N/A · daily gate N/A
+
+### Market Context
+- BTC: $80,910.29 (+0.05% 24h) — flat, holding the Aug rally's gains near cycle highs
+- BTC Dominance: 59.31% (up from 56-58% range two weeks ago) — capital still BTC-heavy, alt breadth not confirming a broad rotation
+- Fear & Greed: 74 (Greed) — third session running in Greed territory
+- Sector leaders (Perplexity): AI strongest (+30% wkly one tracker, +7.5% Blockworks), L1s next (+6.4% wkly), DeFi constructive (+2.9% wkly), Gaming mixed/lagging
+- Catalysts today: **ZEC** — Grayscale Zcash Trust ETF conversion, reportedly launching today on NYSE Arca (ticker ZCSH, Coinbase custodian); **BNB** — Pasteur hardfork live today (throughput 1,237→2,324 TPS); **ETH** — Bitmine $81.5M purchase (largest ETH treasury), Fidelity moving to stake ETH; **SOL** — Franklin Templeton/BlackRock tokenized RWA issuance (ongoing narrative, not dated to today)
+
+### Smart Money Signals
+- Whale Alert: API unavailable this run (free-tier endpoint error, consistent with prior scans)
+- VC/fund moves: no actionable fresh buy/sell — a16z raising ~$2B fund 5, Paradigm raising ~$1.5B (widening into AI/robotics), Multicoin AUM down to ~$2.7B; a16z portfolio composition (ETH/XRP/SOL/AVAX/SUI/ARWEAVE/YGG) is standing exposure, not a fresh move — not scoreable
+- Top trader calls: CryptoKaleo — bearish BTC call ($40-50K flush target) and a separate bounce-to-low-70s note; no fresh altcoin-specific call from Kaleo/pentoshi/Bluntz today
+- DeFiLlama gainers: endpoint unavailable this run
+- CoinGecko trending top 10: BTC, ZANO, CASHCAT, PONS, PUMP, SOL, LIT, MON, HYPE, INJ (SOL #6, INJ #10 — neither in top 5)
+- Whale accumulation (soft, unverified/undated): BTC/ETH/XRP/SOL cited across multiple trackers but no clean <24-48h exchange→wallet tx with timestamp — not formally scoreable, consistent with the pattern flagged all week
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | VWAP(+1) | RSI | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|----------|-----|-------|
+| SOL    | 0         | 0      | 0          | 0             | 0             | +2 (7.73%, $166.6M) | +1 | -2 (2.5% from prev-high) | 0 | 0 (no HH/HL) | +1 | n/a (timeout) | **2** |
+| INJ    | 0         | 0      | 0          | 0             | 0             | +2 (11.81%, $5.7M) | +1 | -2 (1.4% from prev-high) | 0 | +1 (HH/HL) | +1 | 63.3 (neutral) | **3** |
+
+Full-board OPTION-A scan (chg ≥ +5% AND qvol ≥ $3M) beyond the checked watchlist/trending names found no additional qualifiers among spot-checked tickers (ZEC/BNB/ETH/XRP/PUMP/HYPE/LIT/ZANO/MON/PONS all below the +5% leg or below the $3M liquidity floor).
+
+### MEXC Live Prices (eligible candidates only)
+| Ticker | Price | 24h % | Volume | Score | Base Size | Final Size | Option B? |
+|--------|-------|-------|--------|-------|-----------|------------|-----------|
+| SOL    | $101.46 | +7.73% | $166.6M | 2 | — | SKIP | No |
+| INJ    | $5.915 | +11.81% | $5.7M | 3 | — | SKIP | No |
+
+Both SKIP: Level_pts = -2 (within 2% of prev-day high, resistance) AND SCORE < 7 → hard skip regardless per rule. 3-Candle Gate also FAILS both (hourly volume not rising through the last 3 closed candles). Neither has a fresh smart-money or catalyst override (Option B) confirmed live/dated today.
+
+### News on Held Positions
+None — 0 open positions.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+1. **No rules-clean alt entry today.** SOL and INJ are the only two live OPTION-A momentum qualifiers found; both fail on entering near prev-day resistance with a low signal score (2 and 3, need ≥8 in this MACRO_SCORE-57 reduced-sizing band) and both fail the 3-Candle volume-confirmation gate. Watch for a pullback/reclaim setup rather than chasing the extended print.
+2. **BENCHMARK-TRACKING BTC CORE (Rule 12) — trigger conditions MET:** ≥3 consecutive scans with zero rules-clean alt entries (34th+) AND macro not halted (SIZE_MULTIPLIER 0.6 > 0) AND deployment 0% (< 40%). Recommend morning-execution allocate a ~30-40% core tranche to BTC (or ETH) spot as an index-tracking hold per Rule 12 — exempt from momentum gates/+12% TP, exit only on macro halt, capital needed for a qualifying alt, or -10% core drawdown. Do NOT loosen alt-entry gates instead.
+3. Watchlist for tomorrow: ZEC (Grayscale ETF conversion catalyst — recheck live MEXC % if it re-accelerates), BNB (Pasteur hardfork live today — recheck for a volume-confirmed breakout), SOL/INJ (only on a pullback + reclaim, not chasing today's resistance test).
+
+### Risk Factors
+- Macro gate: BTC dominance climbing (59.31%, up from ~56-58% two weeks ago) while alt breadth reads mixed (~50%) — capital still concentrating in BTC even as F&G sits in Greed; alt momentum unconfirmed broad-based.
+- Blocked sectors: none.
+- **34th+ consecutive HOLD/no-new-alt scan with tradeable macro — Anomaly A fired, ClickUp sent this run.**
+- **Standing operational issue:** AGGRESSIVE MODE window (Aug 4-22) ended 3 days ago, not yet reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction; Week 6 weekly-review never ran. Both flagged via ClickUp this run — needs user/weekly-review attention, out of morning-research's scope to self-action.
+- Event risk: Jackson Hole/Fed commentary still cited as a near-term macro swing factor.
+
+### Decision
+TRADE: none (alt entries). **HOLD on alts** — SOL/INJ both fail the resistance/score/3-candle quality gates; no other rules-clean OPTION-A/B qualifier found. **Rule 12 BTC-CORE trigger is active** (see Trade Idea #2) — flagged for morning-execution to size and place a benchmark-tracking BTC tranche; not executed in this research pass. Preserve remaining USDT as dry powder pending the core allocation. Re-evaluate at morning-execution.
+
+Sources: live MEXC `/ticker/24hr` (spot-checked tickers) + `/ticker/price` + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP) + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** catalyst, whale, VC, trader-call, sector-momentum, alt-breadth scans; DeFiLlama (unavailable) + Whale Alert (unavailable).
