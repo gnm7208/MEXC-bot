@@ -196,3 +196,44 @@ SMTC, NCNO also report but timing less certain. INTU and ZM report but postmarke
 pre-market. No non-earnings (upgrade/acquisition/FDA) catalysts surfaced. Re-screen at
 Tuesday morning-research for volume/RSI/spread confirmation before any entry.
 Account equity EOD: $100,000.00
+
+## 2026-08-25 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL
+Futures: S&P +0.1-0.4% | Nasdaq +0.5% (mild risk-on tilt, not a clean signal — one
+source flags recent single-name/sector volatility arguing against calling it clean
+risk-on). Standard threshold (score >= 6).
+Risk events today: no FOMC, no CPI. Fed Barkin speech, ADP weekly employment, Case-Shiller
+home price index, Richmond Fed mfg index, Consumer Confidence, New Home Sales, 2Y/5Y note
+auctions — moderate data day, no single high-impact catalyst.
+
+### Movers Scanned
+Gainers: MA +3.31% (173,051 vol), V +3.03% (309,080), WMT +2.72% (1,011,052), TGT +2.67%
+(364,449), COST +2.57% (77,817), UNH +2.24%, META +1.72%, PM +1.67%, AMT +1.50%, JPM +1.37%
+Losers: TSLA -3.81%, AMD -3.45%, MRVL -3.26%, NVDA -2.92%, ORCL -2.74%
+Note: this is yesterday's (8/24) EOD change carried into the pre-open snapshot — market
+hasn't opened yet at 9:00 AM ET. Only MA and V clear the +3% flag threshold.
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| MA | +3.31% | 1.04x | 76 | above | none confirmed in last 24h (stale Trump-buy disclosure from 8/24 + Jul 30 earnings beat, not fresh) | 0 | 0/15 | 4.0% | 8.0% | 2.00 | NO — vol <1.5x, RSI 76 overbought (-1), within 2% of prev-day high (-2), score 0 < 6 |
+| V  | +3.03% | 1.08x | 77 | above | none confirmed in last 24h (same Trump-buy disclosure + old earnings beat) | 0 | 0/15 | 4.0% | 8.0% | 2.00 | NO — vol <1.5x, RSI 77 overbought (-1), within 2% of prev-day high (-2), score 0 < 6 |
+
+### Trade Ideas
+None — both flagged movers score 0/15, well below the 6-point minimum. No fresh
+(last-24h) catalyst on either name; move looks like late-stage chase (RSI 76-77,
+volume below 1.5x average, price near prior-day high).
+
+Watchlist carried from 8/24 EOD scan (DKS, GFI pre-market earnings reporters today) is
+outside the alpaca.sh movers universe (large-cap S&P100/Nasdaq100 list) — not scored
+this cycle; would need manual bars/quote pull if flagged as a candidate at midday.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — no rules-clean entries. 0 open positions, 0 open orders, daily/weekly gates
+clear (0 trades today). Re-screen at morning-execution (9:45 AM ET) and midday.
+Account equity: $100,000.00
