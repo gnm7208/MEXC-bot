@@ -1414,3 +1414,29 @@ Sources: live MEXC `/ticker/price` + `account` + `positions`.
 **Decision: NO ACTION.** Portfolio idle 100% USDT ($35.77), no positions since Aug-22 close. Still unresolved and now more urgent: (1) AGGRESSIVE MODE window ended Aug-22, not reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction — 2 days overdue; (2) morning-research/morning-execution silent for 2 full days (Aug-23, Aug-24); (3) Week 6 (Aug 17-23) weekly-review never ran. This is a scheduler/cron issue affecting MEXC-bot routines specifically, not a market condition — no capital is at risk (0 positions) but the automated pipeline needs a human check. **ClickUp alert sent this run** flagging the compounding routine gap.
 
 Sources: live MEXC `/ticker/price` + `account` + `positions` + `orders`; `git log`/`grep` on memory/ for gap confirmation.
+
+## 2026-08-25 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $80,752.96 (live).
+
+**Account/Positions (live `account`/`positions`, pre-trade):** **0 open positions.** USDT free $35.768486977508 (100% cash) / locked $0 (canTrade=true). `orders` endpoint HTTP 400 (known permission-gap pattern); locked=0 confirms no resting orders. Positions 0/5 · Trades 0/30 wk (fresh week) · 0/8 today · 0 closed → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 57, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Trade Ideas: zero rules-clean alt qualifiers — SOL (score 2) and INJ (score 3) both SKIP (within 2% of prev-day high, score < 7 hard-skip rule; also fail 3-Candle Gate). **Rule 12 BTC-CORE trigger flagged ACTIVE** by research: ≥3 consecutive zero-alt-entry scans, macro not halted, deployment 0% (<40%).
+
+**STEP 3 — Monitor open positions:** N/A — 0 open positions pre-trade.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Alt entries:** None to validate — RESEARCH-LOG Trade Ideas list has zero qualifiers (SOL/INJ already disqualified in research). Spread check on BTCUSDT: bid $80,752.95 / ask $80,752.96 (~0.0001%, well under 0.5% cap) — clean for the core buy.
+
+**Rule 12 BTC-CORE allocation:** Trigger conditions confirmed independently — 0% deployment < 40% core band, macro not halted (SIZE_MULTIPLIER 0.6 > 0), and the alt dry spell has spanned every scan since the Aug-22 BTC-CORE close (Aug-24 midday/afternoon + Aug-25 evening/morning-research, all zero-qualifier). Sized at ~35% of the $35.7685 book (consistent with the original Aug-10 Rule-12 core sizing), leaving ~65% dry powder.
+
+**BUY** BTC | Qty: 0.00015477 | Cost: $12.506040 (35.0% of $35.7685 book) | Fill: ~$80,804 (MEXC order-response reference price $81,571.28; effective avg fill computed from account balance delta) | Sector: L1 | Order C02__720815327876673537046 | **NO STOP / NO +12% TP — index-tracking hold per Rule 12** (exit only on: macro halt SIZE_MULTIPLIER→0, capital needed for a qualifying alt, or −10% core drawdown ≈ $72,724).
+
+**Review:** N/A — Rule 12 core is exempt from the Layer 3 momentum-entry review gate by design (index-tracking hold, not a scored momentum trade), consistent with the Aug-10 precedent entry.
+
+**Post-trade Account:** USDT free $23.262447 (65.0%) / BTC 0.00015477 (locked $0). Positions 1/5 · Trades 1/30 wk · 1/8 today.
+
+**Decision: BTC-CORE (Rule 12) re-established, NO ALT ENTRY.** Deployment now ~35% (within Rule 12's 30-40% core target); dry powder $23.26 (65%) preserved for a qualifying alt breakout. Alt-entry quality gates NOT loosened. **Standing unresolved issue (not actioned, out of this routine's scope):** AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 3 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran. Re-evaluate at midday.
+
+Sources: live MEXC `/api/v3/account` + `/ticker/price` + `/ticker/quote` (bookTicker) + `order` (market buy) + today's RESEARCH-LOG entry (this file's companion, above).
