@@ -2185,3 +2185,16 @@ None — 0 open positions.
 TRADE: none (alt entries). **HOLD on alts** — SOL/INJ both fail the resistance/score/3-candle quality gates; no other rules-clean OPTION-A/B qualifier found. **Rule 12 BTC-CORE trigger is active** (see Trade Idea #2) — flagged for morning-execution to size and place a benchmark-tracking BTC tranche; not executed in this research pass. Preserve remaining USDT as dry powder pending the core allocation. Re-evaluate at morning-execution.
 
 Sources: live MEXC `/ticker/24hr` (spot-checked tickers) + `/ticker/price` + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP) + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** catalyst, whale, VC, trader-call, sector-momentum, alt-breadth scans; DeFiLlama (unavailable) + Whale Alert (unavailable).
+
+## 2026-08-26 — Evening Scan (Asian open ~03:00 UTC)
+
+### Evening Scan (10 PM CT)
+BTC overnight: $78,520.51 (down from $79,300 midday-yesterday mark / ~$80,804 BTC-CORE entry, roughly -2.8% since entry — soft pullback, no shock move).
+Open positions: BTC-CORE (Rule 12) — 0.00015477 BTC, cost $12.5060 (entry ~$80,804) → val $12.1533 @ $78,520.51 → **-2.83%**. Rule-12 index-tracking hold, exempt from stop/+12% TP/ladder/decay (no stop_price/target_price/peak-P&L field on file for this position — Steps 3/3B/3C N/A by design, consistent with every prior scan since Aug-25 entry). Well inside -10% core drawdown floor (~$72,724 BTC price vs. current $78,520). Thesis (ETF structural demand) intact — no broken catalyst found overnight.
+Overnight catalysts: No fresh market-wide shock. Grayscale Zcash ETF live (Aug-25, already known/priced). Bitcoin ETF inflows +$252M this week, ETH ETF outflows continue. Europol seized Cryptomixer ($29M BTC) — unrelated to held position. CLARITY Act passed (per CryptoSlate) — general crypto-friendly macro tailwind, not a specific alt catalyst. No hack/SEC action/key-unlock affecting BTC.
+Whale activity: Whale Alert free-tier endpoint unavailable (persistent pattern, no data this run).
+Asian session movers: CoinGecko trending: HYPE, DOG, PUMP, AERO, PONS, MON, CASHCAT, STX. Perplexity gainers list: BMT, Dark Cheems, AGI, ONG, STX, VIRTUAL, AERO, INJ. Overlap (2+ sources): **STX, AERO**. Live MEXC 24hr check: STX $0.2592 (+0.12%, vol $408K — fails both momentum and $3M liquidity floor); AERO $0.5159 (-0.04%, vol $3.80M — liquidity passes but flat/no momentum, fails Option A). Neither is a rules-clean live MEXC entry; sourced gainer % figures were stale/non-MEXC.
+Tomorrow's watchlist: STX (recheck live MEXC % if Stacks-specific catalyst reaccelerates), AERO (liquidity qualifies — watch for an actual momentum leg, not just trending-list presence), INJ (persistent trending name across recent scans — watch for a pullback/reclaim rather than chasing).
+Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all Rule-12 exit thresholds.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (STX, AERO); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
