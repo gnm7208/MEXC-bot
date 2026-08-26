@@ -311,3 +311,8 @@ clear (0 trades this week). Re-screen at morning-execution (9:45 AM ET) and midd
 MRK is worth a fresh RSI/volume check post-open given it's only 1 point off threshold
 and has the strongest genuine catalyst of the group.
 Account equity: $100,000.00
+
+### Addendum — 2026-08-26 09:45 ET (morning-execution)
+Decision = HOLD → monitor only per routine. Account: equity $100,000, cash $100,000,
+buying power $400,000. 0 open positions, 0 open orders — nothing to check (no
+thesis/stop/TP review needed). No trade executed.
