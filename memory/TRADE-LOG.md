@@ -1492,3 +1492,23 @@ Sources: live MEXC `/ticker/price` + `/ticker/24hr` (candidates) + `/klines?inte
 **Notes:** Day P&L measured against the Aug-22 EOD baseline ($35.7685) since no EOD snapshot ran Aug-23/24 (routine gap, previously flagged). Sole activity this week: the Aug-25 morning BTC-CORE (Rule 12) re-entry, $12.506 cost, 35% deployment — no alt entries fired all day (morning/midday/afternoon scans all found zero rules-clean qualifiers, INJ and CASHCAT both failed score + 3-Candle Gate). BTC-CORE is Rule-12 index-tracking (exempt from stop/+12% TP), currently -2.02% unrealized, well inside the -10% core drawdown floor. Portfolio down slightly on the day as BTC pulled back from this morning's ~$80,800 entry to ~$79,168 EOD. Unresolved carryover: AGGRESSIVE MODE (Aug 4-22) window ended 3 days ago and strategy has not been reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction; Week 6 (Aug 17-23) weekly-review never ran — both flagged again for user/weekly-review attention, out of this routine's scope to fix.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-22 EOD baseline, today's trade count) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
+
+## 2026-08-26 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,145.44 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.5%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades 1/30 wk · 0/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 56, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Trade Ideas: zero rules-clean alt qualifiers — SLCW (score 3) disqualified (thin 2-candle listing, 3-Candle Gate FAIL, below MACRO<60 threshold of ≥8). No Rule-12 re-trigger needed — BTC-CORE already established Aug-25.
+
+**STEP 3 — Monitor open positions:** Sole position BTC-CORE (Rule 12) — exempt from stop/+12% TP/ladder/decay by design (no stop_price/target_price/peak-P&L on file). Cost $12.5060 (entry ~$80,804) → val $12.2493 @ mark $79,145.44 → **-2.05%**. Exit triggers checked: macro not halted (SIZE_MULTIPLIER 0.6); well above -10% core drawdown floor (~$72,724 BTC price vs. current $79,145.44); no qualifying alt needs the capital (STEP 5 found zero); thesis (ETF structural demand) intact per today's research. Deployment ~34.5% of book — within Rule 12's 30-40% target. No near-stop alert (no stop_price on file for a Rule-12 hold).
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Alt entries:** None to validate — RESEARCH-LOG Trade Ideas list has zero qualifiers (SLCW already disqualified in research, no re-check needed).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** BTC-CORE (Rule 12) holds unchanged at ~34.5% deployment, -2.05% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 4 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran. Re-evaluate at midday.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (this file's companion, above).
