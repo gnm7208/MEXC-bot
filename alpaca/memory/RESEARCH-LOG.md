@@ -257,3 +257,57 @@ WSM (Williams-Sonoma). Also reporting pre-market: BBWI, DCI, DY, SJM. Note: NVDA
 CRWD, A (Agilent) report after-close 8/26 — these move the 8/27 open, not tomorrow's,
 but flag for Thursday morning-research. No acquisition/FDA catalysts surfaced.
 Account equity EOD: $100,000.00
+
+## 2026-08-26 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL
+Futures: S&P +0.1-0.3% | Nasdaq +0.5-0.6% (mixed-to-mild-risk-on; some feeds call the
+open "mixed", others "modestly constructive" — not a clean bullish signal).
+Standard threshold (score >= 6).
+Risk events today: no FOMC rate decision, no CPI. PCE price index + Q2 GDP second
+estimate + personal income/spending at 8:30 AM ET (Fed's preferred inflation gauge —
+moderate-impact, releases before open so priced in by 9:45 AM entry window); FOMC
+Minutes at 1:00 PM (not a policy decision). NVDA reported after-close 8/25: reaction
+roughly flat (+0.26% after-hours vs $213.05 close, implied move ~5.4% priced in but
+didn't materialize) — no outsized AI-chip sector reaction to trade off today.
+
+### Movers Scanned
+Gainers: CDNS +5.05% (192,189 vol), AMD +4.86% (612,564), MRVL +4.82% (539,947),
+MRK +3.81% (617,216), SNPS +3.62% (66,257), NFLX +2.80%, NVDA +2.15%, GS +2.15%,
+DLR +2.01%, META +1.96%
+Losers: DE -2.73%, PANW -3.07%, NKE -3.15%, INTU -3.44%, TGT -3.82%
+Note: pre-open snapshot reflects 8/25 EOD daily-bar change (market not open yet at
+9:00 AM ET) — same names/magnitudes as yesterday's 3:30 PM EOD scan. Five names clear
+the +3% flag threshold: CDNS, AMD, MRVL, MRK, SNPS.
+Not in movers universe (S&P100/Nasdaq100 large-cap list): today's confirmed pre-market
+earnings reporters ANF, KSS, WSM, BBWI, DCI, DY, SJM carried from 8/25 EOD watchlist —
+not scored this cycle.
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| CDNS | +5.05% | 1.61x | 75 | BELOW | none confirmed in last 24h (stale 7/28 B of A PT raise to $420) | 0 | 3/15 | 4.0% | 8.0% | 2.00 | NO — below 50-day SMA (hard skip), score 3 < 6 |
+| AMD | +4.86% | 0.96x | 59 | BELOW | ANALYST_UPGRADE — Raymond James Strong Buy, PT $565→$641 (8/25, within 24h) | +2 | 3/15 | 4.0% | 8.0% | 2.00 | NO — below 50-day SMA (hard skip), vol <1.5x, score 3 < 6 |
+| MRVL | +4.82% | 0.93x | 54 | above | NO_CATALYST — pre-earnings run-up only, Q2 reports 8/27 (not yet reported, not a confirmed beat) | 0 | 2/15 | 5.7% | 11.4% | 2.00 | NO — vol <1.5x, no catalyst, score 2 < 6 |
+| MRK | +3.81% | 1.48x | 71 | above | FDA/clinical + ANALYST_UPGRADE — Phase 3 melanoma trial (Keytruda + Moderna) met endpoints; Morgan Stanley upgrade to Overweight, PT $179 (8/25, within 24h) | +4 | 5/15 | 4.0% | 8.0% | 2.00 | NO — score 5 < 6 (near-miss); RSI 71 not in sweet spot, price already through prev-day high (-2 proximity penalty) |
+| SNPS | +3.62% | 0.94x | 67 | BELOW | NO_CATALYST — Q3 earnings today after-close, pre-report speculation only ("Buy reiterated" ahead of print, not a beat) | 0 | 0/15 | 4.0% | 8.0% | 2.00 | NO — below 50-day SMA (hard skip), vol <1.5x, score 0 < 6 |
+
+### Trade Ideas
+None — all five flagged movers fail the gate. CDNS/AMD/SNPS are below their 50-day
+SMA (hard skip regardless of score or catalyst). MRVL has no confirmed catalyst
+(earnings not until 8/27) and scores only 2/15. MRK is the closest call — real
+clinical + analyst catalysts (+4 pts) but still lands at 5/15, one point under the
+6-point minimum, and is already trading through its prior-day high (chasing, not a
+clean breakout entry) with volume under 1.5x average. No override — Rule 12 core-BTC
+equivalent doesn't apply to alpaca (no index-hold rule for stocks); staying flat.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — no rules-clean entries. 0 open positions, 0 open orders, daily/weekly gates
+clear (0 trades this week). Re-screen at morning-execution (9:45 AM ET) and midday —
+MRK is worth a fresh RSI/volume check post-open given it's only 1 point off threshold
+and has the strongest genuine catalyst of the group.
+Account equity: $100,000.00
