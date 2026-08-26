@@ -2198,3 +2198,84 @@ Tomorrow's watchlist: STX (recheck live MEXC % if Stacks-specific catalyst reacc
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all Rule-12 exit thresholds.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (STX, AERO); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-08-26 — Morning Research (Aggressive Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 65 (Greed)| 65            | 30%    |
+| BTC 24h %     | -0.02%    | 50            | 25%    |
+| BTC Dominance | 59.3%     | 38            | 20%    |
+| Alt Breadth   | ~58% (mixed sample) | 58  | 15%    |
+| Loss Rate     | 0 closed this wk | 75 (neutral default) | 10% |
+**MACRO_SCORE: 56 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent, 30d): L1 2W / 0L | DeFi 0W / 0L | AI 0W / 0L | Gaming 0W / 0L
+Self-learning: insufficient data (2 closed alt trades total, both wins, both L1, unbanded — need ≥3 per band to flag) | sector flags: none | signal_gate: CLEAR (0 consecutive low-tier losses)
+Anomaly scan: A: 35th+ consecutive HOLD/no-new-alt scan, MACRO_SCORE 56 (tradeable) → **ClickUp sent this run** | D: insufficient data (3 closed trades total, need ≥10)
+
+### Account Snapshot
+- Total portfolio value: $35.498 USDT (live `account`, mark BTC $79,056.39)
+- Free USDT: $23.2624 (65.5%) | BTC-CORE 0.00015477 BTC ($12.2356, 34.5%)
+- Open positions: 1/5
+- Trades this week: 1/30 (Aug-25 BTC-CORE entry) · 0/8 today
+- 0 closed trades this week → weekly circuit breaker N/A · daily gate N/A
+
+### Market Context
+- BTC: $79,056.39 (-0.02% 24h) — flat, consolidating below the ~$80.9K Aug-25 high
+- BTC Dominance: 59.3% — still elevated, capital concentrated in BTC over alts
+- Fear & Greed: 65 (Greed)
+- Sector leaders (Perplexity): AI strongest (+30% wkly tracker), DeFi positive (+2.8-3.3%), L1s secondary (+1.9-6.5%), Gaming mixed
+- Catalysts: Grayscale spot Zcash ETF — 5th amended SEC filing, NOT approved yet (stale/known, ZEC declining on the news per prior scans); BTC/ETH spot ETF inflows continuing ($606M BTC, $221M ETH cited); Sui — Mubadala tokenized $75M private-markets fund (institutional signal, not dated to today, SUI price flat live)
+
+### Smart Money Signals
+- Whale Alert: direct API unavailable (`'str' object has no attribute 'get'` — endpoint format error, consistent with prior scans). Perplexity fallback: BTC/ETH/XRP broad accumulation (not dated <48h, not wallet-tx specific); INJ top-holder +6.23% 7d (Santiment, stale >48h → 0 pts)
+- VC/fund moves: no fresh actionable buy — a16z AUM down ~40% to $9.5B (raising new ~$2B fund), Paradigm raising ~$1.5B (AI/robotics crossover), Multicoin AUM down to ~$2.7B; all standing exposure, not scoreable
+- Top trader calls: CryptoKaleo — BTC-only views (bounce to low-70s / bear-market bottom thesis), no specific altcoin ticker call from Kaleo/pentoshi/Bluntz today
+- DeFiLlama gainers: endpoint unavailable this run
+- CoinGecko trending top 10: DOG, PONS, BTC, HYPE, PUMP, SOL, CASHCAT, ZRO, ETH, STX (top-5 trending: DOG, PONS, BTC, HYPE, PUMP)
+- Reddit: no actionable coin call (top post = McDonald's Instagram hack pushing a Solana scam token $GRIMACE — avoid); trending mentions BTC/ETH/THETA/SOL/USDT
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| DOG    | 0 | 0 | 0 | 0 | +1 | 0 (0.06%) | 0 ($116K) | — | — | — | **1** (watchlist, no MEXC live momentum) |
+| PONS   | 0 | 0 | 0 | 0 | +1 | 0 (0.38%) | 0 ($946K) | — | — | — | **1** (watchlist, no MEXC live momentum) |
+| HYPE   | 0 | 0 | 0 | 0 | +1 | 0 (0.01%) | +1 ($3.17M) | — | — | — | **2** (watchlist, flat price) |
+| PUMP   | 0 | 0 | 0 | 0 | +1 | 0 (-0.04%) | +1 ($34.6M) | — | — | — | **2** (watchlist, flat price) |
+| SUI    | 0 | 0 | 0 | 0 | 0 | 0 (-0.08%) | +1 ($3.75M) | — | — | — | **1** (Mubadala catalyst flagged but undated/not live-confirmed) |
+| SLCW   | 0 | 0 | 0 | 0 | 0 | +2 (9.73%) | +1 ($3.93M) | 0 (only 2 daily candles, listing-day range $0.10-$4) | n/a | n/a | **3** (full-board Option-A scan hit) |
+
+Full-board MEXC scan (24h chg ≥ +5% AND qvol ≥ $3M): only **SLCWUSDT** qualified (+9.73%, $3.93M vol) — all trending/watchlist names above (DOG/PONS/HYPE/PUMP/SUI) are flat live on MEXC despite CoinGecko/Perplexity citations, consistent with the recurring "cited movers don't confirm live" pattern.
+
+### MEXC Live Prices (eligible candidates only)
+| Ticker | Price | 24h % | Volume | Score | Base Size | Final Size | Option B? |
+|--------|-------|-------|--------|-------|-----------|------------|-----------|
+| SLCW   | $1.0734 | +9.73% | $3.93M | 3 | — | SKIP | No |
+
+**SLCW SKIP:** only 2 daily candles on record (brand-new/thin listing; prev-day high $4.00 / low $0.10 = listing-day spike-and-crash range, EMA-200 insufficient history). **3-Candle Confirmation Gate: FAIL** — last closed 1h candle ($1.0834) is below yesterday's close ($1.1202) and 1h volume is falling (3,253 → 11,954 → 7,083), not rising. Score 3 is also below both eligibility thresholds (need ≥5 at MACRO≥60, ≥8 at MACRO<60 — we're at 56). Thin-listing manipulation risk consistent with the CASHCAT precedent (Aug-25) — hard SKIP.
+
+### News on Held Positions
+BTC-CORE (Rule 12): thesis = structural ETF weekly demand. Reinforced — CNBC cites $1.92B (or $1.6B, two reports) in spot BTC ETF inflows last week, strongest since October; Bloomberg/CoinStats confirm inflows every session Aug 17-21; Goldman Sachs and Morgan Stanley both adding crypto-linked exposure (income ETFs, IBIT). No negative catalyst. Thesis intact.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+1. **No rules-clean alt entry today.** SLCW is the only live MEXC Option-A momentum hit; disqualified by thin-listing risk + 3-Candle Gate fail + sub-threshold score. DOG/PONS/HYPE/PUMP/SUI are watchlist-only — cited elsewhere as movers but flat live on MEXC.
+2. BTC-CORE (Rule 12) — hold unchanged. Deployment 34.5%, within the 30-40% core band; -2.16% unrealized, well inside the -10% drawdown floor (~$72,724 BTC-price basis). No action needed at execution time.
+3. Watchlist for tomorrow: SUI (Mubadala catalyst — watch for a live MEXC breakout, not just the headline), HYPE/PUMP (liquidity qualifies, need an actual momentum leg), SLCW (recheck after it accumulates real daily-candle history — currently too thin to trust).
+
+### Risk Factors
+- Macro gate: BTC dominance still elevated (59.3%) with alt breadth only mixed (~58%) — capital not broadly rotating into alts despite Greed sentiment.
+- Blocked sectors: none.
+- **35th+ consecutive HOLD/no-new-alt scan with tradeable macro (score 56) — Anomaly A fired, ClickUp sent this run.**
+- Standing operational note (out of morning-research's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 4 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 (Aug 17-23) weekly-review never ran. Not re-alerted this run (already flagged repeatedly Aug-22 through Aug-25) — needs user/weekly-review attention.
+- Event risk: none new flagged beyond ongoing ETF-flow/macro-liquidity watch.
+
+### Decision
+TRADE: none. **HOLD on alts** — only live Option-A hit (SLCW) fails thin-listing + 3-Candle Gate + score checks. BTC-CORE (Rule 12) holds unchanged at 34.5% deployment. Preserve $23.26 (65.5%) dry powder pending a qualifying alt breakout. Re-evaluate at morning-execution.
+
+Sources: live MEXC `/ticker/24hr` (full board scan + spot-checked tickers) + `/ticker/price` + `/klines?interval=1d,60m` (SLCW level/3-candle/EMA-200) + `account`; [alt.me F&G](https://api.alternative.me/fng/); Perplexity fallback for BTC dominance (CoinGecko `/global` HTTP error) + alt breadth + catalysts + trader calls + whale accumulation + VC moves + sector momentum + reddit; CoinGecko `/search/trending`; DeFiLlama (unavailable) + Whale Alert direct API (unavailable, parse error).
