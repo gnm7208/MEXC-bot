@@ -1554,3 +1554,15 @@ No Option B strong-catalyst override found this window.
 **Decision: NO NEW ENTRIES.** No rules-clean alt qualifier this window — RAIN and CASHCAT both fail the 3-Candle Confirmation Gate (CASHCAT also fails EMA-200 on thin history). BTC-CORE (Rule 12) holds unchanged at ~34% deployment, -3.49% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 4 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran. Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan + RAIN/CASHCAT) + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP/vol-surge) + `account`/`positions`; CoinGecko `/coins/markets` (top-20 by 24h%); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## Aug 26 — EOD Snapshot (Day 35, Wednesday)
+
+**Portfolio:** $35.41 | **Cash:** $23.26 (65.7%) | **Day P&L:** -$0.11 (-0.30%) | **Phase P&L:** +$3.09 (+9.57%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop                  |
+|----------|------------|-----------|------------|---------|-------------------|------------------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $78,500.00 | -0.84%  | -$0.36 (-2.85%)   | none (Rule 12 exempt) |
+
+**Notes:** Quiet day — no trades fired across morning-execution, midday, or afternoon-execution; every scan found zero rules-clean alt qualifiers (SLCW disqualified this morning; RAIN and CASHCAT both failed the 3-Candle Confirmation Gate this afternoon). BTC-CORE (Rule 12 index-tracking hold, exempt from stop/+12% TP/ladder) drifted from -2.02% to -2.85% unrealized as BTC slid from ~$79,145 to $78,500, still well inside the -10% core drawdown floor. Portfolio essentially flat on the day (-0.30%). Unresolved carryover, flagged again for user/weekly-review attention: AGGRESSIVE MODE (Aug 4-22) window ended 4 days ago and has not been reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction; Week 6 (Aug 17-23) weekly-review never ran.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-25 EOD baseline, today's trade count) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
