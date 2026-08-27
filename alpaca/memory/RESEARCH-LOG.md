@@ -337,3 +337,71 @@ acquisition catalysts surfaced; Kiplinger notes "no noteworthy earnings" while o
 calendars list 6-12 small-cap reporters — treat as low-conviction, re-screen at
 morning-research if any gap on volume.
 Account equity EOD: $100,000.00
+
+## 2026-08-27 — Alpaca Morning Research
+
+### Market Context
+Sentiment: BULLISH (mild) — Nasdaq futures +0.5-1.1%, S&P futures +0.3-0.4%
+(just under clean +0.5% bar, one feed showed a small dip), VIX -1.55%. Tone
+driven by NVDA's after-hours earnings beat + "~70% FY26 revenue growth"
+guidance lifting broad tech sentiment. No FOMC/CPI print today; Jackson Hole
+Symposium ongoing (Fed Barkin speech) but no scheduled rate decision or major
+data surprise flagged. Standard score threshold (6) applies, not raised to 9.
+Risk events today: Jackson Hole commentary, PCE-adjacent Fed chatter — medium
+attention, no hard data catalyst.
+
+### Movers Scanned
+`alpaca.sh movers` snapshot at 9:00 AM ET returned **stale EOD (8/26 close)
+data** — identical to yesterday's 3:30 PM EOD scan (ORCL +2.84%, SBUX +2.55%,
+QCOM +1.97%, MRVL +1.97%, CAT +1.28%, AAPL +1.16%, UNH +1.12%, META +1.10%,
+MSFT +0.98%, TMO +0.94% / losers REGN -2.28%, SCHW -2.57%, ACN -3.05%,
+INTU -3.20%, LLY -3.57%). None clear +3%. Root cause: the script's default
+bars/snapshot query has no live pre-market print for most names this early —
+confirmed via direct snapshot calls below that real premarket action exists
+but isn't reflected in the generic movers scan yet.
+
+Cross-checked via Perplexity + direct Alpaca snapshot (feed=iex) for named
+premarket gainers not caught by the stale movers list: **NVDA** (real
+latestTrade $222.90 @ 8:39 AM ET vs 8/26 close $209.77 = **+6.26%**),
+**PANW** ($357.00 vs $339.40 close = **+5.19%**), **CRM** (Alpaca IEX
+snapshot still shows $205.75 = 0.00% — no premarket print captured yet on
+this feed despite ~+10% reported elsewhere; flagged data-stale, not a
+zero-move).
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| NVDA | +6.26% | TBD (premkt, no reliable ratio yet) | TBD | above ($207.73) | EARNINGS_BEAT — beat + raised FY26 rev growth guidance ~70% (reported after close 8/26, within 24h) | +3 | 5/15 partial (3 chg +1 sma50 -2 breakout-thru-high +3 catalyst; vol/RSI pending) | 4.0% | 8.0% | 2.00 | PENDING — re-score at 9:45 open, needs vol≥1.5x to clear 6 |
+| PANW | +5.19% | TBD | TBD | above ($339.53) | ANALYST_UPGRADE — JPM/Benchmark/Citizens/BofA PT raises ahead of own earnings (~Sep 1); not yet a confirmed beat | +2 | 4/15 partial (3 chg +1 sma50 -2 breakout-thru-high +2 catalyst) | 4.0% | 8.0% | 2.00 | PENDING — weaker catalyst than NVDA, unlikely to clear 6 even with vol/RSI |
+| CRM | 0.00%* | TBD | TBD | above ($177.07) | EARNINGS_BEAT — EPS $5.90 vs $3.27 est, guidance raised, Agentforce/AI traction cited (reported after close 8/26) | +3 | N/A — data stale | 4.0% | 8.0% | 2.00 | PENDING — snapshot not yet reflecting reported premarket pop; re-check at open before scoring |
+
+*CRM chg% is an IEX-feed data artifact (no premarket print captured on this
+feed at 9:00 AM ET), not a real 0.00% move — do not treat as a dead signal.
+
+### Trade Ideas
+None executable yet — market not open (rule: no premarket entries, 9:45 AM ET
+minimum). Three names carry real, confirmed catalysts and should be re-scored
+live at morning-execution:
+1. **NVDA** — strongest, cleanest setup: confirmed earnings beat + raised
+   guidance, +6.26% premarket, above 50-day SMA. Needs volume ≥1.5x and
+   RSI check at open; likely clears score ≥6 if volume confirms.
+2. **CRM** — real earnings beat (EPS crushed, guidance raised) but Alpaca
+   IEX feed hasn't captured the premarket move yet — must re-pull
+   chg%/volume fresh at 9:45 before deciding; don't trust the stale 0.00%.
+3. **PANW** — real but weaker catalyst (pre-earnings analyst PT raises, no
+   confirmed beat yet); lowest priority of the three, likely score <6.
+
+All three are already trading above the prior day's high, which trips the
+"-2 near-resistance" scoring penalty as currently written even though it's a
+breakout-through rather than an approach-from-below — applying the formula
+literally, consistent with how MRK was scored the same way on 8/26.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD at research stage (market closed, no premarket entries permitted).
+0 open positions, 0 open orders, daily/weekly gates clear (0 trades this
+week, 0 closed trades — circuit breaker check not applicable). Priority
+re-screen at 9:45 AM morning-execution: NVDA first, then CRM, then PANW.
+Account equity: $100,000.00
