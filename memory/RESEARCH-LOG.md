@@ -2292,3 +2292,85 @@ Tomorrow's watchlist: CASHCAT (liquidity now clears $3M but treat as high-risk t
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all Rule-12 exit thresholds.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (ONG, CASHCAT, BMT, XRP, PENGU); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+
+## 2026-08-27 — Morning Research (Aggressive Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 71 (Greed)| 71            | 30%    |
+| BTC 24h %     | -0.38%    | 46            | 25%    |
+| BTC Dominance | 59.1%     | 39            | 20%    |
+| Alt Breadth   | ~55% (mixed sample) | 55  | 15%    |
+| Loss Rate     | 0 closed this wk | 75 (neutral default) | 10% |
+**MACRO_SCORE: 56 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent, 30d): L1 2W / 0L | DeFi 0W / 0L | AI 0W / 0L | Gaming 0W / 0L
+Self-learning: insufficient data (2 closed alt trades total, both wins, both L1, unbanded — need ≥3 per band to flag) | sector flags: none | signal_gate: CLEAR (0 consecutive low-tier losses)
+Anomaly scan: A: 36th+ consecutive HOLD/no-new-alt scan, MACRO_SCORE 56 (tradeable) → **ClickUp sent this run** | D: insufficient data (~3 closed trades total, need ≥10)
+
+### Account Snapshot
+- Total portfolio value: $35.463 USDT (live `account`, mark BTC $78,769.30)
+- Free USDT: $23.2624 (65.6%) | BTC-CORE 0.00015477 BTC ($12.1935, 34.4%)
+- Open positions: 1/5
+- Trades this week: 1/30 (Aug-25 BTC-CORE entry) · 0/8 today
+- 0 closed trades this week → weekly circuit breaker N/A · daily gate N/A
+
+### Market Context
+- BTC: $78,769.30 (-0.38% 24h) — flat, grinding sideways below the ~$80.9K Aug-25 high
+- BTC Dominance: 59.1% — still elevated, capital concentrated in BTC over alts
+- Fear & Greed: 71 (Greed)
+- Sector leaders (Perplexity): AI strongest (+30% wkly), L1s secondary (+6.4%, ETH/BNB-driven), Gaming +6.5% (inconsistent across timeframes), DeFi weakest but constructive (+2.9%)
+- Catalysts: Spot BTC ETF inflows ~$314.3M Aug-25 (7-day inflow streak, IBIT ~$284.4M of it); Jackson Hole/Fed commentary this week — macro swing risk; Stellar Protocol 27 live (auth delegation); Solana Agave 4.2 rollout (faster blocks, lower rent); TAO (Bittensor) repeatedly linked to a possible ETF decision (undated)
+
+### Smart Money Signals
+- Whale Alert: direct API unavailable (`'str' object has no attribute 'get'`, persistent free-tier parse error). Perplexity fallback: broad BTC accumulation (10K+ BTC wallets +46,420 BTC/60d, exchange reserves falling), ETH large-holder buying, XRP +380M in a week — none dated <48h / wallet-tx specific, not formally scoreable per source-freshness rule
+- VC/fund moves: no fresh actionable buy — a16z raising ~$2B fund 5 (AUM down ~40% to $9.5B), Paradigm raising ~$1.5B (AI/robotics crossover, one conflicting AUM figure), Multicoin AUM ~$2.7B (more than halved) — all standing exposure, not scoreable
+- Top trader calls: CryptoKaleo — one $HMM mention (illiquid, not MEXC-relevant) plus standing BTC-only views (bear-bottom $40-50K scenario / low-70s bounce thesis); no Pentoshi or Bluntz_Capital call found today
+- DeFiLlama gainers: endpoint unavailable this run (JSON parse error, consistent pattern)
+- CoinGecko trending top 10: CASHCAT, PONS, HYPE, PENGU, ONG, BTR, ETH, SOL, PUMP, BTC (top-5: CASHCAT, PONS, HYPE, PENGU, ONG)
+- Reddit: no actionable coin call (top post = McDonald's Instagram hack pushing a Solana scam token $GRIMACE — avoid); most-mentioned assets BTC/ETH/SOL/XRP/HYPE
+
+### Weighted Signal Table (Layer 2)
+| Ticker  | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|---------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| BTR     | 0         | 0      | 0          | 0             | 0 (rank #6, outside top 5) | +2 (345.4%, $4.21M) | +1 | -2 (already 3.4% ABOVE prev-day high) | 0 (169% ATR, not bearish) | +1 (HH/HL) | **2** |
+| CASHCAT | 0         | 0      | 0          | 0             | +1 (rank #1 trending) | +2 (17.5%, $4.15M) | +1 | 0 (9.2% from high / 24.9% from low, neutral) | 0 (25% ATR, not bearish) | 0 (no HH/HL) | **4** |
+
+Full-board MEXC scan (24h chg ≥ +5% AND qvol ≥ $3M) surfaced exactly these 2 qualifiers; no other ticker on the board cleared both legs.
+
+### MEXC Live Prices (eligible candidates only)
+| Ticker  | Price    | 24h %  | Volume  | Score | Base Size | Final Size | Option B? |
+|---------|----------|--------|---------|-------|-----------|------------|-----------|
+| BTR     | $0.15901 | +345.4%| $4.21M  | 2     | —         | SKIP       | No        |
+| CASHCAT | $0.23157 | +17.5% | $4.15M  | 4     | —         | SKIP       | No        |
+
+**BTR SKIP:** only 15 daily candles on record (brand-new/thin listing, EMA-200 unfillable) and price already extended 3.4% *above* the prior-day high after a +345% single-session move off a ~$0.03 base — textbook pump/rug profile, not a momentum entry. Level_pts=-2 AND SCORE(2)<7 → hard skip per rule regardless of the HH/HL structure point. **3-Candle Confirmation Gate: FAIL** (first of last 3 closed 60m candles closed below yesterday's close).
+**CASHCAT SKIP:** repeat name, disqualified on every prior appearance this week (Aug-25, Aug-26 evening) for the same reasons — only 15 daily candles (EMA-200 insufficient history, thin/new listing), and today's **3-Candle Confirmation Gate: FAIL** (last 3 closed 60m closes not all above yesterday's close, volume not monotonically rising). Score 4 is also below both eligibility thresholds (need ≥5 at MACRO≥60, ≥8 at MACRO<60 — we're at 56).
+
+No Option B strong-catalyst override found for either name.
+
+### News on Held Positions
+BTC-CORE (Rule 12): thesis = structural ETF weekly demand. Reinforced — 7th consecutive session of net spot BTC ETF inflows (~$314.3M Aug-25, IBIT ~$284.4M), no negative catalyst. Jackson Hole/Fed commentary this week is the one flagged macro swing risk to watch (date-sensitive, not yet landed). Thesis intact.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+1. **No rules-clean alt entry today.** BTR and CASHCAT are the only two live MEXC Option-A momentum hits; BTR is a thin-listing parabolic pump already above resistance (score 2, hard skip), CASHCAT is the same repeat thin-listing name that has failed the 3-Candle Gate on every prior scan (score 4, below threshold).
+2. BTC-CORE (Rule 12) — hold unchanged. Deployment ~34.4%, within the 30-40% core band; -2.68% unrealized (cost $12.5060 vs. val $12.1935 @ $78,769.30), well inside the -10% drawdown floor (~$72,724 BTC-price basis). No action needed at execution time.
+3. Watchlist for tomorrow: CASHCAT (recheck 3-Candle Gate if it re-confirms; still treat as high thin-listing risk), BTR (avoid chasing — only revisit on a deep pullback + reclaim with more daily-candle history), TAO (undated ETF-decision catalyst worth a live recheck).
+
+### Risk Factors
+- Macro gate: BTC dominance still elevated (59.1%) with alt breadth only mixed (~55%) — capital not broadly rotating into alts despite Greed sentiment (F&G 71).
+- Blocked sectors: none.
+- **36th+ consecutive HOLD/no-new-alt scan with tradeable macro (score 56) — Anomaly A fired, ClickUp sent this run.**
+- **Standing operational issue (not re-alerted this run — flagged repeatedly Aug-22 through Aug-26, needs user/weekly-review attention, out of morning-research's scope to self-action):** AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md's own header) ended 5 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 (Aug 17-23) weekly-review never ran, and Week 7 is now also due.
+- Event risk: Jackson Hole/Fed commentary this week — macro swing factor to watch.
+
+### Decision
+TRADE: none. **HOLD on alts** — both live Option-A hits (BTR, CASHCAT) fail on thin-listing risk plus score/3-Candle Gate thresholds. BTC-CORE (Rule 12) holds unchanged at ~34.4% deployment. Preserve $23.26 (65.6%) dry powder pending a qualifying alt breakout. Re-evaluate at morning-execution.
+
+Sources: live MEXC `/ticker/24hr` (full board scan, 2117 symbols) + `/ticker/price` + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure for BTR/CASHCAT) + `account`; [alt.me F&G](https://api.alternative.me/fng/); CoinGecko `/global` + `/search/trending`; **Perplexity (sonar)** ×6 (catalysts, trader calls, whale accumulation, VC/fund moves, sector momentum, reddit, alt breadth); DeFiLlama (unavailable) + Whale Alert direct API (unavailable, parse error).
