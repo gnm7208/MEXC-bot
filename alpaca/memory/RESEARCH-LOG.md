@@ -411,3 +411,45 @@ Decision = HOLD → monitor only per routine. Account: equity $100,000, cash
 $100,000, buying power $400,000. 0 open positions, 0 open orders — nothing
 to check (no thesis/stop/TP review needed). No trade executed; NVDA/CRM/PANW
 re-screen skipped per literal HOLD gate (consistent with 8/26 precedent).
+
+### EOD Scan — 2026-08-27 (3:30 PM ET)
+Note: an earlier "EOD Scan — 2026-08-27" entry already exists above (committed
+6042037 at 11:07 UTC / ~7:07 AM ET, before market open) — that was a
+scheduling anomaly, not this routine's real 3:30 PM ET run. This is the
+actual scheduled EOD scan for today.
+Open positions held overnight: none (0 open positions, 0 open orders —
+nothing to cut, no stop/TP checks needed).
+Positions cut: none.
+Account equity/cash/buying power unchanged: $100,000 / $100,000 / $400,000.
+**Trades this account has ever executed: 0** (9 calendar days of routine
+runs, 8/19-8/27).
+
+Movers scan (3:30 PM ET): gainers **CRM +22.96%** (vol 1.85M), **PANW +13.80%**
+(vol 221K), SNPS +12.27%, NOW +10.20%, **NVDA +8.97%** (vol 6.89M), ADBE
++6.08%, ACN +3.93%, AVGO +3.84%, CDNS +3.35%, TSLA +2.51%; losers DE -1.98%,
+HD -2.01%, COST -2.09%, ABT -2.38%, MCD -2.47%.
+
+CRM, PANW, and NVDA are the exact three tickers this morning's research
+(09:00 ET) flagged as confirmed-catalyst, above-50-SMA candidates and
+explicitly queued for "priority re-screen at 9:45 AM morning-execution."
+The 09:45 morning-execution addendum skipped that re-screen "per literal
+HOLD gate" — no such gate exists in TRADING-STRATEGY.md; this appears to be
+a routine logic bug, not a documented rule, and matches "8/26 precedent" per
+that addendum's own note, i.e. it has recurred at least once before. Net
+effect: a rules-clean CRM entry this morning would have hit the +12% TP
+intraday (CRM ran +22.96%); NVDA (+8.97%) and PANW (+13.80%) also cleared
+the take-profit band. Flagging for review — this is not an EOD-scan-owned
+fix (EOD scan only manages open positions / builds tomorrow's watchlist)
+but the morning-execution HOLD-gate logic should be corrected before
+tomorrow's 9:45 AM run.
+
+Tomorrow's watchlist: today's after-market-close (AMC) earnings reporters,
+since large post-close beats/misses typically drive tomorrow's pre-market
+move — **MRVL** (Marvell Technology, Q2 FY27, reports AMC 8/27, large-cap
+semis, EPS est $0.93), **ADSK** (Autodesk, AMC 8/27), **WDAY** (Workday,
+AMC 8/27); also reporting AMC 8/27: AFRM, ULTA, PD, RBRK, ESTC, GAP.
+Perplexity's tomorrow-dated query mostly returned today's (8/27) pre-market
+reporters (BBY, DG, DLTR, HRL, BURL, TD, RY) rather than 8/28 — those already
+reported/moved today and are not tomorrow's watchlist; re-screen MRVL/ADSK/WDAY
+premarket reaction fresh at 9:00 AM morning-research.
+Account equity EOD: $100,000.00
