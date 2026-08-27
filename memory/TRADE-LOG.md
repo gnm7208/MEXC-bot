@@ -1600,3 +1600,36 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 
 **Decision: NO ACTION.** Sole position is Rule-12-exempt and within normal drawdown; no exit trigger tripped. No alt positions to cut/ladder/tighten. No ClickUp alert (no action taken). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 5 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran, Week 7 now also due. Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `/ticker/price` + `/api/v3/account` + `/positions`; today's RESEARCH-LOG entry.
+
+## 2026-08-27 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,368.11 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.4%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades 1/30 wk · 0/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 56, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Not MACRO_HALTED — full STEP 2-9 run.
+
+**STEP 3 — Monitor open positions:** Sole position BTC-CORE (Rule 12) — exempt from stop/+12% TP/ladder/decay by design (no stop_price/target_price/peak-P&L on file). Cost $12.5060 (entry ~$80,804) → val $12.2838 @ mark $79,368.11 → **-1.78%**. Exit triggers checked: macro not halted; well above -10% core drawdown floor (~$72,724 BTC price vs. current $79,368.11); no qualifying alt needs the capital (STEP 5 found zero, see below); thesis (ETF structural demand) intact, no negative catalyst news. Deployment ~34.6% of $35.55 book — within Rule 12's 30-40% target. No near-stop alert (no stop_price on file for a Rule-12 hold).
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:22 UTC, before the 13:30-15:00 window). CoinGecko top-gainers endpoint unavailable (JSON parse error, consistent pattern) — fell back to full MEXC board scan (24h chg ≥ +5% AND qvol ≥ $3M, 2117 symbols), which surfaced 7 candidates: BTR (+40.97%, $3.19M), CASHCAT (+19.73%, $3.99M, repeat name), DGAI (+13.91%, $23.2M), TAO (+11.36%, $6.24M), SOL (+8.82%, $123.6M), TRUMP (+6.07%, $9.32M), WXT (+5.41%, $13.6M). Whale Alert: unavailable (persistent free-tier parse error). Perplexity: PUMP/ETH/SOL/XRP/BTC flagged as momentum leaders but citations are largely 7-day/weekly gainers (stale, not live 24h MEXC moves — recurring pattern); breaking news 2h: BTC >$80K on ETF inflows, SEC custody-rule review moved to White House, Europol Cryptomixer seizure ($29M BTC, unrelated to any held/candidate position) — no fresh actionable catalyst for any candidate.
+
+Full evaluation on all 7 candidates (klines interval=1d,60m,15m):
+- **SOL** ($104.48, +8.59%, $123.2M vol): above EMA-200, VWAP+1, but RSI 70.5 (**-1**, overbought/extended), vol_surge 1.18x (0), no HH/HL. **3-Candle Gate: FAIL** (vol not rising). **SCORE 3/20 — SKIP.**
+- **TAO** ($256.38, +11.09%, $6.21M vol): above EMA-200, manip flush +1 (29% ATR bearish), vol_surge 1.88x (+1), VWAP+1, but RSI 75.6 (**-1**, overbought). **3-Candle Gate: FAIL** (vol not rising). **SCORE 5/20 — SKIP** (below 8 threshold, MACRO<60).
+- **DGAI** ($0.7623, +11.82%, $22.9M vol): only 4 daily candles (EMA-200 unfillable, brand-new listing — high manipulation risk), level_pts **-2** (1.04% below prev-day high, into resistance), vol_surge 0.35x (declining volume on the pump — bear flag). **3-Candle Gate: FAIL. SCORE 3/20 — SKIP** (level_pts=-2 AND score<7 hard-skip rule).
+- **TRUMP** ($2.358, +4.29%, $9.31M vol): mom_pts=0 (24h chg <5% by strict Option-A test despite qualifying on full-board scan's looser filter), level_pts **-2** (0.47% below prev-day high), vol_surge 0.50x. **3-Candle Gate: FAIL. SCORE 1/20 — SKIP.**
+- **WXT** ($0.018765, +5.23%, $13.6M vol): above EMA-200, VWAP+1, but RSI 68.7 (near-overbought, 0 pts), vol_surge 1.02x (0), no HH/HL, no manip flush. **3-Candle Gate: FAIL. SCORE 4/20 — SKIP.**
+- **BTR** ($0.16897, +36.27%, $3.18M vol, repeat name): now 210 daily candles (thin-listing concern resolved) but still extended, 8.98% below prev-day high. **3-Candle Gate: FAIL** (vol not rising). **SKIP — defer.**
+- **CASHCAT** ($0.23612, +19.39%, $3.98M vol, repeat name): still only 51 daily candles (EMA-200 insufficient history, thin/new listing — same disqualifier as every prior appearance). **3-Candle Gate: FAIL** (closes not confirmed above yesterday's close AND vol not rising). **SKIP — defer** (same thin-listing precedent as Aug-25/26).
+
+Log: "3CANDLE NOT CONFIRMED SOL/TAO/DGAI/TRUMP/WXT/BTR/CASHCAT — defer" (vol_rising=False across the board this window — broad volume exhaustion into the pumps, not fresh breakouts).
+
+No Option B strong-catalyst override found for any candidate.
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5 (all 7 failed the 3-Candle Confirmation Gate; best score was TAO at 5/20, still below the 8-point MACRO<60 threshold).
+
+**Decision: NO NEW ENTRIES.** No rules-clean alt qualifier this window — all 7 live MEXC Option-A momentum hits fail the 3-Candle Confirmation Gate (broad vol_rising=False), and none clear the score≥8 quality gate at MACRO_SCORE 56. BTC-CORE (Rule 12) holds unchanged at ~34.6% deployment, -1.78% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 5 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran, Week 7 now also due. Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 2117 symbols) + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP/vol-surge for all 7 candidates) + `account`/`positions`; CoinGecko (unavailable, fallback to full MEXC board scan); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
