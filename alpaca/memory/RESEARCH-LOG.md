@@ -405,3 +405,9 @@ HOLD at research stage (market closed, no premarket entries permitted).
 week, 0 closed trades — circuit breaker check not applicable). Priority
 re-screen at 9:45 AM morning-execution: NVDA first, then CRM, then PANW.
 Account equity: $100,000.00
+
+### Addendum — 2026-08-27 09:45 ET (morning-execution)
+Decision = HOLD → monitor only per routine. Account: equity $100,000, cash
+$100,000, buying power $400,000. 0 open positions, 0 open orders — nothing
+to check (no thesis/stop/TP review needed). No trade executed; NVDA/CRM/PANW
+re-screen skipped per literal HOLD gate (consistent with 8/26 precedent).
