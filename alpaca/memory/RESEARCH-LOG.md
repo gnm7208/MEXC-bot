@@ -316,3 +316,24 @@ Account equity: $100,000.00
 Decision = HOLD → monitor only per routine. Account: equity $100,000, cash $100,000,
 buying power $400,000. 0 open positions, 0 open orders — nothing to check (no
 thesis/stop/TP review needed). No trade executed.
+
+### EOD Scan — 2026-08-27
+Note: no morning-research/morning-execution/midday entries found for 2026-08-27 in
+this log (no commits today prior to this scan) — those routines appear not to have
+run or logged. Flagging for review; proceeding with EOD scan on live account state.
+Open positions held overnight: none (0 open positions, 0 open orders — nothing to
+cut, no stop/TP checks needed)
+Positions cut: none
+Movers scan (3:30 PM ET): gainers ORCL +2.84%, SBUX +2.55%, QCOM +1.97%, MRVL +1.97%,
+CAT +1.28%, AAPL +1.16%, UNH +1.12%, META +1.10%, MSFT +0.98%, TMO +0.94%; losers
+LLY -3.57%, INTU -3.20%, ACN -3.05%, SCHW -2.57%, REGN -2.28% — no fresh
+catalyst-confirmed setups scored this cycle (0 positions to manage, screen deferred
+to tomorrow's morning-research).
+Tomorrow's watchlist: confirmed pre-market (before-open) earnings reporters for
+2026-08-28 (all small/mid-cap, outside the S&P100/Nasdaq100 movers universe) — MNSO
+(MINISO Group, EPS est $0.28-0.31, Buy rating PT $16.00), FRO (Frontline, EPS est
+$2.74), CHA (Chagee Holdings). Also reporting: JFIN, BWLP, HAFN. No FDA or
+acquisition catalysts surfaced; Kiplinger notes "no noteworthy earnings" while other
+calendars list 6-12 small-cap reporters — treat as low-conviction, re-screen at
+morning-research if any gap on volume.
+Account equity EOD: $100,000.00
