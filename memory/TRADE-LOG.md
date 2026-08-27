@@ -1633,3 +1633,15 @@ No Option B strong-catalyst override found for any candidate.
 **Decision: NO NEW ENTRIES.** No rules-clean alt qualifier this window — all 7 live MEXC Option-A momentum hits fail the 3-Candle Confirmation Gate (broad vol_rising=False), and none clear the score≥8 quality gate at MACRO_SCORE 56. BTC-CORE (Rule 12) holds unchanged at ~34.6% deployment, -1.78% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 5 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 weekly-review never ran, Week 7 now also due. Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 2117 symbols) + `/klines?interval=1d,60m,15m` (level/3-candle/EMA-200/manip/structure/RSI/VWAP/vol-surge for all 7 candidates) + `account`/`positions`; CoinGecko (unavailable, fallback to full MEXC board scan); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## Aug 27 — EOD Snapshot (Day 36, Thursday)
+
+**Portfolio:** $35.74 | **Cash:** $23.26 (65.1%) | **Day P&L:** +$0.33 (+0.93%) | **Phase P&L:** +$3.42 (+10.58%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop                  |
+|----------|------------|-----------|------------|---------|-------------------|------------------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $80,620.88 | +2.70%  | -$0.03 (-0.23%)   | none (Rule 12 exempt) |
+
+**Notes:** Quiet day — no trades fired across morning-execution, midday, or afternoon-execution; every scan found zero rules-clean alt qualifiers (BTR/CASHCAT disqualified this morning; SOL/TAO/DGAI/TRUMP/WXT/BTR/CASHCAT all failed the 3-Candle Confirmation Gate this afternoon, broad volume exhaustion into the pumps). BTC-CORE (Rule 12 index-tracking hold, exempt from stop/+12% TP/ladder) recovered from -2.47% to -0.23% unrealized as BTC rallied from ~$78,811 to $80,620.88, nearly back to the Aug-25 entry price and well inside the -10% core drawdown floor. Portfolio up modestly on the day (+0.93%) on the BTC rally. Unresolved carryover, flagged again for user/weekly-review attention: AGGRESSIVE MODE (Aug 4-22) window ended 5 days ago and has not been reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction; Week 6 (Aug 17-23) weekly-review never ran, Week 7 now also due.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-26 EOD baseline, today's trade count) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
