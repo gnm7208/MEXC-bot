@@ -1679,3 +1679,25 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 
 **Decision: NO ACTION.** Sole position is Rule-12-exempt and within normal drawdown; no exit trigger tripped. No alt positions to cut/ladder/tighten. No ClickUp alert (no action taken). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 6 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run. Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `/ticker/price` + `/api/v3/account` + `/positions`; today's RESEARCH-LOG entry.
+
+## 2026-08-28 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,294.97 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.5%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades 1/30 wk · 0/8 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 59, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Not MACRO_HALTED — full STEP 2-9 run.
+
+**STEP 3 — Monitor open positions:** Sole position BTC-CORE (Rule 12) — exempt from stop/+12% TP/ladder/decay by design (no stop_price/target_price/peak-P&L on file). Cost $12.5060 (entry ~$80,804) → val $12.2725 @ mark $79,294.97 → **-1.87%**. Exit triggers checked: macro not halted; well above -10% core drawdown floor (~$72,724 BTC price vs. current $79,294.97); no qualifying alt needs the capital (STEP 5 found zero, see below); thesis (ETF structural demand, inflow streak now reportedly extended to 9 days per Perplexity) intact, no negative catalyst news. Deployment ~34.5% of $35.53 book — within Rule 12's 30-40% target. No near-stop alert (no stop_price on file for a Rule-12 hold).
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:23 UTC, before the 13:30-15:00 window). CoinGecko top-gainers-by-24h% endpoint returned majors (BTC/ETH/USDT/BNB/XRP) at the top with sub-1% moves — clearly mis-sorted/stale, discarded in favor of a full MEXC board scan. Full board scan (all USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **zero hits** — same as this morning. Broader diagnostic (qvol ≥ $3M, any %): top mover was TRUMP at only +0.15%; every liquid name sitting at ~0.0-0.15% 24h — an extremely flat, dead tape market-wide (consistent with today's morning-research finding). Watchlist carryovers checked live: CASHCAT -0.16% ($3.22M vol), BTR -0.06% ($1.27M vol, now below $3M floor), TAO -0.05% ($3.35M vol) — all flat/negative, no re-confirmation. Whale Alert: unavailable (persistent free-tier parse error). Perplexity: SOL/HYPE/PUMP/TRUMP/USELESS/MELANIA/PEPE cited as "pumping" but citations are 7-day gainers, not live 24h MEXC moves (recurring stale-citation pattern); CASHCAT's cited "+33.89% in a day" traces to a source snippet dated 2026-08-05, not today — discarded as stale. Breaking news (2h): Bitcoin ETF inflow streak reportedly extended to 9 days (+$242M) — reinforces BTC-CORE thesis; Europol seized "Cryptomixer" ($29M BTC, unrelated); BitGo/NYDIG consolidation; Public Citizen flagged $4.7B underwater across Trump-linked crypto ventures (not held) — no fresh actionable catalyst for any candidate. Jackson Hole / Fed Chair Warsh keynote later today flagged as the session's live macro-swing risk (per Investing.com), not yet a directional catalyst.
+
+No candidates cleared the full-board scan; no Option B strong-catalyst override found.
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** Dead tape market-wide (zero Option-A hits, watchlist carryovers all flat/negative) — no rules-clean alt qualifier this window. BTC-CORE (Rule 12) holds unchanged at ~34.5% deployment, -1.87% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 6 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run. Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, USDT pairs) + watchlist carryovers (CASHCAT/BTR/TAO) + `account`/`positions`; CoinGecko `/coins/markets` (mis-sorted, discarded); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
