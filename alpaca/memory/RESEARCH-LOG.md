@@ -532,4 +532,47 @@ for today. Re-screen CRM/PANW/SNPS/NOW/NVDA/OKTA for genuine continuation
 and MRVL/RBRK confirmed avoid at 9:45 AM morning-execution using live
 post-open data, not the pre-open stale movers pull.
 Account equity: $100,000.00
+
+### EOD Scan — 2026-08-28 (3:30 PM ET)
+Open positions held overnight: none (0 open positions, 0 open orders —
+nothing to cut, no stop/TP checks needed).
+Positions cut: none.
+No morning-execution or midday addendum found for today in this log — HOLD
+from morning research appears to have carried through the full session
+with no re-screen logged (same open question flagged in yesterday's EOD
+entry re: a possible morning-execution HOLD-gate bug; not fixed as of this
+run — still not an EOD-scan-owned fix).
+Account equity/cash/buying power unchanged: $100,000 / $100,000 / $400,000.
+**Trades this account has ever executed: 0** (10 calendar days of routine
+runs, 8/19-8/28).
+
+Movers scan (3:30 PM ET): gainers NOW +4.61% (vol 1.04M), AMZN +3.82%,
+SYK +2.90%, NKE +2.71%, INTU +2.66%, NFLX +2.41%, SCHW +2.40%, GOOGL +2.06%,
+CRM +2.03%, BAC +1.90%; losers MRVL -9.81%, SNPS -4.95%, NVDA -4.69%,
+KLAC -4.21%, LRCX -3.94%. Note: NVDA/CRM/SNPS gave back most of yesterday's
+earnings pop today (NVDA -4.69% today vs +8.97%/+8.77% the prior two
+sessions; SNPS -4.95% today vs +12-13% prior) — consistent with yesterday's
+"DEFER, don't chase a 1-day-old pop" call working out; MRVL's premarket
+weakness (-6.81% at 9:13 AM) extended to -9.81% by the close, consistent
+with the "sell-the-news, thesis broken" avoid call.
+
+Tomorrow's pre-market catalyst scan: 8/29 is a Saturday (market closed) —
+`perplexity.sh` correctly returned "no reports" for that date across
+multiple earnings calendars. Next trading day is Monday 2026-08-31.
+Non-earnings catalysts surfaced for the weekend/Monday window: **LNTH**
+(Lantheus Holdings — pending $8B acquisition by Curium at $102.50/share,
+plus recent FDA approval, new institutional stake reported 8/28), **BNTX/
+PFE** (FDA approval for adapted COMIRNATY COVID-19 vaccine), **QNRX**
+(Quoin Pharmaceuticals — FDA-related news + $50M financing, microcap/
+high-risk, ADS). No confirmed earnings-driven premarket movers for Monday
+in this pull; re-run `alpaca.sh movers` + a fresh earnings-calendar query
+Monday morning since weekend queries don't capture Monday's actual
+pre-market reporters.
+
+Tomorrow's watchlist: LNTH (acquisition + FDA catalyst, needs live
+volume/RSI check Monday), BNTX/PFE (FDA approval, lower momentum profile,
+lower priority), QNRX (high-risk microcap, lowest priority — confirm
+liquidity/spread before considering). No confirmed earnings reporters for
+Monday yet — re-screen at Monday's 9:00 AM morning-research.
+Account equity EOD: $100,000.00
 Account equity EOD: $100,000.00
