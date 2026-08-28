@@ -2387,3 +2387,73 @@ Tomorrow's watchlist: CASHCAT and BTR (carryover, still high thin-listing risk p
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all Rule-12 exit thresholds. Also flagged again (out of this routine's scope to self-action): AGGRESSIVE MODE window (Aug 4-22) ended 6 days ago, not yet reverted to CONSERVATIVE MODE; Week 6 and Week 7 weekly-reviews never ran; no morning-research/morning-execution/midday/afternoon-execution activity logged for today (2026-08-28) at all — earlier routines appear not to have run.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (ENAUSDT); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-08-28 — Morning Research (Aggressive Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 73        | 73            | 30%    |
+| BTC 24h %     | +0.01%    | 50            | 25%    |
+| BTC Dominance | 59.3%     | 38            | 20%    |
+| Alt Breadth   | ~65%      | 65            | 15%    |
+| Loss Rate     | 0/0 (default) | 75        | 10%    |
+**MACRO_SCORE: 59 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent, last 30 days): L1 3W / 0L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L
+Self-learning: low 0/0 | mid 0/0 | high 0/0 wins (no signal-scored closed trades on file — both ADA trades predate the scoring system, BTC-CORE is Rule-12/unscored) | sector: L1 3W/0L, no flag | signal_gate: CLEAR (0 consec losses)
+Anomaly scan: A: 37th+ consecutive HOLD/no-new-alt scan detected, MACRO_SCORE 59 (tradeable) → ClickUp alert sent this run | D: insufficient data (3 closed trades total, need ≥10)
+
+### Account Snapshot
+Equity ~$35.62 (BTC-CORE $12.36 + USDT $23.2624) | Free USDT $23.2624 (65.3%) | Open positions 1/5 | Trades this week 1/30 | Closed this week 0 → weekly circuit breaker N/A, daily gate N/A (0 trades today). BTC-CORE: no ladder mechanism (Rule 12 exempt).
+
+### Market Context
+BTC $79,840.01 (vs $80,620.88 Aug-27 EOD, -0.97%). BTC dominance 59.3%. Fear & Greed 73 (Greed). Macro REDUCED (score 59, SIZE_MULTIPLIER 0.6x) — F&G and breadth firm but BTC dominance still elevated (score only 38, weight 20%), consistent with capital not rotating into alts. Sector leaders per Perplexity: AI strongest (+6% to +30% across sources depending on window), L1/DeFi firm, Gaming mixed-to-lagging.
+
+### Smart Money Signals
+- Whale Alert: unavailable (persistent free-tier endpoint error, same pattern as every recent scan)
+- VC/fund moves: a16z raised a $2.2B fifth crypto-only fund (broad continued commitment, no single-coin signal); Paradigm reportedly raising up to $1.5B for a fund spanning crypto+AI+robotics (diversifying, not crypto-only); Multicoin AUM down to ~$2.7B (contraction, no fresh holdings disclosed) — no actionable single-coin VC signal today
+- Top trader calls: CryptoKaleo cited $HMM ($0.00598 context) — live MEXC check: HMMUSDT -28.94% 24h, $114.9K vol, fails the $3M liquidity floor by >25x and moving the wrong direction; stale/bad call, disqualified
+- DeFiLlama gainers: unavailable (API error, `/gainers` returned non-JSON)
+- On-chain accumulation (via Perplexity, Whale Alert API down): BTC (>10K-BTC wallets +~46K BTC over 60d), XRP (whale wallets +~380M XRP/week), ETH (10K-100K ETH wallets at record 19.6M ETH), CRV (~700K CRV whale buy + reported ETH→CRV rotation) — CRV was the only one to clear SCORE_PRE≥3, checked live below
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| CRV    | +3        | -      | -          | -             | -             | 0       | 0       | -     | -         | -          | 3     |
+| XRP    | +2        | -      | -          | -             | -             | (n/a)   | (n/a)   | -     | -         | -          | 2 (watchlist) |
+| ETH    | +2        | -      | -          | -             | -             | (n/a)   | (n/a)   | -     | -         | -          | 2 (watchlist) |
+| SOL    | -         | -      | -          | -             | +1            | (n/a)   | (n/a)   | -     | -         | -          | 1 (watchlist) |
+| ENA    | -         | -      | -          | -             | +1            | (n/a)   | (n/a)   | -     | -         | -          | 1 (watchlist) |
+| HMM    | -         | -      | +1 (bad call, negative move) | - | - | (n/a) | (n/a) | - | - | - | 1 — checked live, disqualified |
+
+Only CRV reached SCORE_PRE ≥ 3 (proceed threshold); all others watchlist-only, no MEXC check run.
+
+### MEXC Live Prices (eligible candidates only)
+| Ticker | Price   | 24h % | Volume   | Score | Base Size | Final Size | Option B? |
+|--------|---------|-------|----------|-------|-----------|------------|-----------|
+| CRV    | $0.3198 | +2.0% | $812,173 | 3/20  | n/a       | n/a        | No — SKIP (score 3 < 8 threshold at MACRO<60; also fails $3M/$1M exit-liquidity floor) |
+
+Full-board scan (all MEXC USDTpairs, 24h ≥ +5% AND vol ≥ $3M): **zero hits.** Broader scan (vol ≥ $3M, any %): every liquid name (BTC, SOL, ENA, XRP, TRX, BNB, TAO, SUI, HYPE, etc.) sitting at ~0.0-0.2% 24h — an unusually flat, dead tape market-wide, not sector-specific.
+
+### News on Held Positions
+BTC-CORE (Rule 12, 0.00015477 BTC, cost $12.5060, entry ~$80,804) → val ~$12.357 @ $79,840.01 = **-1.19%**. Thesis (ETF structural demand) intact and reinforced: US spot BTC/ETH ETFs posted an 8th consecutive day of net inflows ($232.2M BTC / $192.4M ETH on Aug 26), BlackRock IBIT led with ~$200.8M. No thesis-breaking news. Watch item: Jackson Hole/Warsh keynote + Tokyo CPI land today (Aug 28) — macro swing risk, not yet a catalyst break. Well inside the -10% core drawdown floor (~$72,724 BTC price). No ladder/stop applicable (Rule 12 exempt). Deployment ~34.7% of $35.62 book — within Rule 12's 30-40% target, no re-trigger needed.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None rules-clean. Closest candidate:
+1. CRV — Score: 3/20 | Whale-led accumulation (~700K CRV buy, ETH→CRV rotation) but MEXC 24h only +2.0% and volume $812K, far below the $3M liquidity floor — fails Layer 3 exit-liquidity test outright even before the score gate. SKIP, watchlist only pending a real volume/price confirmation.
+
+### Risk Factors
+- Macro gate: BTC dominance elevated (59.3%, contributes only 38/100 to MACRO_SCORE) — capital still not rotating into alts, consistent with the ongoing zero-alt-entry streak
+- Blocked sectors: none
+- Event risks: Jackson Hole / Kevin Warsh keynote + Tokyo CPI print today (Aug 28) — macro volatility risk for BTC-CORE mark, no action pre-emptively, monitor at midday/afternoon
+- Standing ops issue (not actionable by this routine): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 6 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run — flagged again for user/weekly-review attention
+
+### Decision
+TRADE: none. HOLD on alts — full MEXC board returns zero rules-clean OPTION-A/B qualifiers (flattest tape in weeks); only whale-flagged name (CRV) fails the liquidity floor outright. BTC-CORE (Rule 12) holds unchanged at ~34.7% deployment, -1.19%, no exit trigger tripped. Preserve $23.26 (65.3%) dry powder pending a qualifying alt breakout. Alt-entry quality gates NOT loosened. Re-evaluate at morning-execution.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (CRV, HMM, XRP, full board) + `/ticker/24hr` (full-board scan, ~2100+ symbols); alternative.me F&G; CoinGecko `/global` (dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama `/gainers` (unavailable); **Perplexity (sonar)** ×6 (catalysts, trader calls, whale accumulation, VC moves, sector momentum, Reddit hot posts, BTC ETF news).
