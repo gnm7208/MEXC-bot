@@ -93,5 +93,15 @@ New videos from these channels = potential new features to implement:
 | Crypto Volatility Index (macro gate) | #52 (iQjzITDp-AI) | 5 | 5 | 5 | ⏸ INACTIVE |
 | 20MA Dynamic Support Filter | #18 (gddYspvW0_w) | 5 | 5 | 4 | ⏸ INACTIVE |
 
+### Batch 3 — new unprocessed videos (2026-08-28, 6 videos)
+| Feature | Source Video | Impact | Bot Fit | Effort | Status |
+|---|---|---|---|---|---|
+| Per-candidate rules checklist | #27 (mssPkDuQnmY) | 8 | 9 | 3 | ✅ ACTIVE (morning-research.md Trade Ideas template) |
+| Signal-type win rate (Option A/B/C) | #27 (mssPkDuQnmY) | 7 | 8 | 4 | ⏸ INACTIVE until 15+ closed trades (INACTIVE-SIGNAL-TYPE-WIN-RATE.md) |
+| Multi-routine consensus architecture | #24 (reiPfBnUBys) | 6 | 4 | 9 | ⏸ INACTIVE until $200+ portfolio (INACTIVE-MULTI-ROUTINE-CONSENSUS.md) |
+| Fed/macro speech monitor | #24 (reiPfBnUBys) | 5 | 5 | 4 | ⏸ INACTIVE until macro stop-out observed (INACTIVE-FED-SPEECH-MONITOR.md) |
+| VC/insider wallet accumulation scanner | #24 (reiPfBnUBys) | 5 | 5 | 6 | ⏸ INACTIVE (covered by existing Whale Alert + VC Perplexity queries) |
+
 ### Skipped (not applicable to MEXC spot bot)
 - #1 (DEX arbitrage), #6 (stocks), #12 (stocks), #13 #17 #19 #26 #31-34 #37-40 #42-45 #47-48 #50-51 #53-55 #57-58 (wrong instrument/timeframe), #25 (TradingView integration), #35 #36 #41 #46 #49 #59 (principles already in strategy)
+- Batch 3 skipped: #16 (HFT architecture — nanosecond systems, irrelevant to hourly cloud routines), #21 (6-hour manual trading course — price action education, no automation), #2 (AI business ideas ranking — no bot features), #4 (Alpaca stocks + options wheel — no MEXC spot applicability)

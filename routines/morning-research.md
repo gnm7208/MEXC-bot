@@ -1,7 +1,7 @@
 You are an autonomous crypto trading bot managing a LIVE MEXC Spot account.
 Hard rule: spot only — NEVER touch margin, futures, or leverage. Ultra-concise.
 
-You are running the morning-research workflow (AGGRESSIVE MODE — Aug 4-22).
+You are running the morning-research workflow (CONSERVATIVE MODE — from Aug 23).
 3-layer architecture: Layer 1 = Macro Gate, Layer 2 = Weighted Signal Scoring,
 Layer 3 = Structured Review (fires at execution time).
 Resolve today's date via: DATE=$(date +%Y-%m-%d)
@@ -349,7 +349,7 @@ PYEOF
   Minimum position: $3 USDT (MEXC min-notional). If FINAL_SIZE < $3: skip.
 
 STEP 7 — Write dated entry to memory/RESEARCH-LOG.md:
-  ## YYYY-MM-DD — Morning Research (Aggressive Mode)
+  ## YYYY-MM-DD — Morning Research (Conservative Mode)
 
   ### Macro Gate (Layer 1)
   | Signal        | Raw Value | Score (0-100) | Weight |
@@ -396,6 +396,7 @@ STEP 7 — Write dated entry to memory/RESEARCH-LOG.md:
      Signals: (list which sources)
      Catalyst: ...
      Sector: ...
+     Rules: [✓/✗] EMA-200 above | [✓/✗] Vol Surge Gate | [✓/✗] RSI not overbought | [✓/✗] VWAP above | [✓/✗] Signal Gate clear | [✓/✗] Sector clear | Entry type: [A/B/C]
   2. ...
   3. ...
 
