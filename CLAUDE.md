@@ -29,24 +29,25 @@ Open these before doing anything:
 
 Cloud routines live in `routines/`. Local slash commands in `.claude/commands/`.
 
-## Strategy Hard Rules — AGGRESSIVE MODE (Aug 4–22)
-## Conservative rules saved in memory/TRADING-STRATEGY-CONSERVATIVE.md; revert after Aug 22.
+## Strategy Hard Rules — CONSERVATIVE MODE (active since Aug 23)
+## Full rulebook: memory/TRADING-STRATEGY.md. Aggressive-mode rules (Aug 4–22 window,
+## now expired) are archived and must NOT be applied.
 
 - **SPOT ONLY** — no margin, no futures, no leverage, ever
-- Max **5** open positions at a time; **virtual capital model** — size = 4.5-6% of $154 ref = $6.93-$9.24/bet
-- **80-90%** capital deployed; hold only 10-20% USDT as dry powder
+- Max **5-6** open positions at a time; size = **20% of total portfolio** per position
+- **75-85%** capital deployed; hold 15-25% USDT as dry powder
 - **Every position gets a stop price recorded in TRADE-LOG immediately after fill** — MEXC API has no stop-limit orders; stops enforced by midday + afternoon monitoring routines
-- Cut losers at **-6%** from entry (market sell immediately)
-- **Trailing stop (manual)**: stop at **-8%** on entry → tighten to 7% below current at **+3%** gain → close at **+12%**
+- Cut losers at **-7%** from entry (market sell immediately)
+- **Trailing stop (manual)**: stop at **-10%** on entry → tighten to 7% below current at **+3%** gain → close at **+7%**
 - Never tighten within 3% of current price; never move a stop down
-- **LADDER BUY**: if position drops **-5% to -8%** AND thesis intact → buy second equal tranche; new stop = avg cost × 0.92; new target = avg cost × 1.12; max 1 ladder per position
-- Max **30** new trades per week; max **8** trades per day
+- **LADDER BUY: DISABLED** in conservative mode
+- Max **25** new trades per week; max **5** trades per day
 - **Weekly circuit breaker**: if ≥ 40% of this week's closed trades are losses (min 5 trades) → halt; resume when F&G > 50 AND BTC 24h > 0%
-- **Daily gate**: if ≥ **8** trades today AND win rate < 60% → halt until tomorrow
-- **Benchmark-tracking BTC core** (Rule 12): if ≥ 3 consecutive scans yield zero rules-clean alt entries AND macro not halted AND deployment < 40% → hold ~30-40% in BTC (or ETH) spot as an index-tracking hold (exempt from momentum gates + +12% TP; exit only on macro halt, to fund a qualifying alt, or −10% core drawdown). Never sit 100% cash conceding BTC during alt dry spells. Do NOT loosen alt-entry gates to force deployment.
-- **Take-profit**: close at **+12%** gain — no exceptions
+- **Daily gate**: if ≥ **5** trades today AND win rate < 60% → halt until tomorrow
+- **Benchmark-tracking BTC core** (Rule 12): if ≥ 3 consecutive scans yield zero rules-clean alt entries AND macro not halted AND deployment < 40% → hold ~30-40% in BTC (or ETH) spot as an index-tracking hold (exempt from momentum gates + take-profit; exit only on macro halt, to fund a qualifying alt, or −10% core drawdown). Never sit 100% cash conceding BTC during alt dry spells. Do NOT loosen alt-entry gates to force deployment.
+- **Take-profit**: close at **+7%** gain — no exceptions
 - **Entry signal** — any ONE is sufficient:
-  - OPTION A: 24h price change ≥ +5% AND volume ≥ $3M
+  - OPTION A: 24h price change ≥ +2% AND volume ≥ $3M
   - OPTION B: Strong catalyst (ETF filing, protocol upgrade, whale accumulation, VC entry)
   - OPTION C: Coin appears in 3+ signal sources (Whale Alert + CoinGecko + DeFiLlama + trader call)
 - **Smart money first**: prioritize coins with Whale Alert or VC accumulation signals over pure momentum
@@ -75,18 +76,34 @@ MEXC subcommands: `account`, `balance ASSET`, `positions`, `quote SYM`, `price S
 
 ## Order Shapes
 
+**MEXC spot API supports only `LIMIT`, `MARKET`, `LIMIT_MAKER`.**
+`STOP_LOSS_LIMIT` does NOT exist — it is rejected HTTP 400 (verified live 2026-07-28).
+Never attempt to place one; never halt a trade because you cannot.
+
 ```bash
 # Market buy (spend USDT amount)
 bash scripts/mexc.sh order \
   '{"symbol":"BTCUSDT","side":"BUY","type":"MARKET","quoteOrderQty":"2000"}'
 
-# Stop-limit GTC (10% below fill; place immediately after every buy)
+# Limit buy (maker)
 bash scripts/mexc.sh order \
-  '{"symbol":"BTCUSDT","side":"SELL","type":"STOP_LOSS_LIMIT","quantity":"0.001","price":"89900","stopPrice":"90000","timeInForce":"GTC"}'
+  '{"symbol":"BTCUSDT","side":"BUY","type":"LIMIT","quantity":"0.001","price":"64000","timeInForce":"GTC"}'
 
-# Take-profit (close when up +10%)
+# Stop loss / take profit = MARKET SELL, executed by a monitoring routine
 bash scripts/mexc.sh close BTCUSDT
 ```
+
+**Stop mechanism (Rule 4) — virtual, not on-exchange:**
+
+1. Immediately after any fill, record the stop price in `memory/TRADE-LOG.md`.
+2. `midday` + `afternoon-execution` compare live price to that recorded stop.
+3. If breached → `bash scripts/mexc.sh close SYMBOL` (market sell).
+
+Consequence: **stops only exist while routines are running.** If the bot is offline
+(subscription lapsed, API credits exhausted, GHA disabled), open positions have zero
+downside protection. Flat the book before any planned outage.
+`locked: 0` on every balance is the expected steady state — it confirms no resting
+orders, which is correct, not a bug.
 
 ## Cloud Routine Rules
 
