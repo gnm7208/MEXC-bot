@@ -235,6 +235,7 @@ STEP 5 — Build weighted signal table. For every coin that appeared in ANY sour
   +2 pts: DeFiLlama TVL gaining >10% 24h (underlying token)
   +1 pt:  CoinGecko trending top 5
   +2 pts: 24h price >= +5% on MEXC (check in STEP 6)
+  +1 pt:  24h price >= +2% on MEXC — conservative mode signal (check in STEP 6)
   +1 pt:  MEXC volume >= $3M USD (check in STEP 6)
   +1 pt:  ATR manipulation flush — largest 15m candle in last 2h >= 25% of 14-day ATR AND bearish (check in STEP 6)
   +1 pt:  1h market structure bullish — last 3h highs/lows > prior 3h highs/lows (HH/HL, check in STEP 6)
@@ -254,7 +255,7 @@ import json,sys
 d=json.load(sys.stdin)
 pct = float(d.get('priceChangePercent','0'))
 vol = float(d.get('quoteVolume','0'))
-mom_pts = 2 if pct >= 5 else 0
+mom_pts = 2 if pct >= 5 else (1 if pct >= 2 else 0)  # conservative: +1pt ≥2%, +2pts ≥5%
 vol_pts = 1 if vol >= 3000000 else 0
 print(d.get('symbol'), '| price:', d.get('lastPrice'),
       '| 24h:', str(pct)+'%', '| vol: $'+str(int(vol)),
@@ -340,11 +341,14 @@ PYEOF
   - If level_pts = -2 AND SCORE < 7: SKIP regardless (entering near resistance with low conviction)
   - Also flag if: strong catalyst present (ETF filing, protocol upgrade, exchange listing) → OPTION_B = true
   - If OPTION_B = true: eligible regardless of score
+  - LARGE-CAP SOFT GATE: for coins with CoinGecko rank ≤ 100 AND MEXC 24h vol > $50M/day,
+    struct_pts (HH/HL 1h check) is scoring weight only — never a hard block. These can enter
+    even with struct_pts = 0 if all other gates pass. (Prevents over-blocking ETH/SOL/BNB/XRP/ADA.)
 
-  Position size (before macro multiplier):
-  - SCORE 5-7:  BASE_SIZE = 25% of portfolio
-  - SCORE 8-10: BASE_SIZE = 30%
-  - SCORE >= 11: BASE_SIZE = 35%
+  Position size (before macro multiplier) — conservative mode (20% max per position):
+  - SCORE 5-7:  BASE_SIZE = 15% of portfolio
+  - SCORE 8-10: BASE_SIZE = 20%
+  - SCORE >= 11: BASE_SIZE = 20%  (cap at 20% in conservative mode)
   FINAL_SIZE = BASE_SIZE * SIZE_MULTIPLIER (from macro gate)
   Minimum position: $3 USDT (MEXC min-notional). If FINAL_SIZE < $3: skip.
 
@@ -392,7 +396,7 @@ STEP 7 — Write dated entry to memory/RESEARCH-LOG.md:
   (thesis intact / broken? catalyst update? ladder opportunity?)
 
   ### Trade Ideas (Layer 3 review fires at execution time)
-  1. TICKER — Score: X/20 | Final size: $X | Entry ~$X | Stop $X (-X.X% ATR) | Ladder $X (-X.X%) | Target $X (+X.X% ATR / range TP)
+  1. TICKER — Score: X/20 | Final size: $X | Entry ~$X | Stop $X (-10%) | Target $X (+7% / range TP)
      Signals: (list which sources)
      Catalyst: ...
      Sector: ...

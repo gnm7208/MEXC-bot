@@ -47,3 +47,6 @@ curl -fsS -X POST \
   -d "$payload"
 
 echo
+
+# Also send to Telegram (dual-channel; silently skipped if token not set)
+bash "$(dirname "$0")/telegram.sh" "$msg" 2>/dev/null || true
