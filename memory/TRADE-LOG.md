@@ -1701,3 +1701,15 @@ No candidates cleared the full-board scan; no Option B strong-catalyst override 
 **Decision: NO NEW ENTRIES.** Dead tape market-wide (zero Option-A hits, watchlist carryovers all flat/negative) — no rules-clean alt qualifier this window. BTC-CORE (Rule 12) holds unchanged at ~34.5% deployment, -1.87% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): AGGRESSIVE MODE window (Aug 4-22 per TRADING-STRATEGY.md) ended 6 days ago and has not been reverted to CONSERVATIVE MODE; Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run. Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, USDT pairs) + watchlist carryovers (CASHCAT/BTR/TAO) + `account`/`positions`; CoinGecko `/coins/markets` (mis-sorted, discarded); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## Aug 28 — EOD Snapshot (Day 37, Friday)
+
+**Portfolio:** $35.54 | **Cash:** $23.26 (65.5%) | **Day P&L:** -$0.20 (-0.56%) | **Phase P&L:** +$3.22 (+9.97%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop                  |
+|----------|------------|-----------|------------|---------|--------------------|------------------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $79,345.25 | -1.58%  | -$0.23 (-1.80%)    | none (Rule 12 exempt) |
+
+**Notes:** Flat/quiet day — no trades fired across morning-execution, midday, or afternoon-execution; every scan found zero rules-clean alt qualifiers (dead tape, near-zero 24h moves market-wide per afternoon-execution's full board scan). BTC-CORE (Rule 12 index-tracking hold, exempt from stop/+12% TP/ladder) drifted from -1.24% to -1.80% unrealized as BTC slid from ~$79,805 to $79,345, still well inside the -10% core drawdown floor and the ETF inflow thesis intact (9-day inflow streak per Perplexity). Portfolio down slightly on the day (-0.56%) tracking the BTC dip. Unresolved carryover, flagged again for user/weekly-review attention: AGGRESSIVE MODE (Aug 4-22) window ended 6 days ago and has not been reverted to CONSERVATIVE MODE per TRADING-STRATEGY.md's own instruction; Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-27 EOD baseline, today's trade count) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
