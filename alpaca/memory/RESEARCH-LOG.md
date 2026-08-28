@@ -452,4 +452,84 @@ Perplexity's tomorrow-dated query mostly returned today's (8/27) pre-market
 reporters (BBY, DG, DLTR, HRL, BURL, TD, RY) rather than 8/28 — those already
 reported/moved today and are not tomorrow's watchlist; re-screen MRVL/ADSK/WDAY
 premarket reaction fresh at 9:00 AM morning-research.
+
+## 2026-08-28 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL (cautious)
+Futures: S&P mixed/flat (-0.06% to +0.65% across sources, choppy, no clear
+direction) | Nasdaq mixed, slightly weaker in one read
+Risk events today: **Fed Chair Kevin Warsh Jackson Hole speech ~10:00 AM ET
+(2:00 PM UTC)** — high-impact rate-path/real-yield event, similar risk
+profile to an FOMC day; Chicago PMI 9:45 AM ET (beat: 57.6 vs 56.1 est, mild
+positive); BLS preliminary payroll benchmark revision. No CPI/FOMC decision
+today. Given the Fed speech risk, treating this like a BEARISH-day gate per
+strategy intent: **entry threshold raised to FINAL_SCORE >= 9** even though
+futures aren't outright negative.
+
+### Movers Scanned
+`alpaca.sh movers` (S&P100+NDX100 universe) as of 9:13 AM ET — **data-stale
+caveat**: pre-open, so `dailyBar` still reflects 8/27's closed session and
+`prevDailyBar` is 8/26's close; this is the same IEX pre-open lag flagged in
+the 8/27 log, not fresh 8/28 premarket action. Verified via direct
+snapshot/latestTrade timestamps:
+- Top "gainers" (all actually 8/27 EOD moves, already realized, no fresh
+  8/28 print yet): CRM +22.57%, SNPS +13.23%, PANW +12.76%, NOW +10.08%,
+  NVDA +8.77%, ADBE +5.73%, AVGO +4.40%, CDNS +3.83%, ACN +3.31%, TSLA +2.56%.
+  Where a genuine 8/28 premarket trade exists (NVDA, NOW), price is flat-to-
+  slightly-down vs 8/27's close (NVDA $227.72 vs $228.17 = -0.2%; NOW $137.88
+  vs $138.44 = -0.4%) — **no continuation, these are one-day-old extended
+  moves**, not fresh signals.
+- Losers: ABT -2.21%, MRK -2.24%, SYK -2.28%, COST -2.28%, MCD -2.57%.
+- Yesterday's flagged AMC-8/27 earnings reporters (today's real watchlist),
+  checked directly via fresh 8/28 snapshot: **MRVL -6.81%** premarket (beat
+  EPS $0.67/rev $2.01B +58% YoY, but guidance seen as not validating the
+  AI-rally narrative → sell-the-news per Perplexity), **RBRK -7.07%**
+  premarket (no fresh catalyst confirmed, negative reaction). **WDAY, ADSK,
+  PD, ULTA** show no fresh 8/28 print yet (still flat at 8/27 close) — thin
+  premarket liquidity, re-check at open.
+- Perplexity-sourced premarket gainers (unconfirmed on Alpaca IEX feed at
+  9:13 AM, no fresh timestamp): ESTC, GAP, AFRM, OKTA (all real 8/27 earnings
+  pops per prior log, same "already realized" caveat as above), BEKE (Q2
+  beat, net income +100.8% YoY, but not on Alpaca-tradable US-listed movers
+  scan check — flat -0.78% here).
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| MRVL | -6.81% (premkt) | n/a | n/a | n/a | EARNINGS_BEAT but guidance disappointed → negative reaction | n/a | N/A | n/a | n/a | n/a | **NO — negative price move, thesis broken (sell-the-news), long-only** |
+| RBRK | -7.07% (premkt) | n/a | n/a | n/a | none confirmed | n/a | N/A | n/a | n/a | n/a | **NO — negative premarket move** |
+| CRM/PANW/SNPS/NOW/NVDA/OKTA | +8% to +28% (all 8/27, stale) | n/a | n/a | above (per prior day) | real earnings/upgrade catalysts, but 1 day old | n/a | N/A — not fresh | n/a | n/a | n/a | **DEFER — no fresh premarket continuation confirmed; would be chasing an already-extended prior-day pop, high near-resistance risk (-2 pt rule). Re-screen live at 9:45 open for true gap-continuation only.** |
+
+No ticker currently clears score >= 9 (raised threshold) with a fresh,
+confirmed intraday move — market not yet open (9:13 AM ET), and every named
+catalyst mover so far is either a stale 8/27 print or a negative premarket
+reaction.
+
+### Trade Ideas
+None executable pre-market (rule: no premarket entries, 9:45 AM ET minimum
+after 15-min settle). Watchlist for 9:45 AM morning-execution re-screen,
+**live data only, ignore the pre-open stale movers pull**:
+1. **CRM, PANW, SNPS, NOW, NVDA, OKTA** — only worth a fresh look if they
+   show genuine gap-and-go continuation volume above yesterday's close at
+   the open; if flat/fading, skip (chasing a 1-day-old pop near
+   prior-day-high fails the -2 resistance penalty and R:R logic).
+2. **MRVL, RBRK** — avoid (negative premarket reaction, thesis broken
+   before entry).
+3. No new long-only candidate currently meets FINAL_SCORE >= 9. Re-run
+   `alpaca.sh movers` fresh after 9:30 cash open (dailyBar resets) before
+   the 9:45 execution decision.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD at research stage. Market not open, no premarket entries permitted;
+0 open positions, 0 open orders, 0 trades this week — daily/weekly gates
+and circuit breaker not applicable (0 closed trades). Elevated-risk day:
+Fed Chair Jackson Hole speech ~10:00 AM ET — entry bar raised to score >= 9
+for today. Re-screen CRM/PANW/SNPS/NOW/NVDA/OKTA for genuine continuation
+and MRVL/RBRK confirmed avoid at 9:45 AM morning-execution using live
+post-open data, not the pre-open stale movers pull.
+Account equity: $100,000.00
 Account equity EOD: $100,000.00
