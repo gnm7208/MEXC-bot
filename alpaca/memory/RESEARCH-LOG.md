@@ -576,3 +576,18 @@ liquidity/spread before considering). No confirmed earnings reporters for
 Monday yet — re-screen at Monday's 9:00 AM morning-research.
 Account equity EOD: $100,000.00
 Account equity EOD: $100,000.00
+
+## 2026-08-29 — Alpaca Morning Research
+
+### Market Context
+Saturday — market closed, no session, no premarket/futures data to scan.
+Movers/catalyst/scoring steps skipped (nothing tradable exists on a closed
+day; would just burn API calls on stale weekend data).
+
+### Decision
+SKIP — market closed. 0 open positions, 0 trades this week, circuit
+breaker N/A (0 closed trades). Next trading day: Monday 2026-08-31 —
+run full morning-research then against Friday's carried watchlist (LNTH
+acquisition+FDA, BNTX/PFE FDA approval, QNRX high-risk microcap) plus a
+fresh live movers/earnings-calendar pull.
+Account equity: $100,000.00
