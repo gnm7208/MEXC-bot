@@ -2470,3 +2470,72 @@ Tomorrow's watchlist: TAO (recurring CoinGecko trending appearance + undated ETF
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all Rule-12 exit thresholds (-3.66%, well above -10% floor). Standing unresolved issue (not actioned, out of this routine's scope): TRADING-STRATEGY.md file header still reads "AGGRESSIVE MODE (Aug 4-22)" and has not been reverted to the conservative version despite CLAUDE.md stating conservative mode has been active since Aug 23 (7 days now); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-08-29 — Morning Research (Conservative Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 68 (Greed) | 68           | 30%    |
+| BTC 24h %     | -2.68%    | 23            | 25%    |
+| BTC Dominance | ~59.6%    | 36            | 20%    |
+| Alt Breadth   | ~22% green | 25           | 15%    |
+| Loss Rate     | 0/0 closed this wk | 75 (neutral default) | 10% |
+**MACRO_SCORE: 45 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+Note: MACRO_SCORE dropped from 59 (Aug-28) to 45 — BTC turned -2.68% overnight/today (open $79,830 → $77,683) after a multi-day Greed/rally tape; F&G (68) and loss-rate default are still propping the score up, momentum and dominance components both cooled.
+
+### Sector Status
+SECTOR_BLOCKED: none (L1 3W/0L all-time — only 3 closed trades ever, all wins, no sector has any loss)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (all bands/sectors have 0 recorded-score closed trades — 2 pre-scoring ADA wins + 1 unscored BTC-CORE close) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L
+
+Anomaly scan: A: detected (3 consecutive morning-research HOLD decisions — Aug26/27/28 — with latest tradeable MACRO_SCORE 59; ClickUp sent this run) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity ~$35.29 (USDT free $23.262 + BTC 0.00015477 @ $77,683.10 = $12.023). Open positions 1/5 (BTC-CORE, Rule 12). Trades this week 1/25 (BTC-CORE re-entry Aug-25). Trades today 0/5. Deployment ~34.1% (within Rule 12's 30-40% core band). No ladder (BTC-CORE exempt).
+
+### Market Context
+BTC $77,683.10 (-2.68% 24h, pulled back from a >$80K test to as low as $76,882.61 intraday). BTC dominance ~59.6% (climbing over the past 2 weeks, capital still BTC-concentrated). F&G 68 (Greed). Alt breadth weak (~22% of top-50 green) — dominance up + weak breadth = capital still crowding into BTC over alts. Sector momentum (Perplexity): AI strongest (+7-30% depending on window), L1 positive (+6% wk), DeFi positive but not leading (+3%), Gaming lagging/mixed.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (free-tier endpoint error, persistent pattern)
+- Whale Alert (Perplexity, informational only — not the exchange→wallet API signal, not scored): BTC whale wallets +16-20K BTC over past week; XRP large holders +380M in a week; ETH 10K-100K-holder cohort accumulating; INJ top-100 addresses +6.23% over 7 days — all multi-day trends, none <24-48h fresh, none scored
+- VC/fund moves: no fresh portfolio buys — a16z raising ~$2B Fund V, Paradigm raising ~$1.5B (broadened to AI/robotics), Multicoin AUM down >50% to ~$2.7B. Fund-level news only, no new coin-specific accumulation signal
+- Top trader calls: CryptoKaleo posted $HMM (freshness/relevance unclear, obscure ticker) and an LTC/BTC ratio call (technical, not a spot buy call); Kaleo's BTC view is macro-cautious (flagged a possible $40-50K wick before "up only"). No pentoshi/Bluntz calls found today
+- DeFiLlama gainers: unavailable (endpoint error, persistent pattern)
+- CoinGecko trending top 5: PONS, PUMP, TRUMP, DEXE, FOGO (also appearing 6-10: ZEC, ENA, BTC, HYPE, SOL) — momentum/retail-interest only, no corroborating smart-money source on any of them today
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(TBD) | Vol(TBD) | SCORE_PRE |
+|--------|-----------|--------|------------|---------------|---------------|----------|----------|-----------|
+| PONS   | 0         | 0      | 0          | 0             | +1            | -        | -        | 1         |
+| PUMP   | 0         | 0      | 0          | 0             | +1            | -        | -        | 1         |
+| TRUMP  | 0         | 0      | 0          | 0             | +1            | -        | -        | 1         |
+| DEXE   | 0         | 0      | 0          | 0             | +1            | -        | -        | 1         |
+| FOGO   | 0         | 0      | 0          | 0             | +1            | -        | -        | 1         |
+| INJ    | 0 (7d-old holder data, not exchange flow) | 0 | 0 | 0 | 0 | - | - | 0 |
+| XRP    | 0 (7d-old holder data, not exchange flow) | 0 | 0 | 0 | 0 | - | - | 0 |
+
+No candidate reaches SCORE_PRE >= 3 or carries an OPTION_B catalyst → **all watchlist only, STEP 6 MEXC price checks skipped** (per STEP 5 gate).
+
+### MEXC Live Prices (eligible candidates only)
+None eligible — no candidate cleared the SCORE_PRE >= 3 gate.
+
+### News on Held Positions
+BTC-CORE (Rule 12): thesis intact — 9-day consecutive US spot BTC ETF inflow streak reported overnight ($242M added most recent day), reinforcing structural demand thesis. No negative catalyst. Currently -3.86% from ~$80,804 entry, well inside the -10% core drawdown floor. No exit trigger.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None — no coin scored >= 5 and no OPTION_B catalyst identified today.
+
+### Risk Factors
+- Macro gate: BTC momentum component cooled sharply (24h -2.68%) after days of Greed-driven scores in the high-50s/60s; alt breadth weak (~22% green) while dominance climbs (~59.6%) — capital still consolidating into BTC, not rotating into alts.
+- Blocked sectors: none.
+- Anomaly A fired: 3rd consecutive HOLD-with-tradeable-macro morning-research session.
+- Standing unresolved issue (not actioned, out of this routine's scope): memory/TRADING-STRATEGY.md still carries the "AGGRESSIVE MODE (Aug 4-22)" header and has not been reverted to memory/TRADING-STRATEGY-CONSERVATIVE.md's content despite CLAUDE.md stating conservative mode has been active since Aug 23 (this routine used TRADING-STRATEGY-CONSERVATIVE.md + routines/morning-research.md's own conservative-mode formulas as the authoritative rulebook per CLAUDE.md). Week 6 and Week 7 weekly-reviews have not run.
+- Event risk: PCE data and ongoing Fed/policy commentary remain cited as near-term BTC swing factors.
+
+### Decision
+HOLD (no coin scores >= 5, no Option B catalyst; BTC-CORE Rule 12 hold maintained unchanged at ~34% deployment)
