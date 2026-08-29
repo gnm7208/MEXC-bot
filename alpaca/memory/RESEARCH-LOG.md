@@ -591,3 +591,14 @@ run full morning-research then against Friday's carried watchlist (LNTH
 acquisition+FDA, BNTX/PFE FDA approval, QNRX high-risk microcap) plus a
 fresh live movers/earnings-calendar pull.
 Account equity: $100,000.00
+
+### Addendum — 2026-08-29 09:45 ET (morning-execution)
+Saturday, market closed (per TRADING-STRATEGY.md: market hours only,
+Mon-Fri). No Trade Ideas exist for today (research SKIPped above), 0 open
+positions/orders to monitor, so no stop/TP checks or thesis review needed.
+No trades placed, no daily/weekly gate or circuit-breaker check applicable
+(0 trades today, 0 this week). Logging this addendum explicitly so future
+EOD-scan runs don't re-flag a "missing morning-execution addendum" gap —
+this closes the open question noted in the 2026-08-28 EOD entry re: routine
+runs firing on non-trading days without a logged confirmation.
+Account equity: $100,000.00 (unchanged).
