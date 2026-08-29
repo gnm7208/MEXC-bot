@@ -1733,3 +1733,17 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 
 **Decision: NO NEW ENTRIES.** BTC-CORE (Rule 12) holds unchanged at ~34.0% deployment, -4.02% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): TRADING-STRATEGY.md still carries the "AGGRESSIVE MODE (Aug 4-22)" header despite CLAUDE.md stating conservative mode active since Aug 23 (CLAUDE.md's inline Conservative Mode Hard Rules used as authoritative override this run, consistent with prior sessions); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run. Re-evaluate at midday.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-08-29 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,624.20 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (66.0%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/5 · Trades 1/25 wk · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE (Rule 12) check:** cost $12.5060 (entry ~$80,804) → val $12.0139 @ mark $77,624.20 → **-3.94%**. Rule-12 index-tracking hold — exempt from stop/+7% TP/ladder/tighten by design (Steps 3-6C N/A: no stop_price/ladder_price/peak-P&L on file). Exit triggers checked: macro not signaled halted since this morning's research (MACRO_SCORE 45, SIZE_MULTIPLIER 0.6); well above the -10% core drawdown floor (~$72,724 BTC price, currently well above threshold); no qualifying alt needs the capital (today's RESEARCH-LOG Decision=HOLD, zero coins scored >=5); thesis (ETF structural demand, 9-day consecutive inflow streak) intact, no negative catalyst news. Deployment ~34.0% of $35.28 total book — within Rule 12's 30-40% target.
+
+**STEP 7 — Thesis check:** BTC flat since this morning's research mark ($77,557.55 → $77,624.20, +0.09%), below the >5%-move threshold for a mid-day Perplexity catalyst check — no unusual move, no action.
+
+**Decision: NO ACTION.** Sole position is Rule-12-exempt and within normal drawdown; no exit trigger tripped. No alt positions to cut/ladder/tighten. No ClickUp alert (no action taken). Standing unresolved issue (not actioned, out of this routine's scope): memory/TRADING-STRATEGY.md file header still reads "AGGRESSIVE MODE (Aug 4-22)" and has not been reverted to the conservative version despite CLAUDE.md stating conservative mode has been active since Aug 23 (7 days now); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run. Re-evaluate at afternoon-execution.
+
+Sources: live MEXC `/ticker/price` + `/api/v3/account` + `/positions`; today's RESEARCH-LOG entry.
