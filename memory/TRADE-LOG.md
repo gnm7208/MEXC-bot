@@ -1769,3 +1769,23 @@ No candidates cleared even the loosened diagnostic scan; no Option B strong-cata
 **Decision: NO NEW ENTRIES.** Market-wide dead/red tape on a hawkish-Fed risk-off day — zero Option-A hits, watchlist carryovers all flat/negative and below the volume floor. BTC-CORE (Rule 12) holds unchanged at ~34.0% deployment, -3.93% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): memory/TRADING-STRATEGY.md file header still reads "AGGRESSIVE MODE (Aug 4-22)" and has not been reverted to the conservative version despite CLAUDE.md stating conservative mode has been active since Aug 23 (7 days now); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run. Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,690 USDT pairs) + watchlist carryovers (TAO/HYPE/PENGU/PONS) + `account`/`positions`; CoinGecko `/coins/markets` (mis-sorted, discarded); Whale Alert (unavailable); **Perplexity (sonar)** x2 (US-open momentum scan, 2h breaking news).
+
+## 2026-08-30 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,123.84 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.8%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades this week 1/25 (open, BTC-CORE re-entry Aug-25) · Trades today 0/5 · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 56, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD — AIXPLAY (score 5/17) and PUMP (score 4/17) both below the MACRO<60 quality threshold of 8, and both independently fail the 3-Candle Confirmation Gate; no other coin cleared SCORE_PRE>=3 with live MEXC volume support; no Option B catalyst confirmed. No Trade Ideas to validate. No Rule-12 re-trigger needed — BTC-CORE already established Aug-25.
+
+**STEP 3 — Monitor open positions:** Sole position BTC-CORE (Rule 12) — exempt from stop/+7% TP/ladder/decay by design (no stop_price/target_price/peak-P&L on file). Cost $12.5060 (entry ~$80,804) → val $12.0912 @ mark $78,123.84 → **-3.32%**. Exit triggers checked: macro not halted (SIZE_MULTIPLIER 0.6); well above -10% core drawdown floor (~$72,724 BTC price vs. current $78,123.84); no qualifying alt needs the capital (STEP 5 found zero, today's RESEARCH-LOG Decision=HOLD); thesis (ETF structural demand, August inflows >$3B per today's research) intact, no negative catalyst news since research. Deployment ~34.2% of $35.35 book — within Rule 12's 30-40% target. No near-stop alert (no stop_price on file for a Rule-12 hold).
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need >=5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Alt entries:** None to validate — RESEARCH-LOG Trade Ideas list is empty (Decision: HOLD, AIXPLAY/PUMP both disqualified in research).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** BTC-CORE (Rule 12) holds unchanged at ~34.2% deployment, -3.32% (well within the -10% drawdown floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): memory/TRADING-STRATEGY.md still carries the "AGGRESSIVE MODE (Aug 4-22)" header and has not been reverted to memory/TRADING-STRATEGY-CONSERVATIVE.md's content despite CLAUDE.md stating conservative mode has been active since Aug 23 (8 days now); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run — today (Sunday) is the scheduled weekly-review day per CLAUDE.md's schedule table. Re-evaluate at midday.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
