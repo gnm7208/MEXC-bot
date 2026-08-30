@@ -2552,3 +2552,79 @@ Tomorrow's watchlist: none with a fresh actionable catalyst or confirmed MEXC mo
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact (mixed ETF flow signal, not broken) and within all Rule-12 exit thresholds (-3.26%, well above -10% floor). Standing unresolved issue (not actioned, out of this routine's scope): TRADING-STRATEGY.md file header still reads "AGGRESSIVE MODE (Aug 4-22)" and has not been reverted to the conservative version despite CLAUDE.md stating conservative mode has been active since Aug 23 (8 days now); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (PONS/HNT/CASHCAT/PENGU/PUMP); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-08-30 — Morning Research (Conservative Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 69 (Greed) | 69           | 30%    |
+| BTC 24h %     | +0.51%    | 55            | 25%    |
+| BTC Dominance | 59.46%    | 37            | 20%    |
+| Alt Breadth   | ~45% (mixed, majors mostly red, some mid-caps green) | 45 | 15% |
+| Loss Rate     | 0/0 closed this wk (<5 trades) | 75 (neutral default) | 10% |
+**MACRO_SCORE: 56 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none (L1 3W/0L all-time — only 3 closed trades ever, all wins, no sector has any loss)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (all bands/sectors have 0 recorded-score closed trades — 2 pre-scoring ADA wins + 1 unscored BTC-CORE close) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L
+
+Anomaly scan: A: **detected** (5 consecutive morning-research HOLD/HOLD-on-alts decisions — Aug26/27/28/29 + today Aug30 — with today's MACRO_SCORE 56, tradeable; ClickUp sent this run) | C: insufficient data (<7 stop-outs, 0 closed losing trades on record) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity $35.35 (USDT free $23.2624 [65.8%] + BTC 0.00015477 @ $78,082.57 = $12.0848). Open positions 1/5 (BTC-CORE, Rule 12). Trades this week 1/25 (BTC-CORE re-entry Aug-25). Trades today 0/5. Deployment ~34.2% (within Rule 12's 30-40% core band). No ladder (BTC-CORE exempt).
+
+### Market Context
+BTC $78,082.57 (+0.51% 24h, open $77,690 → $78,082.57, mild bounce off yesterday's dip to ~$76,883). BTC dominance 59.46% (still elevated, capital BTC-concentrated). F&G 69 (Greed). Alt breadth mixed-to-weak (majors ETH/DOGE/VET red -2% to -7%; a handful of mid-caps LEO/ICP/JST/BSV/XMR/ZEC green low-single-digits). Sector momentum (Perplexity, weekly-window snapshots): AI strongest (+6-30% depending on source), L1 positive (+3-6.5%), DeFi positive but smaller (+2.8-2.9%), Gaming mixed/weak (-1.65% one session, +3.8-6.5% another — inconsistent across sources).
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only — multi-day trend data, not the <24-48h exchange→wallet API signal, not scored): BTC whales +66,700 BTC over 60 days (1K-10K BTC cohort); ETH 10K-100K-holder wallets at record balances; XRP whales "quietly positioning," >$1M tx count rising — all stale (>48h) by the freshness rule, 0 pts
+- VC/fund moves: no fresh coin-specific accumulation signal — a16z raising ~$2B Fund V, Paradigm raising ~$1.5B (broadened scope to AI/robotics), Multicoin AUM/portfolio unchanged in reporting. Fund-level fundraising news only, not a buy signal
+- Top trader calls: CryptoKaleo posted $HMM (obscure ticker, no corroborating source, freshness/relevance unclear — same low-confidence pattern as prior sessions); no pentoshi/Bluntz calls found today. Kaleo's BTC view remains macro (bounce to low $70Ks room for momentum plays)
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — endpoint error, persistent pattern)
+- CoinGecko trending top 10: CHUMP (#831 rank, thin/micro-cap), **PONS** (#173), **HNT** (#298), CARDS (#158), **PUMP** (#44), PENGU (#93), CASHCAT (#161), LIT (#74), STONKBROKER (#516), INDEX (#604). Top-5 (CoinGecko-trending +1pt each): CHUMP, PONS, HNT, CARDS, PUMP.
+- Catalyst watch (non-fresh/not dated enough for OPTION_B): Grayscale Bittensor (TAO) spot ETF decision "expected in August 2026" per Perplexity — no specific date, live TAO 24h -0.33%/$1.44M vol (flat, below $3M liquidity floor) — not actioned as OPTION_B (vague timing, no live confirmation).
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| AIXPLAY | 0 | 0 | 0 | 0 | 0 | +2 (+20.92%) | +1 ($4.71M) | 0 (neutral) | +1 (62% ATR, bearish 15m flush) | +1 (HH/HL) | **5** |
+| PUMP   | 0 | 0 | 0 | 0 | +1 (top5) | +2 (+7.72%) | +1 ($22.3M) | 0 (neutral) | 0 (10% ATR, not bearish) | 0 (no HH/HL) | **4** |
+| PONS   | 0 | 0 | 0 | 0 | +1 (top5) | — | — | — | — | — | 1 (SCORE_PRE, MEXC live +74.82% but vol $2.77M < $3M floor — not scored further) |
+| HNT    | 0 | 0 | 0 | 0 | +1 (top5) | — | — | — | — | — | 1 (SCORE_PRE, MEXC live +78.97% but vol $519K, far below $3M floor — not scored further) |
+| TAO    | 0 | 0 | 0 | 0 | 0 | 0 (-0.33%) | 0 ($1.44M) | — | — | — | 0 |
+
+AIXPLAY and PUMP sourced via full MEXC board scan (1,670 USDT pairs, 24h≥+5% AND vol≥$3M — only 2 hits). Both also **fail the 3-Candle Confirmation Gate**: AIXPLAY's last 3 closed 1h candles are above yesterday's close but volume is falling sharply (3776→6881→222) with closes decaying (0.0001912→0.0001750→0.0001718) — classic pump-fading pattern; PUMP's last 3 closed 1h candles are all BELOW yesterday's close despite the +7.72% 24h figure (the pump happened earlier in the window and has since reversed) and volume is also falling. **Both deferred regardless of score.**
+
+PONS and HNT are genuine live MEXC moves tonight (confirmed via direct ticker pull, not stale citations like prior nights — PONS +74.82%, HNT +78.97%) but both fail the $3M exit-liquidity/volume floor outright (PONS $2.77M is close but short; HNT $519K is far short) — high rug/thin-liquidity risk on an unconfirmed micro-cap pump, correctly excluded by the volume gate.
+
+### MEXC Live Prices (eligible candidates only)
+None eligible — AIXPLAY (SCORE 5, needs ≥8 under MACRO<60 quality gate) and PUMP (SCORE 4) both below threshold AND both fail the 3-Candle Confirmation Gate independently.
+
+| Ticker | Price | 24h % | Volume | Score | Base Size | Final Size | Option B? |
+|--------|-------|-------|--------|-------|-----------|------------|-----------|
+| AIXPLAY | (micro-cap) | +20.92% | $4.71M | 5/17 | — | SKIP (score<8, 3-candle fail) | No |
+| PUMP | $0.004961 | +7.72% | $22.3M | 4/17 | — | SKIP (score<8, 3-candle fail) | No |
+
+### News on Held Positions
+BTC-CORE (Rule 12): thesis intact. Today's Perplexity BTC-ETF query cites August spot BTC ETF inflows above $3B for the month with an "eight-day inflow streak" resuming after last night's single $201.9M outflow day (BlackRock IBIT leading demand); Treasury-driven lower long yields + weaker dollar also supportive. One negative note: Hashdex closed its spot BTC ETF (first closure since 2024 approvals) on low AUM/liquidity — small/idiosyncratic, not a demand-thesis break. No BTC-specific negative catalyst. Currently -3.37% from ~$80,804 entry (val $12.0848 vs cost $12.5060), well inside the -10% core drawdown floor (~$72,724 BTC price vs. current $78,082.57). No exit trigger.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None — AIXPLAY and PUMP both fail the SCORE≥8 quality gate (MACRO_SCORE 56 <60) and independently fail the 3-Candle Confirmation Gate; no other coin scored ≥1 SCORE_PRE with live MEXC momentum; no OPTION_B catalyst confirmed (TAO's Bittensor ETF timing too vague, TAO itself flat/thin on MEXC today).
+
+### Risk Factors
+- Macro gate: BTC momentum/dominance components remain mid-pack (55/37); alt breadth still soft (~45%, majors red) even with F&G at Greed (69) — capital not broadly rotating into alts yet.
+- Blocked sectors: none.
+- Anomaly A fired (5th consecutive HOLD-with-tradeable-macro morning-research session, Aug26-30) — signal quality/watchlist review flagged again.
+- Genuine live-MEXC alt momentum tonight (PONS +74.82%, HNT +78.97%) but both thin/sub-$3M-liquidity — worth a spot-check at midday/afternoon in case volume catches up to price, but no chase on current liquidity.
+- Standing unresolved issue (not actioned, out of this routine's scope): memory/TRADING-STRATEGY.md still carries the "AGGRESSIVE MODE (Aug 4-22)" header and has not been reverted to memory/TRADING-STRATEGY-CONSERVATIVE.md's content despite CLAUDE.md stating conservative mode has been active since Aug 23 (this routine used TRADING-STRATEGY-CONSERVATIVE.md + CLAUDE.md's inline Conservative Mode Hard Rules + routine's own embedded formulas as the authoritative rulebook, consistent with every session since Aug-29). Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have still not run — today (Aug 30, Sunday) is the scheduled weekly-review day per CLAUDE.md's schedule table.
+- Event risk: PCE data and ongoing Fed commentary remain cited as the next BTC swing factor.
+
+### Decision
+HOLD (AIXPLAY score 5 and PUMP score 4 both below the MACRO<60 quality threshold of 8, and both independently fail the 3-Candle Confirmation Gate; no other coin cleared SCORE_PRE≥3 with live MEXC volume support; no Option B catalyst confirmed. BTC-CORE Rule 12 hold maintained unchanged at ~34.2% deployment, -3.37%, well within the -10% drawdown floor.)
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,670 USDT pairs) + `/ticker/24hr` (TAO/PONS/HNT/PUMP individual) + `/klines?interval=1d,60m,15m` (level/manip/structure/3-candle for AIXPLAY/PUMP); direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts) + ×1 (BTC ETF news for held-position check).
