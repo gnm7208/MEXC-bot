@@ -602,3 +602,20 @@ EOD-scan runs don't re-flag a "missing morning-execution addendum" gap —
 this closes the open question noted in the 2026-08-28 EOD entry re: routine
 runs firing on non-trading days without a logged confirmation.
 Account equity: $100,000.00 (unchanged).
+
+## 2026-08-30 — Alpaca Morning Research
+
+### Market Context
+Sunday — market closed, no session, no premarket/futures data to scan.
+Movers/catalyst/scoring steps skipped (nothing tradable exists on a closed
+day; would just burn API calls on stale weekend data) — same rationale as
+the 2026-08-29 (Saturday) entry.
+
+### Decision
+SKIP — market closed. Account checked: equity $100,000 / cash $100,000 /
+buying power $400,000, unchanged. 0 open positions, 0 trades this week,
+circuit breaker N/A (0 closed trades). Next trading day: Monday 2026-08-31
+— run full morning-research then against Friday 8/28's carried watchlist
+(LNTH acquisition+FDA, BNTX/PFE FDA approval, QNRX high-risk microcap) plus
+a fresh live movers/earnings-calendar pull.
+Account equity: $100,000.00
