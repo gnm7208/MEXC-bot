@@ -1770,6 +1770,18 @@ No candidates cleared even the loosened diagnostic scan; no Option B strong-cata
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,690 USDT pairs) + watchlist carryovers (TAO/HYPE/PENGU/PONS) + `account`/`positions`; CoinGecko `/coins/markets` (mis-sorted, discarded); Whale Alert (unavailable); **Perplexity (sonar)** x2 (US-open momentum scan, 2h breaking news).
 
+## Aug 29 — EOD Snapshot (Day 38, Saturday)
+
+**Portfolio:** $35.37 | **Cash:** $23.26 (65.8%) | **Day P&L:** -$0.17 (-0.47%) | **Phase P&L:** +$3.05 (+9.44%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop                  |
+|----------|------------|-----------|------------|---------|--------------------|------------------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $78,239.99 | -1.39%  | -$0.40 (-3.17%)    | none (Rule 12 exempt) |
+
+**Notes:** Quiet day, no trades — morning-execution, midday, and afternoon-execution all found zero rules-clean alt qualifiers (dead/red tape continuing from Aug-28's hawkish-Fed risk-off move). BTC-CORE (Rule 12 index-tracking hold, exempt from stop/+7% TP/ladder) drifted from -3.93% to -3.17% unrealized as BTC ticked slightly off its Jackson-Hole lows before easing back; still well inside the -10% core drawdown floor and the ETF inflow thesis intact. Portfolio down slightly on the day (-0.47%) tracking the BTC dip. **Late/backfilled run:** this EOD snapshot fired well after the normal 6pm CT slot (produced ~06:34 UTC Aug-30, after Aug-30 morning-research/morning-execution/midday-scan had already run in a separate session) — price/positions pulled live at run time rather than at Aug-29's actual market close; portfolio value is a same-position mark-to-market and remains accurate for the P&L chain. Standing unresolved issues, carried forward again: AGGRESSIVE MODE (Aug 4-22) header in TRADING-STRATEGY.md still not reverted to CONSERVATIVE MODE per its own instruction (CLAUDE.md's inline rules used as authoritative override); Week 6 (Aug 17-23) and Week 7 (Aug 24-30) weekly-reviews have not run — today (Sunday) is the scheduled weekly-review day per CLAUDE.md's schedule table.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-28 EOD baseline, this week's trade count) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
+
 ## 2026-08-30 — Morning Execution (buy-side validation)
 
 **Reachability gate PASS:** `price BTCUSDT` = $78,123.84 (live).
