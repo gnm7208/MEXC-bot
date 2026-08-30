@@ -341,3 +341,54 @@ Across the **entire phase** (Jul 22 – Aug 22), only 3 trades ever closed, and 
 
 ### Overall Grade: C−
 Real, disciplined, rules-clean execution whenever the bot actually ran — one clean +18.58% win, zero forced trades, a sound proactive close ahead of a known gap. But this is the worst week of the phase against the actual mission (beat BTC): −14.74 pts, driven by chronic under-deployment colliding with BTC's sharpest rally of the challenge, worsened by a 3-day scheduler outage the strategy had no way to trade through, and capped off by this review itself running 3 days late with the scheduled mode-revert left undone in the interim. Process failures did more damage this week than any trading decision.
+
+---
+
+## Week ending 2026-08-30 (Week 7, first week of CONSERVATIVE MODE)
+
+### Stats
+| Metric              | Value  |
+|---------------------|--------|
+| Starting portfolio  | $35.7685 (Aug 23 close, Week 6 end) |
+| Ending portfolio    | $35.3610 (live, Aug 30: $23.262447 USDT + 0.00015477 BTC @ $78,171.06) |
+| Week return         | −$0.4075 (−1.14%) |
+| BTC week return     | +1.38% ($77,109.16 Aug 23 → $78,171.06 Aug 30; independent Perplexity estimate ~+0.6% from a different intraday reference point, same direction) |
+| Bot vs BTC          | **−2.52%** |
+| Trades              | 1 (the Aug-25 BTC-CORE re-entry, carried in as open — 0 new trades this week) (W:0 / L:0 / open:1) |
+| Win rate            | N/A (0 closed trades) |
+| Best trade          | N/A |
+| Worst trade         | N/A |
+| Profit factor       | N/A (no realized P&L) |
+
+### Closed Trades
+None this week.
+
+### Open Positions at Week End
+| Ticker | Entry | Price | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| BTC | $80,804 (Aug 25) | $78,171.06 | −$0.41 (−3.26%) | $72,723.60 (−10%, assigned this review — see Aug-30 TRADE-LOG entry) |
+
+### What Worked
+- **The overdue AGGRESSIVE→CONSERVATIVE mode revert finally executed** (this review), 8 days after its Aug-22 due date. The orphaned BTC position (no stop/target since its Aug-25 entry) was retroactively assigned a conservative stop ($72,723.60) and target ($86,460.28) so monitoring routines can manage it going forward.
+- **Zero forced or junk entries all week.** Every scan (Aug 24-30) correctly disqualified everything it looked at — BTR, CASHCAT, SLCW, CRV, DGAI, TRUMP, WXT, SOL, TAO, AIXPLAY, PUMP — on the 3-Candle Gate, thin-listing risk, or a dead/red tape with zero board-wide qualifiers. No rule violations.
+- Reachability and account checks passed every single scan window all week — no operational blocker on the trading-execution side (distinct from the scheduling/review-cadence issue below).
+
+### What Didn't Work
+- **Bot trailed BTC again, −2.52 pts**, on an essentially flat week for both. Small in magnitude, but this is now a trailing pattern in 3 of the last 4 weeks (Wk4 −1.17, Wk6 −14.74, Wk7 −2.52).
+- **Deployment stuck at ~34% all week** (one BTC position, 66% cash) — below both aggressive-mode's and the just-reinstated conservative mode's 75-85% target. The under-deployment problem flagged every week since Week 4 is unresolved by the mode revert; it was never really a mode-specific issue.
+- **This is the second consecutive weekly-review that had to self-diagnose and catch up staleness.** Week 6's review ran 3 days late; this Week 7 review only happened because the same session, already mid-catch-up for Week 6, found the repo had moved on to Aug 30 (today's actual scheduled date) by the time it went to push.
+
+### Signal Score Retrospective
+No new closed trades this week — the retrospective is unchanged from Week 6's: **0 scored closed trades exist across the full history** (2 unscored pre-Aug-4 ADA wins, 1 Rule-12-exempt BTC-CORE win). Conservative mode (now live) does not use the 0-20 numeric scoring system at all, so this tracking metric is retired going forward unless a future aggressive phase reintroduces it.
+
+### Key Lessons
+- Operational reliability — not the trading rules — is now the dominant risk to the mission. Two consecutive weekly-reviews required a manual catch-up (Week 6 three days late, this one effectively folded into the same session because the schedule had already slipped to Week 7's due date).
+- A position opened under one strategy mode (Rule-12-exempt) can be silently left without risk management if the mode reverts and nobody re-applies the new mode's rules to open positions — always re-check every open position's stop/target the moment TRADING-STRATEGY.md changes.
+
+### Adjustments for Next Week
+- No new trading-rule changes beyond the mode revert already recorded in the Week 6 entry above — conservative rules are the live rulebook as of this review.
+- **Verify the revert took effect**: confirm the next morning-research run reads conservative rules (no more "AGGRESSIVE MODE" language in its decision text) and manages the BTC position against its newly-assigned $72,723.60 stop / $86,460.28 target at the next midday/afternoon scan.
+- **Recommend a human check on the MEXC-bot scheduler** — three distinct reliability incidents in ~10 days (the Aug 19-22 blackout, the Aug 23-24 gap, and two late-running weekly-reviews) is a pattern, not a one-off.
+
+### Overall Grade: C+
+No trading mistakes — every scan this week was clean and disciplined — but also no trading progress: one flat-to-slightly-down week on a single stale position, continued sub-target deployment, and a small trail vs. a roughly-flat BTC. The one substantive event of the week was administrative (finally executing the 8-days-overdue mode revert and giving the orphaned BTC position real risk management), which is a genuine fix but not a trading result. Better than Week 6 only because the benchmark miss this time was small, not because anything was actively earned.
