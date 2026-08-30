@@ -1854,3 +1854,40 @@ rules from this point forward — no more Rule-12 exemption.
 Sources: memory/WEEKLY-REVIEW.md (this commit); memory/TRADING-STRATEGY.md /
 TRADING-STRATEGY-CONSERVATIVE.md (this commit); live MEXC `account` (confirmed BTC
 0.00015477 / USDT $23.262447, unchanged from Aug-30 Midday Scan above).
+
+---
+
+## 2026-08-30 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,678.49 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.6%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades 1/25 wk (open, BTC-CORE re-entry Aug-25) · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 56, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD — no Trade Ideas. **Mode note:** today's Weekly Review reverted TRADING-STRATEGY.md to CONSERVATIVE MODE and retroactively assigned BTC-CORE a stop ($72,723.60, entry×0.90) and target ($86,460.28, entry×1.07) — position is **no longer Rule-12 exempt** as of this run; standard conservative stop/TP/trailing rules now apply.
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.1771 @ mark $78,678.49 → **-2.63%**.
+- A) Emergency stop: live $78,678.49 > stop $72,723.60; P&L -2.63% > -10% floor. No trigger.
+- B) Take-profit: live $78,678.49 < target $86,460.28; P&L < +12%. No trigger.
+- C) Trailing tighten: P&L -2.63% < +3% threshold. N/A.
+- D) Peak Decay: no Peak P&L on file yet (position never went positive since the retroactive stop/target assignment) — N/A, peak_pnl_pct > 0 precondition not met.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (78,678.49 − 72,723.60) / 78,678.49 = 7.57% — above 3% threshold, no alert.
+Deployment ~34.4% of $35.44 book — within Rule 12's 30-40% legacy band (position now conservative-rules-governed, no active core-sizing target).
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:12 UTC, before 13:30-15:00 window). CoinGecko top-gainers endpoint mis-sorted again (majors BTC/ETH/XRP/SOL/BNB at top, all +1-3%, recurring stale-sort pattern) — discarded, fell back to full MEXC board scan. Full board scan (1,671 USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **3 hits** — PONSUSDT (+69.73%, $4.53M vol), DGAIUSDT (+7.01%, $36.64M vol), PUMPUSDT (+5.0%, $24.08M vol). Whale Alert: unavailable (persistent `'str' object has no attribute 'get'` parse error). Perplexity momentum sweep flagged HNT (+101% per BlockBeats) and PUMP (+5.4%, above 7/15/30d SMAs) — HNT checked live on MEXC: **+0.69%, $959K vol**, flat/thin, same recurring stale cross-exchange citation mismatch as prior nights, not actionable. Perplexity breaking-news sweep: no thesis-breaking news; Kevin Warsh's hawkish Jackson Hole tone still the week's dominant macro theme (BTC -3% on the news, cited in a weekly recap), CLARITY Act vote ~3 weeks out, BTC ETF inflows resumed (+$2.8B cited), Europol seized Cryptomixer (unrelated AML enforcement). No fresh actionable catalyst for any candidate.
+
+Per-candidate checks (klines-based, MEXC `interval=60m`/`1d`):
+- **PONSUSDT:** ATR flush 103%/not bearish (0pt). 3-Candle Gate: **NOT CONFIRMED** (closes vs $0.244569 signal level, vol_rising=False). **SKIP — gate fail, defer to next scan.**
+- **DGAIUSDT:** ATR flush 25%/not bearish (0pt). 3-Candle Gate: CONFIRMED. EMA200 $0.698912 vs live $0.710300, above=True (pass). Vol surge 2.9x avg (+1). VWAP $0.685510 vs live $0.710300 (+1). RSI14 71.9 — overbought (-1). MktStr HH/HL true (+1). Level: live > prev-day-high $0.687400 (breakout, not near-resistance) → 0pt. CoinGecko top5: not listed → 0pt. Whale/VC/Trader/DeFiLlama: 0 (no signal). **SCORE = 2(mom +7.01%) + 1(vol$36.64M) + 0(level) + 0(manip) + 1(mktstr) + 1(volsurge) + 1(vwap) − 1(rsi) = 5/20.** MACRO_SCORE 56 <60 → needs ≥8. No Option B catalyst found (DGAI not mentioned by Perplexity). **SKIP — score 5 < 8 quality gate.**
+- **PUMPUSDT:** ATR flush 13%/not bearish (0pt). Range TP pre-check: prev-day high $0.005126, 5.3% above → USE_RANGE_TP=true. 3-Candle Gate: **NOT CONFIRMED** (closes vs $0.005063 signal level, vol_rising=False — the +5% move already faded before this scan). **SKIP — gate fail, defer to next scan.** (Consistent with Perplexity's "sustained trend" framing being a slower multi-day move, not a fresh 3-candle breakout.)
+
+No candidate cleared both the quality-score threshold and the 3-Candle Confirmation Gate; no Option B strong-catalyst override found for any ticker. SECTOR_BLOCKED: none (N/A — no candidate reached sector check).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** PONS and PUMP both fail the 3-Candle Confirmation Gate (pumps already fading/reversed intraday); DGAI passes the gate but scores only 5/20, below the MACRO<60 quality threshold of 8. BTC-CORE holds unchanged at ~34.4% deployment, -2.63% (well within stop $72,723.60 and the -10% floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): Week 6/Week 7 weekly-reviews ran today per the Weekly Review entry above — no longer outstanding as of this run. Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,671 USDT pairs) + `/ticker/24hr` (HNT) + `/klines?interval=60m,15m,1d` (ATR/3-candle/EMA200/volsurge/VWAP/RSI/mktstr for PONS/DGAI/PUMP) + `account`/`positions`; CoinGecko `/coins/markets` (mis-sorted, discarded); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
