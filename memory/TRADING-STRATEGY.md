@@ -1,235 +1,126 @@
-# Trading Strategy - AGGRESSIVE MODE (Aug 4-22)
-# Conservative version saved in TRADING-STRATEGY-CONSERVATIVE.md
-# Revert after Aug 22.
+# Trading Strategy
 
 ## Mission
-Maximize returns before Aug 22 on MEXC Spot. Accept higher risk for higher reward.
-Spot only - no margin, no futures, no leverage, ever.
+Outperform BTC buy-and-hold over the challenge window using active swing trades on
+MEXC Spot. Spot only — no margin, no futures, no leverage, ever.
 
 ## Capital & Constraints
-- Platform: MEXC Spot | Instruments: Spot USDT pairs
-- Target deployment: 80-90% (hold 10-20% USDT dry powder only)
-- Max 5 simultaneous positions — virtual capital model (see sizing below)
-
-## 3-Layer Architecture
-
-### Layer 1 — Macro Gate (morning-research STEP 3)
-
-Compute MACRO_SCORE (0-100) from these weighted signals:
-
-| Signal | Scoring Formula | Weight |
-|---|---|---|
-| Fear & Greed (F&G) | raw value 0-100 | 30% |
-| BTC 24h momentum | clamp((btc_24h_pct + 5) * 10, 0, 100) | 25% |
-| BTC dominance | clamp((65 - btc_dom_pct) * 6.67, 0, 100) | 20% |
-| Alt breadth | >70% green=80-100; mixed=40-70; <40% green=0-40 | 15% |
-| Recent loss rate | clamp(100 - loss_pct * 2.5, 0, 100); default 75 if <5 trades | 10% |
-
-MACRO_SCORE = sum of each signal score * its weight
-
-SIZE_MULTIPLIER from MACRO_SCORE:
-- >= 70: SIZE_MULTIPLIER = 1.0 (full aggressive sizing)
-- 40-69: SIZE_MULTIPLIER = 0.6 (reduced sizing)
-- < 40:  SIZE_MULTIPLIER = 0.0 (NO new entries — monitor only)
-
-### Layer 2 — Weighted Signal Scoring (morning-research STEPS 4-6)
-
-Every candidate coin gets a score 0-20 built from these signals:
-
-| Signal | Points |
-|---|---|
-| Whale Alert exchange->wallet flow (accumulation) — <24h: +3 \| 24-48h: +2 \| >48h: 0 | +3 |
-| VC/fund accumulation (a16z, Paradigm, Multicoin) — <48h: +3 \| >48h: +2 | +3 |
-| Top trader call (Kaleo, pentoshi, Bluntz named ticker) — <48h: +2 \| >48h: +1 | +2 |
-| DeFiLlama TVL gaining >10% 24h (underlying token) | +2 |
-| CoinGecko trending top 5 | +1 |
-| 24h price >= +5% on MEXC | +2 |
-| MEXC volume >= $3M USD | +1 |
-| Volume surge: today's USDT volume >= 1.5x 20-day average | +1 |
-| Price within 5% of prev-day low (near support) | +1 |
-| Price within 2% of prev-day high (near resistance) | -2 |
-| ATR manipulation flush: largest 15m candle in last 2h >= 25% of 14-day ATR AND bearish | +1 |
-| 1h market structure bullish: last 3h highs/lows > prior 3h highs/lows (HH/HL on 1h chart) | +1 |
-| VWAP confirmation: live price > session VWAP (computed from today's 1h klines) | +1 |
-| RSI(14) recovering: RSI on 1h chart in 30-60 zone (oversold recovery, momentum building) | +1 |
-| RSI(14) overbought: RSI on 1h chart > 70 (chasing extended move) | -1 |
-
-Entry eligibility:
-- MACRO_SCORE >= 60: SCORE >= 5 → ELIGIBLE (proceed to Layer 3 review)
-- MACRO_SCORE < 60 (weaker macro): SCORE >= 8 → ELIGIBLE; SCORE < 8 → watchlist only (quality gate)
-- SCORE < 5 regardless of macro: watchlist only — do NOT enter
-- If near prev-day high (-2 pts applied) AND SCORE < 7: SKIP — low conviction into resistance
-- OPTION_B override: strong catalyst (ETF filing, protocol upgrade, exchange listing) = eligible regardless of score
-
-Position sizing — virtual capital model (20,000 KES reference = $154 USDT):
-VIRTUAL_CAPITAL = 154.0  # fixed reference, independent of real balance growth
-- Score 5-8:  BASE_PCT = 4.5% → ~$6.93/bet
-- Score 9-12: BASE_PCT = 5.0% → ~$7.70/bet
-- Score >= 13: BASE_PCT = 6.0% → ~$9.24/bet
-
-FINAL_SIZE_USDT = min(VIRTUAL_CAPITAL * BASE_PCT * SIZE_MULTIPLIER, available_usdt * 0.90)
-Minimum position: $3 USDT (MEXC min-notional). Below minimum: skip.
-
-### Layer 3 — Structured Review Gate (execution routines STEP 6)
-
-Run before EVERY order fires. Answer all 5 questions:
-
-1. Bear case: "What is the strongest argument AGAINST entering right now?"
-2. Blind spots: "What am I most likely missing or underweighting?"
-3. Exit liquidity: "Is exit realistic at target price? MEXC volume >= $1M?"
-4. Sector momentum: "Is this sector net positive or fading?"
-5. Correlation: "Does this conflict with an existing open position?"
-
-REVIEW OUTCOME rules:
-- Bear case overwhelming OR blind spot is confirmed blocker OR exit liquidity fails: SKIP
-- 2+ questions raise soft concerns: size down one tier (6%->5%->4.5%->skip of virtual cap)
-- Otherwise: proceed at planned size
-
-Log outcome in TRADE-LOG: "Review: [Proceed/Skip/Size down] - reason"
+- Starting capital: variable (see TRADE-LOG for current equity)
+- Platform: MEXC Spot
+- Instruments: Spot crypto only (USDT pairs preferred)
+- Market hours: 24/7 — but focus research during US morning (6-10 AM CT)
 
 ## Core Rules
-1. SPOT ONLY - no margin, no futures, no leverage, ever
-2. 80-90% deployed; only 10-20% USDT dry powder
-3. Max 5 open positions; virtual capital model ($154 ref, 4.5-6% per position = $6.93-$9.24/bet)
-4. Every position: stop price recorded in TRADE-LOG immediately after fill
-5. ATR-based stops (VOLATILITY_ADJUSTED_STOPS: ACTIVE as of 2026-08-15):
-   atr_pct = 14-day daily ATR / fill_price * 100
-   stop_pct   = max(6.0, min(10.0, atr_pct * 1.0))   # 1x ATR, clamped 6-10%
-   target_pct = max(10.0, min(16.0, atr_pct * 2.0))  # 2x ATR, clamped 10-16%
-   ladder_pct = stop_pct * 0.7                         # 70% of stop distance
-   R:R minimum = 2.0; skip entry if target_pct / stop_pct < 2.0
-6. Cut losers when live_price <= stop_price (from TRADE-LOG). Hard backstop: -10% (ATR max).
-7. Take profit when live_price >= target_price (from TRADE-LOG) OR P&L >= ATR target. No exceptions.
-8. Trailing stop (manual - enforced by monitoring routines):
-   - Entry: stop at ATR-based distance below fill price (6-10%, recorded in TRADE-LOG)
-   - At +3% gain: new_stop = max(current_price * 0.93, entry_price) — break-even floor ensures
-     stop never drops below entry price once a trade has proven itself
-   - At target: close for take profit
+1. SPOT ONLY — no margin, no futures, no leverage, ever
+2. 75-85% deployed; hold 15-25% USDT as dry powder
+3. 5-6 positions max; 20% of total portfolio per position
+4. Every position gets a stop price recorded in TRADE-LOG immediately after fill (MEXC spot
+   API does not support resting stop-limit orders — monitored stops enforce the same rule).
+   Stop = entry price × 0.90 (-10%). Enforced at every midday and afternoon scan.
+5. Cut losers at -7% from entry: market sell immediately when price ≤ stop level
+6. Take profit at +7%: market sell immediately — no exceptions
+7. Trailing stop (manual — enforced by monitoring routines):
+   - Entry: stop at -10% below fill price (recorded in TRADE-LOG)
+   - At +3% gain: tighten stop to 7% below current price (update TRADE-LOG)
+   - At +7% gain: close for take profit
    - Never tighten within 3% of current price; never move a stop down
-9. LADDER BUY: if live_price <= ladder_price (from TRADE-LOG) AND live_price > stop_price AND thesis intact:
-   - Buy a second tranche (same USDT size as first)
-   - avg_cost = (entry + ladder_fill) / 2
-   - New stop = avg_cost × (1 - stop_pct/100) using ATR of avg_cost
-   - New target = avg_cost × (1 + target_pct/100) using ATR of avg_cost
-   - Log in TRADE-LOG: "Ladder buy at $X, avg cost now $X"
-   - Never ladder if thesis broken or sector rolling over
-   - Max 1 ladder per position
-10. Max 30 new trades per week; max 8 new trades per day
-11. Weekly circuit breaker: if >= 40% of closed trades this week are losses
-    (min 5 trades) -> halt; resume when F&G > 50 AND BTC 24h > 0%
-12. Daily gate: if >= 8 trades today AND win rate < 60% -> halt until tomorrow
-13. BENCHMARK-TRACKING BTC CORE (added Wk4, 2026-08-09): the mission is to BEAT
-    BTC buy-and-hold — sitting 100% cash while BTC rises is a guaranteed loss vs
-    the benchmark even when closed trades win (Week 4: bot +2.24% vs BTC +3.41%,
-    trailed −1.17%, three days fully idle). To floor idleness:
-    - Trigger: >= 3 consecutive scan sessions with ZERO rules-clean alt entries
-      AND macro NOT halted (SIZE_MULTIPLIER > 0) AND deployment < 40%.
-    - Action: allocate a core tranche of ~30-40% of the book to BTC (or ETH if
-      BTC momentum is clearly weaker) spot as a benchmark-tracking HOLD.
-    - This core is EXEMPT from the momentum-entry gates, the +12% take-profit,
-      and trailing-stop churn — it is an index-tracking hold, not a momentum trade.
-    - Exit the core only if: (a) macro gate halts (SIZE_MULTIPLIER -> 0), or
-      (b) capital is needed to fund a qualifying alt entry (alts take priority),
-      or (c) a hard -10% drawdown on the core (macro regime break).
-    - Do NOT loosen alt-entry quality gates to force deployment — the parabolic-
-      chase discipline stays. Rule 12 is a floor on idleness, not a gate loosening.
-    - Log core buys/sells in TRADE-LOG tagged "BTC-CORE (Rule 12)".
+8. Max 25 new trades per week; max 5 new trades per day
+9. Weekly circuit breaker: if ≥ 40% of this week's closed trades are losses (min 5 trades) → halt new entries; resume when F&G > 50 AND BTC 24h > 0%
+10. Daily gate: if ≥ 5 trades placed today AND today's win rate < 60% → halt new entries until tomorrow
+11. Momentum filter: only enter if 24h price change ≥ +2% OR a strong confirmed catalyst justifies entry against trend
+12. Follow sector momentum (L1s, DeFi, AI/data layer, gaming/NFT, BTC dominance)
+13. Exit a sector after 2 consecutive failed trades
 
-## Sector P&L Tracking
-- Record sector in every TRADE-LOG entry: L1 / DeFi / AI / Gaming / Other
-- At each research session (Step 1): scan TRADE-LOG for sector win/loss counts
-- SECTOR_BLOCKED: any sector with 2+ CONSECUTIVE losses -> avoid until sector recovers
-- Record sector status in RESEARCH-LOG Macro Gate section each morning
+## Entry Checklist (document ALL before placing order)
+- Specific catalyst today?
+- Sector in momentum?
+- Stop level (7-10% below entry)?
+- Target (minimum 2:1 R:R)?
 
-## Signal Gate (Losing-Signal Memory)
-- At morning-research STEP 1B: scan TRADE-LOG closed trades (newest first)
-- Count unbroken consecutive losses where Signal Score was 5-8 (low tier)
-- If N_consec_low_losses >= 2: SIGNAL_GATE = LOW_TIER_BLOCKED
-- Else: SIGNAL_GATE = CLEAR
-- Record in RESEARCH-LOG under Sector Status each morning
-- Effect: if LOW_TIER_BLOCKED → minimum score to enter = 9 (quality filter)
-- Resets each morning (daily rolling check, not persistent across days)
-
-## Buy-Side Gate (every check must pass before any order)
-- Macro gate NOT halted (SIZE_MULTIPLIER > 0)
-- Weekly circuit breaker NOT active
-- Daily gate NOT active
-- Total positions after fill <= 5
-- Trades today + 1 <= 8 | Trades this week + 1 <= 30
-- FINAL_SIZE_USDT <= available USDT balance (keep >= 10% dry powder)
-- Entry signal: score >= 5 OR OPTION_B catalyst
-- If SIGNAL_GATE = LOW_TIER_BLOCKED: score must be >= 9 (raise threshold)
-- Ticker NOT in SECTOR_BLOCKED sector
-- ATR R:R >= 2.0 (target_pct / stop_pct >= 2.0)
-- Layer 3 review OUTCOME = Proceed (or Size down, not Skip)
+## Buy-Side Gate (every check must pass)
+- Weekly circuit breaker NOT active (< 40% loss rate on min 5 closed trades this week)
+- Daily gate NOT active (if ≥ 5 trades today, today's win rate ≥ 60%)
+- Total positions after fill ≤ 6
+- Trades placed today + 1 ≤ 5
+- Trades placed this week + 1 ≤ 25
+- Position cost ≤ 20% of total portfolio USDT value
+- Position cost ≤ available USDT balance
+- Entry signal: EITHER a strong catalyst documented in today's RESEARCH-LOG (news event,
+  protocol upgrade, whale accumulation, sector rotation) OR 24h price change ≥ +2% with
+  no catalyst needed. Catalyst alone is sufficient — do not require both.
 - Instrument is spot crypto (USDT pair on MEXC)
-- 3-Candle Confirmation Gate: last 3 closed 1h candles all above yesterday's close AND volume rising (each >= prior). If fails → defer to next scan window (no permanent skip).
-- Range TP pre-check: if prev-day high is above current price but < 4% away → SKIP (insufficient room). If 4-12% above → use prev-day high as target_price instead of +12%.
-- EMA-200 Trend Filter: daily price must be above the 200-day EMA. If price < EMA-200 → SKIP (downtrend pump). Exception: OPTION_B catalyst with score >= 10 may override with explicit Layer 3 justification.
-
-## Smart Money Signal Sources (priority order)
-1. Whale Alert - large on-chain transactions (exchange->wallet = accumulation)
-2. VC wallet accumulation (a16z, Paradigm, Multicoin public wallets)
-3. Top trader calls: CryptoKaleo, pentoshi, Bluntz_Capital, Crypto_Cobain
-4. CoinGecko trending (retail momentum, top 5 = signal)
-5. DeFiLlama TVL gainers (protocol-level smart money, >10% 24h)
-Highest conviction = coin appears in 3+ of the above
 
 ## Order Shapes
 ```bash
 # Market buy (spend USDT amount)
 bash scripts/mexc.sh order \
-  '{"symbol":"BTCUSDT","side":"BUY","type":"MARKET","quoteOrderQty":"<amount>"}'
+  '{"symbol":"BTCUSDT","side":"BUY","type":"MARKET","quoteOrderQty":"2000"}'
 
-# Close position (take-profit / cut loser)
-bash scripts/mexc.sh close SYMBOLUSDT
+# Take-profit / cut loser (market sell full position)
+bash scripts/mexc.sh close BTCUSDT
 
-# NOTE: MEXC spot API only supports LIMIT, MARKET, LIMIT_MAKER - NO stop-limit orders.
-# Stops enforced manually by midday + afternoon monitoring routines.
-# Record stop/target/ladder in TRADE-LOG at every entry.
+# NOTE: MEXC spot API only supports LIMIT, MARKET, LIMIT_MAKER — no STOP_LOSS_LIMIT.
+# Stops are enforced by monitoring routines (midday + afternoon scans).
+# After every buy, record in TRADE-LOG: entry price, stop price (-10%), target (+7%).
 ```
 
 ## Sell-Side Rules (evaluated at EVERY midday and afternoon scan)
-- live_price <= stop_price (from TRADE-LOG, ATR-based) OR P&L <= -10% (hard backstop): market sell
-- live_price >= target_price (from TRADE-LOG, ATR-based or range TP): market sell immediately
-- P&L +3% to target: new_stop = max(current_price × 0.93, entry_price) — break-even floor applied
-- Thesis broken (catalyst invalidated, sector rolling over): sell even if above stop
-- SECTOR_BLOCKED: exit all positions in blocked sector
-- Ladder buy check: live_price <= ladder_price (from TRADE-LOG) AND live_price > stop_price AND thesis intact
-- Peak Decay Exit: if P&L has declined >= 50% from its recorded peak AND current P&L < +3%
-  AND stop < 6% away -> run mini thesis check (3 questions):
-    Q1: current 24h volume >= 50% of entry volume? (FAIL if not)
-    Q2: catalyst event date still upcoming? (FAIL if date has passed)
-    Q3: sector not in SECTOR_BLOCKED? (FAIL if blocked)
-  If 2+ questions FAIL -> exit. Log in TRADE-LOG. ClickUp alert on exit only.
-  If < 2 fail -> hold, log "Peak decay flagged" in TRADE-LOG (silent, no ClickUp).
 
-## Phase Parameter Validation (review before Aug 22 revert)
-Compare actual results against these assumptions:
-- Were +12% targets hit? Or did most positions reverse before reaching target?
-- Was -7% cut too tight? (if consecutive ladders triggered) or too loose?
-- Did ladder buys improve avg P&L vs single-entry trades?
-- Did macro gate (SIZE_MULTIPLIER) correctly filter bad market days?
-- Did signal score >= 5 threshold have better win rate than score < 5 entries?
-- Was 30-35% position sizing appropriate for portfolio size ($30-50 range)?
-- **Rule 12 trend-blindness (flagged Wk5, 2026-08-16):** the BTC core deploys a fixed
-  30-40% during ANY dry spell regardless of BTC's own trend. Wk4 (BTC +3.4%) it helped
-  (don't concede an up-move); Wk5 (BTC −3.3%) it DRAGGED (a 100%-cash week would have
-  beaten BTC by more). Over a full sample the up/down weeks should roughly wash on the
-  core slice, but recalibrate: does a TREND-AWARE core (deploy only when BTC momentum ≥ 0,
-  else hold cash) beat the fixed core? Weigh against re-introducing BTC-timing discretion
-  that Rule 12 was built to remove. Do NOT change mid-phase — decide here on the full sample.
-- **Alt-gate strictness (flagged Wk5):** only 2 alt round-trips in 5 phase weeks (both ADA,
-  both wins). Strict gates + persistent Fear tape (F&G 27-34) = near-permanent alt drought.
-  Was the discipline correct (every dry-spell mover was a pump/rug), or are the gates too
-  tight for a Fear regime? Calibrate the conservative alt-entry threshold accordingly.
-Use this review to calibrate conservative strategy settings for post-Aug-22.
+- Unrealized loss ≤ -7% OR price ≤ stop price in TRADE-LOG: market sell immediately
+- Up +7% or more: market sell immediately — take profit
+- Up +3% to +6%: update stop in TRADE-LOG to 7% below current price (trailing adjustment)
+- Thesis broken (catalyst invalidated, sector rolling over): market sell even if not at -7%
+- Sector has 2 consecutive failed trades: exit all positions in that sector
+
+## Research Priorities (morning-research workflow)
+- BTC price and dominance
+- Crypto market sentiment (Fear & Greed Index)
+- Top performing sectors this week
+- Macro: DXY, Fed policy, rate expectations, risk-on/risk-off
+- On-chain: exchange inflows/outflows, funding rates, open interest
+- News on held tokens
+- 2-3 actionable trade ideas with full entry/stop/target
 
 ## Notes from Experience
-- Week 1-2 (Jul 22 - Aug 2): 1 closed trade (ADA +7.0%), 1 open (ADA re-entry).
-  Phase P&L +$0.53 (+1.65%) vs BTC flat. Conservative strategy worked but
-  under-deployed (20% vs 80-90% target). Switched to aggressive mode Aug 4.
-- Stop mechanism: MEXC has no resting stop-limit orders. Enforced by midday +
-  afternoon monitoring routines. Record stop price in TRADE-LOG at every entry.
-- Smart money note: ADA entry was pure momentum - no whale signal. Next entries
-  should prioritize coins with smart money backing for higher conviction.
+(Updated weekly; see WEEKLY-REVIEW.md for context)
+- Week 1 (ending 2026-07-19): 0 trades. Grade F. Root cause operational — Binance = HTTP 451
+  geo-block; Bybit = CloudFront 403 same issue; resolved by migrating to MEXC (no cloud IP
+  block, 0% maker fees). Now trading live on MEXC Spot.
+- **Reachability gate:** every run must first confirm the exchange API responds
+  (`bash scripts/mexc.sh price BTCUSDT`). If it fails, HALT, alert, and place no orders —
+  do not migrate exchanges again without verifying the new venue is reachable from this IP.
+- **Stop mechanism (resolved 2026-07-27):** MEXC spot API only supports LIMIT, MARKET,
+  LIMIT_MAKER — no STOP_LOSS_LIMIT. Rule 4 updated: record stop price in TRADE-LOG at entry;
+  midday and afternoon-execution routines enforce the -7% cut via market sell. This is the
+  live stop mechanism — do NOT skip trades because of missing stop-limit orders.
+
+### AGGRESSIVE MODE phase results (Jul 22 – Aug 22, 2026) — reverted here 2026-08-26
+Ran under a temporary AGGRESSIVE MODE ruleset (higher size %, wider stops/targets, virtual
+capital sizing, Rule 12 BTC-core) per CLAUDE.md's Aug 4-22 window. Phase P&L +10.67% vs BTC
+~+21.4% (bot trailed by ~10.7 pts). Closed record 3W/0L. This file is CONSERVATIVE MODE
+again as of this revert — carried-forward lessons:
+- **Alt-entry gate strictness — validated, kept as-is.** Only 2 alt round-trips closed all
+  phase (both ADA, both wins, +7.0% / +12.9%), but every rejected candidate that was checked
+  was a genuine disqualifier (thin/spent pump, no exit liquidity, downtrend bounce). The
+  quality bar was correct for a persistent Fear-tape regime — do not loosen this file's
+  momentum/catalyst gate to force more trade volume.
+  This file does not include the aggressive-mode signal-scoring system (0-20 pts) or the
+  Rule-12 BTC benchmark-tracking core — both are aggressive-mode-only mechanics and were not
+  carried into this revert. If a future aggressive phase reintroduces a BTC-core carveout,
+  size it above the ~30-40% cap used here: this phase's worst benchmark miss (Week 6,
+  −14.74 pts) came from that cap, not from bad timing — a correctly-timed core still can't
+  track a >20%-in-a-week BTC move at 35% weight.
+- **Signal-scoring system was never validated.** In 3 weeks of existence it produced zero
+  live trades — every scan that reached scoring was disqualified upstream (3-Candle Gate,
+  EMA-200, liquidity floor) before a score-based entry ever fired.
+- **Operational reliability, not strategy design, was the binding constraint in the phase's
+  final week.** A 3-day scheduler/cron gap (Aug 19 night – Aug 22, MEXC-bot-specific — sibling
+  `alpaca/` routines kept firing) meant the bot traded blind through BTC's sharpest rally of
+  the challenge. Confirm the routine schedule is healthy before trusting any read of strategy
+  performance during a gap period.
+- **Open position carried across the revert:** BTC 0.00015477 (entry ~$80,804, Aug 25) was
+  opened under aggressive-mode Rule 12 as an exempt index-tracking core with no stop/target
+  on file. It is NOT being sold as part of this revert (no rules-based exit trigger fired).
+  Per this file's Rule 4, it has been assigned a conservative stop/target retroactively —
+  see TRADE-LOG entry dated 2026-08-26 for the recorded stop (-10%) and target (+7%) — so
+  midday/afternoon monitoring routines can manage it under the now-live conservative rules.

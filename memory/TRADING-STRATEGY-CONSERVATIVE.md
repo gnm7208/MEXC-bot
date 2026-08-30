@@ -93,3 +93,28 @@ bash scripts/mexc.sh close BTCUSDT
   LIMIT_MAKER — no STOP_LOSS_LIMIT. Rule 4 updated: record stop price in TRADE-LOG at entry;
   midday and afternoon-execution routines enforce the -7% cut via market sell. This is the
   live stop mechanism — do NOT skip trades because of missing stop-limit orders.
+
+### AGGRESSIVE MODE phase results (Jul 22 – Aug 22, 2026) — reverted here 2026-08-26
+Ran under memory/TRADING-STRATEGY.md's AGGRESSIVE MODE ruleset (higher size %, wider
+stops/targets, virtual capital sizing, Rule 12 BTC-core). Phase P&L +10.67% vs BTC ~+21.4%
+(bot trailed by ~10.7 pts). Closed record 3W/0L. Carried forward as this file becomes the
+live rulebook again:
+- **Alt-entry gate strictness — validated, kept as-is.** Only 2 alt round-trips closed all
+  phase (both ADA, both wins, +7.0% / +12.9%), but every rejected candidate that was checked
+  was a genuine disqualifier (thin/spent pump, no exit liquidity, downtrend bounce). The
+  quality bar was correct for a persistent Fear-tape regime — do not loosen this file's
+  equivalent momentum/catalyst gate to force more trade volume.
+  This file does not include the aggressive-mode signal-scoring system (0-20 pts) or the
+  Rule-12 BTC benchmark-tracking core — both are aggressive-mode-only mechanics and were not
+  carried into this revert. If a future aggressive phase reintroduces a BTC-core carveout,
+  size it above the ~30-40% cap used here: this phase's worst benchmark miss (Week 6,
+  −14.74 pts) came from that cap, not from bad timing — a correctly-timed core still can't
+  track a >20%-in-a-week BTC move at 35% weight.
+- **Signal-scoring system was never validated.** In 3 weeks of existence it produced zero
+  live trades — every scan that reached scoring was disqualified upstream (3-Candle Gate,
+  EMA-200, liquidity floor) before a score-based entry ever fired.
+- **Operational reliability, not strategy design, was the binding constraint in the phase's
+  final week.** A 3-day scheduler/cron gap (Aug 19 night – Aug 22, MEXC-bot-specific — sibling
+  `alpaca/` routines kept firing) meant the bot traded blind through BTC's sharpest rally of
+  the challenge. Confirm the routine schedule is healthy before trusting any read of strategy
+  performance during a gap period.

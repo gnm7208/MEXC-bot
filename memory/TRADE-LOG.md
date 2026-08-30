@@ -1815,3 +1815,42 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 
 Sources: live MEXC `/ticker/price` + `/api/v3/account` + `/positions`; today's RESEARCH-LOG entry (Morning Execution).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+---
+
+## 2026-08-30 — Weekly Review (Week 6 catch-up + Week 7) + Mode Revert
+
+**Run note:** this weekly-review session started against a stale local checkout (last synced
+content through 2026-08-26) and did the Week 6 (ending Aug 23) analysis and drafted this
+mode-revert against that snapshot; on rebase against the latest origin/main (through Aug-30
+Midday Scan above) the underlying numbers (entry prices, position size) were unchanged, so
+the Week 6 review and the actions below stand as originally computed. Week 7 (ending Aug 30)
+review follows immediately below in memory/WEEKLY-REVIEW.md, computed fresh against today's
+live state.
+
+**AGGRESSIVE MODE → CONSERVATIVE MODE.** memory/TRADING-STRATEGY.md reverted to conservative
+rules this commit, per CLAUDE.md's "revert after Aug 22" instruction (8 days overdue — flagged
+unresolved across every routine run from Aug 24 through today's Aug-30 Midday Scan above).
+Full Week 6 review appended to memory/WEEKLY-REVIEW.md — Grade C−, bot +7.60% vs BTC +22.34%
+(−14.74 pts, worst benchmark miss of the phase), driven by chronic under-deployment colliding
+with BTC's sharpest rally of the challenge plus a 3-day MEXC-bot scheduler gap (Aug 19 night –
+Aug 22) that left the bot unable to trade or resize through the move.
+
+**Open position carried across the revert — stop/target now assigned:**
+BTC 0.00015477 (entry ~$80,804, 2026-08-25) was opened under aggressive-mode Rule 12 as an
+exempt index-tracking core with no stop/target on file, and has been carried unchanged through
+every Aug 26-30 scan (still Rule-12-exempt in those entries above, per the routines' own
+correct reading of the not-yet-reverted TRADING-STRATEGY.md at the time). No rules-based exit
+has fired, so it is **not** being sold as part of this revert. Per the now-live conservative
+Rule 4/6, it is retroactively assigned:
+- **Stop:** $72,723.60 (entry × 0.90, −10%)
+- **Target:** $86,460.28 (entry × 1.07, +7%)
+- Trailing per conservative Rule 7: at +3% gain (≥$83,228.12), tighten stop to 7% below
+  current price; never move the stop down.
+
+Midday/afternoon monitoring routines should treat this position under standard conservative
+rules from this point forward — no more Rule-12 exemption.
+
+Sources: memory/WEEKLY-REVIEW.md (this commit); memory/TRADING-STRATEGY.md /
+TRADING-STRATEGY-CONSERVATIVE.md (this commit); live MEXC `account` (confirmed BTC
+0.00015477 / USDT $23.262447, unchanged from Aug-30 Midday Scan above).

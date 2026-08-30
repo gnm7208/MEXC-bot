@@ -279,3 +279,65 @@ None. Zero round-trips this week — the only action was opening the BTC-CORE (R
 
 ### Overall Grade: B−
 The book beat its benchmark (+2.25 pts) — the literal mission — with correct no-chase discipline through a week of nothing but pump-and-dump tape, and Rule 12 executed exactly as written. That keeps it out of C territory. But it was a fully passive, absolute-negative week (−1.02%) whose only deployed position (BTC-CORE) finished underwater, and the outperformance owed more to BTC's direction (a −3.3% down-week met with a 66% cash cushion) than to any earned edge. The five-week under-deployment problem is unresolved. Same grade as Week 4 by a different route: Week 4 had an excellent trade but *lost* to BTC; Week 5 had no active trade but *beat* BTC — the two roughly offset. Last full week of aggressive mode; phase-to-date still ahead (+2.85% vs BTC −0.59%, 2W/0L closed).
+
+---
+
+## Week ending 2026-08-23 (Week 6) — *run 2026-08-26, 3 days late (scheduler gap, see below)*
+
+### Stats
+| Metric              | Value  |
+|---------------------|--------|
+| Starting portfolio  | $33.2418 (Aug 16 EOD, Week 5 close) |
+| Ending portfolio    | $35.7685 (Aug 22 EOD — no activity Aug 23, routine gap) |
+| Week return         | +$2.5267 (+7.60%) |
+| BTC week return     | +22.34% ($63,017.07 Aug 16 → $77,109.16 Aug 23) |
+| Bot vs BTC          | **−14.74%** (worst benchmark miss of the phase) |
+| Trades              | 1 (W:1 / L:0 / open:0) |
+| Win rate            | 100% (1/1 closed) |
+| Best trade          | BTC-CORE +18.58% |
+| Worst trade         | None (no losers) |
+| Profit factor       | ∞ (gross profit $2.18 / gross loss $0) |
+
+### Closed Trades
+| Ticker | Entry | Exit | P&L | Notes |
+|--------|-------|------|-----|-------|
+| BTC-CORE | ~$65,020 (Aug 10) | ~$77,099 (Aug 22) | +$2.184 (+18.58%) | Rule-12 index-tracking hold. Closed proactively ahead of a multi-day unmonitored gap (subscription lapse risk) to lock the gain — not a rules-based stop/TP exit. |
+
+### Open Positions at Week End
+None — 100% USDT cash ($35.7685).
+
+### What Worked
+- Rule 12's BTC-CORE caught the largest BTC rally of the phase (~+20% in days) and booked +18.58% real profit — an index-tracking hold materially beat sitting in cash.
+- Proactive close ahead of a known monitoring gap (subscription lapse) was the right call — it locked a large unrealized gain instead of leaving a live position unattended.
+- No-chase discipline held all week: every full-board mover (KII, UPC, ETHFI, XPLK, PUMP, BTW, RAZOR) was correctly disqualified on the 3-Candle Gate or EMA-200 trend filter. Zero forced alt entries.
+
+### What Didn't Work
+- **Worst benchmark trail of the entire phase: −14.74 pts.** Bot +7.60% vs BTC +22.34%. Root cause: only ~35% of the book was ever in BTC-CORE — the other 65% sat in cash through one of BTC's sharpest weekly rallies. A fixed 30-40% core cap cannot track a >20% BTC move even when the core call is correct.
+- **A 3-day scheduler outage compounded the miss.** morning-research/morning-execution did not fire from the night of Aug 19 through Aug 22 — BTC ran from ~$64,500 to ~$78,000 "blind," with no macro/signal-gate data available to size up the core or catch a breakout. Sibling `alpaca/` routines kept firing in the same repo over the same window, so this is a MEXC-bot-specific scheduler/cron issue, not a platform-wide outage or a market condition.
+- **This weekly-review itself ran 3 days late** (scheduled Sun Aug 23, actually run Aug 26). AGGRESSIVE MODE's Aug-22 end date passed with no revert to CONSERVATIVE MODE — flagged as unresolved across 4+ subsequent TRADE-LOG entries (Aug 24-26) before this review finally actioned it.
+
+### Signal Score Retrospective
+Across the **entire phase** (Jul 22 – Aug 22), only 3 trades ever closed, and **none were scored by the Layer-2 signal system** introduced Aug 4:
+- **Unscored (pre-Aug-4 entries):** ADA Jul29→Aug1 (+7.0%), ADA Aug2→Aug6 (+12.9%). 2 trades, 2 wins, 100% win rate, avg +9.95%. Best: ADA +12.9%. Worst: ADA +7.0% (still a win).
+- **Tier A (score 5-7):** 0 closed trades.
+- **Tier B (score 8-10):** 0 closed trades.
+- **Tier C (score 11+):** 0 closed trades.
+- **Rule-12 BTC-CORE (exempt, not part of the scoring system):** 1 trade, win, +18.58% (Aug10→Aug22).
+
+**Threshold check: N/A.** Fewer than 5 scored closed trades exist — in fact zero. Every alt-entry scan since Aug 4 that reached Layer 2 scoring was disqualified before a fill (3-Candle Gate, EMA-200, liquidity floor). **Notable finding: the signal-scoring system has never produced a single live trade to validate it in its first 3 weeks of existence.** No threshold adjustment is possible or warranted from this data.
+
+### Key Lessons
+- Rule 12's fixed 30-40% cap means even a *correct* BTC-core call can't close a >20% benchmark gap in one week — that's a structural sizing limit, not a tactical one.
+- Automation reliability is now a bigger risk to phase performance than the trading rules themselves: a 3-day silent scheduler gap on this specific bot cost more in unrealized opportunity than any single bad trade this phase. Needs a human check on the MEXC-bot cron/scheduler config (distinct from `alpaca/`, which kept running).
+- A routine that goes 3 days without writing to memory/ or committing should be caught by monitoring well before a human notices it in a session log — there is currently no such alert.
+
+### Adjustments for Next Week
+- **AGGRESSIVE MODE (Aug 4-22) has ended. memory/TRADING-STRATEGY.md is being reverted to CONSERVATIVE rules in this same commit**, per CLAUDE.md's own instruction ("revert after Aug 22"), now 4 days overdue.
+- **Phase Parameter Validation (resolved this review, per memory/TRADING-STRATEGY.md's "Phase Parameter Validation" section):**
+  - *Trend-aware vs. fixed BTC core:* not carried into conservative mode (Rule 12 doesn't exist there). For any future aggressive phase: this week's evidence shows the binding constraint was the fixed 30-40% **size cap**, not the core's direction-blindness — a trend filter alone would not have closed a >20%-BTC-week gap.
+  - *Alt-entry gate strictness:* validated, not loosened. 2/2 alt trades across the phase were winners (+7.0%, +12.9%), and every rejected mover that was checked showed a genuine disqualifying reason (thin/spent pump, downtrend bounce). Conservative mode's comparable gate is kept as-is.
+- **Operational escalation (out of this routine's authority to fix):** the MEXC-bot scheduler/cron gap (Aug 19 night – Aug 22, and again Aug 23-24) needs a human check. Flagged in this week's ClickUp message.
+- CLAUDE.md's "Strategy Hard Rules — AGGRESSIVE MODE (Aug 4–22)" section header is now stale now that TRADING-STRATEGY.md has reverted — recommend the user update it; not edited here (outside routines/weekly-review.md's instruction set for this run).
+
+### Overall Grade: C−
+Real, disciplined, rules-clean execution whenever the bot actually ran — one clean +18.58% win, zero forced trades, a sound proactive close ahead of a known gap. But this is the worst week of the phase against the actual mission (beat BTC): −14.74 pts, driven by chronic under-deployment colliding with BTC's sharpest rally of the challenge, worsened by a 3-day scheduler outage the strategy had no way to trade through, and capped off by this review itself running 3 days late with the scheduled mode-revert left undone in the interim. Process failures did more damage this week than any trading decision.
