@@ -619,3 +619,11 @@ circuit breaker N/A (0 closed trades). Next trading day: Monday 2026-08-31
 (LNTH acquisition+FDA, BNTX/PFE FDA approval, QNRX high-risk microcap) plus
 a fresh live movers/earnings-calendar pull.
 Account equity: $100,000.00
+
+### Addendum — 2026-08-30 09:45 ET (morning-execution)
+Sunday, market closed (per TRADING-STRATEGY.md: market hours only,
+Mon-Fri). No Trade Ideas exist for today (research SKIPped above), 0 open
+positions/orders to monitor, so no stop/TP checks or thesis review needed.
+No trades placed, no daily/weekly gate or circuit-breaker check applicable
+(0 trades today, 0 this week).
+Account: equity $100,000 / cash $100,000 / buying power $400,000, unchanged.
