@@ -1891,3 +1891,15 @@ No candidate cleared both the quality-score threshold and the 3-Candle Confirmat
 **Decision: NO NEW ENTRIES.** PONS and PUMP both fail the 3-Candle Confirmation Gate (pumps already fading/reversed intraday); DGAI passes the gate but scores only 5/20, below the MACRO<60 quality threshold of 8. BTC-CORE holds unchanged at ~34.4% deployment, -2.63% (well within stop $72,723.60 and the -10% floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Standing unresolved issue (not actioned, out of this routine's scope): Week 6/Week 7 weekly-reviews ran today per the Weekly Review entry above — no longer outstanding as of this run. Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,671 USDT pairs) + `/ticker/24hr` (HNT) + `/klines?interval=60m,15m,1d` (ATR/3-candle/EMA200/volsurge/VWAP/RSI/mktstr for PONS/DGAI/PUMP) + `account`/`positions`; CoinGecko `/coins/markets` (mis-sorted, discarded); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## Aug 30 — EOD Snapshot (Day 39, Sunday)
+
+**Portfolio:** $35.46 | **Cash:** $23.26 (65.6%) | **Day P&L:** +$0.09 (+0.25%) | **Phase P&L:** +$3.14 (+9.71%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-----------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $78,800.01 | +0.15%  | -$0.31 (-2.48%)    | $72,723.60  |
+
+**Notes:** Quiet Sunday, no trades — morning-research, morning-execution, midday, and afternoon-execution all found zero rules-clean alt qualifiers. Big event today: this morning's Weekly Review reverted TRADING-STRATEGY.md from stale AGGRESSIVE MODE back to CONSERVATIVE MODE (8 days overdue) and retroactively assigned BTC-CORE its conservative stop ($72,723.60, entry×0.90) and target ($86,460.28, entry×1.07) — position is no longer Rule-12 exempt going forward, standard stop/TP/trailing rules apply from here. BTC ticked up slightly through the day ($78,124 → $78,800), position unrealized loss narrowed from -3.32% to -2.48%, well inside the new stop. Portfolio up marginally on the day (+0.25%), phase P&L holds strong at +9.71% vs. starting capital. `orders` endpoint still returns HTTP 400 (known permission-gap; locked=0 on both assets confirms no resting orders).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-29 EOD baseline $35.37, this week's trade count 1/25) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
