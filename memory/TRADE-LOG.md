@@ -1982,3 +1982,15 @@ No candidate reached the raw momentum screen (0 board-scan hits) → per-candida
 **Decision: NO NEW ENTRIES.** Flattest/second-consecutive dead tape (zero board-scan hits at +5%/$3M for the second straight scan). BTC-CORE holds unchanged at ~34.2% deployment, -3.42%, well within stop $72,723.60 and the -10% floor; ETF inflow-streak snap is a mild negative but not thesis-breaking (institutional demand framing intact, no hack/SEC/key-unlock news on BTC). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
 
 Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,672 USDT pairs) + `account`/`positions`; CoinGecko `/coins/markets` (unavailable); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## Aug 31 — EOD Snapshot (Day 40, Monday)
+
+**Portfolio:** $35.37 | **Cash:** $23.26 (65.8%) | **Day P&L:** -$0.09 (-0.25%) | **Phase P&L:** +$3.05 (+9.44%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-----------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $78,242.08 | -0.71%  | -$0.40 (-3.17%)    | $72,723.60  |
+
+**Notes:** Quiet Monday, zero trades — new week opened 0/25, all three intraday routines (morning-execution, midday, afternoon-execution) found zero rules-clean alt qualifiers on dead/red tape (second-consecutive zero-hit board scan on the +5%/$3M momentum gate). BTC drifted down slightly through the day ($78,800.01 Sun EOD → $78,242.08 now, -0.71%) on continuing hawkish Jackson Hole Fed commentary (Warsh) and a snapped 9-day BTC ETF inflow streak — mild negative, not thesis-breaking. BTC-CORE unrealized loss widened slightly to -3.17%, still well inside the -10% stop floor ($72,723.60) and the -7% cut. Portfolio down marginally on the day (-0.25%), phase P&L holds strong at +9.44% vs. starting capital. `orders` endpoint still returns HTTP 400 (known permission-gap; locked=0 on both assets confirms no resting orders).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-30 EOD baseline $35.46, this week's trade count 0/25) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
