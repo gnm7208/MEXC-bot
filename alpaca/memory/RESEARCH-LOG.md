@@ -627,3 +627,57 @@ positions/orders to monitor, so no stop/TP checks or thesis review needed.
 No trades placed, no daily/weekly gate or circuit-breaker check applicable
 (0 trades today, 0 this week).
 Account: equity $100,000 / cash $100,000 / buying power $400,000, unchanged.
+
+## 2026-08-31 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL (cautious lean)
+Futures: S&P -0.26% to -0.37% (ES ~7,693-7,722) | Nasdaq futures mixed/soft
+Risk events today: no FOMC/CPI/jobs; only Dallas Fed Manufacturing (10:30 ET,
+beat: 1.3 vs 0.7 forecast) and Chicago PMI (57.8 vs 57.6 prior) — second-tier.
+Headline risk: reports of an escalation in the U.S.-Iran situation and rising
+US-Canada trade tension are cited as the drag on futures. Doesn't clear the
+-0.5% BEARISH bar and no top-tier data release, so scored NEUTRAL — but
+treating today as lower-conviction given the geopolitical overhang (extra
+scrutiny on chase-y pops, same as prior sessions).
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open
+positions, 0 trades this week. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: NOW +4.52%, AMZN +4.00%, NKE +3.05%, INTU +2.92%, SYK +2.66%,
+NFLX +2.39%, SCHW +1.93%, BAC +1.91%, MCD +1.86%, GOOGL +1.77%
+Losers: MRVL -10.25%, LRCX -5.23%, SNPS -4.77%, NVDA -4.66%, KLAC -4.48%
+Flagged (>=+3%): NOW, AMZN, NKE
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| NOW | -2.06%* | 0.3x | 70 | above | ServiceNow earnings/AI beat — reported 8/27, 4 days stale | 0 | 1/15 | 4.7% | 9.3% | 2.00 | No — score <6 |
+| AMZN | -1.81%* | 0.5x | 31 | above | Post-earnings AWS continuation — stale, not 24h | 0 | 1/15 | 4.0% | 8.0% | 2.00 | No — score <6 |
+| NKE | -1.89%* | 1.3x | 31 | BELOW | None; JPMorgan downgrade cited as headwind | 0 | 0/15 | 4.0% | 8.0% | 2.00 | No — below SMA50 + score <6 |
+| LNTH | +0.09% | ~0.6x | — | BELOW | Curium acquisition ($102.50, pending) — deal ~1.7% away, largely priced in | n/a | n/a | n/a | n/a | n/a | No — below SMA50, thin arb spread |
+| QNRX | +12%* / +40% premkt | n/a | — | above | FDA-related news + financing (carried from Fri) | n/a | n/a | n/a | n/a | n/a | No — avg 20d vol ~405 sh, broken/illiquid quote (ask $0), unsafe to size |
+
+*Daily-bar chg% reflects the last completed session (IEX feed delay), not
+today's live intraday tape — `movers` intraday % is what drove the flag;
+this column stays per the standard scoring script's methodology.
+
+### Trade Ideas
+None — no candidate cleared SCORE >= 6 with R:R >= 1.5 and above-SMA50.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. NOW and AMZN are
+extending earnings pops that are now 4+ days old (no fresh 24h catalyst,
+technical score 1/15 each) — same "don't chase a stale pop" pattern that
+played out correctly Friday (NVDA/SNPS/MRVL gave back gains the next
+session). NKE below 50-day SMA, no catalyst. LNTH's acquisition arb is
+already tight and the stock trades below its 50-day SMA. QNRX's premarket
+pop is real per Perplexity but Alpaca's own bars show ~400 shares/day
+average volume and a broken bid/ask (ask $0.00) — not tradeable at any
+size that respects position sizing. Re-scan at 9:45 AM execution and
+tomorrow's morning-research; drop LNTH/QNRX from active watchlist unless
+liquidity/technicals improve.
+Account equity: $100,000.00
