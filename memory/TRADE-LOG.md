@@ -1931,3 +1931,24 @@ Deployment ~34.2% of $35.34 book.
 **Decision: NO NEW ENTRIES.** BTC-CORE holds unchanged at ~34.2% deployment, -3.42% (well within stop $72,723.60 and the -10% floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at midday.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-08-31 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,671.71 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.8%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/5 · Trades this week 0/25 (new week, Monday) · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.1774 @ mark $78,671.71 → -2.64%.**
+- A) Emergency stop (STEP 3): live $78,671.71 > stop $72,723.60; P&L -2.64% > -10% floor. No trigger.
+- B) Take-profit (STEP 4): live $78,671.71 < target $86,460.28; P&L < +7%. No trigger.
+- STEP 5 — Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- STEP 6 — Trailing tighten: P&L -2.64% < +3% threshold. N/A.
+- STEP 6B — Near-stop pre-alert: stop_dist_pct = (78,671.71 − 72,723.60) / 78,671.71 = 7.56% — above 3% threshold, no alert.
+- STEP 6C — Peak Decay: no Peak P&L on file (position has not gone positive since the Aug-26 retroactive stop/target assignment) — precondition peak_pnl_pct > 0 not met, N/A.
+Deployment ~34.4% of $35.44 book.
+
+**STEP 7 — Thesis check:** BTC essentially flat vs. this morning's mark ($78,043.63 → $78,671.71, +0.80%), well below the >5%-move threshold for a mid-day Perplexity catalyst check. Today's RESEARCH-LOG (Morning Research) and last night's Evening Scan both confirm thesis intact (ETF inflows, no hack/SEC/key-unlock news affecting BTC) — no fresh negative catalyst since. No action.
+
+**Decision: NO ACTION.** Sole position within normal drawdown, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` (not queried, no change from prior HTTP 400/locked=0 pattern); today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Evening Scan (overnight thesis check).
