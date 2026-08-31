@@ -681,3 +681,9 @@ size that respects position sizing. Re-scan at 9:45 AM execution and
 tomorrow's morning-research; drop LNTH/QNRX from active watchlist unless
 liquidity/technicals improve.
 Account equity: $100,000.00
+
+
+### Addendum — 2026-08-31 09:45 ET (morning-execution)
+Decision = HOLD → monitor only per routine. Account: equity $100,000, cash
+$100,000, buying power $400,000. 0 open positions, 0 open orders — nothing
+to check (no thesis/stop/TP review needed). No trade executed.
