@@ -1952,3 +1952,33 @@ Deployment ~34.4% of $35.44 book.
 **Decision: NO ACTION.** Sole position within normal drawdown, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` (not queried, no change from prior HTTP 400/locked=0 pattern); today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Evening Scan (overnight thesis check).
+
+## 2026-08-31 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,041.21 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.8%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. `orders` HTTP 400 (known permission-gap pattern). Positions 1/5 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 53, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD — no Trade Ideas (no coin scored ≥5, no live Option B catalyst, zero board-scan hits).
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.0784 @ mark $78,041.21 → **-3.42%**.
+- A) Emergency stop: live $78,041.21 > stop $72,723.60; P&L -3.42% > -10% floor. No trigger.
+- B) Take-profit: live $78,041.21 < target $86,460.28; P&L < +7%/+12%. No trigger.
+- C) Trailing tighten: P&L -3.42% < +3% threshold. N/A.
+- D) Peak Decay: no Peak P&L on file (position hasn't gone positive since the retroactive stop/target assignment) — precondition peak_pnl_pct > 0 not met. N/A.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (78,041.21 − 72,723.60) / 78,041.21 = 6.81% — above 3% threshold, no alert.
+Deployment ~34.2% of $35.34 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:24 UTC, before 13:30-15:00 window). CoinGecko top-gainers endpoint unavailable (recurring pattern). Whale Alert: unavailable (persistent `'str' object has no attribute 'get'` parse error). Full MEXC board scan (1,672 USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **zero hits** — dead tape, second consecutive flat session. Perplexity US-open momentum sweep flagged TRUMP/USELESS/PUMP/MELANIA/PEPE as movers, but every figure cited was a **7-day** gain, not 24h/live (same recurring stale-window citation issue as prior sessions) — not actionable, no live MEXC confirmation attempted since board scan already showed zero qualifying moves. Perplexity breaking-news sweep (last 2h): Bitcoin ETF inflow streak snapped (9 days, mild negative), Ethereum ETF inflows continuing; DeFi sector +38% headline claimed on a "US policy shift" but no ticker/live confirmation (board scan shows zero DeFi names qualifying — treated as unverified); Cronos/Tectonic exploit ~$75M (not held, no action); Europol seized Cryptomixer $29M BTC (AML enforcement, unrelated). Macro backdrop: broad sell-off today on Fed Chair Warsh's hawkish Jackson Hole inflation comments, BTC dropped below $78,000 — consistent with today's live mark. No fresh actionable catalyst for any tradeable candidate.
+
+No candidate reached the raw momentum screen (0 board-scan hits) → per-candidate ATR/3-candle/EMA200/RSI/VWAP checks skipped (nothing to check). No Option B strong-catalyst override found. SECTOR_BLOCKED: none (N/A — no candidate reached sector check).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** Flattest/second-consecutive dead tape (zero board-scan hits at +5%/$3M for the second straight scan). BTC-CORE holds unchanged at ~34.2% deployment, -3.42%, well within stop $72,723.60 and the -10% floor; ETF inflow-streak snap is a mild negative but not thesis-breaking (institutional demand framing intact, no hack/SEC/key-unlock news on BTC). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,672 USDT pairs) + `account`/`positions`; CoinGecko `/coins/markets` (unavailable); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
