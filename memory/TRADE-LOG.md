@@ -1903,3 +1903,31 @@ Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,671 USDT
 **Notes:** Quiet Sunday, no trades — morning-research, morning-execution, midday, and afternoon-execution all found zero rules-clean alt qualifiers. Big event today: this morning's Weekly Review reverted TRADING-STRATEGY.md from stale AGGRESSIVE MODE back to CONSERVATIVE MODE (8 days overdue) and retroactively assigned BTC-CORE its conservative stop ($72,723.60, entry×0.90) and target ($86,460.28, entry×1.07) — position is no longer Rule-12 exempt going forward, standard stop/TP/trailing rules apply from here. BTC ticked up slightly through the day ($78,124 → $78,800), position unrealized loss narrowed from -3.32% to -2.48%, well inside the new stop. Portfolio up marginally on the day (+0.25%), phase P&L holds strong at +9.71% vs. starting capital. `orders` endpoint still returns HTTP 400 (known permission-gap; locked=0 on both assets confirms no resting orders).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-29 EOD baseline $35.37, this week's trade count 1/25) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
+
+## 2026-08-31 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,043.63 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.8%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · New week (Monday) — trades this week 0/25 · trades today 0/5 · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 53, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD — no coin scored >= 5, no Option B catalyst; SOL/TAO both checked and disqualified; full board scan zero +5%/$3M hits. No Trade Ideas to validate.
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.0788 @ mark $78,043.63 → **-3.42%**.
+- A) Emergency stop: live $78,043.63 > stop $72,723.60; P&L -3.42% > -10% floor. No trigger.
+- B) Take-profit: live $78,043.63 < target $86,460.28; P&L < +7%. No trigger.
+- C) Trailing tighten: P&L -3.42% < +3% threshold. N/A.
+- D) Peak Decay: no Peak P&L on file yet (position never gone positive since the retroactive stop/target assignment) — N/A, peak_pnl_pct > 0 precondition not met.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (78,043.63 − 72,723.60) / 78,043.63 = 6.82% — above 3% threshold, no alert.
+Deployment ~34.2% of $35.34 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (new week, 0 closed trades, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Alt entries:** None to validate — RESEARCH-LOG Trade Ideas list is empty (Decision: HOLD, no coin cleared the scoring/momentum gates).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** BTC-CORE holds unchanged at ~34.2% deployment, -3.42% (well within stop $72,723.60 and the -10% floor). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at midday.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
