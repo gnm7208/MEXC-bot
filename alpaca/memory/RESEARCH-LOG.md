@@ -687,3 +687,12 @@ Account equity: $100,000.00
 Decision = HOLD → monitor only per routine. Account: equity $100,000, cash
 $100,000, buying power $400,000. 0 open positions, 0 open orders — nothing
 to check (no thesis/stop/TP review needed). No trade executed.
+
+### EOD Scan — 2026-08-31
+Open positions held overnight: none
+Positions cut: none
+Tomorrow's watchlist: MDT (Medtronic, pre-market earnings, EPS est $1.39,
+expected move ±5.1%), NIO (pre-market earnings), YEXT (confirmed pre-market
+earnings, EPS est $0.17); non-earnings: MGM (proposed takeover by Barry
+Diller's People Inc., 9/1) — no confirmed FDA catalyst for 9/1.
+Account equity EOD: $100,000.00
