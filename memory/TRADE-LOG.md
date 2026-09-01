@@ -2028,3 +2028,24 @@ No other Trade Ideas in today's RESEARCH-LOG. Zero candidates remain.
 **Decision: NO NEW ENTRIES.** PONS disqualified on price-staleness drift (+9.95% > +7% ceiling) — the Ave.ai/Launchpool catalyst is already priced in, entry here would be chasing. BTC-CORE holds unchanged at ~34.5% deployment, -2.11%, well within stop $72,723.60 and the -10% floor. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at midday.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote PONSUSDT` + `/ticker/24hr` (PONSUSDT); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-09-01 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,994.30 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.9%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/5 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.0712 @ mark $77,994.30 → -3.48%.**
+- STEP 3 — Emergency stop: live $77,994.30 > stop $72,723.60; P&L -3.48% > -7%/-10% floor. No trigger.
+- STEP 4 — Take-profit: live $77,994.30 < target $86,460.28; P&L < +7%. No trigger.
+- STEP 5 — Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- STEP 6 — Trailing tighten: P&L -3.48% < +3% threshold. N/A.
+- STEP 6B — Near-stop pre-alert: stop_dist_pct = (77,994.30 − 72,723.60) / 77,994.30 = 6.76% — above 3% threshold, no alert.
+- STEP 6C — Peak Decay: no Peak P&L on file (position has not gone positive since the Aug-26 retroactive stop/target assignment) — precondition peak_pnl_pct > 0 not met, N/A.
+Deployment ~34.0% of $35.33 book.
+
+**STEP 7 — Thesis check:** BTC down modestly vs. this morning's mark ($79,103.43 → $77,994.30, -1.40%), well below the >5%-move threshold for a midday Perplexity catalyst check. No fresh negative catalyst since this morning's research (Option-B PONS entry was skipped on price-staleness, unrelated to BTC thesis). Thesis intact.
+
+**Decision: NO ACTION.** Sole position within normal drawdown, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry (PONS staleness skip).
