@@ -696,3 +696,60 @@ expected move ±5.1%), NIO (pre-market earnings), YEXT (confirmed pre-market
 earnings, EPS est $0.17); non-earnings: MGM (proposed takeover by Barry
 Diller's People Inc., 9/1) — no confirmed FDA catalyst for 9/1.
 Account equity EOD: $100,000.00
+
+## 2026-09-01 — Alpaca Morning Research
+
+### Market Context
+Sentiment: BEARISH (futures -0.5%+ trigger)
+Futures: S&P ~-0.5% to -0.6% (ES ~7,654-7,697, down from Fri close) | VIX
++10% pre-market to ~15.90 on renewed US-Iran military strikes near the
+Strait of Hormuz → Brent crude above $90/bbl → yields + oil both up,
+classic risk-off. Dow fell >350 pts Monday 8/31 on the same headline.
+Risk events today: no FOMC/CPI. JOLTS Job Openings + ISM Manufacturing PMI
+both 10:00 AM ET (second-tier, not enough alone to flip the call) — CPI is
+9/11. Fed Barr speech later, no rate decision.
+Per TRADING-STRATEGY.md gate: BEARISH → raise entry threshold to
+FINAL_SCORE >= 9 today.
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open
+positions, 0 trades this week/today. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: TSLA +5.50%, DE +3.90%, QCOM +3.88%, PANW +2.82%, XOM +2.75%,
+NOW +2.33%, CVX +2.18%, WMT +1.68%, NVDA +1.52%, ISRG +1.16%
+Losers: UNP -2.13%, GOOGL -2.15%, MRVL -2.27%, PM -2.31%, AMZN -2.49%
+Flagged (>=+3%): TSLA, DE, QCOM
+Note: XOM/CVX (energy) both up ~2.2-2.8%, consistent with the Iran-driven
+oil spike, but below the +3% flag threshold.
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| TSLA | +5.50% | 1.5x | 59 | above | Cybercab event (9/3) hype + Morgan Stanley robotaxi commentary — no fresh earnings/formal upgrade, OTHER | 0 | 5/15 | 4.0% | 8.0% | 2.00 | No — score <9 (bearish threshold) |
+| DE | +3.90% | 1.3x | 76 | above | Baird upgrade to Outperform + Raymond James PT raise to $730 (8/31, within 24h) — ANALYST_UPGRADE | +2 | 2/15 | 4.0% | 8.0% | 2.00 | No — score <9; RSI 76 overbought (-1 applied) |
+| QCOM | +3.88% | 1.2x | 72 | BELOW | Daiwa upgrade to Outperform ($225 PT) + Sept 1 chip price hikes — ANALYST_UPGRADE | +2 | 2/15 | 4.0% | 8.0% | 2.00 | No — below SMA50 + score <9 |
+
+Watchlist names carried from 8/31 EOD (MDT, NIO, YEXT earnings; MGM
+takeover) are not in the scanned liquid universe — spot-checked quotes:
+MGM spread 12.4% (too wide/illiquid), NIO/YEXT small-cap and outside the
+movers universe, MDT no unusual move. None substituted into the scan.
+
+### Trade Ideas
+None — no candidate cleared FINAL_SCORE >= 9 (bearish-day threshold).
+TSLA is the strongest setup technically (above SMA50, healthy RSI, decent
+volume) but has no dated catalyst beyond an upcoming event three days out
+— not enough to justify chasing a run into a risk-off tape. DE/QCOM both
+carry real analyst-upgrade catalysts but technical scores are weak (DE
+RSI overbought and stretched from prior high; QCOM below its 50-day SMA,
+an automatic disqualifier).
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. Risk-off tape (Iran
+conflict headlines, VIX +10%, oil >$90) plus no FOMC/CPI catalyst to lean
+against it argues for staying selective; nothing in today's scan clears
+even score >=6, let alone the elevated >=9 bar. Re-scan at 9:45 AM
+execution; watch TSLA into the 9/3 Cybercab event and DE/QCOM for
+follow-through if the tape stabilizes.
+Account equity: $100,000.00
