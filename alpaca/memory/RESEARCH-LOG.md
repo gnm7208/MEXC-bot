@@ -753,3 +753,23 @@ even score >=6, let alone the elevated >=9 bar. Re-scan at 9:45 AM
 execution; watch TSLA into the 9/3 Cybercab event and DE/QCOM for
 follow-through if the tape stabilizes.
 Account equity: $100,000.00
+
+### EOD Scan — 2026-09-01
+Open positions held overnight: none
+Positions cut: none
+Movers re-check (3:30 PM): gainers REGN, DE, ELV, AAPL, XOM, CI, CVX,
+GILD, JNJ, UNH (healthcare/energy-led, none >=+3% flag); losers LRCX,
+ORCL, SNPS, PANW, CDNS (semis/software weak, PANW -5.88%, CDNS -7.62%).
+Consistent with morning risk-off read — no new eligible setups, no
+action needed (0 positions/orders to manage).
+Tomorrow's watchlist (pre-market earnings, 2026-09-02):
+1. OLLI (Ollie's Bargain Outlet) — BMO earnings, EPS est $1.12 vs $0.99
+   YoY, Street "Strong Buy" coverage per TheStreet.
+2. GIII (G-III Apparel) — BMO earnings, EPS est $0.23.
+3. FCEL (FuelCell Energy) — BMO earnings, EPS est -$0.41 vs -$3.78 YoY,
+   analyst PT $22.83 (Buy-leaning 4B/2H/1S).
+Also noted, lower priority: DAKT, CXM, BF.B (BMO earnings, thinner
+coverage/liquidity); AVGO/HPE/SNOW/NTAP report AMC 9/2 — too big/liquid
+to need pre-market flagging, standard morning-research scan will catch
+any gap.
+Account equity EOD: $100,000.00
