@@ -1994,3 +1994,37 @@ Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,672 USDT
 **Notes:** Quiet Monday, zero trades — new week opened 0/25, all three intraday routines (morning-execution, midday, afternoon-execution) found zero rules-clean alt qualifiers on dead/red tape (second-consecutive zero-hit board scan on the +5%/$3M momentum gate). BTC drifted down slightly through the day ($78,800.01 Sun EOD → $78,242.08 now, -0.71%) on continuing hawkish Jackson Hole Fed commentary (Warsh) and a snapped 9-day BTC ETF inflow streak — mild negative, not thesis-breaking. BTC-CORE unrealized loss widened slightly to -3.17%, still well inside the -10% stop floor ($72,723.60) and the -7% cut. Portfolio down marginally on the day (-0.25%), phase P&L holds strong at +9.44% vs. starting capital. `orders` endpoint still returns HTTP 400 (known permission-gap; locked=0 on both assets confirms no resting orders).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Aug-30 EOD baseline $35.46, this week's trade count 0/25) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
+
+## 2026-09-01 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,103.43 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.5%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/5 · Trades this week 0/25 (Mon-Tue, none placed) · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 57, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: TRADE PONS $3.19 (Option-B catalyst override — 3-Candle Gate flagged NOT CONFIRMED at research time, mandatory live re-check).
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.2428 @ mark $79,103.43 → **-2.11%**.
+- A) Emergency stop: live $79,103.43 > stop $72,723.60; P&L -2.11% > -10% floor. No trigger.
+- B) Take-profit: live $79,103.43 < target $86,460.28; P&L < +7%. No trigger.
+- C) Trailing tighten: P&L -2.11% < +3% threshold. N/A.
+- D) Peak Decay: no Peak P&L on file yet (position never gone positive since the retroactive stop/target assignment) — N/A, peak_pnl_pct > 0 precondition not met.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (79,103.43 − 72,723.60) / 79,103.43 = 8.07% — above 3% threshold, no alert.
+Deployment ~34.5% of $35.51 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Validate PONS entry:**
+Spread check (`quote PONSUSDT`): bid $0.472371 / ask $0.473161 → 0.17% — within 0.5% limit, passes.
+Live 24h ticker: lastPrice $0.473871, 24h chg +0.39% (yesterday's +44% pump has rolled out of the 24h window; price has held/extended above the research-time mark, not reversed).
+**3b. Price staleness check:** RESEARCH_PRICE $0.430996 (RESEARCH-LOG entry price) vs LIVE_PRICE $0.473871 → drift_pct = **+9.95%**.
+Rule: drift_pct > +7% → **SKIP — price ran away since research, chasing risk.**
+**SKIP: PONS +9.95% drift since research entry ($0.4310 → $0.4739) — chasing risk, do not enter.** (3-Candle Confirmation Gate re-check made moot by this earlier disqualification — not run.)
+No other Trade Ideas in today's RESEARCH-LOG. Zero candidates remain.
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** PONS disqualified on price-staleness drift (+9.95% > +7% ceiling) — the Ave.ai/Launchpool catalyst is already priced in, entry here would be chasing. BTC-CORE holds unchanged at ~34.5% deployment, -2.11%, well within stop $72,723.60 and the -10% floor. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at midday.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote PONSUSDT` + `/ticker/24hr` (PONSUSDT); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
