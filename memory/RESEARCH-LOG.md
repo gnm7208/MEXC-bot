@@ -2733,3 +2733,87 @@ Tomorrow's watchlist: **PONS** (MEXC-confirmed +32.64%/$9.89M vol, Option A mome
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all conservative-rule exit thresholds (-2.43%, well above -10% stop). Standing unresolved issue (not actioned, out of this routine's scope): no morning-research/morning-execution/midday/afternoon-execution routines ran for 2026-09-01 prior to this evening-scan — this is the first routine of the day to touch memory files today; PONS is a genuine live momentum candidate that a live execution routine did not get to catch today.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `price PONSUSDT` + `/ticker/24hr` (PONS/SKR/RAM); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-09-01 — Morning Research (Conservative Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 69 (Greed) | 69           | 30%    |
+| BTC 24h %     | +1.22%    | 50            | 25%    |
+| BTC Dominance | 59.1%     | 39            | 20%    |
+| Alt Breadth   | ~55% (mixed-positive — Perplexity: "positive overall...recovery rally, not uniform breakout"; AI +17.88% sector, L1s firm, gaming lagging) | 55 | 15% |
+| Loss Rate     | 0/0 closed this wk (<5 trades) | 75 (neutral default) | 10% |
+**MACRO_SCORE: 57 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none (only 3 closed trades all-time — 2 ADA wins + 1 BTC-CORE close, all L1, no losses recorded)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (insufficient scored-trade sample) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L | Other 0 W / 0 L
+
+Anomaly scan: A: **CLEAR this run** (streak broken — today's Decision is TRADE, not HOLD; prior streak was 6 consecutive HOLD/HOLD-on-alts Aug26-31) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity $35.41 (USDT free $23.262447 [65.7%] + BTC 0.00015477 @ $78,486.82 = $12.1474 [34.3%]). Open positions 1/6 (BTC-CORE, conservative rules). Trades this week 0/25 (new week started Aug-31 Monday). Trades today 0/5. Stop $72,723.60 (stop_dist 7.34%, no near-stop alert). Target $86,460.28 (+7%). No ladder (disabled in conservative mode).
+
+### Market Context
+BTC $78,486.82 (+1.22% 24h per MEXC ticker — mild recovery continuing from Aug-31's Warsh-driven dip). BTC dominance 59.1% (still elevated but ticking down from 59.7%). F&G 69 (Greed, up from 62). Alt breadth mixed-to-positive: full board scan shows only 3 pairs clearing +5%/$3M (PONS, PUMP, DGAI) out of 2,078 USDT pairs — not a broad rotation, but Perplexity's qualitative read plus CoinGecko trending list (PONS, RAM, ARB, LIT, SKR, HYPE, BTC, PENGU, UP, VIRTUAL) shows real pockets of altcoin momentum. Sector momentum (Perplexity): AI strongest (+17.88% one sector ranking), L1 large-caps (ETH/SOL) firm, DeFi improving but market-led rather than DeFi-led, Gaming lagging/unconfirmed.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only — multi-day trend data, not the <24-48h exchange→wallet API signal, not scored): BTC/ETH/XRP large-cohort accumulation continuing (same 60-day BTC wallet trend cited repeatedly); SOL/BONK/WLD/PEPE/TRUMP smaller-cap whale buys cited but single-sourced/unconfirmed — all stale (>48h) or unconfirmed, 0 pts
+- VC/fund moves: no fresh coin-specific accumulation signal — a16z Fund V ($2.2B, down from $4.5B target), Paradigm raising ~$1.5B (AI/robotics pivot), Multicoin AUM ~$2.7B. Fund-level fundraising/AUM news only, not a buy signal
+- Top trader calls: no fresh CryptoKaleo/pentoshi/Bluntz specific-ticker call found today (Kaleo's cited commentary is historical BTC macro framing, not a new call)
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — endpoint error, persistent pattern)
+- CoinGecko trending top 10: PONS (#135), RAM (#367, untradeable on MEXC), ARB (#85), LIT (#73), SKR (#170), HYPE (#10), BTC (#1), PENGU (#99), UP (#833), VIRTUAL (#112). Top-5 (CoinGecko-trending +1pt each): **PONS**, RAM (untradeable, excluded), ARB, LIT, SKR.
+- **Catalyst check — PONS** (per Perplexity, dated/specific, not vague): Ave.ai launched a PONS perpetual contract trading pair today; PONS Launchpool (BTR-holder reward campaign, up to 60% APR) ran Aug 29 – Sep 1 04:00 UTC (concluding today); structural buyback/burn narrative (80% of protocol fees to buyback+burn, ~29% of supply already burned); PONS reported generating ~$950K/day revenue on Robinhood Chain, outpacing Jupiter/Axiom. This is a **stacked, dated, specific catalyst set** — stronger than prior sessions' vague/undated catalysts (Alpenglow, TAO ETF timing) that were correctly excluded as OPTION_B.
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| PONS   | 0         | 0      | 0          | 0             | +1            | +2      | +1      | 0     | 0         | 0          | **4** |
+| ARB    | 0         | 0      | 0          | 0             | +1            | (n/a — vol floor fail, STEP 6 skipped) | | | | | 1 (watchlist) |
+| LIT    | 0         | 0      | 0          | 0             | +1            | (n/a — SCORE_PRE<3, no catalyst, STEP 6 skipped) | | | | | 1 (watchlist) |
+| SKR    | 0         | 0      | 0          | 0             | +1            | (n/a — SCORE_PRE<3, no catalyst, STEP 6 skipped) | | | | | 1 (watchlist) |
+| PUMP   | 0         | 0      | 0          | 0             | 0             | (n/a — not trending, no catalyst, SCORE_PRE=0, STEP 6 skipped) | | | | | 0 (watchlist) |
+| DGAI   | 0         | 0      | 0          | 0             | 0             | (n/a — not trending, no catalyst, SCORE_PRE=0, STEP 6 skipped) | | | | | 0 (watchlist) |
+
+Full MEXC board scan (2,078 USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **3 hits** — PONSUSDT (+44.41%, $10.40M), PUMPUSDT (+5.35%, $21.59M), DGAIUSDT (+5.30%, $35.54M). Only PONS carries a live CoinGecko-trending signal + dated catalyst → proceeded to full STEP 6 due diligence. PUMP/DGAI carry no smart-money/catalyst signal (SCORE_PRE=0) and no repeat-appearance edge over their prior disqualifications (Aug-30: DGAI scored 5/20 <8 threshold; PUMP failed 3-Candle Gate) — held at watchlist, not re-run through full technical workup today (no new information to change the prior verdict). ARB (+32.85% live) disqualified on liquidity ($1.55M vol, below $3M floor, consistent with the TAO/HNT precedent of treating sub-$3M moves as unconfirmed/untradeable regardless of size). LIT (+4.46%, $6.56M vol) and SKR (-3.03% today, reversed from last night's pump) both fail SCORE_PRE≥3 gate with no catalyst — watchlist only.
+
+### MEXC Live Prices (eligible candidates only)
+| Ticker | Price | 24h % | Volume | Score | Base Size | Final Size | Option B? |
+|--------|-------|-------|--------|-------|-----------|------------|-----------|
+| PONS   | $0.430996 | +44.41% | $10.40M | 4/17 | 15% (floor tier, Option-B override) | **$3.19** (15% × 0.6 SIZE_MULTIPLIER) | **Yes** |
+
+PONS due-diligence detail (klines-based, MEXC `interval=60m`/`1d`/`15m`):
+- Level: prev-day high $0.449, live 4.0% below → neutral zone (not near-resistance), 0pt.
+- ATR manipulation check: largest 15m candle (last 2h) = 38% of 14-day ATR, **bullish** (not bearish flush) → 0pt (bullish pump, not accumulation-flush pattern; flag for reversal/distribution risk).
+- 1h market structure: last-3h highs ($0.446 max) did NOT exceed prior-3h highs ($0.4464... actually equal/lower) and lows mixed → **no bullish HH/HL**, 0pt.
+- EMA200 (1h): live $0.4284 vs EMA200 $0.2113 — well above (extended, not a pullback entry).
+- RSI14 (1h): 54.6 — neutral, not overbought.
+- VWAP (24h): live $0.4288 vs VWAP $0.3860 — above.
+- **3-Candle Confirmation Gate (informational — enforced at execution, not research): NOT CONFIRMED.** Last 3 closed 1h candles all close above prior-day close ($0.3996), but volume is **declining** across them (1.25M → 0.85M → 0.70M) — the initial pump's momentum is fading/consolidating, not building. Per the gate's own logic (memory/3CANDLE-CONFIRMATION-GATE.md, applied in morning-execution.md/afternoon-execution.md STEP 5), this would defer a live entry attempt until confirmation returns.
+
+### News on Held Positions
+BTC-CORE: thesis intact. Perplexity ETF query: Franklin Templeton filed two new BTC-linked dividend-reinvestment ETFs (effective as early as Sep 1); broader spot BTC ETF complex ~$77.7-79B AUM, ~$51B+ cumulative net inflows; August 2026 inflows >$3B, strongest month of 2026; institutional demand concentrated in BlackRock IBIT. One negative/idiosyncratic note: Hashdex closing its (small, low-AUM) spot BTC ETF — not a demand-thesis break. No BTC-specific negative catalyst. Currently -2.87% from ~$80,804 entry (val $12.1474 vs cost $12.5060), well inside the -10% stop ($72,723.60, stop_dist 7.34%) and the -7% cut level. No exit trigger (no take-profit, no tighten — P&L < +3%, no peak-decay data on file).
+
+### Trade Ideas (Layer 3 review fires at execution time)
+1. **PONS** — Score: 4/17 | Final size: $3.19 (15% base × 0.6 SIZE_MULTIPLIER, floor tier — MEXC min-notional $3 barely cleared) | Entry ~$0.4310 | Stop $0.3879 (-10%) | Target $0.4612 (+7%)
+   Signals: CoinGecko trending (#1 today), MEXC-confirmed live momentum (+44.41%, $10.40M vol, well above $3M floor), dated/specific stacked catalyst (Ave.ai perp listing today, Launchpool campaign concluding today, buyback/burn structural narrative, $950K/day reported revenue).
+   Catalyst: Ave.ai PONS perpetual listing (today) + BTR-holder Launchpool reward campaign (Aug29–Sep1, concluding today) + ongoing 80%-of-fees buyback/burn mechanism (~29% of supply burned).
+   Sector: Other (Robinhood Chain token-launchpad infrastructure — not a clean L1/DeFi/AI/Gaming fit).
+   Rules: [✗] EMA-200 above is TRUE but price is extended far above it (not a pullback entry — flagged, not disqualifying) | [~] Vol Surge Gate: strong absolute volume ($10.4M) but **volume trend on last 3 closed 1h candles is declining**, not surging | [✓] RSI not overbought (54.6) | [✓] VWAP above | [✗] **3-Candle Confirmation Gate NOT CONFIRMED** (volume declining, momentum fading/consolidating — re-check live at execution per memory/3CANDLE-CONFIRMATION-GATE.md) | [✓] Signal Gate clear | [✓] Sector clear (no block) | Entry type: **B** (Option-B catalyst override — SCORE 4/17 is below the MACRO<60 quality threshold of 8, entry eligibility rests entirely on the stacked catalyst, not the momentum score)
+   **Caution flag for execution:** this is a marginal, catalyst-driven idea on a highly volatile launchpad/memecoin-adjacent token, sized at the sub-$3.19 floor (barely above MEXC's $3 min-notional). The 3-Candle Gate is NOT confirmed as of this scan (declining volume on the last 3 closed hourly candles suggests the pump may already be fading into consolidation/distribution rather than continuing). Recommend morning-execution re-run the 3-candle check live before entering — do not force the trade if the gate still fails at execution time.
+
+### Risk Factors
+- Macro gate: BTC dominance still elevated (59.1%, SCORE 39) — capital only partially rotating into alts; only 3/2,078 pairs cleared the +5%/$3M momentum screen, a narrow (not broad) altcoin move.
+- Blocked sectors: none.
+- PONS-specific: high volatility, launchpad/memecoin-adjacent asset, 3-Candle Gate unconfirmed (fading volume), position sized at the min-notional floor ($3.19) — low-conviction, catalyst-only entry, not a momentum-confirmed one.
+- Event risk: no scheduled high-impact macro print flagged for today by Perplexity; ongoing Fed-commentary sensitivity remains the standing macro swing factor; PONS Launchpool campaign concludes today (04:00 UTC) — reward-driven buy pressure may taper off after conclusion.
+
+### Decision
+TRADE: PONS $3.19 (Option-B catalyst override — SCORE 4/17 alone would not qualify under the MACRO<60 quality threshold of 8; entry eligibility rests on Ave.ai perp listing + concluding Launchpool campaign + buyback/burn narrative. **3-Candle Confirmation Gate NOT CONFIRMED as of this scan — flagged for mandatory live re-check at morning-execution before any order is placed.**) BTC-CORE holds unchanged at ~34.3% deployment, -2.87%, well within stop $72,723.60 and the -10% floor.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 2,078 USDT pairs) + `/ticker/24hr` (PONS/SKR/HNT/HYPE/PENGU/ARB/LIT/UP/VIRTUAL) + `/klines?interval=60m,15m,1d` (level/manip/structure/3-candle/EMA200/RSI/VWAP for PONS); direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts) + ×2 (PONS-specific catalyst check, BTC ETF news for held-position check).
