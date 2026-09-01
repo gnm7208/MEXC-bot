@@ -2049,3 +2049,35 @@ Deployment ~34.0% of $35.33 book.
 **Decision: NO ACTION.** Sole position within normal drawdown, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry (PONS staleness skip).
+
+## 2026-09-01 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,746.06 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.9%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 57, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: TRADE PONS (Option-B override) — already validated and SKIPPED at morning-execution on price-staleness drift (+9.95% > +7% ceiling). No other Trade Ideas in today's RESEARCH-LOG.
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.0357 @ mark $77,765.27 → **-3.76%**.
+- A) Emergency stop: live $77,765.27 > stop $72,723.60; P&L -3.76% > -7%/-10% floor. No trigger.
+- B) Take-profit: live $77,765.27 < target $86,460.28; P&L < +7%/+12%. No trigger.
+- C) Trailing tighten: P&L -3.76% < +3% threshold. N/A.
+- D) Peak Decay: no Peak P&L on file (position has not gone positive since the Aug-26 retroactive stop/target assignment) — precondition peak_pnl_pct > 0 not met. N/A.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (77,765.27 − 72,723.60) / 77,765.27 = 6.48% — above 3% threshold, no alert.
+Deployment ~34.1% of $35.30 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:25 UTC, before 13:30-15:00 window). CoinGecko "top gainers" endpoint returned market-cap-order list, not sorted by 24h% (recurring pattern — top rows BTC/ETH/USDT all negative, HYPE +2.64% buried at #10) — not usable as a gainers screen. Whale Alert: unavailable (persistent `'str' object has no attribute 'get'` parse error). Full MEXC board scan (1,676 USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **zero hits** — third consecutive dead-tape scan (Aug-31 afternoon, Sep-1 morning/midday context all flat-to-narrow). Perplexity US-open momentum sweep flagged PUMP/XRP/PENGU/SPX/ZEC/ONDO/LINK/HYPE as movers, but every figure cited was a **7-day or 30-day** gain (or a stale Aug-22/28 snapshot), not live 24h — same recurring stale-window citation issue as prior sessions. Breaking-news sweep (last 2h): Bitcoin holding above $78K despite oil-price spike/Fed-hike bets; Europol seized $1.51B Cryptomixer service (AML enforcement, unrelated); whale deposited 70,739 ETH (~$174M) to exchanges over 2 days (mild bearish ETH signal, not held); spot ETH ETFs +$87.6M inflows (11-day streak, informational); one source claimed ARB +37% today — checked live, disqualified (see below). No fresh actionable catalyst for any tradeable candidate.
+
+**STEP 5D — Live MEXC check on flagged candidates:** ARB +0.28% (not +37% as one stale/inconsistent source claimed), ZEC +0.02%, PUMP +0.02%, XRP +0.002%, PENGU +0.004% ($396K vol, below floor), SPX +0.08% ($158K vol), ONDO -0.0004%, LINK +0.01%, HYPE +0.03% — **all essentially flat**, none clear +5%/$3M. Zero candidates confirmed live.
+
+No candidate reached the raw momentum screen (0 board-scan hits, 0 flagged-candidate live confirmations) → per-candidate ATR/3-candle/EMA200/RSI/VWAP/signal-score checks skipped (nothing to check). No Option B strong-catalyst override found with live confirmation. SECTOR_BLOCKED: none (N/A — no candidate reached sector check).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** Flattest tape yet (zero board-scan hits, zero live-confirmed candidates from Perplexity flags). BTC-CORE holds unchanged at ~34.1% deployment, -3.76%, well within stop $72,723.60 and the -10%/-7% floors. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
+
+Sources: live MEXC `/ticker/price` + `/ticker/24hr` (full board scan, 1,676 USDT pairs) + `/ticker/24hr` (ARB/ZEC/PUMP/XRP/PENGU/SPX/ONDO/LINK/HYPE) + `account`/`positions`; CoinGecko `/coins/markets` (returned unsorted); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
