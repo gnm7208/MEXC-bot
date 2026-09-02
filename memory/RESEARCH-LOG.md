@@ -2835,3 +2835,75 @@ Tomorrow's watchlist: **PONS** (recurring #1 CoinGecko trending, prior momentum 
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all conservative-rule exit thresholds (-4.23%, well above -10% stop, stop_dist 6.02% above the 3% near-stop alert floor). Standing unresolved issue (not actioned, out of this routine's scope): no morning-research/morning-execution/midday/afternoon-execution routines ran for 2026-09-02 prior to this evening-scan — this is the first routine of the day to touch memory files today, same gap pattern as Sep-1.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (PUMP); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-09-02 — Morning Research (Conservative Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 63 (Greed) | 63           | 30%    |
+| BTC 24h %     | -1.33%    | 37            | 25%    |
+| BTC Dominance | 59.1%     | 39            | 20%    |
+| Alt Breadth   | ~55% (mixed — majors mostly small-positive: ETH +2.17%, DASH +10.41%, BCH +1.79%, BNB +1.21%, LTC +1.09%, offset by a stale SOL -2.94% citation) | 55 | 15% |
+| Loss Rate     | 0/0 closed this wk (<5 trades) | 75 (neutral default) | 10% |
+**MACRO_SCORE: 52 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none (only 3 closed trades all-time — 2 ADA wins + 1 BTC-CORE close, all L1, no losses recorded)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (insufficient scored-trade sample, no Signal Score recorded on any of the 3 closed trades) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L | Other 0 W / 0 L
+
+Anomaly scan: A: CLEAR (prior morning-research decision, Sep-1, was TRADE not HOLD — no active skip streak) | C: insufficient data (0 stop-outs on record) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity ~$35.25 (USDT free $23.262447 [66.0%] + BTC 0.00015477 @ $77,433.04 = $11.985 [34.0%]). Open positions 1/6 (BTC-CORE, conservative rules). Trades this week 0/25 (week of Mon Aug-31). Trades today 0/5. Stop $72,723.60 (stop_dist 6.08%, no near-stop alert). Target $86,460.28 (+7%). No ladder (disabled in conservative mode).
+
+### Market Context
+BTC $77,433.04 (-1.33% 24h per MEXC ticker; prevClose $78,484.13, range $76,420-$79,204 — continued mild drift down from Sep-1's Warsh-driven weakness). BTC dominance 59.1% (unchanged from Sep-1, still elevated). F&G 63 (Greed, up from 69→ down slightly, still firmly Greed). Full board scan: only 4/1,672 USDT pairs clear +5%/$3M (FIL, CASHCAT, CRV, ENA) — narrow, not a broad rotation. Sector momentum (Perplexity): AI clearly strongest (+6-30% depending on source), L1 and Gaming positive-but-mixed, DeFi positive but lagging the other sectors across every source checked.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only, not scored — not the <24-48h exchange→wallet API signal): BTC/ETH/XRP large-holder accumulation cited (same recurring multi-day trend framing); a ~$925K (519 ETH) wallet buy into CASHCAT cited — below the API's $1M signal floor and single-sourced, not scored
+- VC/fund moves: no fresh coin-specific buy dated today. a16z crypto reportedly targeting ~$2B for Fund V (infra-focused); Paradigm raising ~$1.5B with an AI/robotics pivot; Multicoin's liquid fund holds ENA (pre-existing position, not a fresh today move) — fundraising/AUM news only, not an actionable signal
+- Top trader calls: no fresh Kaleo/Pentoshi/Bluntz specific-ticker call for a MEXC-tradeable coin today (Kaleo's posts were BTC macro framing + HMM, a meme coin not evaluated)
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — persistent endpoint error, same pattern as every prior session)
+- CoinGecko trending top 10: PONS (#130), CASHCAT (#144), RAM (#928, untradeable), LIT (#75), HEMI (#871), HYPE (#10), BTC (#1), UNI (#27), ARB (#86), ZEC (#11). Top-5 (CoinGecko-trending +1pt each, RAM excluded as untradeable): **PONS, CASHCAT, LIT, HEMI**.
+- **Catalyst check — ZEC**: Perplexity initially flagged "Grayscale's spot ZEC ETF conversion filing" as a headline catalyst; follow-up freshness check confirmed the S-3 was **first filed Nov 26, 2025**, with the latest amendment **Aug 21-25, 2026** — stale, not a fresh today event. Live MEXC ZEC is -1.87% today (below its 24h VWAP $839.70), consistent with the catalyst being already priced in / not moving the tape. **Excluded — stale catalyst, contradicting price action.**
+- Other catalysts noted (none coin-specific/actionable for today): Circle Arc mainnet launch (stablecoin settlement infra), Ethereum Fusaka upgrade narrative (ETH not a momentum candidate today), ENA token unlock scheduled today (dilution/supply risk, not bullish — noted as a risk flag against entering ENA despite its board-scan momentum hit), Trump meeting w/ crypto execs (broad policy sentiment, not coin-specific).
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| ZEC    | 0         | 0      | 0          | 0             | 0 (not top-5) | 0 (-1.87%) | +1 ($6.08M) | +1 (near prev-day low) | 0 | 0 (HH true/HL false, no clean structure) | **2** |
+| CASHCAT| 0         | 0      | 0          | 0             | +1            | (n/a — SCORE_PRE<3, catalyst undated, STEP 6 skipped) | | | | | 1 (watchlist) |
+| PONS   | 0         | 0      | 0          | 0             | +1            | (n/a — SCORE_PRE<3, no fresh catalyst, STEP 6 skipped) | | | | | 1 (watchlist) |
+| FIL    | 0         | 0      | 0          | 0             | 0             | (n/a — no smart-money/catalyst signal, SCORE_PRE=0, STEP 6 skipped) | | | | | 0 (watchlist) |
+| CRV    | 0         | 0      | 0          | 0             | 0             | (n/a — SCORE_PRE=0, no catalyst found, STEP 6 skipped) | | | | | 0 (watchlist) |
+| ENA    | 0         | 0      | 0          | 0             | 0             | (n/a — SCORE_PRE=0, token unlock today is a risk flag not a catalyst, STEP 6 skipped) | | | | | 0 (watchlist) |
+| LIT    | 0         | 0      | 0          | 0             | +1            | (n/a — live -5.28% today, fails momentum outright, STEP 6 skipped) | | | | | 1 (watchlist) |
+| HEMI   | 0         | 0      | 0          | 0             | 0             | (n/a — $940K vol, below $3M liquidity floor, disqualified) | | | | | 0 (watchlist) |
+
+Full MEXC board scan (1,672 USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **4 hits** — FILUSDT (+15.17%, $7.04M), CASHCATUSDT (+13.03%→13.42% live, $3.90M), CRVUSDT (+8.62%, $3.50M), ENAUSDT (+7.34%, $43.70M). None carry a qualifying smart-money pre-score (≥3) or a fresh, dated catalyst (Perplexity confirmed FIL's move is broad-market/short-squeeze-driven with no Filecoin-specific news; CRV has no identifiable catalyst in today's search set; ENA's only dated event today is a token unlock, a supply headwind, not a bullish trigger; CASHCAT's Robinhood-Chain/Binance-Perps narrative is real but not dated as new-today, and its whale-buy mention is sub-$1M-floor/single-sourced) — all four held at watchlist, not run through full STEP 6 technical workup. ZEC (-1.87%, fails momentum) was the only coin with a named "ETF filing" catalyst on the surface but that catalyst dates to Nov 2025 with its last amendment Aug 21-25 — confirmed stale, excluded despite running the full STEP 6 workup (SCORE 2/17, well below the MACRO<60 quality threshold of 8).
+
+### MEXC Live Prices (eligible candidates only)
+None eligible today.
+
+### News on Held Positions
+BTC-CORE: thesis intact. No BTC-specific negative catalyst found today (no hack/SEC action/key-unlock). Macro backdrop continues the mild broad risk-off tone from Sep-1's evening scan (Fed/BOJ hawkish commentary, geopolitical tension flows into havens) — BTC drifted from $78,484 (open) to a $76,420 intraday low before settling ~$77,433, -1.33% 24h. Currently -3.75% from ~$80,804 entry (val $11.985 vs cost $12.5060), well inside the -10% stop ($72,723.60, stop_dist 6.08%) and the -7% cut level. No exit trigger (no take-profit, no tighten — P&L < +3%, no peak-decay data on file).
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None. No coin scored ≥5 (MACRO<60 quality band requires ≥8) and no fresh, dated Option-B catalyst survived verification (ZEC's ETF-filing catalyst is stale, confirmed via follow-up freshness check).
+
+### Risk Factors
+- Macro gate: BTC dominance still elevated (59.1%, SCORE 39) and BTC 24h negative (SCORE 37) — both macro sub-scores below neutral, dragging MACRO_SCORE to 52 (REDUCED sizing band). Only 4/1,672 pairs cleared the +5%/$3M momentum screen — narrow tape.
+- Blocked sectors: none.
+- ENA-specific: token unlock scheduled today — even if it later clears a momentum/catalyst gate on a future scan, treat the unlock as an active dilution/sell-pressure risk, not a reason to chase today's pump.
+- ZEC-specific: the "ETF filing" catalyst circulating in search results is stale (filed Nov 2025, last amendment Aug 21-25) — do not treat any recurring mention of it as fresh without re-verifying the date.
+- Event risk: no scheduled high-impact macro print flagged for today by Perplexity; standing Fed-commentary sensitivity (Warsh's hawkish Jackson Hole tone) remains the dominant macro swing factor; ENA unlock today is the one dated, coin-specific event risk identified.
+
+### Decision
+HOLD — no coin scored ≥5 (MACRO<60 band requires ≥8) and no fresh Option-B catalyst survived verification. BTC-CORE holds unchanged at ~34.0% deployment, -3.75%, well within stop $72,723.60 and the -10%/-7% floors.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,672 USDT pairs) + `/ticker/24hr` (ZEC/PONS/CASHCAT/LIT/HEMI/FIL/CRV/ENA) + `/klines?interval=60m,15m,1d` (level/manip/structure/EMA200/RSI/VWAP for ZEC); direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts) + ×3 (FIL/CRV/ENA catalyst check, CASHCAT catalyst check, ZEC ETF-filing freshness check).
