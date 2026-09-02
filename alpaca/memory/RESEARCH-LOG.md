@@ -773,3 +773,52 @@ coverage/liquidity); AVGO/HPE/SNOW/NTAP report AMC 9/2 — too big/liquid
 to need pre-market flagging, standard morning-research scan will catch
 any gap.
 Account equity EOD: $100,000.00
+
+## 2026-09-02 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL (mixed pre-market signals)
+Futures: S&P mixed across sources, roughly flat to -0.3% (some prints -0.18%
+to -0.64%, others +0.08-0.1%) | Bloomberg: "oil halts advance, Treasuries
+edge higher" — signs the Iran/oil risk-off tape from Mon/Tue is stabilizing,
+not confirmed reversal.
+Risk events today: ADP Nonfarm Employment (7:15 AM ET, est. ~47K) and Fed
+Beige Book (~1 PM ET) — no FOMC/CPI (CPI is 9/11, FOMC 9/16).
+Standard entry threshold (score >= 6) applies — not elevated to 9.
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open
+positions, 0 trades this week/today. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: DE +3.16%, REGN +3.06%, ELV +2.68%, AAPL +2.56%, CI +2.50%,
+GILD +2.43%, CVX +2.32%, XOM +2.18%, JNJ +2.07%, WELL +1.76%
+Losers: INTU -4.02%, PANW -5.22%, ORCL -5.33%, SNPS -5.68%, CDNS -7.57%
+Flagged (>=+3%): DE only
+Watchlist earnings carried from 9/1 EOD (OLLI, GIII, FCEL, all BMO) spot-
+checked via snapshot: OLLI -4.00%, GIII -1.33%, FCEL -0.93% — all down or
+flat pre/post earnings, none qualify as movers.
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| DE | +4.35% (bar) / +3.16% (quote) | 2.2x | 31 | above | Baird upgrade to Outperform ($800 PT) — dated 8/31, >24h old, no fresh catalyst today; news is a follow-through "hits all-time high" story, not a new event | 0 | 3/15 | 4.0% | 8.0% | 2.00 | No — score 3 well below 6; already broke prev-day high (-2 penalty) |
+
+Note: DE quote had an abnormal 9.6% bid/ask spread ($641.59/$703.48) —
+flagging as a data-quality outlier, treated as a soft disqualifier
+independent of the score.
+
+### Trade Ideas
+None — only DE cleared the +3% mover flag and it scores 3/15 (excl.
+catalyst), with no fresh catalyst to add (upgrade is 2 days old, already
+priced in per yesterday's scan). R:R math is fine (2.00) but score is the
+gate here, not R:R.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. No candidate clears
+score >= 6. Market tone is neutral/stabilizing (oil advance halting) but
+not confirmed risk-on; nothing forces a trade. Watch DE for a genuine
+fresh catalyst, and re-scan liquid universe at 9:45 AM execution for any
+early-session breakouts once ADP print (7:15 AM) digests.
+Account equity: $100,000.00
