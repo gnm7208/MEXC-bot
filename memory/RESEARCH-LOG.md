@@ -2907,3 +2907,37 @@ None. No coin scored ≥5 (MACRO<60 quality band requires ≥8) and no fresh, da
 HOLD — no coin scored ≥5 (MACRO<60 band requires ≥8) and no fresh Option-B catalyst survived verification. BTC-CORE holds unchanged at ~34.0% deployment, -3.75%, well within stop $72,723.60 and the -10%/-7% floors.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,672 USDT pairs) + `/ticker/24hr` (ZEC/PONS/CASHCAT/LIT/HEMI/FIL/CRV/ENA) + `/klines?interval=60m,15m,1d` (level/manip/structure/EMA200/RSI/VWAP for ZEC); direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts) + ×3 (FIL/CRV/ENA catalyst check, CASHCAT catalyst check, ZEC ETF-filing freshness check).
+
+## 2026-09-02 — Afternoon Execution (US market open)
+
+**Reachability gate PASS:** `price BTCUSDT` = $76,811.41 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (66.2%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 52, SIZE_MULTIPLIER 0.6 (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD, no Trade Ideas carried forward.
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $11.8881 @ mark $76,811.41 → **-4.94%**.
+- A) Emergency stop: live $76,811.41 > stop $72,723.60; P&L -4.94% > -7%/-10% floor. No trigger.
+- B) Take-profit: live $76,811.41 < target $86,460.28; P&L < +7%/+12%. No trigger.
+- C) Trailing tighten: P&L -4.94% < +3% threshold. N/A.
+- D) Peak Decay: no Peak P&L on file (position has not gone positive since the Aug-26 retroactive stop/target assignment) — precondition peak_pnl_pct > 0 not met. N/A.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (76,811.41 − 72,723.60) / 76,811.41 = 5.32% — above 3% threshold, no alert.
+Deployment ~33.8% of $35.15 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:19 UTC, before 13:30-15:00 window). CoinGecko "top gainers" endpoint again returned market-cap-order list, not sorted by 24h% (BTC/ETH/USDT/BNB/XRP all negative in top rows — recurring known issue, not usable as a gainers screen). Whale Alert: unavailable (persistent `'str' object has no attribute 'get'` parse error). Full MEXC board scan (1,676 USDT pairs, 24h chg ≥ +5% AND qvol ≥ $3M): **2 hits** — CASHCATUSDT (+29.78%, $6.02M) and FILUSDT (+10.83%, $9.10M), live-confirmed via individual `/ticker/24hr`. Perplexity US-open momentum sweep: confirmed CASHCAT as a real mover but only on a **7-day** basis (+108.6% weekly, meme-coin group leader, no fresh today-dated catalyst); found **no evidence** of FIL pumping specifically (broad market only). Breaking-news sweep (2h): a sharp US-Iran tension escalation triggered a broad crypto flash-crash/safe-haven sell-off today (BTC -1.86% at the low, consistent with the live mark); Europol seized $1.51B Cryptomixer service (unrelated, AML enforcement); Strategy restarted BTC buying (+4,603 BTC/$370M); BitMine added 53,501 ETH. No BTC-specific negative catalyst beyond the broad macro risk-off already reflected in the live price — thesis intact, no forced action (stop $72,723.60 not threatened, stop_dist 5.32%).
+
+**STEP 5D/technical workup — CASHCAT & FIL:**
+- CASHCATUSDT: ATR flush 20% (not bearish, no pts); 3-Candle Confirmation Gate **FAIL** (closes vs $0.21920 signal level, vol not rising) — same repeat-disqualification pattern as this coin's prior appearances (Aug-25, Aug-26 evening, today's morning-research). EMA-200 unfillable (57 daily candles, thin/newer listing). Vol surge 1.7x (+1), VWAP above (+1), RSI 55.9 (+1), no HH/HL structure, no level edge. **Per rule: 3-Candle Gate FAIL → SKIP entry this window**, regardless of partial score — deferred to next scan.
+- FILUSDT: ATR flush 19% bearish (no pts, needs ≥25%); Range-TP pre-check **SKIP RANGE-TP** (prev-day high only 4.0% above — insufficient room, consistent with FIL's move being priced in); 3-Candle Confirmation Gate **FAIL** (closes vs $0.77930, vol not rising); **EMA-200: below** ($0.76840 live vs $0.81377 EMA) — downtrend pump, not Option-B, fails trend filter independently. Vol surge 2.0x (+1), VWAP below (0), RSI 55.5 (+1), no HH/HL structure, no level edge. **Per rule: 3-Candle Gate FAIL + EMA-200 downtrend → SKIP**, both independently disqualifying.
+
+No other candidate reached the board scan. SECTOR_BLOCKED: none (N/A — no candidate cleared).
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates passed STEP 5.
+
+**Decision: NO NEW ENTRIES.** CASHCAT and FIL both fail the 3-Candle Confirmation Gate (FIL doubly disqualified on EMA-200 downtrend); neither carries a fresh dated catalyst per Perplexity. BTC-CORE holds unchanged at ~33.8% deployment, -4.94%, well within stop $72,723.60 (stop_dist 5.32%) and the -10%/-7% floors — broad US-Iran-driven macro risk-off is already reflected in the live price, no BTC-specific negative catalyst, thesis intact. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,676 USDT pairs) + `/ticker/24hr` (CASHCAT/FIL individual) + `/klines?interval=1d,15m,60m` (ATR flush/range-TP/3-candle/EMA200/vol-surge/VWAP/RSI/structure/level for CASHCAT/FIL); CoinGecko `/coins/markets` (returned unsorted, unusable); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum/CASHCAT/FIL check, 2h breaking news).
