@@ -838,3 +838,60 @@ small/micro-cap earnings scheduled (KNOP, HURC, WALD, VIRC, IRS), none
 in the liquid tradeable universe. No confirmed upgrade/M&A/FDA catalysts
 found. Nothing to flag; standard morning-research scan sufficient.
 Account equity EOD: $100,000.00
+
+## 2026-09-03 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL
+Futures: S&P mixed, roughly flat (-0.06% to +0.48% across sources, no
+consensus direction) | Nasdaq mixed similarly.
+Risk events today: no FOMC/CPI (CPI is 9/11, FOMC 9/16). Initial jobless
+claims, trade balance, ISM Non-Manufacturing PMI (10:00 AM ET), Challenger
+job cuts, Fed speakers (Waller, Hammack). Second-tier data only.
+Standard entry threshold (score >= 6) applies — not elevated to 9.
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open
+positions, 0 trades this week/today. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: REGN +3.44%, DE +3.27%, ORCL +3.21%, NVDA +3.19%, META +2.46%,
+NFLX +2.36%, QCOM +2.07%, AXP +1.79%, VRTX +1.72%, CAT +1.64%
+Losers: PANW -9.28%, NOW -4.33%, PLD -2.25%, ADBE -2.23%, CDNS -2.08%
+Flagged (>=+3%): REGN, DE, ORCL, NVDA
+Note: `movers` snapshot's dailyBar had not rolled over for the new session
+at scan time (pre-open) — % changes reflect the completed 9/2 session, per
+established pattern on this routine. Cross-checked against Perplexity's
+live pre-market gainers (SNOW +22-24% on raised guidance, TLYS, GIPR, BIAF,
+GELS, HOOD, PFG) — none of those names are in the tradeable 75-stock
+universe, and IEX feed shows no meaningful pre-market ticks yet for
+in-universe names (NOW's latest bar still timestamped 9/2 close). No
+substitution made; scored the flagged universe names as-is.
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|----------|---------|-------|----------|---------|-----|-----------|
+| REGN | +0.15% (fresh bar) | 0.5x | 22 | above | NO_CATALYST (FDA approval was 8/20, >2wk old) | 0 | -1/15 | 4.0% | 8.0% | 2.00 | NO |
+| DE   | +0.27% (fresh bar) | 0.5x | 31 | above | NO_CATALYST (Baird upgrade 8/31, already stale/priced in per 9/1, 9/2 logs) | 0 | -1/15 | 4.0% | 8.0% | 2.00 | NO |
+| ORCL | +5.40% (fresh bar) | 1.4x | 62 | BELOW | NO_CATALYST (TD Cowen PT cut to $240 w/ Buy; next real catalyst is Oct 28 analyst day / Sept 10 earnings — not today) | 0 | 2/15 | 4.4% | 8.8% | 2.00 | NO — below SMA50 (auto-disqualified) |
+| NVDA | +3.06% (fresh bar) | 0.8x | 76 | above | NO_CATALYST (Hugging Face deal first reported 8/26-27, >24h old; CNBC hit today is commentary, not new news; Q2 earnings 3+ wks old) | 0 | 0/15 | 4.0% | 8.0% | 2.00 | NO — RSI 76 overbought |
+
+Note: chg%/RSI/vol recomputed from a clean daily-bar pull (start/end
+bounded) rather than the raw snapshot figures in Movers Scanned above —
+the two differ slightly due to bar-window edge effects but both show sub-
+3%-with-volume moves once trading actually resumes; conclusions unchanged.
+
+### Trade Ideas
+None — no candidate clears SCORE >= 6. All four flagged movers lack a
+dated (<24h) catalyst, and technicals are weak across the board: REGN/DE
+show negligible volume and no real momentum despite the >=3% flag, ORCL
+is below its 50-day SMA (automatic disqualifier), NVDA is RSI-overbought
+(76) off stale M&A/earnings news already priced in over the past 1-3 weeks.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. No candidate clears
+score >= 6 or carries a fresh catalyst. Neutral, low-conviction tape (mixed
+futures, no FOMC/CPI, only second-tier data). Re-scan at 9:45 AM execution
+for genuine post-open momentum once real intraday ticks are live.
+Account equity: $100,000.00
