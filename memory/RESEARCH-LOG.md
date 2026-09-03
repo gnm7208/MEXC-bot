@@ -2959,3 +2959,65 @@ Tomorrow's watchlist: **PONS** (recurring CoinGecko-trending, prior entries alre
 Action taken: None. No emergency sells, no take-profit closes, no ladder buys, no thesis-broken exits — BTC-CORE thesis intact and within all conservative-rule exit thresholds (-4.52%, well above -10% stop, stop_dist 5.74% above the 3% near-stop alert floor). Standing unresolved issue (not actioned, out of this routine's scope): no morning-research/morning-execution/midday/afternoon-execution/daily-summary routines have logged for 2026-09-03 yet — same gap pattern noted in prior evening scans.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (LIT/PONS/PUMP); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-09-03 — Morning Research (Conservative Mode)
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 65 (Greed) | 65           | 30%    |
+| BTC 24h %     | +0.0034%   | 50           | 25%    |
+| BTC Dominance | 59.1%      | 39           | 20%    |
+| Alt Breadth   | ~25% (low-confidence, partial sample skewed negative — ETH/XRP/BNB all red) | 25 | 15% |
+| Loss Rate     | 0/0 closed this week | 75 (neutral default) | 10% |
+**MACRO_SCORE: 51 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (insufficient scored-trade sample — only 2 closed trades in the 30-day window, ADA +12.9% Aug-6 and BTC-CORE +18.6% Aug-22 subscription-close, neither carries a recorded Signal Score) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 2 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L | Other 0 W / 0 L
+Anomaly scan: A: CLEAR (1 consecutive HOLD — Sep-2 only; prior decision Sep-1 was TRADE, no active 3+ skip streak) | C: insufficient data (0 stop-outs on record) | D: insufficient data (only ~3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity ~$35.29 | Free USDT $23.2624 (65.9%) | Open positions 1/6 (BTC-CORE) | Trades this week 0/25, 0/5 today | Deployment ~34.1%
+
+### Market Context
+BTC $77,701.46 (+0.0034% 24h — dead-flat tape, essentially unchanged day-over-day). BTC dominance 59.1% (flat vs. yesterday's 59.1%). F&G 65 (Greed, down slightly from 63 yesterday — still firmly Greed-band). Alt breadth read is low-confidence (Perplexity's Coinranking snapshot showed only 6/50 rows positive from a partial excerpt, and the visible majors — ETH -2.13%, XRP -2.10%, BNB -0.71% — were mostly red); full MEXC board scan (1,674 USDT pairs) confirms this: **zero pairs** cleared even the +2%/$3M conservative-mode momentum floor, the flattest tape logged this cycle (prior sessions at least cleared +5%/$3M occasionally, e.g. Sep-2 afternoon's CASHCAT/FIL). Sector momentum (Perplexity): AI strongest (+17.88%), DePIN best (+24.95%), Gaming lagging, L1/DeFi modest — no dated ticker-specific catalyst attached to any of it.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only): no dated today-specific accumulation signal — only generic multi-month BTC/ETH whale-trend framing (ETH May-2026 accumulation, BTC early-2026 270K-BTC accumulation), none <48h fresh, 0 pts
+- VC/fund moves: no coin-specific accumulation signal — only fund-level AUM news (a16z crypto AUM down ~40% to $9.5B on capital returns, Paradigm holdings down ~6%), not a buy signal for any ticker
+- Top trader calls: no fresh CryptoKaleo/pentoshi/Bluntz specific-ticker call found today (Kaleo's profile has no dated call; no data returned for pentoshi/Bluntz)
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — endpoint error, persistent pattern)
+- CoinGecko trending top 10: PONS (#119), INDEX (#413), AKE (#130), CASHCAT (#144), LIT (#72), AI (#143), ARB (#76), PENGU (#102), HYPE (#10), UNI (#28). Top-5 (+1pt each): **PONS, INDEX, AKE, CASHCAT, LIT**.
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| PONS   | 0 | 0 | 0 | 0 | +1 | 0 | 0 | — | — | — | 1 |
+| INDEX  | 0 | 0 | 0 | 0 | +1 | 0 | 0 | — | — | — | 1 |
+| AKE    | 0 | 0 | 0 | 0 | +1 | 0 | 0 | — | — | — | 1 |
+| CASHCAT| 0 | 0 | 0 | 0 | +1 | 0 | 0 | — | — | — | 1 |
+| LIT    | 0 | 0 | 0 | 0 | +1 | 0 | 0 | — | — | — | 1 |
+
+All five top-5-trending coins live-checked on MEXC (STEP 6 precheck, since none reached SCORE_PRE≥3 formally but momentum was verified anyway to rule out a missed mover): PONS +0.10%/$8.98M, CASHCAT +0.05%/$6.23M, LIT +0.10%/$10.70M, ARB +0.18%/$2.01M (below vol floor), HYPE -0.01%/$1.80M (below vol floor), PENGU +0.01%/$0.52M (below vol floor), UNI -0.03%/$2.54M (below vol floor), AKE +0.64%/$6.19M, INDEX +1.29%/$0.30M (below vol floor) — **all essentially flat, none clear the +2%/$3M momentum gate**. No coin reaches SCORE_PRE ≥ 3; no strong catalyst (no ETF filing, protocol upgrade, or exchange listing found for any candidate) → OPTION_B = false for all. Full 1,674-pair board scan independently confirms zero qualifiers at both +2%/$3M and +5%/$3M thresholds.
+
+### MEXC Live Prices (eligible candidates only)
+None — zero candidates reached eligibility.
+
+### News on Held Positions
+BTC-CORE — thesis intact. No BTC-specific catalyst (positive or negative) found in today's macro-catalyst sweep beyond the known ETF-inflow/macro-event framing (Fed dates 9/7, 9/14, 9/17, 10/1 flagged by Bitfinex as the next volatility triggers). No hack/SEC action/key-unlock. Live $77,701.46 vs. stop $72,723.60 (stop_dist 6.4%) and target $86,460.28 — unrealized -3.84%, well within both floors.
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None. Zero candidates cleared SCORE_PRE ≥ 3, zero live-confirmed momentum (full board scan: 0/1,674 pairs at +2%/$3M), no Option B catalyst.
+
+### Risk Factors
+- Macro gate: Alt Breadth score (25) is the weakest input and low-confidence (partial-sample data); BTC Dominance (39) still elevated, capping upside for alts even if momentum returns.
+- Blocked sectors: none
+- Event risks: Fed-related macro dates ahead (Sep 7, 14, 17; Oct 1 per Bitfinex outlook) — no immediate binary event today. Third-consecutive session of zero-hit momentum board scan — dead tape, not a risk event per se but degrading candidate quality.
+
+### Decision
+HOLD (no coin scored ≥5, no Option B catalyst; zero board-scan hits at either +2% or +5% threshold, deadest tape logged this cycle). BTC-CORE holds unchanged at ~34.1% deployment, -3.84%, well within stop $72,723.60 and the -10%/-7% floors.
