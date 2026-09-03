@@ -2170,3 +2170,24 @@ Deployment ~34.1% of $35.29 book.
 **Decision: NO NEW ENTRIES.** No Trade Ideas from Morning Research today (macro band + momentum screen produced nothing ≥5 score / no surviving catalyst, deadest tape logged this cycle per research). BTC-CORE holds unchanged at ~34.1% deployment, -3.82%, well within stop $72,723.60 (stop_dist 6.43%) and the -10%/-7% floors. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at midday.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-09-03 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,816.21 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.9%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.0436 @ mark $77,816.21 → -3.70%.**
+- STEP 3 — Emergency stop: live $77,816.21 > stop $72,723.60; P&L -3.70% > -7%/-10% floor. No trigger.
+- STEP 4 — Take-profit: live $77,816.21 < target $86,460.28; P&L < +7%. No trigger.
+- STEP 5 — Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- STEP 6 — Trailing tighten: P&L -3.70% < +3% threshold. N/A.
+- STEP 6B — Near-stop pre-alert: stop_dist_pct = (77,816.21 − 72,723.60) / 77,816.21 = 6.55% — above 3% threshold, no alert.
+- STEP 6C — Peak Decay: no Peak P&L on file (position has not gone positive since the Aug-26 retroactive stop/target assignment) — precondition peak_pnl_pct > 0 not met, N/A.
+Deployment ~34.1% of $35.31 book.
+
+**STEP 7 — Thesis check:** BTC essentially flat vs. this morning's mark ($77,717.71 → $77,816.21, +0.13%), well below the >5%-move threshold for a midday Perplexity catalyst check. No fresh negative catalyst since this morning's research (Decision: HOLD, no Trade Ideas). Thesis intact.
+
+**Decision: NO ACTION.** Sole position within normal drawdown, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry.
