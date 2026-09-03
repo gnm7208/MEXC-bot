@@ -2191,3 +2191,15 @@ Deployment ~34.1% of $35.31 book.
 **Decision: NO ACTION.** Sole position within normal drawdown, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry.
+
+## Sep 03 — EOD Snapshot (Day 43, Thursday)
+
+**Portfolio:** $35.33 | **Cash:** $23.26 (65.9%) | **Day P&L:** +$0.02 (+0.04%) | **Phase P&L:** +$3.01 (+9.30%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-----------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $77,938.88 | +0.28%  | -$0.44 (-3.55%)    | $72,723.60  |
+
+**Notes:** No afternoon-execution or evening-scan TRADE-LOG entries landed today, and Sep-2's EOD snapshot never posted (afternoon-execution 09-02 only touched RESEARCH-LOG) — Day P&L above is measured against the last confirmed baseline, the Sep-01 EOD snapshot ($35.31), so it spans roughly two days rather than one; flagging for review, not correcting retroactively. Fourth-plus consecutive session with zero board-scan hits (0/1,674+ USDT pairs at the +2%/$3M momentum floor) and zero Trade Ideas from Morning Research (MACRO_SCORE 51, SIZE_MULTIPLIER 0.6, not halted). BTC-CORE sits unchanged at ~34% deployment, -3.55% unrealized, well inside the -10% stop floor ($72,723.60, stop_dist ~6.6%) and the -7% cut threshold — stop unchanged (never move down, never tightened since P&L has not touched +3%). Portfolio essentially flat since the last confirmed baseline (+0.04%), phase P&L holds at +9.30% vs. $32.32 starting capital. `orders` endpoint still HTTP 400 (known permission-gap; locked=0 on both assets confirms no resting orders). Week stands at 0/25 trades (Mon-Thu).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-01 EOD baseline $35.31 — most recent available, Sep-02 EOD missing) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
