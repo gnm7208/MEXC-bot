@@ -822,3 +822,19 @@ not confirmed risk-on; nothing forces a trade. Watch DE for a genuine
 fresh catalyst, and re-scan liquid universe at 9:45 AM execution for any
 early-session breakouts once ADP print (7:15 AM) digests.
 Account equity: $100,000.00
+
+### EOD Scan — 2026-09-03
+Note: no morning-research entry logged today — proceeding on live state only
+(0 positions, 0 orders both confirmed via API).
+Open positions held overnight: none
+Positions cut: none
+Movers re-check (3:30 PM): gainers REGN +3.44%, DE +3.27%, ORCL +3.21%,
+NVDA +3.19%, META +2.46%, NFLX +2.36%, QCOM +2.07%, AXP +1.79%, VRTX
++1.72%, CAT +1.64%; losers PANW -9.28% (post-earnings guidance miss),
+NOW -4.33%, PLD -2.25%, ADBE -2.23%, CDNS -2.08%. No open positions to
+manage — no action needed.
+Tomorrow's watchlist: thin pre-market catalyst day (2026-09-04) — only
+small/micro-cap earnings scheduled (KNOP, HURC, WALD, VIRC, IRS), none
+in the liquid tradeable universe. No confirmed upgrade/M&A/FDA catalysts
+found. Nothing to flag; standard morning-research scan sufficient.
+Account equity EOD: $100,000.00
