@@ -2349,3 +2349,15 @@ Deployment ~34.5% of $35.55 book.
 **Decision: NO NEW ENTRIES.** 4 live-confirmed movers worked up (PONS, ZEC, LIT, DASH); 3 failed the 3-Candle Confirmation Gate (momentum not yet confirmed/volume declining), 1 (ZEC) cleared all quantitative gates but was sized down to skip on Layer-3 review (extended move + thin-float risk, 2 soft concerns). BTC-CORE holds unchanged at ~34.5% deployment, -1.76%, well within stop $72,723.60 (stop_dist 8.39%) and the -10%/-7% floors — no forced action despite today's first negative BTC catalyst (jobs report / rate-hike repricing). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan (watch PONS/ZEC/LIT for 3-candle reconfirmation on the next scan).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,660 USDT pairs) + `/klines?interval=1d,15m,60m` (PONS/ZEC/LIT/DASH level/manip/3-candle/EMA200/VWAP/RSI/MktStr) + `quote ZECUSDT`/`quote PONSUSDT`/`quote LITUSDT`; CoinGecko `/coins/markets` (unsorted, unusable) + `/search/trending`; Whale Alert (unavailable); **Perplexity (sonar)** ×3 (US-open momentum scan, 2h breaking news, PONS/Uniswap catalyst check).
+
+## Sep 04 — EOD Snapshot (Day 44, Friday)
+
+**Portfolio:** $35.52 | **Cash:** $23.26 (65.5%) | **Day P&L:** +$0.19 (+0.54%) | **Phase P&L:** +$3.20 (+9.90%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-----------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $79,179.35 | -1.57%  | -$0.25 (-2.01%)    | $72,723.60  |
+
+**Notes:** Quiet full day — evening-scan (Peak P&L +0.50% new high), morning-execution, midday, and afternoon-execution all logged, zero trades placed. Morning Research flagged ZEC (Option B catalyst) but it was disqualified pre-Layer-3 on the Range-TP room check; afternoon board scan found 9 live movers (PONS/ZEC/LIT/DASH worked up) but none survived the 3-Candle Confirmation Gate or Layer-3 review (ZEC sized down to skip on extended-move/thin-float concerns). BTC-CORE eased with a broader BTC pullback (jobs-report rate-hike repricing) but stayed well inside all floors — stop_dist ~8.2%, unrealized -2.01%, unchanged at $72,723.60 (never moved). Portfolio +0.54% day / +9.90% phase vs $32.32 starting capital. Trades today: none. Trades this week: 0/25.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote BTCUSDT` + `/ticker/24hr` (BTCUSDT); `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-03 EOD baseline $35.33) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
