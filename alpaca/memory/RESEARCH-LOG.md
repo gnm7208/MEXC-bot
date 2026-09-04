@@ -895,3 +895,49 @@ score >= 6 or carries a fresh catalyst. Neutral, low-conviction tape (mixed
 futures, no FOMC/CPI, only second-tier data). Re-scan at 9:45 AM execution
 for genuine post-open momentum once real intraday ticks are live.
 Account equity: $100,000.00
+
+## 2026-09-04 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL (mildly risk-on pre-market, jobs report is the swing factor)
+Futures: S&P +0.04% to +0.2% | Nasdaq mixed (-0.09% to +0.42%) — muted, low-conviction
+Risk events today: August Nonfarm Payrolls (8:30 AM ET) — main event, no FOMC/CPI
+(CPI 9/11, FOMC 9/16). Some sources already show a post-print pullback in S&P futures,
+signalling the jobs data landed on the softer/hawkish-surprise side — treating today
+like an elevated-risk data day given the whipsaw potential.
+Standard entry threshold (score >= 6) applies, but staying selective given jobs-day
+uncertainty.
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open positions,
+0 trades this week/today. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: NOW +6.52%, ORCL +5.73%, TSLA +5.39%, GS +3.26%, META +2.99%, ACN +2.93%,
+CRM +2.93%, AMT +2.72%, MSFT +2.70%, MS +2.52%
+Losers: AVGO -2.80%, MMC -1.65%, MDLZ -1.60%, ABT -1.51%, SYK -1.31%
+Flagged (>=+3%): NOW, ORCL, TSLA, GS
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | VAH | Abv VAH? | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|-----|----------|----------|---------|-------|----------|---------|-----|-----------|
+| NOW  | +6.52% | 1.0x | 54 | above | $146.97 | No (-0.9%) | NO_CATALYST (only stale "Final Trades" analyst mentions, nothing dated/fresh) | 0 | 3/15 | 4.0% | 8.0% | 2.00 | No — score 3 < 6, below VAH |
+| ORCL | +5.73% | 1.1x | 70 | above | $156.74 | No (-1.7%) | NO_CATALYST (earnings not until 9/10; today's piece is pre-earnings commentary, not a dated event) | 0 | 2/15 | 4.0% | 8.0% | 2.00 | No — score 2 < 6, below VAH |
+| TSLA | +5.39% | 1.6x | 46 | above | $383.33 | No (-1.8%) | OTHER — Cybercab robotaxi launch (Austin) is a real dated event, but same-day safety-regulator probe into ~1,000 Cybercabs + bearish analyst pushback ("largely a bust") makes it two-sided, not a clean bullish catalyst | 0 | 5/15 | 4.0% | 8.0% | 2.00 | No — score 5 < 6, below VAH, catalyst too mixed to waive VAH gate |
+| GS   | +3.26% | 0.9x | 59 | BELOW | $1039.79 | No (-0.2%) | NO_CATALYST (whale-alert mentions only, nothing dated) | 0 | 1/15 | 4.0% | 8.0% | 2.00 | No — below 50-day SMA (auto-disqualified), score 1 < 6 |
+
+### Trade Ideas
+None — all four flagged movers fail the score gate (max 5/15 on TSLA) and every
+one is still below its prior-day Value Area High, so none clear the VAH-breakout
+gate either. TSLA's Cybercab story is the closest to a real catalyst but the
+same-day regulatory probe is a genuine thesis risk, not a reason to force a
+waiver on the VAH/score gates.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. No candidate clears SCORE >= 6
+or the VAH-breakout gate; GS also sits below its 50-day SMA. Jobs-report day adds
+event risk on top of already-weak setups — no reason to force a trade. Re-scan at
+9:45 AM execution for genuine post-open momentum once the payrolls reaction settles
+and real intraday ticks are live.
+Account equity: $100,000.00
