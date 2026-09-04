@@ -2286,3 +2286,24 @@ Deployment ~35.0% of $35.79 book.
 **Decision: NO NEW ENTRIES.** ZEC (today's sole Trade Idea, Option B catalyst override) disqualified on the Range-TP pre-check — its +15.5% intraday move already closed most of the distance to yesterday's high, leaving only 2.7% of room, below the 4% floor required to size a target. Re-evaluate next session if ZEC pulls back to open fresh room, or a new momentum/catalyst candidate emerges. BTC-CORE holds unchanged at ~35.0% deployment, +0.15%, well within stop $72,723.60 (stop_dist 10.14%) and the -10%/-7% floors; Peak P&L unchanged at +0.50% (decay condition not met — stop too far away to trigger). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `price ZECUSDT` + `quote ZECUSDT` + `/ticker/24hr` (BTC, ZEC) + `/klines?interval=1d,15m` (ZEC level/manip/range-TP); `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-09-04 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $81,181.38 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.0%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.5644 @ mark $81,181.38 → +0.47%.**
+- STEP 3 — Emergency stop: live $81,181.38 > stop $72,723.60; P&L +0.47% > -7%/-10% floor. No trigger.
+- STEP 4 — Take-profit: live $81,181.38 < target $86,460.28; P&L +0.47% < +7%. No trigger.
+- STEP 5 — Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- STEP 6 — Trailing tighten: P&L +0.47% < +3% threshold. N/A.
+- STEP 6B — Near-stop pre-alert: stop_dist_pct = (81,181.38 − 72,723.60) / 81,181.38 = 10.42% — above 3% threshold, no alert.
+- STEP 6C — Peak Decay: Peak P&L +0.50% @ $81,209.99 (2026-09-04 evening-scan) on file. Current +0.47% < peak (not a new high, unchanged). decay_pct = 6.59% (well below the 50% trigger floor) — condition not met (also stop_dist 10.42% not <6.0). No trigger, no flag log needed.
+Deployment ~35.0% of $35.83 book.
+
+**STEP 7 — Thesis check:** BTC essentially flat vs. this morning's mark ($80,914.30 → $81,181.38, +0.33%), well below the >5%-move threshold for a midday Perplexity catalyst check. No fresh negative catalyst since this morning's research (Decision: TRADE ZEC, disqualified at morning-execution on Range-TP pre-check; BTC-CORE thesis unaffected). Thesis intact.
+
+**Decision: NO ACTION.** Sole position within normal drawdown/gain band, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry.
