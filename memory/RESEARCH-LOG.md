@@ -3041,3 +3041,83 @@ Tomorrow's watchlist: **ZEC** (2-source overlap tonight, live-flat — recheck i
 Action taken: None (no emergency sell/take-profit/thesis-broken exit). Peak P&L field updated in TRADE-LOG (first positive reading, +0.50% @ $81,209.99) — informational only, no trade action. BTC-CORE thesis intact, well within all conservative-rule exit thresholds (stop_dist 10.45%, well above the 3% near-stop and 6% peak-decay floors).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (ZEC/LIT/SHRUB/PONS/ARB/APT); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-09-04 — Morning Research (Conservative Mode)
+
+**Reachability gate PASS:** `price BTCUSDT` = $80,914.30 (live).
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 74 (Greed) | 74           | 30%    |
+| BTC 24h %     | +4.19%     | 92           | 25%    |
+| BTC Dominance | 59.3%      | 38           | 20%    |
+| Alt Breadth   | 71.2% of 1,658 USDT pairs positive (live MEXC board scan — all 14 major-cap coins checked also positive) | 85 | 15% |
+| Loss Rate     | 0/0 closed this week | 75 (neutral default) | 10% |
+**MACRO_SCORE: 73 | SIZE_MULTIPLIER: 1.0x**
+Deployment stance: FULL — first FULL-band day logged since the conservative-mode revert; broad genuine rally (not a stale-citation mirage — confirmed via full live board scan).
+
+### Sector Status
+SECTOR_BLOCKED: none (only 3 closed trades all-time — 2 ADA wins + 1 BTC-CORE close, all L1, no losses)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (no Signal Score recorded on any of the 3 closed trades — insufficient sample) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L | Other 0 W / 0 L
+Anomaly scan: A: CLEAR (2 consecutive HOLD — Sep-2, Sep-3; Sep-1 was TRADE, no active 3+ skip streak, no alert) | C: insufficient data (0 stop-outs on record) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity ~$35.79 (USDT free $23.262447 [65.0%] + BTC 0.00015477 @ $80,964.51 = $12.531 [35.0%]). Open positions 1/6 (BTC-CORE, conservative rules). Trades this week 0/25 (week of Mon Aug-31, today Fri). Trades today 0/5. Stop $72,723.60 (stop_dist 10.18%, no near-stop alert). Target $86,460.28 (+7%). Peak P&L on file: +0.50% @ $81,209.99 (2026-09-04 evening-scan, first positive reading). No ladder (disabled in conservative mode).
+
+### Market Context
+BTC $80,914.30 (+4.19% 24h per MEXC ticker) — strong break higher, continuing the overnight recovery first logged at evening-scan ($81,209.99 peak). BTC dominance 59.3% (flat vs. recent days, still elevated — alt momentum today is broad despite dominance not falling). F&G 74 (Greed, up sharply from 65 two days ago). Full live board scan (1,658 USDT pairs): **14 pairs clear +5%/$3M**, **22 clear +2%/$3M**, **71.2% of all pairs positive** — by far the broadest tape logged this cycle after 10+ consecutive flat/dead-tape sessions. All 14 major-cap coins checked (BTC/ETH/XRP/BNB/SOL/ADA/DOGE/LINK/LTC/AVAX/BCH/TRX/SUI/DOT) are positive — genuine broad risk-on, not an isolated pump. Sector momentum (Perplexity): broad risk-on led by BTC breaking $80K+, DeFi/AI/RWA narratives strengthening (Sui $10M AI/DeFi builder fund, tokenized RWA collateral at monthly high), gaming momentum unclear from available sources.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only, not scored): no dated <24-48h exchange→wallet accumulation signal meeting the API's $1M/fresh criteria — only generic multi-month BTC/ETH/XRP whale-accumulation framing and a Sept-2-dated Nansen note that UNI whale wallets grew 3.20M→3.46M tokens (~2 days old, informational only, not the scored API signal)
+- VC/fund moves: no fresh coin-specific buy dated today — only fund-level AUM/fundraising news (a16z crypto ~$9.5B AUM after 40% YoY drop, raising a new ~$2B Fund V; Paradigm raising ~$1.5B with AI/robotics pivot; Multicoin AUM roughly halved to ~$2.7B). No actionable ticker signal.
+- Top trader calls: no fresh dated CryptoKaleo/pentoshi/Bluntz specific-ticker call found for today (Kaleo's visible posts are macro/RWA-sector commentary, not a dated single-ticker call)
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — persistent endpoint error)
+- CoinGecko trending top 10: PONS (#111), SHRUB (#709, untradeable-tier/thin), PENGU (#103), UNI (#26), ZEC (#11), HYPE (#10), LIT (#69), PUMP (#52), MARSCOIN (#225), USELESS (#174). Top-5 (+1pt each): **PONS, SHRUB, PENGU, UNI, ZEC**.
+- **Catalyst check — ZEC**: Confirmed **live and current**, unlike prior sessions' stale citation. Multiple Sept 1-3-dated sources describe Grayscale's spot Zcash ETF (ticker ZCSH) actively launching/trading on NYSE Arca (one source: "Zcash price surges nearly 19% on launch of Grayscale's Zcash ETF," last-updated today) plus a Sept-2-dated follow-up ("Grayscale intensifies spot ETF push, urges SEC to maintain current rules"). Additional supportive context: SEC closed its Zcash Foundation investigation without enforcement, Ironwood upgrade fixed a prior issuance-risk overhang, ~30% of ZEC supply is shielded (thin liquid float amplifies moves). Today's live MEXC price (+15.61%, $12.0M vol) **confirms** the catalyst is moving the tape — not contradicted like every prior ZEC mention this cycle. **OPTION_B = true.**
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| ZEC    | 0 | 0 | 0 | 0 | +1 | +2 (+15.61%) | +1 ($12.0M) | 0 (neutral, 3.0% from prev-high) | 0 (normal, 15% ATR) | 0 (no HH/HL, consolidating) | **4** |
+| XRP    | 0 | 0 | 0 | 0 | 0 | +2 (+6.19%) | +1 ($67.5M) | 0 (neutral, 2.2% from prev-high) | 0 | 0 (no HH/HL) | 3 (watchlist — no smart-money/catalyst hook) |
+| UNI    | 0 | 0 | 0 | 0 | +1 | +2 (+11.51%) | +1 ($3.03M) | -2 (NEAR PREV-DAY HIGH) | 0 (bullish pump 28% ATR, not bearish flush) | 0 (no HH/HL) | 2 (watchlist — level penalty, no Option B) |
+| ADA    | 0 | 0 | 0 | 0 | 0 | +2 (+9.23%) | +1 ($10.75M) | -2 (NEAR PREV-DAY HIGH) | 0 | 0 (no HH/HL) | 1 (watchlist) |
+| LIT    | 0 | 0 | 0 | 0 | 0 | +2 (+16.90%) | +1 ($14.55M) | -2 (NEAR PREV-DAY HIGH) | 0 | 0 (no HH/HL) | 1 (watchlist) |
+| TAO    | 0 | 0 | 0 | 0 | 0 | +1 (+4.88%) | +1 ($3.57M) | -2 (NEAR PREV-DAY HIGH) | 0 | 0 (no HH/HL) | 0 (watchlist) |
+
+Full board scan (1,658 pairs, ≥+5%/$3M): 14 hits — MARSCOIN +104.19%/$3.74M, USELESS +65.28%/$3.89M, PONS +41.48%/$11.17M, LIT +16.90%/$14.55M, DGAI +15.83%/$52.80M, ZEC +15.61%/$11.99M, UNI +11.51%/$3.03M, ENA +11.23%/$50.43M, CAKE +9.74%/$3.74M, ADA +9.23%/$10.75M, TRUMP +7.02%/$19.20M, XRP +6.19%/$67.50M, HYPE +6.03%/$4.01M, DOGE +5.41%/$20.58M. Excluded from candidate workup: **MARSCOIN/USELESS** (extreme %, no identifiable project/catalyst, classic thin-liquidity pump-risk pattern, excluded on risk grounds); **PONS** (repeat "trending-only, contradicted-on-live-check" history this cycle — today's +41% is real but no smart-money/catalyst backing and looks like a blow-off extension, not chased); **DGAI** (new listing, launched only ~10 days ago Aug 24-27 with a +93% first-day pump already on file — thin price history, elevated manipulation/volatility risk for a brand-new token, excluded); **ENA** (no fresh catalyst found, prior session flagged a token-unlock dilution risk within the last few days); **CAKE** (source explicitly flagged wash-trading concern alongside the rally); **TRUMP** (meme/political, no catalyst, excluded on risk grounds); **HYPE** (facing a $1.2B token unlock Sept-29, net dilution risk, no offsetting fresh catalyst today).
+
+### MEXC Live Prices (eligible candidates only)
+| Ticker | Price | 24h % | Volume | Score | Base Size | Final Size | Option B? |
+|--------|-------|-------|--------|-------|-----------|------------|-----------|
+| ZEC | $948.49 | +15.61% | $11.99M | 4/17 | 15% (conservative default for sub-5 Option-B entry) | $5.37 (15% × 1.0x) | **Yes — Grayscale spot ZEC ETF (ZCSH) live launch/push, SEC investigation closed, Ironwood fix, thin shielded float** |
+
+### News on Held Positions
+BTC-CORE: thesis intact and strengthening. No BTC-specific negative catalyst; broad ETF-inflow-driven rally (BTC ETFs, ETH ETFs both citing strong multi-day inflow streaks) plus cooling rate-hike odds (CME FedWatch ~50/50 vs. prior hawkish pricing) pushed BTC through $80K–$82K. Live $80,914.30 vs. cost basis (~$80,804 entry) → position is essentially flat/marginally positive (~+0.14%), well inside the -10% stop ($72,723.60, stop_dist 10.18%) and below the +7%/+12% take-profit levels. First sustained positive stretch since the Aug-26 retroactive stop/target assignment (evening-scan logged the first-ever positive Peak P&L, +0.50%, a few hours ago).
+
+### Trade Ideas (Layer 3 review fires at execution time)
+1. **ZEC** — Score: 4/17 | Final size: $5.37 | Entry ~$948.49 | Stop $853.64 (-10%) | Target $1,014.88 (+7%)
+   Signals: CoinGecko trending top-5, live MEXC momentum (+15.61%/$11.99M, confirms catalyst not stale), OPTION_B strong catalyst (Grayscale spot ZEC ETF live launch/push + SEC investigation closed + Ironwood issuance-risk fix + thin shielded float)
+   Catalyst: Grayscale ZCSH spot ETF launch/push (Sept 1-3-dated sources), regulatory overhang cleared
+   Sector: Privacy/Other — not blocked, 0W/0L on file
+   Rules: [✓] Signal Gate clear | [✓] Sector clear | [ ] EMA-200/Vol-Surge/RSI/VWAP/3-Candle Gate — not run in this research pass, **must be validated fresh at morning-execution** before any fill (price has already moved +15.61% intraday — verify no chase into an exhausted move, confirm 3-candle continuation, and re-check live level distance from resistance before sizing the order)
+   Entry type: B (catalyst override; score below the 5-pt quality floor for this MACRO band)
+
+No other candidate reached eligibility: XRP/UNI/ADA/LIT/TAO all scored below 5 with no surviving Option-B catalyst (UNI/ADA/LIT/TAO also carry a -2 near-prev-day-high resistance penalty).
+
+### Risk Factors
+- Macro gate: BTC dominance (38) remains the weakest sub-score — still elevated at 59.3%, a headwind for sustained alt outperformance even on a strong risk-on day.
+- Blocked sectors: none.
+- ZEC-specific: price already +15.61% intraday before this candidate was flagged — genuine chase risk; morning-execution must re-verify the move hasn't exhausted itself (3-candle gate, RSI) before filling. Recommend limit/maker entry rather than chasing market price if still extended.
+- ADA/UNI/LIT/TAO all sit within ~0.5-1.3% of their prev-day high — real resistance risk if today's rally stalls; correctly excluded on the level_pts=-2 rule given sub-7 scores.
+- DGAI/PONS/MARSCOIN/USELESS: large live moves excluded on manipulation/thin-liquidity/no-catalyst grounds — do not chase these purely on board-scan momentum.
+- Event risk: Fed Sept 15-16 FOMC remains the dominant macro swing factor ahead; CME FedWatch odds have eased to ~50/50 which is supportive for today's rally continuing short-term.
+
+### Decision
+TRADE: ZEC ($5.37, Option B override) — pending final Layer-3 validation (3-Candle Gate, EMA-200, RSI, VWAP) at morning-execution before fill. First FULL-macro, broad-momentum day logged since the conservative-mode revert (MACRO_SCORE 73, 14/1,658 pairs ≥+5%/$3M, 71.2% breadth). BTC-CORE holds unchanged at ~35.0% deployment, ~+0.14%, well within stop $72,723.60 and the -10%/-7% floors.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,658 USDT pairs, all majors) + `/klines?interval=1d,15m,60m` (level/manip/structure for ZEC/XRP/ADA/TAO/UNI/LIT); direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts) + ×2 (ZEC catalyst freshness check, DGAI identity/catalyst check).
