@@ -941,3 +941,20 @@ event risk on top of already-weak setups — no reason to force a trade. Re-scan
 9:45 AM execution for genuine post-open momentum once the payrolls reaction settles
 and real intraday ticks are live.
 Account equity: $100,000.00
+
+### EOD Scan — 2026-09-04
+Live state confirmed via API: 0 open positions, 0 open orders — consistent with
+TRADE-LOG and morning-research HOLD decision above; no intraday execution occurred.
+Open positions held overnight: none
+Positions cut: none
+Movers re-check (3:30 PM): gainers KLAC +7.10%, MRVL +4.80%, AMAT +4.43%,
+LRCX +4.03%, ORCL +2.99%, AMD +2.95%, NVDA +2.33%, CAT +2.03%, TXN +1.93%,
+ADI +1.16% (semis-led session); losers SNPS -7.75%, ADBE -6.99%, TSLA
+-6.07%, CDNS -3.97%, INTU -3.44%. No open positions to manage — no action
+needed.
+Next trading day: Tue 2026-09-08 (Mon 9/7 is Labor Day, market closed).
+Pre-market earnings: ABM, CAN, UNFI. After-close: CASY, BRZE, TTAN, AVO,
+INNV. None confirmed in the liquid tradeable universe (small/mid-cap
+earnings names); no upgrade/M&A/FDA catalysts surfaced for that date.
+Nothing to flag; standard morning-research scan on 9/8 sufficient.
+Account equity EOD: $100,000.00
