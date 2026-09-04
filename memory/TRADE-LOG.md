@@ -2235,3 +2235,17 @@ No candidate reached the raw momentum screen (0 board-scan hits, 0 flagged-candi
 **Decision: NO NEW ENTRIES.** Zero board-scan hits (2,091 pairs), zero live-confirmed candidates from Perplexity flags — every cited mover (ARB, ZEC, INDEX, XRP) disqualified on live MEXC price check, same recurring stale-citation pattern as prior sessions. BTC-CORE holds unchanged at ~34.4% deployment, -2.89%, well within stop $72,723.60 (stop_dist 7.32%) and the -10%/-7% floors. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 2,091 USDT pairs) + `/ticker/24hr` (ARB/ZEC/INDEX/XRP/SOL/PENGU/PUMP individual); CoinGecko `/coins/markets` (returned unsorted, unusable); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news).
+
+## 2026-09-04 — Evening Scan (Asian open ~03:00 UTC) — Peak P&L update
+
+**BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.5689 @ mark $81,209.99 → +0.50%.** First positive reading since the Aug-26 retroactive stop/target assignment (prior sessions all logged "no Peak P&L on file").
+
+**Peak P&L:** +0.50% @ $81,209.99 (2026-09-04) — new high, first time current_pnl_pct > 0.
+
+- A) Emergency stop: live $81,209.99 > stop $72,723.60; no trigger.
+- B) Take-profit: live $81,209.99 < target $86,460.28; P&L +0.50% < +12%; no trigger.
+- C) Trailing tighten: P&L +0.50% < +3% threshold; N/A.
+- STEP 3B Near-stop pre-alert: stop_dist_pct = (81,209.99−72,723.60)/81,209.99 = 10.45% — above 3% threshold, no alert.
+- STEP 3C Peak Decay: decay_pct = 0% (peak just set this run, current_pnl_pct = peak_pnl_pct). Trigger condition (decay≥50 AND pnl<3.0 AND stop_dist<6.0 AND peak>0) not met — stop_dist_pct 10.45% alone rules it out. No trigger.
+
+Deployment ~35.1% of $35.83 book.

@@ -3021,3 +3021,23 @@ None. Zero candidates cleared SCORE_PRE ≥ 3, zero live-confirmed momentum (ful
 
 ### Decision
 HOLD (no coin scored ≥5, no Option B catalyst; zero board-scan hits at either +2% or +5% threshold, deadest tape logged this cycle). BTC-CORE holds unchanged at ~34.1% deployment, -3.84%, well within stop $72,723.60 and the -10%/-7% floors.
+
+## 2026-09-04 — Evening Scan (Asian open ~03:00 UTC)
+
+**⚠ Routine gap:** no morning-research/morning-execution/midday/afternoon-execution/daily-summary entry exists for 2026-09-04 yet — this evening-scan is the first log entry of the day. Same recurring gap pattern flagged in prior sessions; proceeding with STEP 2-6 (live-state monitor + overnight scan) since it doesn't depend on today's Morning Research output.
+
+### Evening Scan (10 PM CT)
+BTC overnight: $81,209.99 (vs. yesterday afternoon-execution mark $78,465.44, +3.50% — strong overnight recovery, first time BTC-CORE has traded positive since the Aug-26 retroactive stop/target assignment).
+Open positions: BTC-CORE — 0.00015477 BTC, cost $12.5060 (entry ~$80,804) → val $12.5689 @ $81,209.99 → **+0.50%**, first positive reading on file. New Peak P&L logged in TRADE-LOG: +0.50% @ $81,209.99 (2026-09-04).
+- A) Emergency stop: live $81,209.99 > stop $72,723.60; no trigger.
+- B) Take-profit: live $81,209.99 < target $86,460.28, P&L +0.50% < +12%; no trigger.
+- 3B Near-stop pre-alert: stop_dist_pct = (81,209.99−72,723.60)/81,209.99 = 10.45% — above 3% threshold, no alert.
+- 3C Peak Decay: peak just set this run (decay_pct = 0%); stop_dist_pct 10.45% > 6.0% floor anyway — no trigger.
+Thesis intact — no hack/SEC action/key-unlock affecting BTC.
+Overnight catalysts: Macro/rate repricing remained the dominant driver, not a crypto-native event — Fed Chair Warsh's Jackson Hole hawkish comments (Aug 30) and Japan rate-hike bets framed the broader risk backdrop, but BTC itself rallied ~$3,000 in recent hours per HTX data, breaking through $81,000 on continuing ETF-inflow strength (BTC funds +$101.1M, ETH funds +$226M/9-session streak = $1.4B). 6h sweep: no ETF approval/hack/protocol-upgrade event specific to BTC; Europol dismantled a crypto-mixing service seizing $29M BTC (third-party AML enforcement, unrelated, not held); Full Sail (SUI ecosystem) closed after a hack (not held); Crypto.com-linked lending platform hit by $74M hack (not held, no exposure). No BTC-specific negative catalyst — thesis intact.
+Whale activity: Whale Alert free-tier endpoint unavailable (persistent `'str' object has no attribute 'get'` parse error, same pattern as every prior session).
+Asian session movers: CoinGecko trending: PONS, SHRUB, ZEC, PENGU, PUMP, UNI, LIT, CASHCAT. Perplexity Asian-gainers query returned mostly illiquid/microcap names (BULLA, USELESS, BR/Bedrock, CHIP/USD.AI) not on MEXC, plus majors ARB (+18.55%), LIT (+10.93%), APT (+9.87%), ZEC (+16-18%) per CMC/crypto.st citations. 2+ source overlap: **ZEC** (CoinGecko trending + Perplexity/CMC/crypto.st gainer citations) and **LIT** (CoinGecko trending + Perplexity/CMC citation). Live-checked on MEXC: ZEC $945, **+0.16%**/vol $11.2M (flat, contradicts the cited +16-18% figure); LIT $4.4575, **+0.17%**/vol $15.75M (flat, contradicts +10.93%); also checked ARB +0.14%/$2.48M (below vol floor, contradicts +18.55%), APT +0.03%/$0.35M (below vol floor, contradicts +9.87%), PONS +0.48%/$10.86M (flat). SHRUB (CoinGecko top-gainer, +282.7%) not listed on MEXC (`invalid symbol`) — untradeable, not evaluated further. Same recurring stale/inconsistent-citation pattern as every prior session — MEXC (the trading venue) is the source of truth and shows all essentially flat; zero candidates clear the +2%/$3M momentum floor.
+Tomorrow's watchlist: **ZEC** (2-source overlap tonight, live-flat — recheck if volume/price move live-confirms the cited Grayscale/ETF-conversion catalyst); **LIT** (2-source overlap, live-flat, recurring appearance); **PONS** (recurring CoinGecko-trending, repeatedly stale on live check — monitor only).
+Action taken: None (no emergency sell/take-profit/thesis-broken exit). Peak P&L field updated in TRADE-LOG (first positive reading, +0.50% @ $81,209.99) — informational only, no trade action. BTC-CORE thesis intact, well within all conservative-rule exit thresholds (stop_dist 10.45%, well above the 3% near-stop and 6% peak-decay floors).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (ZEC/LIT/SHRUB/PONS/ARB/APT); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
