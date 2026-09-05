@@ -3208,3 +3208,31 @@ None. Best candidate (ZEC, DASH — both score 4/17) falls well short of the MAC
 HOLD (best score 4/17, well below the ≥8 floor required at MACRO_SCORE 52; no Option B catalyst survives freshness check). BTC-CORE holds unchanged at ~34.6% deployment, -1.55%, well within stop $72,723.60 and the -10%/-7% floors.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,655 USDT pairs) + `/ticker/24hr` (ZEC/DASH/LIT/XMR/MARSCOIN/USELESS/ARB individual) + `/klines?interval=1d,15m,60m` (level/manip/structure for ZEC/DASH/LIT/XMR) + `quote ZECUSDT`; direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts).
+
+## 2026-09-05 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,584.66 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.4%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 52, SIZE_MULTIPLIER 0.6x (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD — best candidate score 4/17 well below the ≥8 floor required at MACRO_SCORE 52; no Option B catalyst survives freshness check. No Trade Ideas listed.
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.3173 @ mark $79,584.66 → **-1.51%**.
+- A) Emergency stop: live $79,584.66 > stop $72,723.60; P&L -1.51% > -7%/-10% floor. No trigger.
+- B) Take-profit: live $79,584.66 < target $86,460.28; P&L < +7%. No trigger.
+- C) Trailing tighten: P&L -1.51% < +3% threshold. N/A.
+- D) Peak Decay: Peak P&L +0.50% @ $81,209.99 (2026-09-04) on file; current -1.51% < peak (decay_pct ≈402%) but stop_dist_pct 8.62% (not <6.0) — trigger condition not met. No trigger. Peak unchanged.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (79,584.66 − 72,723.60) / 79,584.66 = 8.62% — above 3% threshold, no alert.
+Deployment ~34.6% of $35.58 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Validate live data for each planned entry:** No Trade Ideas listed in today's RESEARCH-LOG — nothing to validate. No candidates to check against 3-candle/EMA200/RSI/VWAP/range-TP gates.
+
+**STEP 6 — Layer 3 review:** N/A — zero candidates reached Layer 3.
+
+**Decision: NO NEW ENTRIES.** No Trade Ideas from Morning Research (best score 4/17 well below the MACRO<60-band ≥8 floor; no Option B catalyst survives freshness check). BTC-CORE holds unchanged at ~34.6% deployment, -1.51%, well within stop $72,723.60 (stop_dist 8.62%) and the -10%/-7% floors; Peak P&L unchanged at +0.50%. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
