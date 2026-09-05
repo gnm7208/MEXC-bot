@@ -2382,3 +2382,30 @@ Deployment ~34.6% of $35.59 book.
 **Decision: NO ACTION.** Sole position within normal drawdown band, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry.
+
+
+## 2026-09-05 — Afternoon Execution (US market open momentum sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,704.77 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.4% of book) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 52, SIZE_MULTIPLIER 0.6x (not halted). SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: HOLD — no Trade Ideas (best score 4/17 well below the MACRO<60-band ≥8 floor).
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,804) → val $12.3359 @ mark $79,704.77 → **-1.36%**.
+- A) Emergency stop: live $79,704.77 > stop $72,723.60; P&L -1.36% > -7%/-10% floor. No trigger.
+- B) Take-profit: live $79,704.77 < target $86,460.28; P&L -1.36% < +7%/+12%. No trigger.
+- C) Trailing tighten: P&L -1.36% < +3% threshold. N/A.
+- D) Peak Decay: Peak P&L +0.50% @ $81,209.99 (2026-09-04) on file. Current -1.36% < peak (not a new high, unchanged). decay_pct ≈372% but stop_dist_pct 8.76% (not <6.0) — trigger condition not met (all 4 must hold). No trigger.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (79,704.77 − 72,723.60) / 79,704.77 = 8.76% — above 3% threshold, no alert.
+Deployment ~34.6% of $35.60 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Afternoon signal scan:** US_OPEN_WINDOW inactive (13:09 UTC, before 13:30-15:00 window). CoinGecko "top gainers" endpoint again returned market-cap-order list, not sorted by 24h% (recurring known issue) — ignored in favor of a full live MEXC board scan. Full board scan (1,655 USDT pairs): 64.5% positive breadth (broad but shallow) — **0 pairs clear +5%/$3M, 0 pairs clear even +2%/$3M**. Recurring watchlist names all live-checked and flat: ZEC +0.03%/$4.26M, LIT +0.002%/$18.79M, DASH +0.37%/$6.88M, PONS +0.32%/$14.41M, MARSCOIN +0.43%/$4.54M, XMR +0.03%/$4.50M, USELESS -0.01%/$3.97M — yesterday's/overnight's momentum has fully died. Whale Alert unavailable (persistent `'str' object has no attribute 'get'` parse error, same pattern as every prior session). Perplexity US-open sweep (2 queries) flagged ZEC ("topping $1,000" ETF framing, actually flat live), PENGU (+47% 7d), PUMP (+74.6% 7d), CASHCAT (+108.6% 7d), XRP (~40-50% 7d) — all weekly/7d framing, not live 24h moves; live-checked PENGU +0.05%/$0.47M (thin), PUMP -0.003%/$18.17M, CASHCAT +0.02%/$4.31M — all flat, confirms same recurring stale-citation pattern (Perplexity sources lag live tape). Breaking news (2h): US bitcoin ETF $731M inflow (already logged yesterday, lagging/stale), Europol Cryptomixer seizure (unrelated AML enforcement), AMC/Robinhood tokenized-shares dispute (unrelated) — no fresh actionable catalyst.
+
+**Decision: NO NEW ENTRIES.** Zero candidates cleared even the loosest momentum floor (+2%/$3M) on a full 1,655-pair live board scan — market has gone flat/quiet after yesterday's moves fully died out. No Trade Ideas from Morning Research either. Never reached STEP 6 (Layer 3 review) — nothing to review. BTC-CORE holds unchanged at ~34.6% deployment, -1.36%, well within stop $72,723.60 (stop_dist 8.76%) and the -10%/-7% floors. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,655 USDT pairs) + `/ticker/24hr` (ZEC/LIT/DASH/PONS/MARSCOIN/XMR/USELESS/PENGU/PUMP/CASHCAT individual); CoinGecko `/coins/markets` (unsorted, unusable); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
