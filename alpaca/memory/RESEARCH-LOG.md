@@ -958,3 +958,12 @@ INNV. None confirmed in the liquid tradeable universe (small/mid-cap
 earnings names); no upgrade/M&A/FDA catalysts surfaced for that date.
 Nothing to flag; standard morning-research scan on 9/8 sufficient.
 Account equity EOD: $100,000.00
+
+### Addendum — 2026-09-05 09:45 ET (morning-execution)
+Saturday, market closed (per TRADING-STRATEGY.md: market hours only,
+Mon-Fri). No Trade Ideas exist for today (no morning-research entry —
+market closed, none run), 0 open positions/orders to monitor, so no
+stop/TP checks or thesis review needed. No trades placed, no daily/weekly
+gate or circuit-breaker check applicable (0 trades today, 0 this week).
+Account: equity $100,000 / cash $100,000 / buying power $400,000, unchanged.
+Next trading day: Tue 2026-09-08 (Mon 9/7 is Labor Day, market closed).
