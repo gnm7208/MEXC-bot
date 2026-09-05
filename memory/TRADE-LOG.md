@@ -2409,3 +2409,15 @@ Deployment ~34.6% of $35.60 book.
 **Decision: NO NEW ENTRIES.** Zero candidates cleared even the loosest momentum floor (+2%/$3M) on a full 1,655-pair live board scan — market has gone flat/quiet after yesterday's moves fully died out. No Trade Ideas from Morning Research either. Never reached STEP 6 (Layer 3 review) — nothing to review. BTC-CORE holds unchanged at ~34.6% deployment, -1.36%, well within stop $72,723.60 (stop_dist 8.76%) and the -10%/-7% floors. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A). Re-evaluate at evening-scan.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,655 USDT pairs) + `/ticker/24hr` (ZEC/LIT/DASH/PONS/MARSCOIN/XMR/USELESS/PENGU/PUMP/CASHCAT individual); CoinGecko `/coins/markets` (unsorted, unusable); Whale Alert (unavailable); **Perplexity (sonar)** ×2 (US-open momentum scan, 2h breaking news); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## Sep 05 — EOD Snapshot (Day 45, Saturday)
+
+**Portfolio:** $35.60 | **Cash:** $23.26 (65.3%) | **Day P&L:** +$0.08 (+0.23%) | **Phase P&L:** +$3.28 (+10.15%)
+
+| Ticker   | Qty        | Entry     | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-----------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,804  | $79,718.08 | +0.68%  | -$0.17 (-1.34%)    | $72,723.60  |
+
+**Notes:** Quiet weekend session — midday and afternoon-execution both logged, zero trades placed. Morning Research found no Trade Ideas (MACRO_SCORE 52, best score 4/17 below the MACRO<60-band floor); afternoon full board scan (1,655 USDT pairs) found zero candidates clearing even the loosest +2%/$3M momentum floor — yesterday's movers (ZEC, LIT, DASH, PONS) all went flat. BTC-CORE eased slightly to -1.34% unrealized, well inside all floors — stop unchanged at $72,723.60 (stop_dist ~8.8%), never moved. Portfolio +0.23% day / +10.15% phase vs $32.32 starting capital. Trades today: none. Trades this week: 0/25.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-04 EOD baseline $35.52) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
