@@ -3139,3 +3139,72 @@ Tomorrow's watchlist: **ZEC** (Grayscale ZCSH AUM now >$400M, catalyst durable �
 Action taken: None (no emergency sell/take-profit/thesis-broken exit). Peak P&L unchanged (+0.50% @ $81,209.99, 2026-09-04). BTC-CORE thesis intact, well within all conservative-rule exit thresholds (stop_dist 8.67%, above both the 3% near-stop and 6% peak-decay floors).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (SHRUB/MARSCOIN/ZEC/LIT/DASH/PONS); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable).
+
+## 2026-09-05 — Morning Research (Conservative Mode)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,550.49 (live).
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 73 (Greed) | 73           | 30%    |
+| BTC 24h %     | -1.64%     | 34           | 25%    |
+| BTC Dominance | 59.1%      | 39           | 20%    |
+| Alt Breadth   | 40.6% of 1,655 USDT pairs positive (live MEXC board scan) | 41 | 15% |
+| Loss Rate     | 0/0 closed this week | 75 (neutral default) | 10% |
+**MACRO_SCORE: 52 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none (only 3 closed trades all-time — 2 ADA wins + 1 BTC-CORE close, all L1, no losses)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (no Signal Score recorded on any of the 3 closed trades — insufficient sample) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L | Other 0 W / 0 L
+Anomaly scan: A: CLEAR (0 consecutive HOLD — yesterday's [Sep-4] Decision was TRADE ZEC, no active 3+ skip streak) | C: insufficient data (0 stop-outs on record) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity ~$35.57 (USDT free $23.262447 [65.4%] + BTC 0.00015477 @ $79,550.49 = $12.3120 [34.6%]). Open positions 1/6 (BTC-CORE, conservative rules). Trades this week 0/25 (week of Mon Aug-31, today Saturday). Trades today 0/5. Stop $72,723.60 (stop_dist 8.58%, no near-stop alert). Target $86,460.28 (+7%). Peak P&L on file: +0.50% @ $81,209.99 (2026-09-04), unchanged. No ladder (disabled in conservative mode).
+
+### Market Context
+BTC $79,550.49 (-1.64% 24h) — pulling back from yesterday's $81,209.99 evening peak, continuing the "blowout jobs report" hawkish-rate-repricing pullback first logged at yesterday afternoon-execution; still holding the low-$79K/high-$78K range from overnight. BTC dominance 59.1% (flat, still elevated — headwind for sustained alt outperformance). F&G 73 (Greed, essentially flat vs. yesterday's 74). Full live board scan (1,655 USDT pairs): only **6 pairs clear +5%/$3M** (MARSCOIN, DASH, USELESS, ZEC, LIT, XMR), **7 clear +2%/$3M**, and only **40.6% of all pairs positive** — a narrower, weaker tape than yesterday's broad 71.2%-positive rally; nearly all major-caps (BTC/ETH/XRP/BNB/SOL/ADA/DOGE/LINK/AVAX/BCH/SUI) are red today, with only LTC (+2.3%) and TRX (flat) holding up — this is a risk-off-tinged pullback day, not a broad rally. Sector momentum (Perplexity): mixed — DeFi basket +2.46%, alt-L1 rotation (XRP/DOGE/ZEC/ADA outsized gains per one Sept-3-dated snapshot) contrasted against today's live-flat/red majors; AI/gaming had no clean sector readout.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only, not scored): no dated <24-48h exchange→wallet accumulation signal meeting the API's $1M/fresh criteria — only generic multi-month BTC/ETH/XRP whale-accumulation framing (CryptoQuant 60-day BTC/ETH/XRP holder-growth data, not dated today)
+- VC/fund moves: no fresh coin-specific buy dated today — only fund-level AUM/fundraising recaps (a16z ~$9.5B AUM after 40% YoY drop raising new ~$2B Fund V; Paradigm raising ~$1.5B with possible AI/robotics pivot; Multicoin AUM ~$2.7B) — same figures as prior sessions, no new signal
+- Top trader calls: no fresh dated CryptoKaleo/pentoshi/Bluntz specific-ticker call found for today (Kaleo's visible posts reference $HMM/$PONS, both undated/old)
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — persistent endpoint error)
+- CoinGecko trending top 10 (top-5, +1pt each): **CP** (#528, illiquid/thin — not on MEXC, skip), **DASH** (#79), **PONS** (#110), **SHRUB** (#391, untradeable on MEXC per recurring prior check), **ZEC** (#11)
+- **Catalyst check — ZEC**: underlying Grayscale spot ZEC ETF (ZCSH) catalyst is now >48h old (launched/live since Sept 1-3, AUM >$400M per last night's evening-scan) — durable but no longer fresh news; today's move (+8.17%) is a partial retrace off yesterday evening's $1,020+ high, consistent with cooling/consolidation rather than a new catalyst leg. **No OPTION_B override today** — treat as quantitative-score candidate only, same posture as yesterday afternoon's "extended move" concern.
+- **ARB "up 90%" headline (beincrypto, dated today)**: checked live — MEXC shows ARB **-4.65%**, $1.24M vol (below both floors), same recurring stale/off-base citation pattern (headline referenced a bounce off record lows, not a 24h move). Disqualified.
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| ZEC    | 0 | 0 | 0 | 0 | +1 | +2 (+8.17%) | +1 ($9.61M) | 0 (neutral, 2.3% from prev-high) | 0 (normal, 10% ATR) | 0 (no HH/HL) | **4** |
+| DASH   | 0 | 0 | 0 | 0 | +1 | +2 (+28.93%) | +1 ($4.98M) | -2 (NEAR PREV-DAY HIGH, 1.3%) | +1 (bearish flush, 64% ATR) | +1 (HH/HL) | **4 → SKIP (level -2, score <7)** |
+| LIT    | 0 | 0 | 0 | 0 | 0 | +2 (+6.94%) | +1 ($25.69M) | 0 (neutral, 4.1% from prev-high) | 0 (14% ATR, not ≥25%) | 0 (no HH/HL) | 3 (watchlist — no catalyst hook) |
+| XMR    | 0 | 0 | 0 | 0 | 0 | +2 (+5.41%) | +1 ($6.88M) | 0 (neutral, 6.3% from prev-high) | 0 (17% ATR) | +1 (HH/HL) | 4 (watchlist — no catalyst hook) |
+
+Full board scan (1,655 pairs, ≥+5%/$3M): 6 hits — MARSCOIN +31.78%/$5.87M, DASH +28.93%/$4.98M, USELESS +9.55%/$8.31M, ZEC +8.17%/$9.61M, LIT +6.94%/$25.69M, XMR +5.41%/$6.88M. Excluded from candidate workup: **MARSCOIN** (recurring pump-risk name, no identifiable catalyst, excluded every prior session it has appeared); **USELESS** (extreme-% thin-liquidity pump pattern, same exclusion basis as MARSCOIN).
+
+### MEXC Live Prices (eligible candidates only)
+None — zero candidates reached eligibility (MACRO_SCORE 52 sits in the 40-69 band, requiring SCORE ≥8; best score today is 4).
+
+### News on Held Positions
+BTC-CORE: thesis intact. No BTC-specific negative catalyst (no hack/SEC action/key-unlock) — today's pullback is macro-driven (continuing hawkish rate-repricing off the strong US jobs report, per yesterday's afternoon/evening logs), not BTC-specific. Live $79,550.49 vs. cost basis (~$80,804 entry) → unrealized -1.55%, well inside the -10% stop ($72,723.60, stop_dist 8.58%) and below the +7% take-profit. Peak P&L unchanged at +0.50% (2026-09-04); decay condition not triggered (stop too far away).
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None. Best candidate (ZEC, DASH — both score 4/17) falls well short of the MACRO<60-band ≥8 quality floor; DASH additionally disqualified outright on the level_pts=-2/score<7 resistance rule. No Option B catalyst survives freshness check (ZEC's ETF catalyst is >48h old and today's move reads as consolidation, not new news).
+
+### Risk Factors
+- Macro gate: BTC 24h (34) and BTC Dominance (39) are the weakest sub-scores — today is a genuine pullback (not a stale-citation artifact, confirmed via live board scan showing only 40.6% breadth vs. yesterday's 71.2%).
+- Blocked sectors: none.
+- ZEC/DASH-specific: both sit within ~2% of their prev-day high (DASH literally inside the -2 resistance penalty) — chasing either into resistance on a cooling/pullback day is poor risk/reward.
+- MARSCOIN/USELESS: large live moves excluded on manipulation/thin-liquidity/no-catalyst grounds — do not chase.
+- Event risk: Fed Sept 15-16 FOMC remains the dominant macro swing factor; today's pullback (jobs-report hawkish repricing) is a preview of that volatility.
+
+### Decision
+HOLD (best score 4/17, well below the ≥8 floor required at MACRO_SCORE 52; no Option B catalyst survives freshness check). BTC-CORE holds unchanged at ~34.6% deployment, -1.55%, well within stop $72,723.60 and the -10%/-7% floors.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,655 USDT pairs) + `/ticker/24hr` (ZEC/DASH/LIT/XMR/MARSCOIN/USELESS/ARB individual) + `/klines?interval=1d,15m,60m` (level/manip/structure for ZEC/DASH/LIT/XMR) + `quote ZECUSDT`; direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts).
