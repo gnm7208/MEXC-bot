@@ -2421,3 +2421,24 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (f
 **Notes:** Quiet weekend session — midday and afternoon-execution both logged, zero trades placed. Morning Research found no Trade Ideas (MACRO_SCORE 52, best score 4/17 below the MACRO<60-band floor); afternoon full board scan (1,655 USDT pairs) found zero candidates clearing even the loosest +2%/$3M momentum floor — yesterday's movers (ZEC, LIT, DASH, PONS) all went flat. BTC-CORE eased slightly to -1.34% unrealized, well inside all floors — stop unchanged at $72,723.60 (stop_dist ~8.8%), never moved. Portfolio +0.23% day / +10.15% phase vs $32.32 starting capital. Trades today: none. Trades this week: 0/25.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-04 EOD baseline $35.52) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
+
+## 2026-09-06 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,993.79 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.3%) / locked $0 (canTrade=true); BTC locked $0 — no resting orders. Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**BTC-CORE — cost $12.5060 (entry ~$80,803.77) → val $12.3806 @ mark $79,993.79 → -1.00%.**
+- STEP 3 — Emergency stop: live $79,993.79 > stop $72,723.60; P&L -1.00% > -7%/-10% floor. No trigger.
+- STEP 4 — Take-profit: live $79,993.79 < target $86,460.28; P&L -1.00% < +7%. No trigger.
+- STEP 5 — Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- STEP 6 — Trailing tighten: P&L -1.00% < +3% threshold. N/A.
+- STEP 6B — Near-stop pre-alert: stop_dist_pct = (79,993.79 − 72,723.60) / 79,993.79 = 9.09% — above 3% threshold, no alert.
+- STEP 6C — Peak Decay: Peak P&L +0.50% @ $81,209.99 (2026-09-04) on file. Current -1.00% < peak (not a new high, unchanged). decay_pct ≈300% but stop_dist_pct 9.09% (not <6.0) — trigger condition not met (all 4 must hold). No trigger, no flag log needed.
+Deployment ~34.7% of $35.64 book.
+
+**STEP 7 — Thesis check:** BTC essentially flat vs. this morning's mark ($79,949.01 → $79,993.79, +0.06%), well below the >5%-move threshold for a midday Perplexity catalyst check. No fresh negative catalyst since this morning's research (Decision: HOLD, no Trade Ideas — best candidate PONS score 6/17 below MACRO 40-69-band ≥8 floor). Thesis intact.
+
+**Decision: NO ACTION.** Sole position within normal drawdown band, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry.
