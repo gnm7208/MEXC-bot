@@ -3236,3 +3236,71 @@ Deployment ~34.6% of $35.58 book.
 **Decision: NO NEW ENTRIES.** No Trade Ideas from Morning Research (best score 4/17 well below the MACRO<60-band ≥8 floor; no Option B catalyst survives freshness check). BTC-CORE holds unchanged at ~34.6% deployment, -1.51%, well within stop $72,723.60 (stop_dist 8.62%) and the -10%/-7% floors; Peak P&L unchanged at +0.50%. No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-09-06 — Morning Research (Conservative Mode)
+
+**Reachability gate PASS:** `price BTCUSDT` = $79,918.16 (live).
+
+### Macro Gate (Layer 1)
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 73 (Greed) | 73           | 30%    |
+| BTC 24h %     | +0.46%     | 55           | 25%    |
+| BTC Dominance | 59.2%      | 39           | 20%    |
+| Alt Breadth   | 63.9% of 1,646 USDT pairs positive (live MEXC board scan) | 64 | 15% |
+| Loss Rate     | 0/0 closed this week | 75 (neutral default) | 10% |
+**MACRO_SCORE: 60 | SIZE_MULTIPLIER: 0.6x**
+Deployment stance: REDUCED
+
+### Sector Status
+SECTOR_BLOCKED: none (only 3 closed trades all-time — 2 ADA wins + 1 BTC-CORE close, all L1, no losses)
+Self-learning: low 0/0 wins | mid 0/0 wins | high 0/0 wins | no sector flags (no Signal Score recorded on any of the 3 closed trades — insufficient sample) | signal_gate: CLEAR (0 consec losses)
+SIGNAL_GATE: CLEAR (0 consecutive low-tier losses)
+Sector P&L (recent): L1 3 W / 0 L | DeFi 0 W / 0 L | AI 0 W / 0 L | Gaming 0 W / 0 L | Other 0 W / 0 L
+Anomaly scan: A: CLEAR (1 consecutive HOLD — Sep-05; Sep-04 was TRADE, no active 3+ skip streak, no alert) | C: insufficient data (0 stop-outs on record) | D: insufficient data (only 3 closed trades all-time, need ≥10)
+
+### Account Snapshot
+Equity ~$35.63 (USDT free $23.262447 [65.3%] + BTC 0.00015477 @ $79,918.16 = $12.3689 [34.7%]). Open positions 1/6 (BTC-CORE, conservative rules). Trades this week 0/25 (week of Mon Sep-01... new week starts Mon Sep-07, today Sunday — still counts against week of Aug-31/Sep-06). Trades today 0/5. Stop $72,723.60 (stop_dist 9.00%, no near-stop alert). Target $86,460.28 (+7%). Peak P&L on file: +0.50% @ $81,209.99 (2026-09-04), unchanged. No ladder (disabled in conservative mode).
+
+### Market Context
+BTC $79,918.16 (+0.46% 24h, computed from priceChange/openPrice — MEXC's `priceChangePercent` field returned a fractional value today, e.g. "0.0046", not the usual percent-form string; treated as 0.46% after cross-check against priceChange/openPrice, flagging for awareness in case the upstream field format is drifting). BTC dominance 59.2% (flat vs. recent days, still elevated). F&G 73 (Greed, flat vs. yesterday's 73). Full live board scan (1,646 USDT pairs): 14 pairs clear +5%/$3M, 24 clear +2%/$3M, 63.9% of all pairs positive — broader-but-shallow tape, similar character to Sep-04's rally but roughly half the breadth (63.9% vs 71.2%) and about half the +5% hit count. All majors essentially flat (BTC +0.46%, ETH +2.05%→ shown as raw 0.0205 pre-correction/+2.05% corrected read consistent with Perplexity's "+1.80%" citation, BNB +5.89%, ADA +5.03%). Sector momentum (Perplexity): RWA/tokenization cited as clearest structural momentum (+589% YTD growth story), AI-linked names getting rotation support, DeFi/gaming not leading.
+
+### Smart Money Signals
+- Whale Alert (API): unavailable (`'str' object has no attribute 'get'` — persistent free-tier parse error, same pattern as every prior session)
+- Whale Alert (Perplexity, informational only, not scored): generic BTC/ETH/SOL/XRP whale-accumulation framing (BTC whales +$1.2B per a dated-but-recurring story, ETH on-chain whales net buying per CoinLobster) — no fresh <48h coin-specific exchange→wallet flow meeting the API's scored criteria
+- VC/fund moves: no fresh coin-specific buy dated today — only recurring fund-level AUM recaps (a16z ~$9.5B, Paradigm raising ~$1.5B AI/robotics fund, Multicoin ~$2.7B) — same figures as prior sessions, no new signal
+- Top trader calls: Kaleo mentions found for $HMM, $PONS, $DOGE, BTC, $LDO but all dated Jul–Aug (oldest: DOGE Oct-2025, PONS Aug-29) — none dated today, treated as stale per recurring convention, no fresh call counted
+- DeFiLlama gainers: unavailable (`Expecting value: line 1 column 1` — persistent endpoint error)
+- CoinGecko trending top 10: FIRO (#935), CP (#520), PONS (#93), ARB (#65), PENGU (#103), SHRUB (#825), UNI (#22), USELESS (#158), BTC (#1), ZEC (#10). Top-5 (+1pt each): **FIRO, CP, PONS, ARB, PENGU**.
+- No fresh dated Option-B-caliber catalyst identified for any live board-scan mover today (Uniswap's fee-switch/burn catalyst is real but is a late-August event, not fresh news; ARB's +43% move has no identified catalyst in any source checked).
+
+### Weighted Signal Table (Layer 2)
+| Ticker | Whale(+3) | VC(+3) | Trader(+2) | DeFiLlama(+2) | CoinGecko(+1) | Mom(+2) | Vol(+1) | Level | Manip(+1) | MktStr(+1) | SCORE |
+|--------|-----------|--------|------------|---------------|---------------|---------|---------|-------|-----------|------------|-------|
+| ARB  | 0 | 0 | 0 | 0 | +1 | +2 (+43.57%) | +1 ($3.79M) | -2 (NEAR PREV-DAY HIGH, 3.5%) | 0 (bullish pump 63% ATR, not bearish) | +1 (HH/HL) | **3 → SKIP (level -2, score <7)** |
+| PONS | 0 | 0 | 0 (stale, >1wk old) | 0 | +1 | +2 (+29.76%) | +1 ($17.04M) | 0 (neutral, 9.0% from high) | +1 (bearish flush, 33% ATR) | +1 (HH/HL) | **6** (below MACRO<70-band ≥8 floor) |
+| UNI  | 0 | 0 | 0 | 0 | 0 (rank #7, not top-5) | +2 (+14.17%) | +1 ($3.17M) | -2 (NEAR PREV-DAY HIGH, 1.2%) | +1 (bearish flush, 27% ATR) | +1 (HH/HL) | **3 → SKIP (level -2, score <7)** |
+
+Full board scan (1,646 pairs, ≥+5%/$3M, 14 hits): BULLA +69.09%/$3.51M, ARB +43.34%/$3.79M, PONS +28.87%/$17.04M, MARSCOIN +25.78%/$3.68M, CAKE +14.58%/$5.88M, UNI +14.14%/$3.16M, ENA +8.82%/$41.26M, DOGE +7.39%/$25.18M, ASTER +7.19%/$9.35M, CASHCAT +6.54%/$3.62M, USELESS +6.18%/$3.78M, BNB +5.93%/$53.91M, BCH +5.91%/$3.37M, ADA +5.03%/$7.45M. Excluded from candidate workup: **BULLA** (extreme %, no identifiable catalyst, thin-liquidity pump-risk pattern); **MARSCOIN** (recurring pump-risk name, no catalyst, excluded every prior session it has appeared); **CAKE** (prior-session wash-trading concern flagged alongside its rally, no fresh catalyst today); **ENA** (prior-flagged token-unlock dilution risk; Sept-2 unlock has now passed but no fresh accumulation catalyst replacing it); **DOGE** (Kaleo call is 11 months stale, no fresh catalyst); **ASTER** (thin recent-listing history, elevated manipulation risk, no catalyst); **CASHCAT/USELESS** (recurring thin-liquidity meme names, no catalyst); **BNB/BCH/ADA** (majors with no catalyst hook; momentum-only score would sit well below the ≥8 floor even before level/structure checks — not worked up further).
+
+### MEXC Live Prices (eligible candidates only)
+None — zero candidates reached eligibility (MACRO_SCORE 60 sits in the 40-69 band, requiring SCORE ≥8; best surviving score today is PONS at 6, and ARB/UNI are disqualified outright on the level_pts=-2/score<7 resistance rule).
+
+### News on Held Positions
+BTC-CORE: thesis intact. No BTC-specific negative catalyst — today's tape is essentially flat (+0.46% 24h) after the week's chop (jobs-report hawkish repricing mid-week, partial recovery since). Live $79,918.16 vs. cost basis (~$80,804 entry) → unrealized -1.10%, well inside the -10% stop ($72,723.60, stop_dist 9.00%) and below the +7% take-profit. Peak P&L unchanged at +0.50% (2026-09-04); decay condition not triggered (stop too far away, stop_dist 9.00% not <6.0% floor).
+
+### Trade Ideas (Layer 3 review fires at execution time)
+None. Best candidate (PONS, score 6/17) falls short of the MACRO 40-69-band ≥8 quality floor and carries no fresh catalyst (its only smart-money hook, a Kaleo call, is over a week stale). ARB (score 3) and UNI (score 3) are both disqualified outright on the level_pts=-2/score<7 near-resistance rule despite large momentum moves.
+
+### Risk Factors
+- Macro gate: BTC Dominance (39) remains the weakest sub-score — still elevated at 59.2%, a headwind for sustained alt outperformance.
+- Blocked sectors: none.
+- ARB/UNI: both sit within ~1-4% of prev-day highs after large intraday moves — real resistance risk, correctly excluded on the level_pts=-2 rule.
+- PONS: repeat "trending/momentum-only, no durable catalyst" name this cycle (also failed the 3-Candle Confirmation Gate at Sep-04 afternoon-execution) — do not chase without a fresh catalyst even if score edges toward the floor on a future scan.
+- Data quality: MEXC's `priceChangePercent` field returned fractional-form values today (e.g. "0.0046") instead of the usual percent-form string ("4.19") seen in prior sessions — cross-verified via `priceChange`/`openPrice` for this pass; flagging in case this is a persistent upstream format change future routines should account for (do not assume the raw field is always percent-form going forward — verify before trusting it directly).
+- Event risk: Fed Sept 15-16 FOMC remains the dominant macro swing factor ahead.
+
+### Decision
+HOLD (best score 6/17 [PONS], well below the ≥8 floor required at MACRO_SCORE 60; no Option B catalyst survives freshness check for any candidate). BTC-CORE holds unchanged at ~34.7% deployment, -1.10%, well within stop $72,723.60 and the -10%/-7% floors.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `/ticker/24hr` (full board scan, 1,646 USDT pairs) + `/ticker/24hr` (ARB/PONS/UNI/BNB individual) + `/klines?interval=1d,15m,60m` (level/manip/structure for ARB/PONS/UNI) + `quote ARBUSDT`/`quote PONSUSDT`/`quote UNIUSDT`; direct Fear & Greed API (alternative.me); direct CoinGecko `/global` (BTC dominance) + `/search/trending`; Whale Alert (unavailable); DeFiLlama (unavailable); **Perplexity (sonar)** ×6 (alt breadth, catalysts, trader calls, whale accumulation, VC moves, sector momentum, reddit hot posts).
