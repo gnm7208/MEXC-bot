@@ -2442,3 +2442,16 @@ Deployment ~34.7% of $35.64 book.
 **Decision: NO ACTION.** Sole position within normal drawdown band, no cut/take-profit/ladder/tighten/decay trigger tripped. No alt positions to manage. No ClickUp alert (no action taken). Re-evaluate at afternoon-execution.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-LOG entry (Morning Research, Conservative Mode) + Morning Execution entry.
+
+
+## Sep 06 — EOD Snapshot (Day 46, Sunday)
+
+**Portfolio:** $35.57 | **Cash:** $23.26 (65.4%) | **Day P&L:** -$0.03 (-0.09%) | **Phase P&L:** +$3.25 (+10.05%)
+
+| Ticker   | Qty        | Entry       | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-------------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,803.77 | $79,515.39 | -0.25%  | -$0.20 (-1.59%)    | $72,723.60  |
+
+**Notes:** Quiet Sunday — midday scan logged, zero trades placed (no morning/afternoon-execution runs today, weekend cadence). BTC eased slightly overnight/into the day, dragging BTC-CORE further to -1.59% unrealized, still well inside all floors — stop unchanged at $72,723.60 (stop_dist ~8.5%), never moved. Portfolio -0.09% day / +10.05% phase vs $32.32 starting capital. Trades today: none. Trades this week: 0/25.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-05 EOD baseline $35.60) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
