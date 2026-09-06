@@ -975,3 +975,12 @@ today, no fresh intraday data to evaluate. 0 open positions/orders (API
 confirmed), 0 trades today/this week, circuit breaker N/A.
 Account: equity $100,000 / cash $100,000 / buying power $400,000, unchanged.
 Next trading day: Tue 2026-09-08 (Mon 9/7 is Labor Day, market closed).
+
+### Addendum — 2026-09-06 09:45 ET (morning-execution)
+Sunday, market closed (per TRADING-STRATEGY.md: market hours only,
+Mon-Fri). No Trade Ideas exist for today (no morning-research scan ran —
+market closed). API confirmed 0 open positions, 0 open orders, so no
+thesis/stop/TP checks needed. No trades placed, no daily/weekly gate or
+circuit-breaker check applicable (0 trades today, 0 this week).
+Account: equity $100,000 / cash $100,000 / buying power $400,000, unchanged.
+Next trading day: Tue 2026-09-08 (Mon 9/7 is Labor Day, market closed).
