@@ -2455,3 +2455,15 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT`; today's RESEARCH-L
 **Notes:** Quiet Sunday — midday scan logged, zero trades placed (no morning/afternoon-execution runs today, weekend cadence). BTC eased slightly overnight/into the day, dragging BTC-CORE further to -1.59% unrealized, still well inside all floors — stop unchanged at $72,723.60 (stop_dist ~8.5%), never moved. Portfolio -0.09% day / +10.05% phase vs $32.32 starting capital. Trades today: none. Trades this week: 0/25.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-05 EOD baseline $35.60) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
+
+## Sep 09 — EOD Snapshot (Day 49, Wednesday)
+
+**Portfolio:** $35.43 | **Cash:** $23.26 (65.7%) | **Day P&L:** -$0.14 (-0.41%) | **Phase P&L:** +$3.11 (+9.61%)
+
+| Ticker   | Qty        | Entry       | Price      | Day Chg | Unrealized P&L    | Stop        |
+|----------|------------|-------------|------------|---------|--------------------|-------------|
+| BTC-CORE | 0.00015477 | ~$80,803.77 | $78,589.69 | -1.16%  | -$0.34 (-2.74%)    | $72,723.60  |
+
+**Notes:** **OPERATIONAL GAP — no routine ran Sep 07 or Sep 08.** Last prior entry in this log is the Sep 06 (Sunday) EOD snapshot; no morning-research/execution, midday, afternoon-execution, or evening-scan commits exist anywhere in git history (local or remote, all branches checked) for Sep 07–08 — confirmed via `git ls-remote`/`git for-each-ref`, most recent activity before today was 2026-09-06. Per CLAUDE.md, stops are enforced only by midday/afternoon monitoring routines, so BTC-CORE ran ~2.5 days with zero active stop enforcement (no breach occurred — live price stayed well inside the $72,723.60 stop the whole window per the price checked today). "Day P&L" above is actually a 3-day change (Sep06→Sep09) since that's the last valid baseline; treat the % as cumulative over 3 days, not 1. BTC-CORE eased further to -2.74% unrealized (was -1.59% on Sep06), still well inside all floors — stop unchanged at $72,723.60 (stop_dist 7.46%), never moved. Portfolio -0.41% since Sep06 / +9.61% phase vs $32.32 starting capital. Trades today: none. Trades this week (Mon Sep07–today): 0/25. Root cause of the gap not diagnosable from inside this session (no error logs available) — flagging for user to check routine scheduling/subscription status.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-06 EOD baseline $35.57) + memory/PROJECT-CONTEXT.md (starting capital $32.32); `git log --all`/`git ls-remote`/`git for-each-ref` (gap verification across all local and remote branches).
