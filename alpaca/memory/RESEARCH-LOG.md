@@ -984,3 +984,21 @@ thesis/stop/TP checks needed. No trades placed, no daily/weekly gate or
 circuit-breaker check applicable (0 trades today, 0 this week).
 Account: equity $100,000 / cash $100,000 / buying power $400,000, unchanged.
 Next trading day: Tue 2026-09-08 (Mon 9/7 is Labor Day, market closed).
+
+### EOD Scan — 2026-09-09
+Note: no morning-research or morning-execution entries logged for 9/8 or
+9/9 (routine gap) — proceeding on live state only (0 positions, 0 orders
+confirmed via API), consistent with TRADE-LOG (0 open positions, 0 closed
+trades to date).
+Open positions held overnight: none
+Positions cut: none
+Movers re-check (3:30 PM): gainers META +6.79%, MRVL +4.11%, AMD +2.78%,
+XOM +2.23%, CVX +1.85%, MDLZ +1.07%, TMO +0.94%, BAC +0.81%, ABBV +0.75%,
+QCOM +0.71%; losers SPG -3.04%, KLAC -3.47%, TGT -2.43%, PSA -2.40%,
+PLD -2.32%. No open positions to manage — no action needed.
+Tomorrow's watchlist (2026-09-10): pre-market earnings M, FLWS, MCFT,
+SHOE, DBI, VNCE, LOVE, SIG, ASO — none in the liquid 75-stock tradeable
+universe. ORCL reports after close (not pre-market). No confirmed
+upgrade/M&A/FDA catalysts surfaced for in-universe names. Nothing to
+flag; standard morning-research scan sufficient.
+Account equity EOD: $100,000.00
