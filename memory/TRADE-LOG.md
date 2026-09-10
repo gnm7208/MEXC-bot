@@ -2509,3 +2509,17 @@ Deployment ~34.3% of $35.40 book.
 **Decision: NO NEW ENTRIES.** ZEC (today's sole Trade Idea, Option-B catalyst override) failed the 3-Candle Confirmation Gate live — the move has visibly faded since this morning's research (momentum +4.93%→+1.27%, volume $12.37M→$8.95M/0.1x of 20d avg, price flipped below VWAP) confirming research's own caution flag that this catalyst has repeatedly failed to convert to a live fill. BTC-CORE holds unchanged at ~34.3% deployment, -2.90%, well within stop $72,723.60 (stop_dist 7.31%) and the -10%/-7% floors; Peak P&L unchanged at +0.50% (decay condition not met — stop_dist too wide to trigger). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A).
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote ZECUSDT` + `/ticker/24hr` (BTC, ZEC) + `/klines?interval=1d,60m,15m` (ZEC level/manip/range-TP/3-candle/VWAP/RSI); `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
+
+## 2026-09-10 — Midday Scan (position sweep)
+
+**Reachability gate PASS:** `price BTCUSDT` = $77,810.49 (live).
+
+**ANOMALY — BTC-CORE position gone, unlogged.** Live `account`/`positions` shows **0 open positions** (balances = USDT only, $35.319814 free / $0 locked). BTC-CORE (0.00015477 BTC, cost $12.5060, entry ~$80,803.77) was still on file as open in this morning's Morning Execution entry (commit `88465f5`, mark $78,459.39, -2.90%) — no sell/exit for it appears anywhere in TRADE-LOG, RESEARCH-LOG, or git history (`git log`/`git fetch origin main` both checked, nothing past `88465f5`). USDT free rose $23.262447 → $35.319814 (+$12.057367) — consistent with the BTC position being liquidated at roughly current market price (0.00015477 BTC × ~$77.9k ≈ $12.06), but **no order, price, timestamp, or reason is recorded anywhere.** Not fabricating an exit entry for an unlogged trade. `scripts/mexc.sh` has no trade-history subcommand and CLAUDE.md prohibits calling the MEXC API directly, so the fill (if any) can't be reconstructed from inside this session.
+
+**Action taken:** ClickUp alert sent (see below). Positions 0/6 · Trades this week 0/25 · 0/5 today. Book = $35.32, 100% cash — no open positions to sweep (STEP 3-7 all N/A, nothing to cut/take-profit/ladder/tighten/decay-check/thesis-check). Weekly circuit breaker N/A, daily gate N/A.
+
+**Decision: NO ACTION (nothing to manage) + anomaly flagged.** Re-evaluate at afternoon-execution; if BTC-CORE's disappearance was an out-of-band manual close, next research/execution cycle should treat the book as 100% cash / no core position on file going forward until confirmed otherwise.
+
+ClickUp sent: "ALERT (midday 2026-09-10): BTC-CORE position (0.00015477 BTC, was open as of this morning's morning-execution log) is GONE from the live MEXC account with NO corresponding sell recorded anywhere in TRADE-LOG or git history. USDT free rose 23.262447 -> 35.319814 (+12.057367), consistent with a liquidation near current price (~78k) but unlogged/unexplained. Flagging for manual review — did not fabricate an exit record."
+
+Sources: live MEXC `account` + `balance BTC` + `positions` + `price BTCUSDT`; `orders BTCUSDT` HTTP 400 (known permission-gap pattern); `git log`/`git fetch origin main` (history check, nothing past 88465f5); today's TRADE-LOG Morning Execution entry.
