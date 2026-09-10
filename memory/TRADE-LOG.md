@@ -2467,3 +2467,45 @@ Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote BTCUSDT`; 
 **Notes:** **OPERATIONAL GAP — no routine ran Sep 07 or Sep 08.** Last prior entry in this log is the Sep 06 (Sunday) EOD snapshot; no morning-research/execution, midday, afternoon-execution, or evening-scan commits exist anywhere in git history (local or remote, all branches checked) for Sep 07–08 — confirmed via `git ls-remote`/`git for-each-ref`, most recent activity before today was 2026-09-06. Per CLAUDE.md, stops are enforced only by midday/afternoon monitoring routines, so BTC-CORE ran ~2.5 days with zero active stop enforcement (no breach occurred — live price stayed well inside the $72,723.60 stop the whole window per the price checked today). "Day P&L" above is actually a 3-day change (Sep06→Sep09) since that's the last valid baseline; treat the % as cumulative over 3 days, not 1. BTC-CORE eased further to -2.74% unrealized (was -1.59% on Sep06), still well inside all floors — stop unchanged at $72,723.60 (stop_dist 7.46%), never moved. Portfolio -0.41% since Sep06 / +9.61% phase vs $32.32 starting capital. Trades today: none. Trades this week (Mon Sep07–today): 0/25. Root cause of the gap not diagnosable from inside this session (no error logs available) — flagging for user to check routine scheduling/subscription status.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); memory/TRADE-LOG.md (Sep-06 EOD baseline $35.57) + memory/PROJECT-CONTEXT.md (starting capital $32.32); `git log --all`/`git ls-remote`/`git for-each-ref` (gap verification across all local and remote branches).
+
+## 2026-09-10 — Morning Execution (buy-side validation)
+
+**Reachability gate PASS:** `price BTCUSDT` = $78,459.39 (live).
+
+**Account/Positions (live `account`/`positions`):** 1 open (BTC-CORE 0.00015477 BTC), USDT free $23.262447 (65.7%) / locked $0 (canTrade=true); BTC locked $0. `orders` HTTP 400 (known permission-gap pattern, locked=0 confirms no resting orders). Positions 1/6 · Trades this week 0/25 · 0/5 today · 0 closed this week → weekly circuit breaker N/A, daily gate N/A.
+
+**STEP 1 — Today's RESEARCH-LOG (Morning Research):** MACRO_SCORE 53, SIZE_MULTIPLIER 0.6x. SECTOR_BLOCKED: none. SIGNAL_GATE: CLEAR. Decision: TRADE ZEC $3.19 (Option-B catalyst override, score 2/17) — flagged in research as a likely skip pending mandatory Layer-3 re-check (RSI 80 overbought + failed Vol Surge Gate at research time).
+
+**STEP 2 — ZEC spread check:** `quote ZECUSDT` bid $1,232.91 / ask $1,233.86 → spread 0.077% (well under 0.5% floor, neither side zero) — pass.
+
+**STEP 3 — Monitor open positions:**
+BTC-CORE — cost $12.5060 (entry ~$80,803.77) → val $12.1420 @ mark $78,459.39 → **-2.90%**.
+- A) Emergency stop: live $78,459.39 > stop $72,723.60; P&L -2.90% > -7%/-10% floor. No trigger.
+- B) Take-profit: live $78,459.39 < target $86,460.28; P&L -2.90% < +7%. No trigger.
+- C) Trailing tighten: P&L -2.90% < +3% threshold. N/A.
+- D) Peak Decay: Peak P&L +0.50% @ $81,209.99 (2026-09-04) on file; current -2.90% < peak (not a new high, unchanged). decay_pct ≈680% but stop_dist_pct 7.31% (not <6.0) — trigger condition not met (all 4 must hold). No trigger.
+- E) Ladder: LADDER BUY DISABLED in conservative mode (CLAUDE.md) — N/A.
+- F) Near-stop pre-alert: stop_dist_pct = (78,459.39 − 72,723.60) / 78,459.39 = 7.31% — above 3% threshold, no alert.
+Deployment ~34.3% of $35.40 book.
+
+**STEP 4 — Gates:** Weekly circuit breaker N/A (0 closed trades this week, need ≥5). Daily gate N/A (0 trades today).
+
+**STEP 5 — Validate ZEC entry:**
+- 24h momentum re-confirmed live: $1,233.20, +1.27% 24h (raw 0.0127), $8.95M vol — **materially weaker than research's +4.93%/$12.37M cited this morning; momentum thesis fading.**
+- Price staleness: research entry $1,241.54 vs live $1,232.90 → drift -0.70% — within ±3%, staleness OK, proceed.
+- Prev-day level check (daily klines, limit=2): prev_day_high $1,296.93, prev_day_low $1,174.31. dist_from_high 4.94% (not <2.0 → no -2 penalty), dist_from_low 4.75% (<5.0 → +1 near-support bonus). level_pts = +1.
+- ATR manipulation flush check: largest 15m range 17% of daily ATR — below 25% bearish-flush floor. manip_pts = 0 (down from this morning's 24%, still non-triggering).
+- Range TP pre-check: prev_day_high $1,296.93 > live $1,233.20, range_dist_pct = 5.17% (4.0-12.0 band) → USE_RANGE_TP = true.
+- **3-Candle Confirmation Gate: FAIL** — last 3 closed 1h candles ($1,243.43 / $1,244.33 / $1,237.13) all closed BELOW signal level $1,245.37 (yesterday's close); vol_rising=True but confirmed=False. **3CANDLE NOT CONFIRMED [ZEC] — defer to next window.**
+- EMA-200 (1d): live $1,240.09 vs EMA-200 ~$550 — far above, uptrend intact (moot, gate already failed above).
+- Vol Surge: today vol $1.09M vs 20d avg $8.53M → 0.1x — well below 1.5x floor, 0pts (sharply down from 1.45x this morning).
+- VWAP (24h, 1h klines): live $1,232.14 vs VWAP $1,254.48 — **now BELOW VWAP** (was above this morning), 0pts — fresh reversal signal.
+- RSI14 (1h): 52.2 — cooled out of overbought (was 80 this morning) into the 30-60 recovering band, +1pt (moot, gate already failed).
+
+**Per rule, 3-Candle Confirmation Gate failure is an unconditional skip — does not reach STEP 6 Layer 3 review**, same treatment as PONS/LIT/DASH on 2026-09-04.
+
+**STEP 6 — Layer 3 review:** N/A — ZEC disqualified at STEP 5 (3-Candle Gate fail), zero candidates reached Layer 3.
+
+**Decision: NO NEW ENTRIES.** ZEC (today's sole Trade Idea, Option-B catalyst override) failed the 3-Candle Confirmation Gate live — the move has visibly faded since this morning's research (momentum +4.93%→+1.27%, volume $12.37M→$8.95M/0.1x of 20d avg, price flipped below VWAP) confirming research's own caution flag that this catalyst has repeatedly failed to convert to a live fill. BTC-CORE holds unchanged at ~34.3% deployment, -2.90%, well within stop $72,723.60 (stop_dist 7.31%) and the -10%/-7% floors; Peak P&L unchanged at +0.50% (decay condition not met — stop_dist too wide to trigger). No trades placed, no stop updates → no ClickUp notification (STEP 10 N/A).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT` + `quote ZECUSDT` + `/ticker/24hr` (BTC, ZEC) + `/klines?interval=1d,60m,15m` (ZEC level/manip/range-TP/3-candle/VWAP/RSI); `orders` HTTP 400 (known permission-gap, locked=0 confirms no resting orders); today's RESEARCH-LOG entry (Morning Research, Conservative Mode).
