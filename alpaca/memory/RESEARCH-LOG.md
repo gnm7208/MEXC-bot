@@ -1002,3 +1002,43 @@ universe. ORCL reports after close (not pre-market). No confirmed
 upgrade/M&A/FDA catalysts surfaced for in-universe names. Nothing to
 flag; standard morning-research scan sufficient.
 Account equity EOD: $100,000.00
+
+## 2026-09-10 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL (mixed-to-mildly-negative futures, no FOMC/CPI today)
+Futures: S&P -0.13% to -0.5% (sources conflicting, some show brief flat/+0.2%) | Nasdaq -0.3% to -0.66%
+Risk events today: PPI (8:30 AM ET) + weekly jobless claims — CPI is tomorrow (9/11), not today, no FOMC.
+Standard entry threshold (score >= 6) applies; staying selective given the inflation
+print and mixed tape rather than forcing the score >= 9 bearish bar.
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open positions,
+0 trades this week/today. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: META +6.53%, MRVL +4.19%, AMD +3.06%, XOM +2.16%, CVX +1.82%, QCOM +1.34%,
+MDLZ +1.29%, TXN +1.01%, ISRG +0.85%, ABBV +0.84%
+Losers: SPG -3.58%, KLAC -3.23%, TGT -3.19%, PSA -2.42%, NOW -2.33%
+Flagged (>=+3%): META, MRVL, AMD
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | VAH | Abv VAH? | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|-----|----------|----------|---------|-------|----------|---------|-----|-----------|
+| META | +6.53% | 2.2x | 73 | above | $657.83 | No (-0.7%) | ANALYST_UPGRADE — JPMorgan to overweight, tied to Muse AI launch + youth-safety legal overhang relief | 2 | 6/15 | 4.0% | 8.0% | 2.00 | No — clears score but below VAH, catalyst is upgrade not earnings/acquisition (no waiver) |
+| MRVL | +4.19% | 0.8x | 49 | above | $241.80 | No (-2.8%) | Earnings beat was 9/8 (>24h old, no credit); BofA Buy upgrade dated around the print, not confirmed today | 0 | 2/15 | 5.0% | 10.1% | 2.00 | No — score 2 < 6, below VAH |
+| AMD | +3.06% | 1.5x | 57 | above | $526.67 | No (-1.1%) | OTHER — CFO bullish AI TAM commentary at Citi TMT conference, no earnings/formal upgrade dated today | 0 | 4/15 | 4.0% | 8.0% | 2.00 | No — score 4 < 6, below VAH |
+
+### Trade Ideas
+None — META is the only name that clears SCORE >= 6 (4 base + 2 catalyst), but it's
+still trading below yesterday's Value Area High and the catalyst is an analyst
+upgrade, not an EARNINGS_BEAT or ACQUISITION, so the VAH-breakout gate cannot be
+waived. MRVL and AMD both fail the score gate outright on top of failing VAH.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. No candidate clears both the
+score gate and the VAH-breakout gate; PPI print at 8:30 AM adds event risk on an
+already-mixed tape. Re-scan at 9:45 AM execution for genuine post-open volume/VAH
+acceptance once real intraday ticks are live.
+Account equity: $100,000.00
