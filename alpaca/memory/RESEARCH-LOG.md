@@ -1051,3 +1051,20 @@ Ideas existed to re-validate (none cleared score/VAH gates this morning). No
 trades placed. Daily/weekly gates and circuit breaker N/A (0 trades today/this
 week).
 Account equity: $100,000.00
+
+### EOD Scan — 2026-09-10
+Live state confirmed via API: 0 open positions, 0 open orders — consistent with
+TRADE-LOG and morning HOLD decision. No positions to review for thesis
+breaks/stale cuts/stop checks — nothing to do in Steps 3A-3C.
+Open positions held overnight: none
+Positions cut: none
+Movers re-check (3:30 PM): gainers ELV +6.05%, AAPL +3.23%, ISRG +2.10%, PM
++2.06%, QCOM +1.40%; losers LRCX -5.13%, ORCL -4.61%, KLAC -2.95%, AMD -2.93%,
+AMAT -2.53% (chip names broadly weak into the close).
+Tomorrow's watchlist (2026-09-11): pre-market earnings KR, HOFT, RENT, MNY —
+none in the liquid tradeable universe (KR is large-cap but grocery/no momentum
+catalyst fit; others too small/illiquid). No upgrade/M&A/FDA catalysts
+surfaced for in-universe names. Key risk event: CPI (MoM/YoY) at 8:30 AM ET —
+elevated volatility likely at the open, standard morning-research caution
+applies. Nothing to flag beyond that; standard scan sufficient.
+Account equity EOD: $100,000.00
