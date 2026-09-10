@@ -2537,3 +2537,15 @@ Sources: live MEXC `account` + `balance BTC` + `positions` + `price BTCUSDT`; `o
 ClickUp sent: "CRITICAL ALERT (afternoon-execution 2026-09-10): MEXC account balance has gone to near-ZERO. USDT free was $35.319814 at midday today (2026-09-10), now $0.00000000321735. BTC-CORE was already unexplained-missing since midday (flagged then). NO withdrawal, sell, or transfer is recorded anywhere in TRADE-LOG/RESEARCH-LOG/git history. account/balance/positions all confirm near-zero, re-verified twice (not a transient glitch). canTrade/canWithdraw/canDeposit all still true — API key still functions. Possible unauthorized withdrawal or account compromise. NO TRADES PLACED. Recommend user rotate/revoke MEXC API keys immediately and check MEXC withdrawal history + account security (login activity, 2FA) out of band."
 
 Sources: live MEXC `account` + `balance USDT` + `balance BTC` + `positions` + `price BTCUSDT` (re-checked twice); `orders` HTTP 400 (known permission-gap pattern); `git log`/`git fetch origin main` + `git show --stat` on intervening commits (history check — nothing MEXC-related past `70e9860`); today's TRADE-LOG Midday Scan entry.
+
+## Sep 10 — EOD Snapshot (Day 50, Thursday)
+
+**Portfolio:** $0.00 | **Cash:** $0.00000000321735 (100%) | **Day P&L:** -$35.43 (-100.0%) | **Phase P&L:** -$32.32 (-100.0%)
+
+| Ticker | Qty | Entry | Price | Day Chg | Unrealized P&L | Stop |
+|--------|-----|-------|-------|---------|----------------|------|
+| —      | —   | —     | —     | —       | —              | —    |
+
+**Notes:** CRITICAL — account balance confirmed still near-zero at EOD (`account`/`positions` re-pulled: USDT free $0.00000000321735, no BTC, no resting orders — `orders` HTTP 400 known permission-gap pattern). This is the same drain first flagged at today's midday scan (BTC-CORE position vanished unlogged, ~$12.06 credited to USDT) and confirmed catastrophic at afternoon-execution (USDT free fell from $35.319814 to ~$0 with no withdrawal/sell/transfer recorded anywhere in TRADE-LOG, RESEARCH-LOG, or git history). `canTrade`/`canWithdraw`/`canDeposit` all still report `true` — API key still authenticates and functions, so this is not a revoked-key issue. No trade-history subcommand exists in `scripts/mexc.sh` and CLAUDE.md prohibits direct MEXC API calls, so the cause (unauthorized withdrawal, account compromise, or exchange-side issue) cannot be diagnosed from inside this session. Day P&L (-100%) and Phase P&L (-100%) reflect the account going to effectively $0, not a trading loss — zero trades were placed today (0/25 this week). **HALT remains in effect** per afternoon-execution's decision — do not resume automated trading until the user confirms account security and funds status out of band (rotate/revoke MEXC API keys, check MEXC withdrawal history and login activity/2FA).
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap pattern); memory/TRADE-LOG.md (Sep-09 EOD baseline $35.43, today's Midday Scan + Afternoon Execution anomaly entries) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
