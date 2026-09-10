@@ -1042,3 +1042,12 @@ score gate and the VAH-breakout gate; PPI print at 8:30 AM adds event risk on an
 already-mixed tape. Re-scan at 9:45 AM execution for genuine post-open volume/VAH
 acceptance once real intraday ticks are live.
 Account equity: $100,000.00
+
+### Addendum — 2026-09-10 09:45 ET (morning-execution)
+Decision = HOLD from morning-research — monitor only, no re-scan/execution per
+routine. API confirmed: equity $100,000 / cash $100,000 / buying power $400,000,
+0 open positions, 0 open orders — unchanged from research snapshot. No Trade
+Ideas existed to re-validate (none cleared score/VAH gates this morning). No
+trades placed. Daily/weekly gates and circuit breaker N/A (0 trades today/this
+week).
+Account equity: $100,000.00
