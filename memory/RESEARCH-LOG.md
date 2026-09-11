@@ -3486,3 +3486,34 @@ Tomorrow's watchlist: **ZEC** (recurring Grayscale ETF-conversion + 2x-leveraged
 Action taken: **None — cannot trade, book is $0.00000000321735 USDT / 0 positions.** No emergency sell, no take-profit, no thesis-broken exit (nothing held). HALT from 2026-09-10 afternoon-execution remains the operative decision: do not resume automated trading until the user confirms account security and funds status out of band.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap pattern); **Perplexity (sonar)** ×3 (overnight/Asian catalysts, 6h news, Asian gainers); CoinGecko `/search/trending`; Whale Alert (unavailable); memory/TRADE-LOG.md (Sep-10 EOD snapshot, midday/afternoon anomaly entries).
+
+## 2026-09-11 — Morning Research (Conservative Mode)
+
+**CRITICAL — HALT REMAINS IN EFFECT. Account balance still near-zero, unresolved 24+ hours since first flagged (2026-09-10 midday) and confirmed catastrophic (2026-09-10 afternoon-execution).** Reachability gate PASS: `price BTCUSDT` = $76,785.60 (live). Live `account`/`positions` re-checked: USDT free **$0.00000000321735**, no BTC, no other assets, no resting orders. `canTrade`/`canWithdraw`/`canDeposit` all still `true` — key still functions, not a revocation issue. No withdrawal/sell/transfer is recorded anywhere in TRADE-LOG/RESEARCH-LOG/git history explaining the drain from $35.32 (2026-09-10 midday) to ~$0 (2026-09-10 afternoon). **No user action confirming account security/funds status has been logged since the alert was first sent** — this is now the third consecutive routine (midday, afternoon-execution, evening-scan) plus this morning-research citing the same unresolved critical state.
+
+Given $0.00000000321735 USDT available (nowhere near the $3 minimum notional) and 0 open positions, full Layer 1/Layer 2 signal scoring is skipped this cycle — there is no capital to deploy regardless of macro score or candidate quality, and running the full Perplexity/Whale Alert/DeFiLlama battery would burn API calls with zero possible action. Macro context logged for record continuity only:
+
+### Macro Gate (Layer 1) — informational only, no capital to deploy
+| Signal        | Raw Value | Score (0-100) | Weight |
+|---------------|-----------|---------------|--------|
+| Fear & Greed  | 56        | 56            | 30%    |
+| BTC 24h %     | -0.02%    | 50            | 25%    |
+| BTC Dominance | 58.5%     | 43            | 20%    |
+| Alt Breadth   | n/a (skipped) | —         | 15%    |
+| Loss Rate     | 0/0 (neutral default) | 75 | 10%   |
+**MACRO_SCORE: not finalized (Alt Breadth skipped — no action-relevant purpose with $0 capital) | SIZE_MULTIPLIER: N/A — irrelevant, $0 available**
+Deployment stance: **HALTED — operational/security halt, not a macro-gate halt**
+
+### Sector Status
+SECTOR_BLOCKED: none on file
+SIGNAL_GATE: CLEAR (no new closed trades since last check)
+Self-learning: insufficient data change since last session — see prior entries
+Anomaly scan: N/A this cycle — superseded by the standing critical balance-drain anomaly (see above)
+
+### Account Snapshot
+Equity: **$0.00000000321735** (100% of nothing). Free USDT: $0.00000000321735. Open positions: 0/6. Trades this week: 0/25. Trades today: 0/5.
+
+### Decision
+**HALT — operational/security halt remains in effect.** Do not resume automated trading, do not attempt any order (book is below min-notional), until the user confirms account security and funds status out of band (rotate/revoke MEXC API keys, check MEXC withdrawal history + login activity/2FA). This is the fourth consecutive routine logging this same unresolved state. Escalating via ClickUp again given 24+ hour non-response.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; direct Fear & Greed API (alternative.me); direct CoinGecko `/global`; memory/TRADE-LOG.md (Sep-10 midday/afternoon anomaly entries, Sep-10 EOD snapshot); memory/RESEARCH-LOG.md (2026-09-11 Evening Scan entry).
