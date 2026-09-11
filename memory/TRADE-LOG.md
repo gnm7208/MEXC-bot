@@ -2583,3 +2583,15 @@ STEP 4 — Circuit breaker / daily gate: N/A (0 closed trades this week, 0 trade
 **Decision: HALT continues — no action possible or taken.** Do not resume automated trading until the user confirms account security and funds status out of band (rotate/revoke MEXC API keys, check MEXC withdrawal history + login activity/2FA). Re-verify live balance first at every future routine until resolved.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap pattern); memory/RESEARCH-LOG.md (2026-09-11 Morning Research + Morning Execution entries); memory/TRADE-LOG.md (Sep-10 EOD snapshot, midday/afternoon-execution anomaly entries, 2026-09-11 Midday Scan entry).
+
+## Sep 11 — EOD Snapshot (Day 51, Friday)
+
+**Portfolio:** $0.00 | **Cash:** $0.00000000321735 (100%) | **Day P&L:** $0.00 (0.0%) | **Phase P&L:** -$32.32 (-100.0%)
+
+| Ticker | Qty | Entry | Price | Day Chg | Unrealized P&L | Stop |
+|--------|-----|-------|-------|---------|----------------|------|
+| —      | —   | —     | —     | —       | —              | —    |
+
+**Notes:** HALT remains in effect, day 2 of the unresolved incident. Account balance confirmed still near-zero at EOD (`account`/`positions` re-pulled: USDT free $0.00000000321735, no BTC, no other assets, 0 open positions, no resting orders — `orders` HTTP 400 known permission-gap pattern). No change since yesterday's EOD — the Sep-10 midday→afternoon drain ($35.32 → ~$0) remains unexplained, with no withdrawal/sell/transfer recorded anywhere in TRADE-LOG, RESEARCH-LOG, or git history. `canTrade`/`canWithdraw`/`canDeposit` all still report `true` — API key still authenticates and functions, so the key remains live and potentially exposed if compromised; this is not a revoked-key issue. Zero trades placed today or this week (0/25) — every routine today (midday, afternoon-execution) ran monitor-only per the operational/security halt and found nothing to manage (0/6 positions). Day P&L is flat at $0.00 (book already at effectively $0, nothing left to move); Phase P&L unchanged at -100%. **HALT remains in effect** — do not resume automated trading until the user confirms account security and funds status out of band (rotate/revoke MEXC API keys, check MEXC withdrawal history and login activity/2FA). This is now the incident's second EOD snapshot with no user confirmation logged.
+
+Sources: live MEXC `account` + `positions` + `price BTCUSDT`; `orders` HTTP 400 (known permission-gap pattern); memory/TRADE-LOG.md (Sep-10 EOD baseline $0.00, today's Midday Scan + Afternoon Execution entries) + memory/PROJECT-CONTEXT.md (starting capital $32.32).
