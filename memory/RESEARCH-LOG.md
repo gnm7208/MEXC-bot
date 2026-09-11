@@ -3517,3 +3517,21 @@ Equity: **$0.00000000321735** (100% of nothing). Free USDT: $0.00000000321735. O
 **HALT — operational/security halt remains in effect.** Do not resume automated trading, do not attempt any order (book is below min-notional), until the user confirms account security and funds status out of band (rotate/revoke MEXC API keys, check MEXC withdrawal history + login activity/2FA). This is the fourth consecutive routine logging this same unresolved state. Escalating via ClickUp again given 24+ hour non-response.
 
 Sources: live MEXC `account` + `positions` + `price BTCUSDT`; direct Fear & Greed API (alternative.me); direct CoinGecko `/global`; memory/TRADE-LOG.md (Sep-10 midday/afternoon anomaly entries, Sep-10 EOD snapshot); memory/RESEARCH-LOG.md (2026-09-11 Evening Scan entry).
+
+## 2026-09-11 — Morning Execution (buy-side validation)
+
+**CRITICAL — HALT REMAINS IN EFFECT. Account balance still near-zero, now 2+ days unresolved since first flagged (2026-09-10 midday) and confirmed catastrophic (2026-09-10 afternoon-execution).** Reachability gate PASS: `price BTCUSDT` = $77,251.82 (live). Live `account`/`positions` re-checked: USDT free **$0.00000000321735**, no BTC, no other assets, `orders` HTTP 400 (known permission-gap pattern). `canTrade`/`canWithdraw`/`canDeposit` all still `true` — key still functions, not a revocation issue. **No user action confirming account security/funds status has been logged since the alert was first sent 2026-09-10 afternoon** — this is the fifth consecutive routine (midday, afternoon-execution, EOD, evening-scan, morning-research) plus this morning-execution citing the same unresolved critical state, now spanning into a second calendar day.
+
+STEP 1 decision from today's Morning Research entry: **HALT — operational/security halt** (not a macro-gate halt; MACRO_SCORE not finalized, no capital to deploy regardless). Per routine: logging halt and skipping STEPS 4-10 (no capital exists to trade with, and no signal-scoring purpose in burning API calls against $0 available).
+
+STEP 2/3 — Open positions: **0/6**. Nothing to monitor, nothing to stop out, nothing to take-profit, nothing to tighten, nothing to decay-check, nothing to ladder, nothing to near-stop pre-alert. All N/A.
+
+STEP 4 — Circuit breaker / daily gate: N/A (0 closed trades this week, 0 trades today).
+
+**Action taken:** ClickUp alert re-sent (escalation, see below). Push notification sent to user directly given 24+ hour non-response to prior ClickUp alerts — this is a potential account-compromise / unauthorized-withdrawal situation, not a routine trading halt.
+
+**Decision: HALT — no new entries today. Do not resume automated trading until the user confirms account security and funds status out of band** (rotate/revoke MEXC API keys, check MEXC withdrawal history + login activity/2FA).
+
+ClickUp sent: "HALT CONTINUES (morning-execution 2026-09-11): Account still at $0.00000000321735 USDT, 0 positions, 2+ days since the ~$35 balance drain was first flagged (2026-09-10 midday/afternoon). No user confirmation of account security logged yet. NO TRADES PLACED. Recommend rotating/revoking MEXC API keys and checking withdrawal history + 2FA/login activity immediately if not already done."
+
+Sources: live MEXC `account` + `positions` + `orders` + `price BTCUSDT`; memory/TRADE-LOG.md (Sep-10 midday/afternoon/EOD anomaly entries); memory/RESEARCH-LOG.md (2026-09-11 Evening Scan + Morning Research entries).
