@@ -1068,3 +1068,46 @@ surfaced for in-universe names. Key risk event: CPI (MoM/YoY) at 8:30 AM ET —
 elevated volatility likely at the open, standard morning-research caution
 applies. Nothing to flag beyond that; standard scan sufficient.
 Account equity EOD: $100,000.00
+
+## 2026-09-11 — Alpaca Morning Research
+
+### Market Context
+Sentiment: NEUTRAL (conflicting pre-market futures snapshots, no broad selloff)
+Futures: S&P -0.15% to +0.56% (sources disagree) | Nasdaq -0.66% to flat
+Risk events today: CPI (Aug, 8:30 AM ET) — already released by scan time (9:11
+AM ET); no FOMC today. Semis broadly weak (AMD -3.3%, MRVL -3.4%, ORCL -5.3%,
+LRCX -5.8%, AMAT -3.2%) vs healthcare/consumer modestly higher — sector
+rotation, not uniform risk-off. Standard entry threshold (score >= 6) applies.
+Account: equity $100,000 / cash $100,000 / buying power $400,000 — no open
+positions, 0 trades this week/today. Circuit breaker N/A (0 closed trades).
+
+### Movers Scanned
+Gainers: ELV +4.86%, AAPL +3.55%, PM +2.20%, ISRG +2.03%, ABBV +1.64%, ACN
++1.13%, SNPS +1.02%, PANW +0.99%, CI +0.91%, ADP +0.77%
+Losers: AMAT -3.17%, AMD -3.33%, MRVL -3.43%, ORCL -5.29%, LRCX -5.81%
+Flagged (>=+3%): ELV, AAPL
+
+### Signal Table
+| Ticker | Chg% | Vol× | RSI | SMA50 | VAH | Abv VAH? | Catalyst | Cat pts | Score | ATR stop | ATR tgt | R:R | Eligible? |
+|--------|------|------|-----|-------|-----|----------|----------|---------|-------|----------|---------|-----|-----------|
+| ELV | +4.86% | 2.1x | 50 | above | $421.56 | No (-1.2%) | OTHER — 9/10 FY26 guidance reaffirmation + Q3-tracking-ahead commentary at Wells Fargo conf (>24h old, not earnings/upgrade/acquisition) | 0 | 4/15 | 4.0% | 8.0% | 2.00 | No — score 4 < 6, below VAH, no waiver (not EARNINGS_BEAT/ACQUISITION) |
+| AAPL | +3.55% | 1.8x | 50 | above | $326.66 | No (-0.0%) | OTHER — Sept 9 iPhone launch event + CEO transition commentary, no fresh earnings/upgrade/M&A today | 0 | 4/15 | 4.0% | 8.0% | 2.00 | No — score 4 < 6, below VAH, no waiver |
+
+RSI defaulted to 50 (neutral) on both — too early in the session for 14 hourly
+bars (only 1 hourly bar printed so far pre-market).
+
+### Trade Ideas
+None — both flagged movers score 4/15 (below the 6 gate) and sit just under
+prior-day VAH; catalysts are stale (>24h) management/product commentary, not
+EARNINGS_BEAT or ACQUISITION, so the VAH waiver doesn't apply either.
+
+### SECTOR_BLOCKED
+none
+
+### Decision
+HOLD — 0 open positions, 0 trades this week/today. No candidate clears the
+score or VAH-breakout gates. CPI already released pre-scan; semis notably weak
+(chip-name losers list) while healthcare/AAPL only modestly extended — nothing
+actionable. Re-scan at 9:45 AM execution for genuine post-open volume/VAH
+acceptance.
+Account equity: $100,000.00
